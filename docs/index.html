@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>sino-ui - ECharts 4.x for Vue.js 2.x.</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="description" content="ECharts 4.x for Vue.js 2.x." />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <link
+      rel="icon"
+      href="_media/favicon.ico"
+      mce_href="_media/favicon.ico"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css" />
+    <!-- inject css file -->
+    <link rel="stylesheet" href="//unpkg.com/vuep/dist/vuep.css" />
+    <link rel="stylesheet" href="vue.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="app"></div>
+    <script src="//unpkg.com/vue/dist/vue.min.js"></script>
+    <script src="//unpkg.com/docsify-demo-box-vue/dist/docsify-demo-box-vue.min.js"></script>
+    <script>
+      var jsResources =
+        '<scr' + 'ipt src="//unpkg.com/vue/dist/vue.js"></scr' + 'ipt>';
+      var cssResources =
+        '@import url("//cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css");';
+      var bootCode = 'var globalVariable = "leon"';
+      var globalVariable = 'leon';
+
+      window.$docsify = {
+        name: 'sino-ui',
+        repo: 'giscafer/sino-ui', // connect to github
+        loadSidebar: true,
+        coverpage: true,
+        themeColor: '#3c78eb',
+        homepage: 'base-quickstart.md',
+        search: {
+          maxAge: 86400000,
+          paths: 'auto',
+          placeholder: {
+            '/': '搜索',
+            '/en': 'Type to search',
+          },
+          noData: {
+            '/': '找不到结果',
+            '/en': 'No Results',
+          },
+          depth: 2,
+        },
+        mergeNavbar: true,
+        plugins: [DemoBoxVue.create(jsResources, cssResources, bootCode)],
+      };
+
+      // remove sidebar's title and add my logo
+      let interval = setInterval(function() {
+        if (document.getElementsByTagName('aside')[0]) {
+          let parent = document.getElementsByTagName('aside')[0];
+          parent.removeChild(parent.getElementsByTagName('h1')[0]);
+          let div = document.createElement('div');
+          div.setAttribute('class', 'logo');
+          let a = document.createElement('a');
+          a.setAttribute('href', 'https://vueblocks.github.io/sino-ui');
+          let img = document.createElement('img');
+          img.setAttribute('src', './_media/icon.svg');
+          let titleImg = document.createElement('img');
+          titleImg.setAttribute('src', './_media/logo_blue.svg');
+          a.appendChild(img);
+          div.appendChild(a);
+          parent.prepend(div);
+          div.appendChild(titleImg);
+          clearInterval(interval);
+        }
+      }, 0);
+
+      window.addEventListener('scroll', winScroll, false);
+      function winScroll(e) {
+        let coverNav = document.getElementById('cover-nav');
+        let scrollTop = document.documentElement.scrollTop;
+        if (coverNav) {
+          if (scrollTop > 96) {
+            coverNav.style.display = 'none';
+          } else {
+            coverNav.style.display = 'block';
+          }
+        }
+      }
+    </script>
+    <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+    <!-- inject js file -->
+    <script src="//unpkg.com/vuep/dist/vuep.min.js"></script>
+    <script src="//unpkg.com/echarts@latest/dist/echarts.min.js"></script>
+    <script src="//unpkg.com/echarts-wordcloud@1.1.3/dist/echarts-wordcloud.js"></script>
+    <script src="//unpkg.com/echarts-liquidfill@2.0.4/dist/echarts-liquidfill.js"></script>
+    <script src="//unpkg.com/sino-ui@latest/lib/sino-ui.umd.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <!-- <script src="sino-ui.umd.min.js"></script> -->
+    <script src="//unpkg.com/docsify/lib/plugins/search.js"></script>
+  </body>
+</html>
