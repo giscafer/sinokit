@@ -50,8 +50,7 @@ section.cover .cover-main > ul > li > code {
   }
 }
 
-@-webkit-keyframes line-repetition /*Safari and Chrome*/
-{
+@-webkit-keyframes line-repetition /*Safari and Chrome*/ {
   from {
     top: 0;
     opacity: 1;
@@ -154,6 +153,9 @@ aside.sidebar ul:first-child > li:nth-child(2) > p {
 aside.sidebar ul:first-child > li:nth-child(3) > p {
   background: url(./_media/sidebar3.svg) no-repeat 48px;
 }
+aside.sidebar ul:first-child > li:nth-child(4) > p {
+  background: url(./_media/sidebar3.svg) no-repeat 48px;
+}
 
 aside.sidebar ul li.active > a {
   border: 0;
@@ -194,8 +196,8 @@ section.content .vuep {
 }
 
 section.content .vuep:hover {
-  box-shadow: 0 0 10px 0 rgba(232, 237, 250, .6),
-  0 2px 4px 0 rgba(232, 237, 250, .6);
+  box-shadow: 0 0 10px 0 rgba(232, 237, 250, 0.6),
+    0 2px 4px 0 rgba(232, 237, 250, 0.6);
 }
 
 section.content .vuep-editor,
@@ -233,7 +235,7 @@ section.content .markdown-section {
 .markdown-section h3,
 .markdown-section h4 {
   font-size: 1rem;
-  margin: 1.5rem 0 .75rem;
+  margin: 1.5rem 0 0.75rem;
 }
 
 .markdown-section table {
@@ -258,7 +260,6 @@ section.content .markdown-section {
 
 .markdown-section iframe:hover {
   border: 1px solid #ebebeb;
-  box-shadow: 0 0 10px 0 rgba(232, 237, 250, .6),
-  0 2px 4px 0 rgba(232, 237, 250, .6);
+  box-shadow: 0 0 10px 0 rgba(232, 237, 250, 0.6),
+    0 2px 4px 0 rgba(232, 237, 250, 0.6);
 }
-
