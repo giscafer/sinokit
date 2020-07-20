@@ -3,11 +3,11 @@
 ![logo](_media/icon.svg)
 
 <blockquote>
-  <p style="color:#fff;">SinoUI for Vue.js 2.x.</p>
+  <p style="color:#fff;">SinoKit for Vue.js 2.x.</p>
 </blockquote>
 
 <ul style="color:#fff">
-  <li>`SinoUI` 是基于 `Vue2.x` 构建封装的组件化方案</li>
+  <li>`SinoKit` 是基于 `Vue2.x` 构建封装的组件化方案</li>
   <li>提供 组件、区块、页面模板 的物料平台</li>
 </ul>
 

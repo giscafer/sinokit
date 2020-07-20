@@ -2,30 +2,30 @@
 
 ## 通过 npm 安装
 
-我们提供了 `sino-ui` npm 包，通过下面命令即可完成安装，`sino-ui` 依赖于 `element` 与 `vue`，所以不要忘记安装依赖包。
+我们提供了 `sinokit` npm 包，通过下面命令即可完成安装，`sinokit` 依赖于 `element` 与 `vue`，所以不要忘记安装依赖包。
 
 ```bash
-npm i sino-ui -S
+npm i sinokit -S
 ```
 
-## 引入 SinoUI
+## 引入 SinoKit
 
 安装完成后，即可使用 `import` 或 `require` 使用。
 
-完整引入 `sino-ui`
+完整引入 `sinokit`
 
 ```js
 import Vue from 'vue';
-import SinoUI from 'sino-ui';
+import SinoKit from 'sinokit';
 
-Vue.use(SinoUI);
+Vue.use(SinoKit);
 ```
 
-按需引入 `sino-ui`
+按需引入 `sinokit`
 
 ```js
 import Vue from 'vue';
-import { VeBarChart } from 'sino-ui'; // 引入单个图表
+import { VeBarChart } from 'sinokit'; // 引入单个图表
 
 Vue.component('VeBarChart', VeBarChart);
 ```
