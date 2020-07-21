@@ -6,8 +6,9 @@
 
 import CustomEventPlugin from '@sinokit/utils/event';
 import JsonSchemaEditor from './JsonSchemaEditor';
+import JsonEditor from './JsonEditor';
 
-const COMPONENTS = [JsonSchemaEditor];
+const COMPONENTS = [JsonEditor, JsonSchemaEditor];
 
 const install = Vue => {
   Vue.use(CustomEventPlugin);
@@ -28,5 +29,6 @@ if (typeof window !== 'undefined' && window.Vue) {
 export default {
   install,
   CustomEventPlugin,
+  JsonEditor,
   JsonSchemaEditor
 };

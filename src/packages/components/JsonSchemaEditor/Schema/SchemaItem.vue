@@ -5,7 +5,7 @@
         <el-row type="flex" justify="space-around" align="middle">
           <el-col :span="2" class="down-style-col">
             <span v-if="value.type === 'object'" class="down-style" @click="handleClickIcon">
-              <i v-if="value.type === 'object'" class="el-icon-caret-bottom icon-object"></i>
+              <i v-if="showIcon" class="el-icon-caret-bottom icon-object"></i>
               <i v-if="!showIcon" class="el-icon-caret-right icon-object"></i>
             </span>
           </el-col>
@@ -52,11 +52,11 @@
 
       <el-col v-if="showTitle" :span="isMock ? 4 : 5" class="col-item col-item-mock">
         <el-input v-model="value.title" :disabled="value.disabled" size="small" placeholder="标题">
-          <Icon
+          <i
             slot="append"
-            type="edit"
+            class="el-icon-edit"
             @click="handleAction({eventType:'show-edit',field:'title'})"
-          />
+          ></i>
         </el-input>
       </el-col>
       <!-- 默认值输入框 -->

@@ -5,7 +5,7 @@
         <el-row type="flex" justify="space-around" align="middle">
           <el-col :span="2" class="down-style-col">
             <span v-if="items.type === 'object'" class="down-style" @click="handleClickIcon">
-              <i v-if="showIcon" class="el-icon-caret-bottom icon-object"></i>
+              <i v-if="!showIcon" class="el-icon-caret-bottom icon-object"></i>
               <i v-else class="el-icon-caret-right icon-object"></i>
             </span>
           </el-col>
@@ -100,7 +100,7 @@
           :editor-id="editorId"
         />
       </template>
-      <template v-if="items.type==='object'">
+      <template v-if="items.type==='object' && !showIcon">
         <SchemaObject
           :prefix="nameArray"
           :data="items"

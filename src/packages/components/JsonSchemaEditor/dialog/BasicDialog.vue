@@ -38,7 +38,7 @@ export default {
 
   watch: {
     initData: {
-      handler(newName, oldName) {
+      handler() {
         this.data = this.initData.value
       },
       deep: true

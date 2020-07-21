@@ -5,6 +5,7 @@
         <el-button size="mini" type="primary" @click="handleChangeSchema">changeSchema2</el-button>
         <el-button size="mini" type="info" @click="handlePageParams">Toggle Page Params</el-button>
         {{ schemaJsonString }}
+        <json-editor :value="schema" :readOnly="true"></json-editor>
       </el-col>
       <el-col :span="18">
         <JsonSchemaEditor
