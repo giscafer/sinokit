@@ -8,14 +8,16 @@ const routes = [
     path: '/',
     name: '首页',
     // component: Chart,
-    redirect: '/chart/bar'
+    redirect: '/json-schema-editor'
   },
 
   {
-    path: '/test-page',
-    name: '测试页面',
+    path: '/json-schema-editor',
+    name: 'JsonSchemaEditor',
     component: () =>
-      import(/* webpackChunkName: "test-page" */ '../views/TestPage.vue'),
+      import(
+        /* webpackChunkName: "json-schema-editor" */ '../views/json-schema-editor.vue'
+      ),
     props: true
   }
 ];

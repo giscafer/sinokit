@@ -5,13 +5,14 @@
         <el-row type="flex" justify="space-around" align="middle">
           <el-col :span="2" class="down-style-col">
             <span v-if="value.type === 'object'" class="down-style" @click="handleClickIcon">
-              <Icon v-if="showIcon" class="icon-object" type="caret-bottom" />
-              <Icon v-if="!showIcon" class="icon-object" type="caret-right" />
+              <i v-if="value.type === 'object'" class="el-icon-caret-bottom icon-object"></i>
+              <i v-if="!showIcon" class="el-icon-caret-right icon-object"></i>
             </span>
           </el-col>
-          <el-col :span="20">
+          <el-col :span="20" class="el-input--small">
             <input
-              class="el-input el-input--medium el-input__inner"
+              size="small"
+              class="el-input el-input__inner"
               :class="{'is-disabled':value.disabled}"
               :value="name"
               :disabled="value.disabled"
@@ -31,6 +32,7 @@
 
       <el-col :span="3" class="col-item col-item-type">
         <el-select
+          size="small"
           :value="value.type"
           :disabled="value.disabled && !value.canChangeType"
           class="type-select-style"
@@ -49,11 +51,11 @@
       </el-col>
 
       <el-col v-if="showTitle" :span="isMock ? 4 : 5" class="col-item col-item-mock">
-        <el-input v-model="value.title" :disabled="value.disabled" placeholder="标题">
+        <el-input v-model="value.title" :disabled="value.disabled" size="small" placeholder="标题">
           <Icon
             slot="append"
             type="edit"
-            @click.native="handleAction({eventType:'show-edit',field:'title'})"
+            @click="handleAction({eventType:'show-edit',field:'title'})"
           />
         </el-input>
       </el-col>
@@ -66,30 +68,36 @@
         <el-input
           v-model.trim="value.default"
           placeholder="默认值"
+          size="small"
           :disabled="value.type === 'object' || value.type === 'array' || value.disabled"
         >
-          <Icon
+          <i
             slot="append"
-            type="edit"
-            @click.native="handleAction({eventType:'show-edit',field:'default'})"
-          />
+            class="el-icon-edit"
+            @click="handleAction({eventType:'show-edit',field:'default'})"
+          ></i>
         </el-input>
       </el-col>
 
       <el-col :span="isMock ? 4 : 5" class="col-item col-item-desc">
-        <el-input v-model="value.description" :disabled="value.disabled" placeholder="备注">
-          <Icon
+        <el-input
+          v-model="value.description"
+          :disabled="value.disabled"
+          size="small"
+          placeholder="备注"
+        >
+          <i
             slot="append"
-            type="edit"
-            @click.native="handleAction({eventType:'show-edit',field:'description'})"
-          />
+            class="el-icon-edit"
+            @click="handleAction({eventType:'show-edit',field:'description'})"
+          ></i>
         </el-input>
       </el-col>
 
       <el-col :span="isMock ? 2 : 3" class="col-item col-item-setting">
         <span class="adv-set" @click="handleAction({eventType:'setting', schemaType: value.type})">
           <el-tooltip placement="top" content="高级设置">
-            <Icon type="setting" />
+            <i class="el-icon-setting"></i>
           </el-tooltip>
         </span>
         <span
@@ -97,7 +105,7 @@
           :class="{'hidden':value.disabled}"
           @click="handleAction({eventType:'delete-field'})"
         >
-          <Icon type="close" class="close" />
+          <i class="el-icon-close close"></i>
         </span>
         <DropPlus
           v-if="value.type === 'object'"
@@ -110,7 +118,7 @@
           @click="handleAction({eventType:'add-field',isChild:false})"
         >
           <el-tooltip placement="top" content="添加兄弟节点">
-            <Icon type="plus" class="plus" />
+            <i class="el-icon-plus plus"></i>
           </el-tooltip>
         </span>
       </el-col>
@@ -142,7 +150,6 @@
 </template>
 <script>
 import isUndefined from 'lodash/isUndefined'
-import Icon from '../../Icon'
 import MockSelect from '../MockSelect'
 import DropPlus from './DropPlus'
 import SchemaObject from './SchemaObject'
@@ -151,7 +158,6 @@ import { SCHEMA_TYPE } from '../utils'
 export default {
   name: 'SchemaItem',
   components: {
-    Icon,
     MockSelect,
     DropPlus,
     'schema-array': SchemaArray,

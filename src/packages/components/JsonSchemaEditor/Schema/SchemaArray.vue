@@ -5,12 +5,12 @@
         <el-row type="flex" justify="space-around" align="middle">
           <el-col :span="2" class="down-style-col">
             <span v-if="items.type === 'object'" class="down-style" @click="handleClickIcon">
-              <Icon v-if="showIcon" class="icon-object" type="caret-bottom" />
-              <Icon v-else class="icon-object" type="caret-right" />
+              <i v-if="showIcon" class="el-icon-caret-bottom icon-object"></i>
+              <i v-else class="el-icon-caret-right icon-object"></i>
             </span>
           </el-col>
           <el-col :span="20">
-            <el-input disabled value="Items" />
+            <el-input disabled value="Items" size="small" />
           </el-col>
           <el-col :span="2" style="text-align:center">
             <el-tooltip placement="top" content="全选">
@@ -21,7 +21,12 @@
       </el-col>
 
       <el-col :span="3" class="col-item col-item-type">
-        <el-select :value="items.type" class="type-select-style" @change="handleChangeType">
+        <el-select
+          :value="items.type"
+          size="small"
+          class="type-select-style"
+          @change="handleChangeType"
+        >
           <el-option v-for="item in schemaTypes" :key="item" :value="item" :label="item"></el-option>
         </el-select>
       </el-col>
@@ -35,12 +40,12 @@
       </el-col>
 
       <el-col v-if="showTitle" :span="isMock ? 4 : 5" class="col-item col-item-mock">
-        <el-input v-model="items.title" placeholder="标题">
-          <Icon
+        <el-input v-model="items.title" placeholder="标题" size="small">
+          <i
             slot="append"
-            type="edit"
-            @click.native="handleAction({eventType:'show-edit',field:'title'})"
-          />
+            class="el-icon-edit"
+            @click="handleAction({eventType:'show-edit',field:'title'})"
+          ></i>
         </el-input>
       </el-col>
       <el-col
@@ -48,28 +53,28 @@
         :span="isMock ? 4 : 5"
         class="col-item col-item-mock"
       >
-        <el-input v-model="items.default" placeholder="默认值">
-          <Icon
+        <el-input v-model="items.default" placeholder="默认值" size="small">
+          <i
             slot="append"
-            type="edit"
-            @click.native="handleAction({eventType:'show-edit',field:'default'})"
-          />
+            class="el-icon-edit"
+            @click="handleAction({eventType:'show-edit',field:'default'})"
+          ></i>
         </el-input>
       </el-col>
 
       <el-col :span="isMock ? 4 : 5" class="col-item col-item-desc">
-        <el-input v-model="items.description" placeholder="备注">
-          <Icon
+        <el-input v-model="items.description" placeholder="备注" size="small">
+          <i
             slot="append"
-            type="edit"
-            @click.native="handleAction({eventType:'show-edit',field:'description'})"
-          />
+            class="el-icon-edit"
+            @click="handleAction({eventType:'show-edit',field:'description'})"
+          ></i>
         </el-input>
       </el-col>
       <el-col :span="isMock ? 2 : 3" class="col-item col-item-setting">
         <span class="adv-set" @click="handleAction({eventType:'setting', schemaType: items.type})">
           <el-tooltip placement="top" content="高级设置">
-            <Icon type="setting" />
+            <i class="el-icon-setting"></i>
           </el-tooltip>
         </span>
 
@@ -78,7 +83,7 @@
           @click="handleAction({eventType:'add-field',isChild:true})"
         >
           <el-tooltip placement="top" content="添加子节点">
-            <Icon type="plus" class="plus" />
+            <i class="el-icon-plus plus"></i>
           </el-tooltip>
         </span>
       </el-col>
@@ -110,13 +115,12 @@
 </template>
 <script>
 import isUndefined from 'lodash/isUndefined'
-import Icon from '../../Icon'
 import MockSelect from '../MockSelect'
 import SchemaObject from './SchemaObject'
 import { SCHEMA_TYPE } from '../utils'
 export default {
   name: 'SchemaArray',
-  components: { Icon, MockSelect, SchemaObject },
+  components: { MockSelect, SchemaObject },
   props: {
     isMock: {
       type: Boolean,

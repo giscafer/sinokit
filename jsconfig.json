@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["app/*"],
+      "@sinokit/*": ["src/packages/*"]
+    }
+  },
+  "exclude": ["node_modules", "dist", "docs", "public"]
+}

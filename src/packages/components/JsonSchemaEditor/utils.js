@@ -1,4 +1,4 @@
-import { logger } from '@/shared/utils';
+import logger from '@sinokit/utils/logger';
 
 export const JSONPATH_JOIN_CHAR = '.';
 export const lang = 'zh_CN';

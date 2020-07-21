@@ -27,7 +27,7 @@
         <div class="sidebar-content">
           <ul>
             <li>
-              <router-link exact to="/test-page">测试页面</router-link>
+              <router-link exact to="/json-schema-editor">JsonSchemaEditor</router-link>
             </li>
             <li>
               <router-link to="/test-event">测试事件</router-link>

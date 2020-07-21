@@ -28,7 +28,7 @@
 <script>
 import { VueAceEditor } from 'vue2x-ace-editor'
 export default {
-  name: 'TemplateDialog',
+  name: 'RawDialog',
   components: { VueAceEditor },
   inheritAttrs: false,
   props: {
@@ -54,7 +54,7 @@ export default {
       require('brace/mode/json')
       require('brace/theme/chrome')
     },
-    editorChange(editor) {},
+    editorChange() {},
     onSchemaChange(v) {
       this.$nextTick(() => {
         this.schema = v

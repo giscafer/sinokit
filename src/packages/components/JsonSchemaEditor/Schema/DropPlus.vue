@@ -1,7 +1,7 @@
 <template>
   <el-tooltip placement="top" content="添加兄弟/子节点">
     <el-dropdown trigger="click">
-      <Icon type="plus" class="plus" />
+      <i class="el-icon-plus plus"></i>
       <el-dropdown-menu slot="dropdown">
         <el-dropdown-item>
           <span @click="addFieldAction({type:'add-field',isChild:false})">兄弟节点</span>
@@ -15,10 +15,9 @@
 </template>
 
 <script>
-import Icon from '../../Icon'
 export default {
   name: 'DropPlus',
-  components: { Icon },
+  components: {},
   props: {
     prefix: {
       type: Array,

@@ -13,12 +13,12 @@
           <el-row type="flex" justify="space-around" align="middle">
             <el-col :span="2" class="down-style-col">
               <span v-if="schemaData.type === 'object'" class="down-style" @click="handleClickIcon">
-                <Icon v-if="show" class="icon-object" type="caret-bottom" />
-                <Icon v-if="!show" class="icon-object" type="caret-right" />
+                <i v-if="show" class="el-icon-caret-bottom icon-object"></i>
+                <i v-if="!show" class="el-icon-caret-right icon-object"></i>
               </span>
             </el-col>
             <el-col :span="20">
-              <el-input disabled value="root" />
+              <el-input disabled value="root" size="small" />
             </el-col>
             <el-col :span="2" style="text-align:center">
               <el-tooltip placement="top" content="全选">
@@ -32,6 +32,7 @@
             :value="schemaData.type"
             :disabled="schemaData.disabled && !schemaData.canChangeType"
             class="type-select-style"
+            size="small"
             @change="handleChangeType2($event)"
           >
             <el-option v-for="item in schemaTypes" :key="item" :value="item" :label="item"></el-option>
@@ -41,12 +42,17 @@
           <MockSelect :schema="schemaData" @showEdit="handleShowEdit" @change="handleChangeMock" />
         </el-col>
         <el-col v-if="showTitle" :span="isMock ? 4 : 5" class="col-item col-item-mock">
-          <el-input v-model="schemaData.title" placeholder="标题" :disabled="schemaData.disabled">
-            <Icon
+          <el-input
+            v-model="schemaData.title"
+            placeholder="标题"
+            :disabled="schemaData.disabled"
+            size="small"
+          >
+            <i
               slot="append"
-              type="edit"
-              @click.native="handleSchemaUpdateEvent({eventType:'show-edit',field:'title',prefix:['properties'],isRoot:true})"
-            />
+              class="el-icon-edit"
+              @click="handleSchemaUpdateEvent({eventType:'show-edit',field:'title',prefix:['properties'],isRoot:true})"
+            ></i>
           </el-input>
         </el-col>
         <el-col
@@ -57,13 +63,14 @@
           <el-input
             v-model="schemaData.default"
             placeholder="默认值"
+            size="small"
             :disabled="schemaData.type === 'object' || schemaData.type === 'array' || schemaData.disabled"
           >
-            <Icon
+            <i
               slot="append"
-              type="edit"
-              @click.native="handleSchemaUpdateEvent({eventType:'show-edit',field:'default',prefix:['properties'],isRoot:true})"
-            />
+              class="el-icon-edit"
+              @click="handleSchemaUpdateEvent({eventType:'show-edit',field:'default',prefix:['properties'],isRoot:true})"
+            ></i>
           </el-input>
         </el-col>
 
@@ -71,13 +78,14 @@
           <el-input
             v-model="schemaData.description"
             placeholder="备注"
+            size="small"
             :disabled="schemaData.disabled"
           >
-            <Icon
+            <i
               slot="append"
-              type="edit"
-              @click.native="handleSchemaUpdateEvent({eventType:'show-edit',field:'description',prefix:['properties'],isRoot:true})"
-            />
+              class="el-icon-edit"
+              @click="handleSchemaUpdateEvent({eventType:'show-edit',field:'description',prefix:['properties'],isRoot:true})"
+            ></i>
           </el-input>
         </el-col>
         <el-col :span="2" class="col-item col-item-setting">
@@ -86,7 +94,7 @@
             @click="handleSchemaUpdateEvent({eventType:'setting',schemaType:schemaData.type,prefix:['properties'],isRoot:true})"
           >
             <el-tooltip placement="top" content="高级设置">
-              <Icon type="setting" />
+              <i class="el-icon-setting"></i>
             </el-tooltip>
           </span>
 
@@ -95,7 +103,7 @@
             @click="handleSchemaUpdateEvent({eventType:'add-field',isChild:false,prefix:['properties']})"
           >
             <el-tooltip placement="top" content="添加子节点">
-              <Icon type="plus" class="plus" />
+              <i class="el-icon-plus plus"></i>
             </el-tooltip>
           </span>
         </el-col>
@@ -138,7 +146,6 @@ import {
   ObjectDialog,
   RawDialog
 } from './dialog'
-import Icon from '../Icon'
 import {
   SCHEMA_TYPE,
   log,
@@ -153,7 +160,6 @@ import {
 export default {
   name: 'JsonSchemaEditor',
   components: {
-    Icon,
     MockSelect,
     SchemaJson,
     BasicDialog,
@@ -193,7 +199,7 @@ export default {
   },
   watch: {
     schemaData: {
-      handler(newVal, oldVal) {
+      handler(newVal) {
         log(this, 'watch', newVal)
       },
       deep: true
@@ -525,6 +531,3 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
-@import url('./jsonschema.scss');
-</style>
