@@ -12,6 +12,7 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 package-lock.json
+packages/**/package-lock.json
 # Editor directories and files
 .idea
 .vscode

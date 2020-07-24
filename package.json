@@ -4,12 +4,20 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
     "build:lib": "vue-cli-service build --mode lib --target lib --dest lib src/index.js",
-    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
     "report": "vue-cli-service build --mode lib --target lib --dest lib --report src/index.js",
     "docs": "docsify serve docs",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "clear-all": "rimraf package-lock.json packages/*/node_modules packages/*/package-lock.json",
+    "bootstrap:ci": "lerna bootstrap --npm-client=yarn",
+    "bootstrap:lerna": "lerna bootstrap",
+    "bootstrap": "npm-run-all clear-all bootstrap:lerna",
+    "build:parallel": "lerna run build --parallel",
+    "build": "lerna run build",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
+    "release:lerna": "lerna version --exact --no-git-tag-version",
+    "release:beta": "lerna publish --force-publish=* --exact --skip-temp-tag  --preid=beta --npm-tag=beta",
+    "release": "npm-run-all build release:lerna && npm run changelog"
   },
   "dependencies": {
     "core-js": "^3.6.5",
@@ -20,6 +28,8 @@
     "vue": "^2.6.11"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.10.4",
     "@vue/cli-plugin-babel": "~4.4.0",
     "@vue/cli-plugin-eslint": "~4.4.0",
     "@vue/cli-service": "~4.4.0",
@@ -32,8 +42,12 @@
     "eslint-plugin-vue": "^6.2.2",
     "highlight.js": "^10.1.1",
     "jsonlint": "^1.6.3",
+    "lerna": "^3.22.1",
     "node-sass": "^4.14.1",
     "normalize.css": "^8.0.1",
+    "rollup": "^2.23.0",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
     "sass-loader": "^9.0.2",
     "script-loader": "^0.7.2",
     "vue-router": "^3.3.4",

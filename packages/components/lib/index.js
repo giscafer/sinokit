@@ -1,10 +1,12 @@
+'use strict';
+
 /**
  * @author: giscafer ,https://github.com/giscafer
  * @date: 2020-07-21 11:39:31
  * @description: 组件注册
  */
 
-import CustomEventPlugin from '@sinokit/utils/event';
+import { CustomEventPlugin } from '@sinokit/utils';
 import JsonSchemaEditor from './JsonSchemaEditor';
 import JsonEditor from './JsonEditor';
 

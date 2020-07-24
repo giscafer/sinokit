@@ -4,7 +4,6 @@
       <el-col :span="6">
         <el-button size="mini" type="primary" @click="handleChangeSchema">changeSchema2</el-button>
         <el-button size="mini" type="info" @click="handlePageParams">Toggle Page Params</el-button>
-        {{ schemaJsonString }}
         <json-editor :value="schema" :readOnly="true"></json-editor>
       </el-col>
       <el-col :span="18">
@@ -22,7 +21,7 @@
 </template>
 <script>
 // import { JsonSchemaEditor } from '@sinokit/components'
-import { warningToast } from '@sinokit/utils/message'
+import { warningToast } from '@sinokit/utils'
 export default {
   name: 'BasicDialog',
   // components: { JsonSchemaEditor },
@@ -36,7 +35,7 @@ export default {
         title: 'title',
         properties: {
           field_1: {
-            type: 'string'
+            type: 'string',
           },
           field_2: {
             type: 'object',
@@ -50,23 +49,23 @@ export default {
                       type: 'object',
                       properties: {
                         field_1fca9: {
-                          type: 'string'
+                          type: 'string',
                         },
                         field_21b59: {
-                          type: 'string'
-                        }
-                      }
-                    }
-                  }
+                          type: 'string',
+                        },
+                      },
+                    },
+                  },
                 },
-                required: ['field_4']
-              }
+                required: ['field_4'],
+              },
             },
-            required: ['field_3']
-          }
+            required: ['field_3'],
+          },
         },
-        required: ['field_1', 'field_2']
-      }
+        required: ['field_1', 'field_2'],
+      },
     }
   },
   created() {},
@@ -95,13 +94,13 @@ export default {
         page: {
           type: 'number',
           default: 1,
-          description: '第几页'
+          description: '第几页',
         },
         size: {
           type: 'number',
           default: 10,
-          description: '每页记录数量'
-        }
+          description: '每页记录数量',
+        },
       }
       Object.assign(this.schema.properties, pageInfo)
       this.schemaJsonString = JSON.stringify(this.schema, null, 2)
@@ -111,8 +110,8 @@ export default {
     },
     onSchemaChange(v) {
       this.schemaJsonString = JSON.stringify(v, null, 2)
-    }
-  }
+    },
+  },
 }
 </script>
 <style lang="scss" scoped>
