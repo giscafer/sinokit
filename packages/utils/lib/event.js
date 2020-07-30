@@ -30,10 +30,19 @@ const eventHub = new Vue({
   }
 });
 
-const CustomEventPlugin = V =>
+/* const CustomEventPlugin = V =>
   Object.defineProperty(V.prototype, '$event', {
     value: eventHub,
     writable: true
-  });
+  }); */
+
+const CustomEventPlugin = {
+  install: function(V) {
+    Object.defineProperty(V.prototype, '$event', {
+      value: eventHub,
+      writable: true
+    });
+  }
+};
 
 export default CustomEventPlugin;

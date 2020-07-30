@@ -228,7 +228,7 @@ module.exports = __webpack_require__(1);
     }), n.d(t, "g", function () {
       return p;
     });
-    var r = n(59);
+    var r = n(23);
 
     const i = ".",
           o = ["string", "number", "array", "object", "boolean", "integer"],
@@ -346,7 +346,7 @@ module.exports = __webpack_require__(1);
       return r;
     });
   }, function (e, t, n) {
-    var r = n(40),
+    var r = n(41),
         i = "object" == typeof self && self && self.Object === Object && self,
         o = r || i || Function("return this")();
     e.exports = o;
@@ -397,7 +397,7 @@ module.exports = __webpack_require__(1);
       return null == e ? e : r(e, t, n);
     };
   }, function (e, t, n) {
-    var r = n(45);
+    var r = n(46);
 
     e.exports = function (e, t, n) {
       var i = null == e ? void 0 : r(e, t);
@@ -7433,7 +7433,7 @@ module.exports = __webpack_require__(1);
 
     l.prototype.clear = r, l.prototype.delete = i, l.prototype.get = o, l.prototype.has = a, l.prototype.set = s, e.exports = l;
   }, function (e, t, n) {
-    var r = n(42);
+    var r = n(43);
 
     e.exports = function (e, t) {
       for (var n = e.length; n--;) if (r(e[n][0], t)) return n;
@@ -7448,8 +7448,8 @@ module.exports = __webpack_require__(1);
       return r(t) ? n["string" == typeof t ? "string" : "hash"] : n.map;
     };
   }, function (e, t, n) {
-    var r = n(24),
-        i = n(38);
+    var r = n(25),
+        i = n(39);
 
     e.exports = function (e, t, n, o) {
       var a = !n;
@@ -7629,6 +7629,8 @@ module.exports = __webpack_require__(1);
         a = Object(o.a)(i, r, [], !1, null, null, null);
     a.options.__file = "lib/json-schema-editor/src/Schema/SchemaObject.vue";
     t.a = a.exports;
+  }, function (t, n) {
+    t.exports = e;
   }, function (e, t) {
     e.exports = function (e) {
       for (var t = -1, n = null == e ? 0 : e.length, r = 0, i = []; ++t < n;) {
@@ -7639,8 +7641,8 @@ module.exports = __webpack_require__(1);
       return i;
     };
   }, function (e, t, n) {
-    var r = n(38),
-        i = n(42),
+    var r = n(39),
+        i = n(43),
         o = Object.prototype.hasOwnProperty;
 
     e.exports = function (e, t, n) {
@@ -7667,7 +7669,7 @@ module.exports = __webpack_require__(1);
     var r = n(7)(n(2), "Map");
     e.exports = r;
   }, function (e, t, n) {
-    var r = n(26);
+    var r = n(27);
 
     e.exports = function (e) {
       if ("string" == typeof e || r(e)) return e;
@@ -7675,9 +7677,9 @@ module.exports = __webpack_require__(1);
       return "0" == t && 1 / e == -1 / 0 ? "-0" : t;
     };
   }, function (e, t, n) {
-    var r = n(46),
+    var r = n(47),
         i = n(127),
-        o = n(50);
+        o = n(51);
 
     e.exports = function (e) {
       return o(e) ? r(e) : i(e);
@@ -7704,7 +7706,7 @@ module.exports = __webpack_require__(1);
     };
   }, function (e, t, n) {
     (function (e) {
-      var r = n(40),
+      var r = n(41),
           i = t && !t.nodeType && t,
           o = i && "object" == typeof e && e && !e.nodeType && e,
           a = o && o.exports === i && r.process,
@@ -7717,7 +7719,7 @@ module.exports = __webpack_require__(1);
       }();
 
       e.exports = s;
-    }).call(this, n(30)(e));
+    }).call(this, n(31)(e));
   }, function (e, t) {
     var n = Object.prototype;
 
@@ -7727,7 +7729,7 @@ module.exports = __webpack_require__(1);
     };
   }, function (e, t, n) {
     var r = n(135),
-        i = n(52),
+        i = n(53),
         o = Object.prototype.propertyIsEnumerable,
         a = Object.getOwnPropertySymbols,
         s = a ? function (e) {
@@ -7738,12 +7740,12 @@ module.exports = __webpack_require__(1);
     e.exports = s;
   }, function (e, t, n) {
     var r = n(139),
-        i = n(27),
+        i = n(28),
         o = n(140),
         a = n(141),
         s = n(142),
         l = n(12),
-        c = n(41),
+        c = n(42),
         u = c(r),
         d = c(i),
         f = c(o),
@@ -7856,8 +7858,8 @@ module.exports = __webpack_require__(1);
       return !!(t = null == t ? 9007199254740991 : t) && ("number" == r || "symbol" != r && n.test(e)) && e > -1 && e % 1 == 0 && e < t;
     };
   }, function (e, t, n) {
-    var r = n(25),
-        i = n(28);
+    var r = n(26),
+        i = n(29);
 
     e.exports = function (e, t) {
       for (var n = 0, o = (t = r(t, e)).length; null != e && n < o;) e = e[i(t[n++])];
@@ -7868,8 +7870,8 @@ module.exports = __webpack_require__(1);
     var r = n(121),
         i = n(122),
         o = n(9),
-        a = n(47),
-        s = n(44),
+        a = n(48),
+        s = n(45),
         l = n(125),
         c = Object.prototype.hasOwnProperty;
 
@@ -7895,7 +7897,7 @@ module.exports = __webpack_require__(1);
           s = a && a.exports === o ? r.Buffer : void 0,
           l = (s ? s.isBuffer : void 0) || i;
       e.exports = l;
-    }).call(this, n(30)(e));
+    }).call(this, n(31)(e));
   }, function (e, t) {
     e.exports = function (e) {
       return "number" == typeof e && e > -1 && e % 1 == 0 && e <= 9007199254740991;
@@ -7907,16 +7909,16 @@ module.exports = __webpack_require__(1);
       };
     };
   }, function (e, t, n) {
-    var r = n(39),
-        i = n(48);
+    var r = n(40),
+        i = n(49);
 
     e.exports = function (e) {
       return null != e && i(e.length) && !r(e);
     };
   }, function (e, t, n) {
-    var r = n(46),
+    var r = n(47),
         i = n(130),
-        o = n(50);
+        o = n(51);
 
     e.exports = function (e) {
       return o(e) ? r(e, !0) : i(e);
@@ -7926,10 +7928,10 @@ module.exports = __webpack_require__(1);
       return [];
     };
   }, function (e, t, n) {
-    var r = n(54),
-        i = n(55),
-        o = n(34),
-        a = n(52),
+    var r = n(55),
+        i = n(56),
+        o = n(35),
+        a = n(53),
         s = Object.getOwnPropertySymbols ? function (e) {
       for (var t = []; e;) r(t, o(e)), e = i(e);
 
@@ -7943,10 +7945,10 @@ module.exports = __webpack_require__(1);
       return e;
     };
   }, function (e, t, n) {
-    var r = n(49)(Object.getPrototypeOf, Object);
+    var r = n(50)(Object.getPrototypeOf, Object);
     e.exports = r;
   }, function (e, t, n) {
-    var r = n(54),
+    var r = n(55),
         i = n(9);
 
     e.exports = function (e, t, n) {
@@ -8217,7 +8219,7 @@ module.exports = __webpack_require__(1);
     };
 
     r._withStripped = !0;
-    var i = n(57),
+    var i = n(58),
         o = n.n(i),
         a = n(21),
         s = n(22),
@@ -8324,8 +8326,6 @@ module.exports = __webpack_require__(1);
         d = Object(u.a)(c, r, [], !1, null, null, null);
     d.options.__file = "lib/json-schema-editor/src/Schema/SchemaArray.vue";
     t.a = d.exports;
-  }, function (t, n) {
-    t.exports = e;
   }, function (e, t, n) {
     e.exports = n(158);
   }, function (e, t, n) {
@@ -9294,11 +9294,11 @@ module.exports = __webpack_require__(1);
         i = n.n(r)()(!1);
     i.push([e.i, "\n.json-editor[data-v-d3ee32fc] {\n  height: 100%;\n  position: relative;\n}\n.json-editor[data-v-d3ee32fc] .CodeMirror {\n  height: auto;\n  min-height: 300px;\n}\n.json-editor[data-v-d3ee32fc] .CodeMirror-scroll {\n  min-height: 300px;\n}\n.json-editor[data-v-d3ee32fc] .cm-s-rubyblue span.cm-string {\n  color: #f08047;\n}\n", ""]), t.default = i;
   }, function (e, t, n) {
-    var r = n(24),
-        i = n(25),
-        o = n(44),
+    var r = n(25),
+        i = n(26),
+        o = n(45),
         a = n(8),
-        s = n(28);
+        s = n(29);
 
     e.exports = function (e, t, n, l) {
       if (!a(e)) return e;
@@ -9328,10 +9328,10 @@ module.exports = __webpack_require__(1);
 
     e.exports = i;
   }, function (e, t, n) {
-    var r = n(39),
+    var r = n(40),
         i = n(81),
         o = n(8),
-        a = n(41),
+        a = n(42),
         s = /^\[object .+?Constructor\]$/,
         l = Function.prototype,
         c = Object.prototype,
@@ -9398,7 +9398,7 @@ module.exports = __webpack_require__(1);
     };
   }, function (e, t, n) {
     var r = n(9),
-        i = n(26),
+        i = n(27),
         o = /\.|\[(?:[^[\]]*|(["'])(?:(?!\1)[^\\]|\\.)*?\1)\]/,
         a = /^\w*$/;
 
@@ -9429,7 +9429,7 @@ module.exports = __webpack_require__(1);
       return t;
     };
   }, function (e, t, n) {
-    var r = n(43);
+    var r = n(44);
 
     function i(e, t) {
       if ("function" != typeof e || null != t && "function" != typeof t) throw new TypeError("Expected a function");
@@ -9450,7 +9450,7 @@ module.exports = __webpack_require__(1);
   }, function (e, t, n) {
     var r = n(89),
         i = n(16),
-        o = n(27);
+        o = n(28);
 
     e.exports = function () {
       this.size = 0, this.__data__ = {
@@ -9594,7 +9594,7 @@ module.exports = __webpack_require__(1);
     var r = n(14),
         i = n(107),
         o = n(9),
-        a = n(26),
+        a = n(27),
         s = r ? r.prototype : void 0,
         l = s ? s.toString : void 0;
 
@@ -9612,10 +9612,10 @@ module.exports = __webpack_require__(1);
       return i;
     };
   }, function (e, t, n) {
-    var r = n(25),
+    var r = n(26),
         i = n(109),
         o = n(110),
-        a = n(28);
+        a = n(29);
 
     e.exports = function (e, t) {
       return t = r(t, e), null == (e = o(e, t)) || delete e[a(i(t))];
@@ -9626,7 +9626,7 @@ module.exports = __webpack_require__(1);
       return t ? e[t - 1] : void 0;
     };
   }, function (e, t, n) {
-    var r = n(45),
+    var r = n(46),
         i = n(111);
 
     e.exports = function (e, t) {
@@ -9645,7 +9645,7 @@ module.exports = __webpack_require__(1);
   }, function (e, t, n) {
     var r = n(113),
         i = n(119),
-        o = n(24),
+        o = n(25),
         a = n(120),
         s = n(129),
         l = n(132),
@@ -9654,16 +9654,16 @@ module.exports = __webpack_require__(1);
         d = n(136),
         f = n(137),
         h = n(138),
-        p = n(35),
+        p = n(36),
         m = n(143),
         g = n(144),
         v = n(150),
         y = n(9),
-        b = n(47),
+        b = n(48),
         x = n(152),
         w = n(8),
         k = n(154),
-        C = n(29),
+        C = n(30),
         S = {};
     S["[object Arguments]"] = S["[object Array]"] = S["[object ArrayBuffer]"] = S["[object DataView]"] = S["[object Boolean]"] = S["[object Date]"] = S["[object Float32Array]"] = S["[object Float64Array]"] = S["[object Int8Array]"] = S["[object Int16Array]"] = S["[object Int32Array]"] = S["[object Map]"] = S["[object Number]"] = S["[object Object]"] = S["[object RegExp]"] = S["[object Set]"] = S["[object String]"] = S["[object Symbol]"] = S["[object Uint8Array]"] = S["[object Uint8ClampedArray]"] = S["[object Uint16Array]"] = S["[object Uint32Array]"] = !0, S["[object Error]"] = S["[object Function]"] = S["[object WeakMap]"] = !1, e.exports = function e(t, n, A, M, D, L) {
       var T,
@@ -9740,8 +9740,8 @@ module.exports = __webpack_require__(1);
     };
   }, function (e, t, n) {
     var r = n(16),
-        i = n(27),
-        o = n(43);
+        i = n(28),
+        o = n(44);
 
     e.exports = function (e, t) {
       var n = this.__data__;
@@ -9762,7 +9762,7 @@ module.exports = __webpack_require__(1);
     };
   }, function (e, t, n) {
     var r = n(19),
-        i = n(29);
+        i = n(30);
 
     e.exports = function (e, t) {
       return e && r(t, i(t), e);
@@ -9798,21 +9798,21 @@ module.exports = __webpack_require__(1);
     };
   }, function (e, t, n) {
     var r = n(126),
-        i = n(31),
-        o = n(32),
+        i = n(32),
+        o = n(33),
         a = o && o.isTypedArray,
         s = a ? i(a) : r;
     e.exports = s;
   }, function (e, t, n) {
     var r = n(12),
-        i = n(48),
+        i = n(49),
         o = n(10),
         a = {};
     a["[object Float32Array]"] = a["[object Float64Array]"] = a["[object Int8Array]"] = a["[object Int16Array]"] = a["[object Int32Array]"] = a["[object Uint8Array]"] = a["[object Uint8ClampedArray]"] = a["[object Uint16Array]"] = a["[object Uint32Array]"] = !0, a["[object Arguments]"] = a["[object Array]"] = a["[object ArrayBuffer]"] = a["[object Boolean]"] = a["[object DataView]"] = a["[object Date]"] = a["[object Error]"] = a["[object Function]"] = a["[object Map]"] = a["[object Number]"] = a["[object Object]"] = a["[object RegExp]"] = a["[object Set]"] = a["[object String]"] = a["[object WeakMap]"] = !1, e.exports = function (e) {
       return o(e) && i(e.length) && !!a[r(e)];
     };
   }, function (e, t, n) {
-    var r = n(33),
+    var r = n(34),
         i = n(128),
         o = Object.prototype.hasOwnProperty;
 
@@ -9825,18 +9825,18 @@ module.exports = __webpack_require__(1);
       return t;
     };
   }, function (e, t, n) {
-    var r = n(49)(Object.keys, Object);
+    var r = n(50)(Object.keys, Object);
     e.exports = r;
   }, function (e, t, n) {
     var r = n(19),
-        i = n(51);
+        i = n(52);
 
     e.exports = function (e, t) {
       return e && r(t, i(t), e);
     };
   }, function (e, t, n) {
     var r = n(8),
-        i = n(33),
+        i = n(34),
         o = n(131),
         a = Object.prototype.hasOwnProperty;
 
@@ -9869,7 +9869,7 @@ module.exports = __webpack_require__(1);
             r = s ? s(n) : new e.constructor(n);
         return e.copy(r), r;
       };
-    }).call(this, n(30)(e));
+    }).call(this, n(31)(e));
   }, function (e, t) {
     e.exports = function (e, t) {
       var n = -1,
@@ -9881,7 +9881,7 @@ module.exports = __webpack_require__(1);
     };
   }, function (e, t, n) {
     var r = n(19),
-        i = n(34);
+        i = n(35);
 
     e.exports = function (e, t) {
       return r(e, i(e), t);
@@ -9897,23 +9897,23 @@ module.exports = __webpack_require__(1);
     };
   }, function (e, t, n) {
     var r = n(19),
-        i = n(53);
+        i = n(54);
 
     e.exports = function (e, t) {
       return r(e, i(e), t);
     };
   }, function (e, t, n) {
-    var r = n(56),
-        i = n(34),
-        o = n(29);
+    var r = n(57),
+        i = n(35),
+        o = n(30);
 
     e.exports = function (e) {
       return r(e, o, i);
     };
   }, function (e, t, n) {
-    var r = n(56),
-        i = n(53),
-        o = n(51);
+    var r = n(57),
+        i = n(54),
+        o = n(52);
 
     e.exports = function (e) {
       return r(e, o, i);
@@ -9939,7 +9939,7 @@ module.exports = __webpack_require__(1);
       return t && "string" == typeof e[0] && n.call(e, "index") && (r.index = e.index, r.input = e.input), r;
     };
   }, function (e, t, n) {
-    var r = n(36),
+    var r = n(37),
         i = n(146),
         o = n(147),
         a = n(148),
@@ -9991,7 +9991,7 @@ module.exports = __webpack_require__(1);
     var r = n(2).Uint8Array;
     e.exports = r;
   }, function (e, t, n) {
-    var r = n(36);
+    var r = n(37);
 
     e.exports = function (e, t) {
       var n = t ? r(e.buffer) : e.buffer;
@@ -10013,7 +10013,7 @@ module.exports = __webpack_require__(1);
       return o ? Object(o.call(e)) : {};
     };
   }, function (e, t, n) {
-    var r = n(36);
+    var r = n(37);
 
     e.exports = function (e, t) {
       var n = t ? r(e.buffer) : e.buffer;
@@ -10021,8 +10021,8 @@ module.exports = __webpack_require__(1);
     };
   }, function (e, t, n) {
     var r = n(151),
-        i = n(55),
-        o = n(33);
+        i = n(56),
+        o = n(34);
 
     e.exports = function (e) {
       return "function" != typeof e.constructor || o(e) ? {} : r(i(e));
@@ -10045,13 +10045,13 @@ module.exports = __webpack_require__(1);
     e.exports = o;
   }, function (e, t, n) {
     var r = n(153),
-        i = n(31),
-        o = n(32),
+        i = n(32),
+        o = n(33),
         a = o && o.isMap,
         s = a ? i(a) : r;
     e.exports = s;
   }, function (e, t, n) {
-    var r = n(35),
+    var r = n(36),
         i = n(10);
 
     e.exports = function (e) {
@@ -10059,13 +10059,13 @@ module.exports = __webpack_require__(1);
     };
   }, function (e, t, n) {
     var r = n(155),
-        i = n(31),
-        o = n(32),
+        i = n(32),
+        o = n(33),
         a = o && o.isSet,
         s = a ? i(a) : r;
     e.exports = s;
   }, function (e, t, n) {
-    var r = n(35),
+    var r = n(36),
         i = n(10);
 
     e.exports = function (e) {
@@ -10515,7 +10515,7 @@ module.exports = __webpack_require__(1);
         h = n.n(f),
         p = n(5),
         m = n.n(p),
-        g = n(37),
+        g = n(38),
         v = n.n(g),
         y = n(6),
         b = n.n(y),
@@ -10551,7 +10551,7 @@ module.exports = __webpack_require__(1);
         k = {
       name: "SchemaJson",
       components: {
-        "schema-array": n(58).a,
+        "schema-array": n(59).a,
         "schema-object": w.a
       },
       inheritAttrs: !1,
@@ -10898,7 +10898,7 @@ module.exports = __webpack_require__(1);
 
     O._withStripped = !0;
 
-    var j = n(23),
+    var j = n(24),
         E = n.n(j),
         _ = n(0),
         N = {
@@ -12080,19 +12080,20 @@ module.exports = __webpack_require__(1);
       e.component(oe.name, oe);
     };
 
-    var ae = oe;
+    var ae = oe,
+        se = n(23);
 
-    const se = [u, ae],
-          le = function (e) {
-      se.forEach(t => {
+    const le = [u, ae],
+          ce = function (e) {
+      e.use(se.CustomEventPlugin), le.forEach(t => {
         e.component(t.name, t);
       });
     };
 
-    "undefined" != typeof window && window.Vue && le(window.Vue);
+    "undefined" != typeof window && window.Vue && ce(window.Vue);
     t.default = {
       version: "0.1.0",
-      install: le,
+      install: ce,
       JsonEditor: u,
       JsonSchemaEditor: ae
     };

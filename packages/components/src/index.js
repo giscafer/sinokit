@@ -4,12 +4,19 @@ import JsonEditor from '../lib/json-editor/index.js';
 import JsonSchemaEditor from '../lib/json-schema-editor/index.js';
 import { CustomEventPlugin } from '@sinokit/utils';
 
-const components = [JsonEditor, JsonSchemaEditor, CustomEventPlugin];
+const components = [
+  JsonEditor,
+  JsonSchemaEditor
+];
 
 const install = function(Vue) {
+  Vue.use(CustomEventPlugin);
+
   components.forEach(component => {
     Vue.component(component.name, component);
   });
+
+
 };
 
 /* istanbul ignore if */
@@ -20,7 +27,6 @@ if (typeof window !== 'undefined' && window.Vue) {
 export default {
   version: '0.1.0',
   install,
-  CustomEventPlugin,
   JsonEditor,
   JsonSchemaEditor
 };

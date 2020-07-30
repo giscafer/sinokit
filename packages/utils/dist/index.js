@@ -8512,12 +8512,19 @@ var eventHub = new Vue({
     }
   }
 });
-
-var CustomEventPlugin = function CustomEventPlugin(V) {
-  return Object.defineProperty(V.prototype, '$event', {
+/* const CustomEventPlugin = V =>
+  Object.defineProperty(V.prototype, '$event', {
     value: eventHub,
     writable: true
-  });
+  }); */
+
+var CustomEventPlugin = {
+  install: function install(V) {
+    Object.defineProperty(V.prototype, '$event', {
+      value: eventHub,
+      writable: true
+    });
+  }
 };
 
 function logger() {
