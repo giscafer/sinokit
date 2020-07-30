@@ -4,7 +4,7 @@
       <el-col :span="6">
         <el-button size="mini" type="primary" @click="handleChangeSchema">changeSchema2</el-button>
         <el-button size="mini" type="info" @click="handlePageParams">Toggle Page Params</el-button>
-        <json-editor :value="schema" :readOnly="true"></json-editor>
+        <json-editor :value="schema" :readOnly="false"></json-editor>
       </el-col>
       <el-col :span="18">
         <JsonSchemaEditor
@@ -21,6 +21,7 @@
 </template>
 <script>
 // import { JsonSchemaEditor } from '@sinokit/components'
+import cloneDeep from 'lodash/cloneDeep'
 import { warningToast } from '@sinokit/utils'
 export default {
   name: 'BasicDialog',
@@ -29,7 +30,15 @@ export default {
   data() {
     return {
       schemaKey: '1222',
-      schemaJsonString: '',
+      schema2: {
+        type: 'object',
+        title: 'title',
+        properties: {
+          field_1: {
+            type: 'string',
+          },
+        },
+      },
       schema: {
         type: 'object',
         title: 'title',
@@ -69,10 +78,13 @@ export default {
     }
   },
   created() {},
-  mounted() {},
+  mounted() {
+    this.schemaCopy = this.schema
+  },
   methods: {
     handleChangeSchema() {
       this.schema = Object.assign({}, this.schema2)
+      this.schemaCopy = this.schema
       this.schemaKey = Date.now()
     },
     /**
@@ -82,12 +94,14 @@ export default {
       if (this.schema.type !== 'object') {
         return warningToast('当前 Schema 不是对象类型，不能添加分页属性', 2000)
       }
-      if (this.schema.properties.page) {
-        delete this.schema.properties.page
-        delete this.schema.properties.size
-        this.schemaJsonString = JSON.stringify(this.schema, null, 2)
-        this.$refs.editorRef.setValue()
-        this.schemaKey = Date.now()
+      const cloneSchema = cloneDeep(this.schema)
+      if (cloneSchema.properties.page) {
+        delete cloneSchema.properties.page
+        delete cloneSchema.properties.size
+        this.$nextTick(() => {
+          this.schema = cloneSchema
+          this.schemaKey = Date.now() + ''
+        })
         return
       }
       const pageInfo = {
@@ -102,11 +116,9 @@ export default {
           description: '每页记录数量',
         },
       }
-      Object.assign(this.schema.properties, pageInfo)
-      this.schemaJsonString = JSON.stringify(this.schema, null, 2)
-      this.$refs.editorRef.setValue()
-      this.schemaCodeKey = Date.now()
-      this.schemaKey = Date.now()
+      Object.assign(cloneSchema.properties, pageInfo)
+      this.schema = cloneSchema
+      this.schemaKey = Date.now() + ''
     },
     onSchemaChange(v) {
       this.schemaJsonString = JSON.stringify(v, null, 2)

@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "start": "npm run serve",
     "serve": "vue-cli-service serve",
-    "build:lib": "vue-cli-service build --mode lib --target lib --dest lib src/index.js",
-    "report": "vue-cli-service build --mode lib --target lib --dest lib --report src/index.js",
+    "build:app": "vue-cli-service build",
     "docs": "docsify serve docs",
     "lint": "vue-cli-service lint",
     "clear-all": "rimraf package-lock.json packages/*/node_modules packages/*/package-lock.json",
@@ -45,6 +45,7 @@
     "lerna": "^3.22.1",
     "node-sass": "^4.14.1",
     "normalize.css": "^8.0.1",
+    "rimraf": "^3.0.2",
     "rollup": "^2.23.0",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-node-resolve": "^5.2.0",
@@ -52,7 +53,8 @@
     "script-loader": "^0.7.2",
     "vue-router": "^3.3.4",
     "vue-template-compiler": "^2.6.11",
-    "vue2x-ace-editor": "^0.1.3"
+    "vue2x-ace-editor": "^0.1.3",
+    "webpack": "^4.44.0"
   },
   "eslintConfig": {
     "root": true,

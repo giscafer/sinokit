@@ -51,7 +51,7 @@ const setConfigureWebpack = config => {
 };
 
 module.exports = {
-  publicPath: './',
+  publicPath: '/',
   pages: {
     index: {
       entry: resolve('app/main.js')
