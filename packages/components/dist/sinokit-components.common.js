@@ -12101,7 +12101,7 @@ module.exports = __webpack_require__(1);
 
     "undefined" != typeof window && window.Vue && ce(window.Vue);
     t.default = {
-      version: "0.1.5",
+      version: "0.1.7",
       install: ce,
       JsonEditor: u,
       JsonSchemaEditor: ae
