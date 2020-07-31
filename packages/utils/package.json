@@ -17,7 +17,7 @@
     "lib"
   ],
   "publishConfig": {
-    "registry": "https://registry.npm.taobao.org/"
+    "registry": "https://registry.npmjs.org/"
   },
   "repository": {
     "type": "git",
@@ -30,5 +30,5 @@
   "dependencies": {
     "vue": "^2.6.11"
   },
-  "gitHead": "a742847a7ba3496a98a2ec248c130cc0d5177678"
+  "gitHead": "533a98d17de4714a544eafd214550cb9a1b70ad3"
 }
