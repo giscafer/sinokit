@@ -12092,7 +12092,7 @@ module.exports = __webpack_require__(1);
 
     "undefined" != typeof window && window.Vue && ce(window.Vue);
     t.default = {
-      version: "0.1.1",
+      version: "0.1.3-alpha.3",
       install: ce,
       JsonEditor: u,
       JsonSchemaEditor: ae
