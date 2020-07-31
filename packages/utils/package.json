@@ -17,6 +17,7 @@
     "lib"
   ],
   "publishConfig": {
+    "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
   "repository": {
@@ -30,5 +31,5 @@
   "dependencies": {
     "vue": "^2.6.11"
   },
-  "gitHead": "533a98d17de4714a544eafd214550cb9a1b70ad3"
+  "gitHead": "b35250e6a74a16a75b6c68cbd6c4040d0cc1dd5b"
 }

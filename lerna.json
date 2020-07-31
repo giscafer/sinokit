@@ -1,6 +1,13 @@
 {
-  "packages": [
-    "packages/*"
-  ],
+  "packages": ["packages/*"],
+  "command": {
+    "publish": {
+      "message": "chore(release): publish %s"
+    },
+    "create": {
+      "homepage": "https://github.com/giscafer/sinokit",
+      "license": "MIT"
+    }
+  },
   "version": "0.1.3-alpha.1"
 }
