@@ -2,66 +2,61 @@
 
 ## 通过 npm 安装
 
-我们提供了 `sinokit` npm 包，通过下面命令即可完成安装，`sinokit` 依赖于 `element` 与 `vue`，所以不要忘记安装依赖包。
+我们提供了 `@sinokit/包名` npm 包，通过下面命令即可完成安装，`SinoKit` 依赖于 `element` 与 `vue`，所以不要忘记安装依赖包。
 
 ```bash
 npm i sinokit -S
 ```
 
-## 引入 SinoKit
+## 引入 @sinokit/components
 
 安装完成后，即可使用 `import` 或 `require` 使用。
 
-完整引入 `sinokit`
+完整引入 `@sinokit/components`
 
 ```js
 import Vue from 'vue';
-import SinoKit from 'sinokit';
+import SinoKitComponents from '@sinokit/components';
 
-Vue.use(SinoKit);
+Vue.use(SinoKitComponents);
 ```
 
-按需引入 `sinokit`
+按需引入 `@sinokit/components`
 
 ```js
 import Vue from 'vue';
-import { VeBarChart } from 'sinokit'; // 引入单个图表
+import { JsonEditor } from '@sinokit/components'; // 引入单个组件，如 JsonEditor
 
-Vue.component('VeBarChart', VeBarChart);
+Vue.component('JsonEditor', JsonEditor);
 ```
 
-目前支持的单个引入图表列表如下：
-
-| 组件名称 | 组件        |
-| -------- | ----------- |
-| 折线图   | VeLineChart |
-| 柱状图   | VeBarChart  |
-
-## 创建图表
+## 示例
 
 ```html
-<ve-bar-chart :data="chartData" />
-```
+/*vue*/
+<desc>
+  `JsonEditor` 组件使用展示
+</desc>
 
-```js
-export default {
-  created() {
-    this.chartData = {
-      dimensions: {
-        name: 'Week',
-        data: ['Mon.', 'Tue.', 'Wed.', 'Thu.', 'Fir.', 'Sat.', 'Sun.'],
-      },
-      measures: [
-        {
-          name: 'PV',
-          data: [256, 767, 1356, 2087, 803, 582, 432],
-        },
-        {
-          name: 'UV',
-          data: [287, 707, 1756, 1822, 987, 432, 322],
-        },
-      ],
-    };
-  },
-};
+<template>
+  <div>
+    <div class="wrapper">
+      <json-editor :value="jsonObject" />
+    </div>
+  </div>
+</template>
+
+<script>
+  export default {
+    data() {
+      return {
+        jsonObject: {
+          author: 'giscafer',
+          email: 'test@outlook.com',
+          github: 'https://github.com/giscafer'
+        }
+      };
+    }
+  };
+</script>
 ```

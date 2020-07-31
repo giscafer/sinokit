@@ -2,50 +2,23 @@
 
 `SinoKit` 是基于 `Vue2.x` 与 `ElementUI` 构建封装的解决方案库，通过提供 **功能组件**、**区块**、**页面模板**，用以解决频繁开发业务组件的情况，目的是提效降本。
 
-## 示例
+## Packages 模块
 
-<!--
-<iframe width="100%" height="470" src="//jsfiddle.net/vecharts/ydkyhjv6/embedded/result,html,js/?bodyColor=fff" allowfullscreen="allowfullscreen" frameborder="0"></iframe> -->
+`SinoKit` 有以下几种模块：
 
-```html
-/*vue*/
-<desc>
-  Hello `world` - a - b
-</desc>
+- `@sinokit/components` 组件库，含基础通用组件&业务组件
+- `@sinokit/utils` 工具包
 
-<style>
-  .wrapper {
-    font-size: 20px;
-  }
-</style>
+## Materials 物料
 
-<template>
-  <div>
-    <div class="wrapper">
-      <div>
-        <p>author: {{ globalVariable }}</p>
-        <button :style="style" @click="onClick">test</button>
-      </div>
-    </div>
-  </div>
-</template>
+可复用物料（区块、页面模板），减少重复的开发，提升效率
 
-<script>
-  export default {
-    data() {
-      return {
-        globalVariable: '',
-        style: {
-          color: 'blue',
-        },
-      };
-    },
-    methods: {
-      onClick() {
-        alert('author: ' + this.globalVariable);
-        this.style.color = 'red';
-      },
-    },
-  };
-</script>
-```
+## 源码
+
+- [Gitlab](http://192.168.16.65/tsc-internal/middle-platform/frontend/sinokit)
+
+本工程使用 [Lerna](https://lerna.js.org/) 来实现 `monorepo` 管理，延伸了解：
+
+- [lerna workflow 杂谈项目管理方式](https://github.com/pigcan/blog/issues/16)
+- [使用 lerna 优雅地管理多个 package](https://zhuanlan.zhihu.com/p/35237759)
+- [基于 Lerna 管理 packages 的 Monorepo 项目组织](http://www.redream.cn/2020/04/23/%E5%9F%BA%E4%BA%8E-lerna-%E7%AE%A1%E7%90%86-packages-%E7%9A%84-monorepo-%E9%A1%B9%E7%9B%AE%E7%BB%84%E7%BB%87/)
