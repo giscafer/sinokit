@@ -1,6 +1,6 @@
 {
   "name": "sinokit",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "scripts": {
     "start": "npm run serve",
@@ -37,7 +37,7 @@
     "babel-eslint": "^10.1.0",
     "brace": "^0.11.1",
     "codemirror": "^5.56.0",
-    "conventional-changelog": "^3.1.21",
+    "conventional-changelog-cli": "^2.0.34",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
     "highlight.js": "^10.1.1",
@@ -45,6 +45,7 @@
     "lerna": "^3.22.1",
     "node-sass": "^4.14.1",
     "normalize.css": "^8.0.1",
+    "npm-run-all": "^4.1.5",
     "rimraf": "^3.0.2",
     "rollup": "^2.23.0",
     "rollup-plugin-babel": "^4.4.0",
