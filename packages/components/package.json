@@ -33,7 +33,7 @@
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "dependencies": {
-    "@sinokit/utils": "0.1.4",
+    "@sinokit/utils": "^0.1.4",
     "codemirror": "^5.56.0",
     "element-ui": "^2.13.2",
     "json-schema-faker": "^0.5.0-rcv.24",
