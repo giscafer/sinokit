@@ -1,11 +1,13 @@
-# `sinokit-utils`
+# @sinokit/utils
 
-> TODO: description
+![NPM version](https://img.shields.io/npm/v/@sinokit/utils.svg?style=flat-square)
+
+工具函数
 
 ## Usage
 
-```
-const sinokitUtils = require('sinokit-utils');
+```js
+import { logger } from '@sinokit/utils';
 
-// TODO: DEMONSTRATE API
+logger(null, '日记信息');
 ```

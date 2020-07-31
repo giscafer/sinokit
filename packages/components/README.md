@@ -1,11 +1,13 @@
-# `sinokit-components`
+# @sinokit/components
 
-> TODO: description
+![NPM version](https://img.shields.io/npm/v/@sinokit/components.svg?style=flat-square)
+
+组件
 
 ## Usage
 
-```
-const sinokitComponents = require('sinokit-components');
+```js
+import SinokitComp from '@sinokit/components';
 
-// TODO: DEMONSTRATE API
+Vue.use(SinokitComponents);
 ```
