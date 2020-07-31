@@ -18,7 +18,7 @@
     "release:lerna": "lerna version --exact --no-git-tag-version",
     "release:beta": "lerna publish --force-publish=* --exact --skip-temp-tag  --preid=beta --npm-tag=beta",
     "publish": "lerna publish",
-    "release": "npm-run-all build release:lerna && npm run changelog"
+    "release": "npm-run-all build publish && npm run changelog"
   },
   "dependencies": {
     "core-js": "^3.6.5",

@@ -1,4 +1,12 @@
-## [0.1.1](http://192.168.16.65/tsc-internal/middle-platform/frontend/sinokit/compare/v0.1.3-alpha.3...v0.1.1) (2020-07-31)
+## [0.1.1](http://192.168.16.65/tsc-internal/middle-platform/frontend/sinokit/compare/v0.1.5...v0.1.1) (2020-07-31)
+
+
+
+## [0.1.5](http://192.168.16.65/tsc-internal/middle-platform/frontend/sinokit/compare/v0.1.4...v0.1.5) (2020-07-31)
+
+
+
+## [0.1.4](http://192.168.16.65/tsc-internal/middle-platform/frontend/sinokit/compare/v0.1.3-alpha.3...v0.1.4) (2020-07-31)
 
 
 

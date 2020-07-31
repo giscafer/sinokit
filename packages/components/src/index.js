@@ -25,7 +25,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 export default {
-  version: '0.1.3-alpha.3',
+  version: '0.1.5',
   install,
   JsonEditor,
   JsonSchemaEditor

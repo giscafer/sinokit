@@ -1,5 +1,14 @@
-module.exports =
-/******/ (function(modules) { // webpackBootstrap
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(typeof exports === 'object' && typeof module === 'object')
+		module.exports = factory(require("@sinokit/utils"));
+	else if(typeof define === 'function' && define.amd)
+		define(["@sinokit/utils"], factory);
+	else {
+		var a = typeof exports === 'object' ? factory(require("@sinokit/utils")) : factory(root["@sinokit/utils"]);
+		for(var i in a) (typeof exports === 'object' ? exports : root)[i] = a[i];
+	}
+})(window, function(__WEBPACK_EXTERNAL_MODULE__74__) {
+return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// install a JSONP callback for chunk loading
 /******/ 	function webpackJsonpCallback(data) {
 /******/ 		var chunkIds = data[0];
@@ -14784,7 +14793,7 @@ component.options.__file = "lib/json-schema-editor/src/Schema/SchemaArray.vue"
 /* 74 */
 /***/ (function(module, exports) {
 
-module.exports = require("@sinokit/utils");
+module.exports = __WEBPACK_EXTERNAL_MODULE__74__;
 
 /***/ }),
 /* 75 */
@@ -20543,3 +20552,4 @@ json_schema_editor.install = function (Vue) {
 
 /***/ })
 /******/ ]);
+});

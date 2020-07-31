@@ -1,5 +1,14 @@
-module.exports =
-/******/ (function(modules) { // webpackBootstrap
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(typeof exports === 'object' && typeof module === 'object')
+		module.exports = factory(require("@sinokit/utils"));
+	else if(typeof define === 'function' && define.amd)
+		define(["@sinokit/utils"], factory);
+	else if(typeof exports === 'object')
+		exports["SINOKIT"] = factory(require("@sinokit/utils"));
+	else
+		root["SINOKIT"] = factory(root["@sinokit/utils"]);
+})(window, function(__WEBPACK_EXTERNAL_MODULE__2__) {
+return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
 /******/
@@ -12092,7 +12101,7 @@ module.exports = __webpack_require__(1);
 
     "undefined" != typeof window && window.Vue && ce(window.Vue);
     t.default = {
-      version: "0.1.3-alpha.3",
+      version: "0.1.5",
       install: ce,
       JsonEditor: u,
       JsonSchemaEditor: ae
@@ -12104,7 +12113,8 @@ module.exports = __webpack_require__(1);
 /* 2 */
 /***/ (function(module, exports) {
 
-module.exports = require("@sinokit/utils");
+module.exports = __WEBPACK_EXTERNAL_MODULE__2__;
 
 /***/ })
 /******/ ])["default"];
+});
