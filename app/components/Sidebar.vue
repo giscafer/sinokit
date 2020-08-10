@@ -10,14 +10,14 @@
           <span>组件示例</span>
         </div>
         <div class="sidebar-content">
-          <!--  <ul>
+          <ul>
             <li v-for="(item, index) in sidebarMenus" :key="index">
               <router-link exact :to="item.url" replace>
                 <span v-text="item.name"></span>
                 <div class="rectangle-right"></div>
               </router-link>
             </li>
-          </ul>-->
+          </ul>
         </div>
       </section>
       <section>
@@ -26,9 +26,6 @@
         </div>
         <div class="sidebar-content">
           <ul>
-            <li>
-              <router-link exact to="/json-schema-editor">JsonSchemaEditor</router-link>
-            </li>
             <li>
               <router-link to="/test-event">测试事件</router-link>
             </li>
@@ -43,21 +40,25 @@
 </template>
 
 <script>
+import { routes } from '@/router'
 const sidebarRouter = () => {
-  /*  return Object.keys(chartTypes).map(key => {
-    return {
-      name: chartTypes[key].name,
-      url: `/chart/${chartTypes[key].type}`
+  const menus = []
+  routes.forEach((route) => {
+    if (!route.hidden) {
+      menus.push({
+        name: route.name,
+        url: route.path,
+      })
     }
-  }) */
-  return []
+  })
+  return menus
 }
 
 export default {
   name: 'sidebar',
   created() {
     this.sidebarMenus = sidebarRouter()
-  }
+  },
 }
 </script>
 

@@ -3,14 +3,20 @@ import VueRouter from 'vue-router';
 
 Vue.use(VueRouter);
 
-const routes = [
+export const routes = [
   {
     path: '/',
     name: '首页',
-    // component: Chart,
-    redirect: '/json-schema-editor'
+    hidden: true, // 不现实在菜单
+    redirect: '/timeline'
   },
 
+  {
+    path: '/timeline',
+    name: '时光轴',
+    component: () => import('../views/timeline/index.vue'),
+    props: true
+  },
   {
     path: '/json-schema-editor',
     name: 'JsonSchemaEditor',
