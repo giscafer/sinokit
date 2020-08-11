@@ -2,10 +2,13 @@
   <div>
     <h3>时间轴</h3>
     <div id="visualization"></div>
+    <svg width="960" height="50" />
   </div>
 </template>
 <script>
+// https://observablehq.com/@d3/focus-context?collection=@d3/d3-brush
 import { Timeline, DataSet } from 'vis-timeline/standalone'
+import * as d3 from 'd3'
 export default {
   name: 'TimelinePage',
   props: {},
@@ -78,6 +81,91 @@ export default {
       }
 
       this.timeline = new Timeline(container, items, options)
+
+      this.brushInit()
+    },
+    brushInit() {
+      const svg = d3.select('svg')
+      const targetRect = document
+        .querySelector('#visualization')
+        .getBoundingClientRect()
+      svg.attr('width', targetRect.width)
+      console.log(svg, svg.attr('width'))
+      const width = targetRect.width
+      // const x2 = d3.scaleTime().range([0, width]);
+      const height = 20
+      console.log(width, height)
+      const x = d3.scaleTime().range([0, width])
+      const context = svg.append('g').attr('class', 'context')
+
+      const arc = d3
+        .arc()
+        .innerRadius(0)
+        .outerRadius(height / 2)
+        .startAngle(0)
+        .endAngle((d, i) => (i ? Math.PI : -Math.PI))
+
+      const brushHandle = (context, selection) => {
+        document.querySelector('.overlay').setAttribute('fill', '#EBEDF8')
+        document.querySelector('.selection').setAttribute('fill', '#B4B9D2')
+        document.querySelector('.overlay').setAttribute('fill', '#EBEDF8')
+        document.querySelector('.handle--w').setAttribute('stroke-width', 1.5)
+        document.querySelector('.handle--w').setAttribute('d', arc())
+        document.querySelector('.handle--e').setAttribute('d', arc())
+
+        context
+          .select('.brush')
+          .select('path')
+          .attr('display', selection === null ? 'none' : null)
+          .attr(
+            'transform',
+            selection === null
+              ? null
+              : (d, i) => `translate(${selection[i]},${height / 2})`
+          )
+      }
+
+      const brushed = () => {
+        if (d3.event.sourceEvent && d3.event.sourceEvent.type === 'zoom') return // ignore brush-by-zoom
+        var s = d3.event.selection
+        console.log(s)
+        /*  x.domain(s.map(x2.invert, x2))
+
+        focus.select('.area').attr('d', area)
+        focus.select('.axis--x').call(xAxis)
+
+        svg.call(
+          zoom.transform,
+          d3.zoomIdentity.scale(width / (s[1] - s[0])).translate(-s[0], 0)
+        ) */
+
+        d3.select('svg').call(brushHandle, s)
+      }
+
+      const brush = d3
+        .brushX()
+        .extent([
+          [0, 0],
+          [width, height],
+        ])
+        .on('brush end', brushed)
+
+      context
+        .append('g')
+        .attr('class', 'brush')
+        .call(brush)
+        .call(brush.move, x.range())
+
+      /*  context
+        .select('.brush')
+        .append('path')
+        .attr('class', 'handle--custom')
+        .attr('fill', '#666')
+        .attr('fill-opacity', 0.8)
+        .attr('stroke', '#000')
+        .attr('stroke-width', 1.5)
+        .attr('cursor', 'ew-resize')
+        .attr('d', arc()) */
     },
   },
 }
@@ -169,5 +257,8 @@ $textColor: #4865e9;
 .vis-time-axis .vis-grid.vis-major {
   border-width: 2px;
   border: 0;
+}
+.brush {
+  background: #777;
 }
 </style>
