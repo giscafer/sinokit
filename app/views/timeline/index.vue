@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3>时光轴</h3>
+    <h3>时间轴</h3>
     <div id="visualization"></div>
   </div>
 </template>
@@ -73,7 +73,7 @@ export default {
         },
         margin: {
           item: 20,
-          axis: 40,
+          axis: 20,
         },
       }
 
@@ -83,6 +83,8 @@ export default {
 }
 </script>
 <style lang="scss" >
+$dotColor: #738dff;
+$textColor: #4865e9;
 .vis-timeline {
   border: none;
   // font-family: purisa, 'comic sans', cursive;
@@ -124,7 +126,7 @@ export default {
       font-stretch: normal;
       line-height: 24px;
       letter-spacing: 1px;
-      color: #4865e9;
+      color: $textColor;
       text-decoration: none;
     }
   }
@@ -138,13 +140,16 @@ export default {
 .vis-item.vis-dot {
   border-width: 10px;
   border-radius: 10px;
-  border-color: #f8b849;
-  background-color: #f8b849;
+  border-color: $dotColor;
+  background-color: $dotColor;
 }
 
+.vis-item.vis-dot.vis-selected {
+  border-color: $dotColor;
+}
 .vis-item.vis-selected {
-  border-color: green;
-  background-color: lightgreen;
+  border-color: transparent;
+  background-color: transparent;
 }
 
 .vis-time-axis .vis-text {
