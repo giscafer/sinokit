@@ -10,6 +10,7 @@
 // https://observablehq.com/@d3/focus-context?collection=@d3/d3-brush
 import { Timeline, DataSet } from 'vis-timeline/standalone'
 import * as d3 from 'd3'
+import { brushHandle, isMoveBrush, flexibleType } from './utils'
 export default {
   name: 'TimelinePage',
   props: {},
@@ -46,48 +47,49 @@ export default {
         {
           start: new Date(2010, 1, 1),
           content:
-            '<div><p class="date">2004-11-18</p><a href="" target="_blank">批准上市</a></div>',
+            '<div><p class="date">2010-11-18</p><a href="" target="_blank">批准上市</a></div>',
         },
         {
           start: new Date(2011, 1, 1),
           content:
-            '<div><p class="date">2004-11-18</p><a href="" target="_blank">新适应症</a></div>',
+            '<div><p class="date">2011-11-18</p><a href="" target="_blank">新适应症</a></div>',
         },
         {
           start: new Date(2012, 1, 1),
           content:
-            '<div><p class="date">2004-11-18</p><a href="" target="_blank">新给药方案</a></div>',
+            '<div><p class="date">2012-11-18</p><a href="" target="_blank">新给药方案</a></div>',
         },
         {
           start: new Date(2013, 1, 1),
           content:
-            '<div><p class="date">2004-11-18</p><a href="" target="_blank">包装</a></div>',
+            '<div><p class="date">2013-11-18</p><a href="" target="_blank">包装</a></div>',
         },
         {
           start: new Date(2014, 1, 1),
           content:
-            '<div><p class="date">2004-11-18</p><a href="" target="_blank">审批</a></div>',
+            '<div><p class="date">2014-11-18</p><a href="" target="_blank">审批</a></div>',
         },
         {
           start: new Date(2015, 1, 1),
           content:
-            '<div><p class="date">2004-11-18</p><a href="" target="_blank">IPO</a></div>',
+            '<div><p class="date">2015-11-18</p><a href="" target="_blank">IPO</a></div>',
         },
         {
           start: new Date(2016, 1, 1),
           content:
-            '<div><p class="date">2004-11-18</p><a href="" target="_blank">准备上市</a></div>',
+            '<div><p class="date">2016-11-18</p><a href="" target="_blank">准备上市</a></div>',
         },
         {
           start: new Date(2017, 1, 1),
           content:
-            '<div><p class="date">2004-11-18</p><a href="" target="_blank">上市</a></div>',
+            '<div><p class="date">2017-11-18</p><a href="" target="_blank">上市</a></div>',
         },
       ])
       const minDate = new Date(2009, 1, 1)
       const maxDate = new Date(2018, 1, 1)
       const zoomMax = maxDate.getTime() - minDate.getTime()
-      const zoomMin = 31104000000 * 3 // 季度为缩放单位
+      const zoomMin = 31104000000 // 月为缩放单位
+      // const zoomMin = 31104000000 * 3 // 季度为缩放单位
       this.startDate = minDate
       this.endDate = maxDate
       console.log(zoomMax)
@@ -133,57 +135,39 @@ export default {
       const x = d3.scaleTime().range([0, width])
       const context = svg.append('g').attr('class', 'context')
 
-      const arc = d3
-        .arc()
-        .innerRadius(0)
-        .outerRadius(height / 2)
-        .startAngle(0)
-        .endAngle((d, i) => (i ? Math.PI : -Math.PI))
+      // let brushedSelection = this.brushRange[1] / 2
 
-      const brushHandle = (context, selection) => {
-        document.querySelector('.overlay').setAttribute('fill', '#EBEDF8')
-        document.querySelector('.selection').setAttribute('fill', '#B4B9D2')
-        document.querySelector('.overlay').setAttribute('fill', '#EBEDF8')
-        document.querySelector('.handle--w').setAttribute('stroke-width', 1.5)
-        document.querySelector('.handle--w').setAttribute('d', arc())
-        document.querySelector('.handle--e').setAttribute('d', arc())
-
-        context
-          .select('.brush')
-          .select('path')
-          .attr('display', selection === null ? 'none' : null)
-          .attr(
-            'transform',
-            selection === null
-              ? null
-              : (d, i) => `translate(${selection[i]},${height / 2})`
-          )
-      }
-      let brushedSelection = this.brushRange[1] / 2
-
-      const moveTo = ({ selection, type }) => {
-        // brush 宽度变化时动态缩放时间轴
-        if (type === 'brush') {
+      const moveTo = ({ selection }) => {
+        console.log(selection, this.prevSelection)
+        // 需要区分 宽度变化还是滑动，只能执行一个方法，不然 zoomIn 和 zoomOut 不生效
+        console.log('isMoveBrush=', isMoveBrush(selection, this.prevSelection))
+        if (!isMoveBrush(selection, this.prevSelection)) {
+          // brush 宽度变化时动态缩放时间轴
           const w = selection[1] - selection[0]
           const rate = +(w / width).toFixed(2)
-          if (w < brushedSelection) {
+          if (
+            flexibleType(selection, this.prevSelection) === 1 ||
+            flexibleType(selection, this.prevSelection) === 3
+          ) {
             this.timeline.zoomOut(rate)
             console.info('zoomOut', rate)
-          } else if (w > brushedSelection) {
+          } else if (
+            flexibleType(selection, this.prevSelection) === 2 ||
+            flexibleType(selection, this.prevSelection) === 4
+          ) {
             this.timeline.zoomIn(rate)
             console.info('zoomIn', rate)
           }
-          brushedSelection = w
+          // brushedSelection = w
+        } else {
+          const position = selection[1]
+          const newPosigion = this.zoomRange * (position / this.brushRange[1])
+          const date = new Date(this.startDate.getTime() + newPosigion)
+          console.log(date.getFullYear())
+          this.timeline.moveTo(date)
         }
-        const position = selection[1]
-        const newPosigion = this.zoomRange * (position / this.brushRange[1])
-        console.log(position, newPosigion, this.brushRange[1], this.zoomRange)
-        const date = new Date(this.startDate.getTime() + newPosigion)
-        console.log(date)
-        setTimeout(() => {
-          // 需要区分 宽度变化还是滑动，只能执行一个方法，不然 zoomIn 和 zoomOut 不生效
-          // this.timeline.moveTo(date)
-        })
+
+        this.prevSelection = selection
       }
       const brushed = () => {
         if (d3.event.sourceEvent && d3.event.sourceEvent.type === 'zoom') return // ignore brush-by-zoom
@@ -192,7 +176,9 @@ export default {
 
         moveTo(d3.event)
 
-        d3.select('svg').call(brushHandle, s)
+        d3.select('svg').call((context, selection) => {
+          brushHandle(context, selection, height)
+        }, s)
       }
 
       const brush = d3
