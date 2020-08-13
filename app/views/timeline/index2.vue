@@ -3,21 +3,20 @@
     <h3>时间轴2</h3>
     <el-button type="primary" @click="handleZoom">缩放</el-button>
     <div id="visualization"></div>
-    <svg width="960" height="50" />
+    <svg width="960" height="14" />
   </div>
 </template>
 <script>
 // https://observablehq.com/@d3/focus-context?collection=@d3/d3-brush
 import { Timeline, DataSet } from 'vis-timeline/standalone'
 import * as d3 from 'd3'
-import { brushHandle, isMoveBrush, flexibleType } from './utils'
+import { brushHandle } from './utils'
 export default {
   name: 'TimelinePage',
   props: {},
   data() {
     return {
       timeline: null,
-      zoomRange: 0,
       brushRange: 0,
       startDate: new Date(),
       endDate: new Date(),
@@ -38,7 +37,6 @@ export default {
       } else {
         this.timeline.zoomOut(+percent)
       }
-      console.log(this.toggle)
       this.toggle = !this.toggle
     },
     createTimeline() {
@@ -46,9 +44,9 @@ export default {
       // 注意：JavaScript Date 对象中，月份是从0开始
       const data = [
         {
-          start: new Date(2010, 1, 1),
+          start: new Date(2010, 0, 1),
           content:
-            '<div><p class="date">2010-11-18</p><a href="" target="_blank">批准上市</a></div>',
+            '<div><p class="date">2010-11-18</p><a href="" target="_blank">第一个</a></div>',
         },
         {
           start: new Date(2011, 1, 1),
@@ -56,32 +54,32 @@ export default {
             '<div><p class="date">2011-11-18</p><a href="" target="_blank">新适应症</a></div>',
         },
         {
-          start: new Date(2012, 1, 1),
+          start: new Date(2012, 0, 1),
           content:
-            '<div><p class="date">2012-11-18</p><a href="" target="_blank">新给药方案</a></div>',
+            '<div><p class="date">2014-11-18</p><a href="" target="_blank">新给药方案</a></div>',
         },
         {
-          start: new Date(2013, 1, 1),
+          start: new Date(2013, 0, 1),
           content:
             '<div><p class="date">2013-11-18</p><a href="" target="_blank">包装</a></div>',
         },
         {
-          start: new Date(2014, 1, 1),
+          start: new Date(2014, 0, 1),
           content:
             '<div><p class="date">2014-11-18</p><a href="" target="_blank">审批</a></div>',
         },
         {
-          start: new Date(2015, 1, 1),
+          start: new Date(2015, 0, 1),
           content:
             '<div><p class="date">2015-11-18</p><a href="" target="_blank">IPO</a></div>',
         },
         {
-          start: new Date(2016, 1, 1),
+          start: new Date(2016, 0, 1),
           content:
             '<div><p class="date">2016-11-18</p><a href="" target="_blank">准备上市</a></div>',
         },
         {
-          start: new Date(2017, 1, 1),
+          start: new Date(2017, 0, 1),
           content:
             '<div><p class="date">2017-11-18</p><a href="" target="_blank">上市</a></div>',
         },
@@ -89,14 +87,14 @@ export default {
 
       this.items = new DataSet(data)
       this.itemData = data
-      const minDate = new Date(2009, 1, 1)
-      const maxDate = new Date(2018, 1, 1)
+      const minDate = new Date(2009, 0, 1)
+      const maxDate = new Date(2018, 0, 1)
       const zoomMax = maxDate.getTime() - minDate.getTime()
       const zoomMin = 31104000000 // 月为缩放单位
       // const zoomMin = 31104000000 * 3 // 季度为缩放单位
       this.startDate = minDate
       this.endDate = maxDate
-      console.log(zoomMax)
+      // console.log(zoomMax)
       var options = {
         zoomMin,
         zoomMax,
@@ -105,12 +103,12 @@ export default {
           item: 'top',
         },
         margin: {
-          item: 20,
-          axis: 20,
+          item: 19,
+          axis: 19,
         },
         // zoomFriction: 10,
         zoomable: false,
-        horizontalScroll: true,
+        horizontalScroll: false,
         moveable: false,
         max: maxDate,
         min: minDate,
@@ -118,16 +116,7 @@ export default {
       }
       this.timeline = new Timeline(container, this.items, options)
       window.timeline = this.timeline
-      this.zoomRange = zoomMax - zoomMin
-      console.log('this.zoomRange=', this.zoomRange)
-      this.timeline.on('rangechanged', (event) => {
-        const { start, end, byUser } = event
-        console.log(
-          d3.timeFormat('%Y-%m')(start),
-          d3.timeFormat('%Y-%m')(end),
-          byUser
-        )
-      })
+
       // timeline.fit() 自适应
       // timeline.zoomIn() // 放大
       // timeline.zoomOut() // 缩小
@@ -145,58 +134,25 @@ export default {
       console.log(svg, svg.attr('width'))
       const width = targetRect.width
       // const x2 = d3.scaleTime().range([0, width]);
-      const height = 20
-      // console.log(width, height)
+      const height = 14
       const x = d3.scaleTime().range([0, width])
       const xAxis2 = d3.axisBottom(x)
       const context = svg.append('g').attr('class', 'context')
 
-      // let brushedSelection = this.brushRange[1] / 2
-
-      const moveTo = ({ selection }) => {
-        console.log(selection, this.prevSelection)
-        // 需要区分 宽度变化还是滑动，只能执行一个方法，不然 zoomIn 和 zoomOut 不生效
-        console.log('isMoveBrush=', isMoveBrush(selection, this.prevSelection))
-        if (!isMoveBrush(selection, this.prevSelection)) {
-          // brush 宽度变化时动态缩放时间轴
-          const w = selection[1] - selection[0]
-          const rate = +(w / width).toFixed(2)
-          if (
-            flexibleType(selection, this.prevSelection) === 1 ||
-            flexibleType(selection, this.prevSelection) === 3
-          ) {
-            this.timeline.zoomOut(rate)
-            console.info('zoomOut', rate)
-          } else if (
-            flexibleType(selection, this.prevSelection) === 2 ||
-            flexibleType(selection, this.prevSelection) === 4
-          ) {
-            this.timeline.zoomIn(rate)
-            console.info('zoomIn', rate)
-          }
-          // brushedSelection = w
-        } else {
-          const position = selection[1]
-          const newPosigion = this.zoomRange * (position / this.brushRange[1])
-          const date = new Date(this.startDate.getTime() + newPosigion)
-          console.log(date.getFullYear())
-          this.timeline.moveTo(date)
-        }
-
-        this.prevSelection = selection
-      }
       const brushed = () => {
         if (d3.event.sourceEvent && d3.event.sourceEvent.type === 'zoom') return // ignore brush-by-zoom
-        var s = d3.event.selection
-        console.log('evt=', d3.event)
+        const s = d3.event.selection
+        console.log(s.map(x.invert, x).map((d) => d3.timeFormat('%Y-%m')(d)))
 
-        moveTo(d3.event)
+        // 根据 brush 位置渲染 缩放和定位timeline
+        const timeX = s.map(x.invert, x)
+        this.timeline.setWindow(timeX[0], timeX[1])
 
         d3.select('svg').call((context, selection) => {
           brushHandle(context, selection, height)
         }, s)
       }
-
+      // 创建 brush
       const brush = d3
         .brushX()
         .extent([
@@ -205,24 +161,42 @@ export default {
         ])
         .on('brush end', brushed)
       this.brushRange = x.range()
-      const brushWidth = this.brushRange[1] / 2 // 初始化的长度
+
+      // 渲染brush
       context
         .append('g')
         .attr('class', 'brush')
         .call(brush)
         .call(brush.move, [this.brushRange[0], this.brushRange[1] / 2])
-      // 日期坐标
+
+      // 日期坐标添加到brush作为参考依据
       x.domain(
-        d3.extent(this.itemData, function (d) {
-          return d.start
-        })
+        d3.extent(
+          [
+            { start: this.startDate },
+            ...this.itemData,
+            { start: this.endDate },
+          ],
+          function (d) {
+            return d.start
+          }
+        )
       )
       context
         .append('g')
-        .attr('class', 'axis axis--x axis2')
+        .attr('class', 'axis axis--x brush-axis')
+        .attr('style', 'display:none;')
         .attr('transform', 'translate(0,' + height + ')')
         .call(xAxis2)
-      this.timeline.zoomIn(brushWidth / this.brushRange[1])
+      document
+        .querySelector('.overlay')
+        .setAttribute('style', 'border-radius:6px;')
+      // 首次初始化
+      const timeX = [this.brushRange[0], this.brushRange[1] / 2].map(
+        x.invert,
+        x
+      )
+      this.timeline.setWindow(timeX[0], timeX[1])
     },
   },
 }
@@ -230,13 +204,17 @@ export default {
 <style lang="scss" >
 $dotColor: #738dff;
 $textColor: #4865e9;
+$bgColor: #fff;
 .vis-timeline {
   border: none;
   // font-family: purisa, 'comic sans', cursive;
-  font-size: 12pt;
-  background: #ffecea;
-  .vis-panel .vis-bottom {
+  font-size: 14pt;
+  background: $bgColor;
+  .vis-panel.vis-bottom {
     border: none !important;
+  }
+  .vis-panel.vis-top {
+    border-bottom: 1px solid #ededed !important;
   }
   .vis-minor {
     display: none;
@@ -269,7 +247,7 @@ $textColor: #4865e9;
       font-size: 16px;
       font-weight: normal;
       font-stretch: normal;
-      line-height: 24px;
+      line-height: 14px;
       letter-spacing: 1px;
       color: $textColor;
       text-decoration: none;
@@ -317,5 +295,8 @@ $textColor: #4865e9;
 }
 .brush {
   background: #777;
+  .brush-axis {
+    display: none;
+  }
 }
 </style>

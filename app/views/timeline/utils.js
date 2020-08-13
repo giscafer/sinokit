@@ -61,7 +61,7 @@ export const createArc = height => {
     .innerRadius(0)
     .outerRadius(height / 2)
     .startAngle(0)
-    .endAngle((d, i) => (i ? Math.PI : -Math.PI));
+    .endAngle((d, i) => (i ? Math.PI : -Math.PI))();
 };
 
 export const brushHandle = (context, selection, height) => {
@@ -69,8 +69,8 @@ export const brushHandle = (context, selection, height) => {
   document.querySelector('.selection').setAttribute('fill', '#B4B9D2');
   document.querySelector('.overlay').setAttribute('fill', '#EBEDF8');
   document.querySelector('.handle--w').setAttribute('stroke-width', 1.5);
-  document.querySelector('.handle--w').setAttribute('d', createArc());
-  document.querySelector('.handle--e').setAttribute('d', createArc());
+  // document.querySelector('.handle--w').setAttribute('d', createArc(height));
+  // document.querySelector('.handle--e').setAttribute('d', createArc(height));
 
   context
     .select('.brush')
