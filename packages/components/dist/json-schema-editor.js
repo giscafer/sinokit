@@ -11178,7 +11178,7 @@ module.exports = copyObject;
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: /Users/giscafer/Code/sinohealth/sinokit/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!/Users/giscafer/Code/sinohealth/sinokit/node_modules/vue-loader/lib??vue-loader-options!./lib/json-editor/src/json-editor.vue?vue&type=template&id=d3ee32fc&scoped=true&
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./lib/json-editor/src/json-editor.vue?vue&type=template&id=d3ee32fc&scoped=true&
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
@@ -11193,29 +11193,29 @@ render._withStripped = true
 
 // CONCATENATED MODULE: ./lib/json-editor/src/json-editor.vue?vue&type=template&id=d3ee32fc&scoped=true&
 
-// EXTERNAL MODULE: /Users/giscafer/Code/sinohealth/sinokit/node_modules/codemirror/lib/codemirror.js
+// EXTERNAL MODULE: ./node_modules/codemirror/lib/codemirror.js
 var codemirror = __webpack_require__(3);
 var codemirror_default = /*#__PURE__*/__webpack_require__.n(codemirror);
 
-// EXTERNAL MODULE: /Users/giscafer/Code/sinohealth/sinokit/node_modules/codemirror/addon/lint/lint.css
+// EXTERNAL MODULE: ./node_modules/codemirror/addon/lint/lint.css
 var lint = __webpack_require__(25);
 
-// EXTERNAL MODULE: /Users/giscafer/Code/sinohealth/sinokit/node_modules/codemirror/lib/codemirror.css
+// EXTERNAL MODULE: ./node_modules/codemirror/lib/codemirror.css
 var lib_codemirror = __webpack_require__(27);
 
-// EXTERNAL MODULE: /Users/giscafer/Code/sinohealth/sinokit/node_modules/codemirror/theme/idea.css
+// EXTERNAL MODULE: ./node_modules/codemirror/theme/idea.css
 var idea = __webpack_require__(29);
 
-// EXTERNAL MODULE: /Users/giscafer/Code/sinohealth/sinokit/node_modules/codemirror/mode/javascript/javascript.js
+// EXTERNAL MODULE: ./node_modules/codemirror/mode/javascript/javascript.js
 var javascript = __webpack_require__(34);
 
-// EXTERNAL MODULE: /Users/giscafer/Code/sinohealth/sinokit/node_modules/codemirror/addon/lint/lint.js
+// EXTERNAL MODULE: ./node_modules/codemirror/addon/lint/lint.js
 var lint_lint = __webpack_require__(35);
 
-// EXTERNAL MODULE: /Users/giscafer/Code/sinohealth/sinokit/node_modules/codemirror/addon/lint/json-lint.js
+// EXTERNAL MODULE: ./node_modules/codemirror/addon/lint/json-lint.js
 var json_lint = __webpack_require__(36);
 
-// CONCATENATED MODULE: /Users/giscafer/Code/sinohealth/sinokit/node_modules/babel-loader/lib!/Users/giscafer/Code/sinohealth/sinokit/node_modules/vue-loader/lib??vue-loader-options!./lib/json-editor/src/json-editor.vue?vue&type=script&lang=js&
+// CONCATENATED MODULE: ./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./lib/json-editor/src/json-editor.vue?vue&type=script&lang=js&
 //
 //
 //
@@ -11290,7 +11290,7 @@ __webpack_require__(31);
 // EXTERNAL MODULE: ./lib/json-editor/src/json-editor.vue?vue&type=style&index=0&id=d3ee32fc&scoped=true&lang=css&
 var json_editorvue_type_style_index_0_id_d3ee32fc_scoped_true_lang_css_ = __webpack_require__(37);
 
-// EXTERNAL MODULE: /Users/giscafer/Code/sinohealth/sinokit/node_modules/vue-loader/lib/runtime/componentNormalizer.js
+// EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
 var componentNormalizer = __webpack_require__(1);
 
 // CONCATENATED MODULE: ./lib/json-editor/src/json-editor.vue
@@ -11333,7 +11333,7 @@ json_editor.install = function (Vue) {
 
 "use strict";
 
-// CONCATENATED MODULE: /Users/giscafer/Code/sinohealth/sinokit/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!/Users/giscafer/Code/sinohealth/sinokit/node_modules/vue-loader/lib??vue-loader-options!./lib/json-schema-editor/src/MockSelect/index.vue?vue&type=template&id=ead96cb2&scoped=true&
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./lib/json-schema-editor/src/MockSelect/index.vue?vue&type=template&id=ead96cb2&scoped=true&
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
@@ -11380,7 +11380,7 @@ render._withStripped = true
 
 // CONCATENATED MODULE: ./lib/json-schema-editor/src/MockSelect/index.vue?vue&type=template&id=ead96cb2&scoped=true&
 
-// CONCATENATED MODULE: /Users/giscafer/Code/sinohealth/sinokit/node_modules/babel-loader/lib!/Users/giscafer/Code/sinohealth/sinokit/node_modules/vue-loader/lib??vue-loader-options!./lib/json-schema-editor/src/MockSelect/index.vue?vue&type=script&lang=js&
+// CONCATENATED MODULE: ./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./lib/json-schema-editor/src/MockSelect/index.vue?vue&type=script&lang=js&
 //
 //
 //
@@ -11445,7 +11445,7 @@ render._withStripped = true
 });
 // CONCATENATED MODULE: ./lib/json-schema-editor/src/MockSelect/index.vue?vue&type=script&lang=js&
  /* harmony default export */ var src_MockSelectvue_type_script_lang_js_ = (MockSelectvue_type_script_lang_js_); 
-// EXTERNAL MODULE: /Users/giscafer/Code/sinohealth/sinokit/node_modules/vue-loader/lib/runtime/componentNormalizer.js
+// EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
 var componentNormalizer = __webpack_require__(1);
 
 // CONCATENATED MODULE: ./lib/json-schema-editor/src/MockSelect/index.vue
@@ -11478,7 +11478,7 @@ component.options.__file = "lib/json-schema-editor/src/MockSelect/index.vue"
 
 "use strict";
 
-// CONCATENATED MODULE: /Users/giscafer/Code/sinohealth/sinokit/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!/Users/giscafer/Code/sinohealth/sinokit/node_modules/vue-loader/lib??vue-loader-options!./lib/json-schema-editor/src/Schema/SchemaObject.vue?vue&type=template&id=36924100&
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./lib/json-schema-editor/src/Schema/SchemaObject.vue?vue&type=template&id=36924100&
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
@@ -11509,7 +11509,7 @@ render._withStripped = true
 
 // CONCATENATED MODULE: ./lib/json-schema-editor/src/Schema/SchemaObject.vue?vue&type=template&id=36924100&
 
-// CONCATENATED MODULE: /Users/giscafer/Code/sinohealth/sinokit/node_modules/babel-loader/lib!/Users/giscafer/Code/sinohealth/sinokit/node_modules/vue-loader/lib??vue-loader-options!./lib/json-schema-editor/src/Schema/SchemaObject.vue?vue&type=script&lang=js&
+// CONCATENATED MODULE: ./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./lib/json-schema-editor/src/Schema/SchemaObject.vue?vue&type=script&lang=js&
 //
 //
 //
@@ -11574,7 +11574,7 @@ render._withStripped = true
 });
 // CONCATENATED MODULE: ./lib/json-schema-editor/src/Schema/SchemaObject.vue?vue&type=script&lang=js&
  /* harmony default export */ var Schema_SchemaObjectvue_type_script_lang_js_ = (SchemaObjectvue_type_script_lang_js_); 
-// EXTERNAL MODULE: /Users/giscafer/Code/sinohealth/sinokit/node_modules/vue-loader/lib/runtime/componentNormalizer.js
+// EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
 var componentNormalizer = __webpack_require__(1);
 
 // CONCATENATED MODULE: ./lib/json-schema-editor/src/Schema/SchemaObject.vue
@@ -14177,7 +14177,7 @@ module.exports = isUndefined;
 
 "use strict";
 
-// CONCATENATED MODULE: /Users/giscafer/Code/sinohealth/sinokit/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!/Users/giscafer/Code/sinohealth/sinokit/node_modules/vue-loader/lib??vue-loader-options!./lib/json-schema-editor/src/Schema/SchemaArray.vue?vue&type=template&id=dc1f96b0&
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./lib/json-schema-editor/src/Schema/SchemaArray.vue?vue&type=template&id=dc1f96b0&
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
@@ -14526,7 +14526,7 @@ render._withStripped = true
 
 // CONCATENATED MODULE: ./lib/json-schema-editor/src/Schema/SchemaArray.vue?vue&type=template&id=dc1f96b0&
 
-// EXTERNAL MODULE: /Users/giscafer/Code/sinohealth/sinokit/node_modules/lodash/isUndefined.js
+// EXTERNAL MODULE: ./node_modules/lodash/isUndefined.js
 var isUndefined = __webpack_require__(72);
 var isUndefined_default = /*#__PURE__*/__webpack_require__.n(isUndefined);
 
@@ -14539,7 +14539,7 @@ var SchemaObject = __webpack_require__(23);
 // EXTERNAL MODULE: ./lib/json-schema-editor/src/utils.js
 var utils = __webpack_require__(0);
 
-// CONCATENATED MODULE: /Users/giscafer/Code/sinohealth/sinokit/node_modules/babel-loader/lib!/Users/giscafer/Code/sinohealth/sinokit/node_modules/vue-loader/lib??vue-loader-options!./lib/json-schema-editor/src/Schema/SchemaArray.vue?vue&type=script&lang=js&
+// CONCATENATED MODULE: ./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./lib/json-schema-editor/src/Schema/SchemaArray.vue?vue&type=script&lang=js&
 //
 //
 //
@@ -14762,7 +14762,7 @@ var utils = __webpack_require__(0);
 });
 // CONCATENATED MODULE: ./lib/json-schema-editor/src/Schema/SchemaArray.vue?vue&type=script&lang=js&
  /* harmony default export */ var Schema_SchemaArrayvue_type_script_lang_js_ = (SchemaArrayvue_type_script_lang_js_); 
-// EXTERNAL MODULE: /Users/giscafer/Code/sinohealth/sinokit/node_modules/vue-loader/lib/runtime/componentNormalizer.js
+// EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
 var componentNormalizer = __webpack_require__(1);
 
 // CONCATENATED MODULE: ./lib/json-schema-editor/src/Schema/SchemaArray.vue
@@ -17346,7 +17346,7 @@ ___CSS_LOADER_EXPORT___.push([module.i, ".json-schema-vue-editor{cursor:pointer}
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: /Users/giscafer/Code/sinohealth/sinokit/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!/Users/giscafer/Code/sinohealth/sinokit/node_modules/vue-loader/lib??vue-loader-options!./lib/json-schema-editor/src/json-schema-editor.vue?vue&type=template&id=817a1e5c&
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./lib/json-schema-editor/src/json-schema-editor.vue?vue&type=template&id=817a1e5c&
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
@@ -17829,23 +17829,23 @@ render._withStripped = true
 
 // CONCATENATED MODULE: ./lib/json-schema-editor/src/json-schema-editor.vue?vue&type=template&id=817a1e5c&
 
-// EXTERNAL MODULE: /Users/giscafer/Code/sinohealth/sinokit/node_modules/lodash/set.js
+// EXTERNAL MODULE: ./node_modules/lodash/set.js
 var set = __webpack_require__(6);
 var set_default = /*#__PURE__*/__webpack_require__.n(set);
 
-// EXTERNAL MODULE: /Users/giscafer/Code/sinohealth/sinokit/node_modules/lodash/get.js
+// EXTERNAL MODULE: ./node_modules/lodash/get.js
 var get = __webpack_require__(7);
 var get_default = /*#__PURE__*/__webpack_require__.n(get);
 
-// EXTERNAL MODULE: /Users/giscafer/Code/sinohealth/sinokit/node_modules/lodash/unset.js
+// EXTERNAL MODULE: ./node_modules/lodash/unset.js
 var unset = __webpack_require__(52);
 var unset_default = /*#__PURE__*/__webpack_require__.n(unset);
 
-// EXTERNAL MODULE: /Users/giscafer/Code/sinohealth/sinokit/node_modules/lodash/cloneDeep.js
+// EXTERNAL MODULE: ./node_modules/lodash/cloneDeep.js
 var cloneDeep = __webpack_require__(8);
 var cloneDeep_default = /*#__PURE__*/__webpack_require__.n(cloneDeep);
 
-// CONCATENATED MODULE: /Users/giscafer/Code/sinohealth/sinokit/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!/Users/giscafer/Code/sinohealth/sinokit/node_modules/vue-loader/lib??vue-loader-options!./lib/json-schema-editor/src/Schema/index.vue?vue&type=template&id=225cb962&
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./lib/json-schema-editor/src/Schema/index.vue?vue&type=template&id=225cb962&
 var Schemavue_type_template_id_225cb962_render = function() {
   var _vm = this
   var _h = _vm.$createElement
@@ -17898,7 +17898,7 @@ var SchemaObject = __webpack_require__(23);
 // EXTERNAL MODULE: ./lib/json-schema-editor/src/Schema/SchemaArray.vue + 4 modules
 var SchemaArray = __webpack_require__(73);
 
-// CONCATENATED MODULE: /Users/giscafer/Code/sinohealth/sinokit/node_modules/babel-loader/lib!/Users/giscafer/Code/sinohealth/sinokit/node_modules/vue-loader/lib??vue-loader-options!./lib/json-schema-editor/src/Schema/index.vue?vue&type=script&lang=js&
+// CONCATENATED MODULE: ./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./lib/json-schema-editor/src/Schema/index.vue?vue&type=script&lang=js&
 //
 //
 //
@@ -17973,7 +17973,7 @@ var SchemaArray = __webpack_require__(73);
 });
 // CONCATENATED MODULE: ./lib/json-schema-editor/src/Schema/index.vue?vue&type=script&lang=js&
  /* harmony default export */ var src_Schemavue_type_script_lang_js_ = (Schemavue_type_script_lang_js_); 
-// EXTERNAL MODULE: /Users/giscafer/Code/sinohealth/sinokit/node_modules/vue-loader/lib/runtime/componentNormalizer.js
+// EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
 var componentNormalizer = __webpack_require__(1);
 
 // CONCATENATED MODULE: ./lib/json-schema-editor/src/Schema/index.vue
@@ -18005,7 +18005,7 @@ var MockSelect = __webpack_require__(22);
 // EXTERNAL MODULE: ./lib/json-schema-editor/src/jsonschema.scss
 var jsonschema = __webpack_require__(156);
 
-// CONCATENATED MODULE: /Users/giscafer/Code/sinohealth/sinokit/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!/Users/giscafer/Code/sinohealth/sinokit/node_modules/vue-loader/lib??vue-loader-options!./lib/json-schema-editor/src/dialog/BasicDialog.vue?vue&type=template&id=704c85e6&scoped=true&
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./lib/json-schema-editor/src/dialog/BasicDialog.vue?vue&type=template&id=704c85e6&scoped=true&
 var BasicDialogvue_type_template_id_704c85e6_scoped_true_render = function() {
   var _vm = this
   var _h = _vm.$createElement
@@ -18069,7 +18069,7 @@ BasicDialogvue_type_template_id_704c85e6_scoped_true_render._withStripped = true
 
 // CONCATENATED MODULE: ./lib/json-schema-editor/src/dialog/BasicDialog.vue?vue&type=template&id=704c85e6&scoped=true&
 
-// CONCATENATED MODULE: /Users/giscafer/Code/sinohealth/sinokit/node_modules/babel-loader/lib!/Users/giscafer/Code/sinohealth/sinokit/node_modules/vue-loader/lib??vue-loader-options!./lib/json-schema-editor/src/dialog/BasicDialog.vue?vue&type=script&lang=js&
+// CONCATENATED MODULE: ./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./lib/json-schema-editor/src/dialog/BasicDialog.vue?vue&type=script&lang=js&
 //
 //
 //
@@ -18164,7 +18164,7 @@ var BasicDialog_component = Object(componentNormalizer["a" /* default */])(
 if (false) { var BasicDialog_api; }
 BasicDialog_component.options.__file = "lib/json-schema-editor/src/dialog/BasicDialog.vue"
 /* harmony default export */ var BasicDialog = (BasicDialog_component.exports);
-// CONCATENATED MODULE: /Users/giscafer/Code/sinohealth/sinokit/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!/Users/giscafer/Code/sinohealth/sinokit/node_modules/vue-loader/lib??vue-loader-options!./lib/json-schema-editor/src/dialog/StringDialog.vue?vue&type=template&id=13a1df5c&
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./lib/json-schema-editor/src/dialog/StringDialog.vue?vue&type=template&id=13a1df5c&
 var StringDialogvue_type_template_id_13a1df5c_render = function() {
   var _vm = this
   var _h = _vm.$createElement
@@ -18428,14 +18428,14 @@ StringDialogvue_type_template_id_13a1df5c_render._withStripped = true
 
 // CONCATENATED MODULE: ./lib/json-schema-editor/src/dialog/StringDialog.vue?vue&type=template&id=13a1df5c&
 
-// EXTERNAL MODULE: /Users/giscafer/Code/sinohealth/sinokit/node_modules/lodash/compact.js
+// EXTERNAL MODULE: ./node_modules/lodash/compact.js
 var compact = __webpack_require__(24);
 var compact_default = /*#__PURE__*/__webpack_require__.n(compact);
 
 // EXTERNAL MODULE: ./lib/json-schema-editor/src/utils.js
 var utils = __webpack_require__(0);
 
-// CONCATENATED MODULE: /Users/giscafer/Code/sinohealth/sinokit/node_modules/babel-loader/lib!/Users/giscafer/Code/sinohealth/sinokit/node_modules/vue-loader/lib??vue-loader-options!./lib/json-schema-editor/src/dialog/StringDialog.vue?vue&type=script&lang=js&
+// CONCATENATED MODULE: ./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./lib/json-schema-editor/src/dialog/StringDialog.vue?vue&type=script&lang=js&
 //
 //
 //
@@ -18643,7 +18643,7 @@ var StringDialog_component = Object(componentNormalizer["a" /* default */])(
 if (false) { var StringDialog_api; }
 StringDialog_component.options.__file = "lib/json-schema-editor/src/dialog/StringDialog.vue"
 /* harmony default export */ var StringDialog = (StringDialog_component.exports);
-// CONCATENATED MODULE: /Users/giscafer/Code/sinohealth/sinokit/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!/Users/giscafer/Code/sinohealth/sinokit/node_modules/vue-loader/lib??vue-loader-options!./lib/json-schema-editor/src/dialog/NumberDialog.vue?vue&type=template&id=19dbe58a&
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./lib/json-schema-editor/src/dialog/NumberDialog.vue?vue&type=template&id=19dbe58a&
 var NumberDialogvue_type_template_id_19dbe58a_render = function() {
   var _vm = this
   var _h = _vm.$createElement
@@ -18916,7 +18916,7 @@ NumberDialogvue_type_template_id_19dbe58a_render._withStripped = true
 
 // CONCATENATED MODULE: ./lib/json-schema-editor/src/dialog/NumberDialog.vue?vue&type=template&id=19dbe58a&
 
-// CONCATENATED MODULE: /Users/giscafer/Code/sinohealth/sinokit/node_modules/babel-loader/lib!/Users/giscafer/Code/sinohealth/sinokit/node_modules/vue-loader/lib??vue-loader-options!./lib/json-schema-editor/src/dialog/NumberDialog.vue?vue&type=script&lang=js&
+// CONCATENATED MODULE: ./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./lib/json-schema-editor/src/dialog/NumberDialog.vue?vue&type=script&lang=js&
 //
 //
 //
@@ -19131,7 +19131,7 @@ var NumberDialog_component = Object(componentNormalizer["a" /* default */])(
 if (false) { var NumberDialog_api; }
 NumberDialog_component.options.__file = "lib/json-schema-editor/src/dialog/NumberDialog.vue"
 /* harmony default export */ var NumberDialog = (NumberDialog_component.exports);
-// CONCATENATED MODULE: /Users/giscafer/Code/sinohealth/sinokit/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!/Users/giscafer/Code/sinohealth/sinokit/node_modules/vue-loader/lib??vue-loader-options!./lib/json-schema-editor/src/dialog/ArrayDialog.vue?vue&type=template&id=0d4fe178&
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./lib/json-schema-editor/src/dialog/ArrayDialog.vue?vue&type=template&id=0d4fe178&
 var ArrayDialogvue_type_template_id_0d4fe178_render = function() {
   var _vm = this
   var _h = _vm.$createElement
@@ -19243,7 +19243,7 @@ ArrayDialogvue_type_template_id_0d4fe178_render._withStripped = true
 
 // CONCATENATED MODULE: ./lib/json-schema-editor/src/dialog/ArrayDialog.vue?vue&type=template&id=0d4fe178&
 
-// CONCATENATED MODULE: /Users/giscafer/Code/sinohealth/sinokit/node_modules/babel-loader/lib!/Users/giscafer/Code/sinohealth/sinokit/node_modules/vue-loader/lib??vue-loader-options!./lib/json-schema-editor/src/dialog/ArrayDialog.vue?vue&type=script&lang=js&
+// CONCATENATED MODULE: ./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./lib/json-schema-editor/src/dialog/ArrayDialog.vue?vue&type=script&lang=js&
 //
 //
 //
@@ -19358,7 +19358,7 @@ var ArrayDialog_component = Object(componentNormalizer["a" /* default */])(
 if (false) { var ArrayDialog_api; }
 ArrayDialog_component.options.__file = "lib/json-schema-editor/src/dialog/ArrayDialog.vue"
 /* harmony default export */ var ArrayDialog = (ArrayDialog_component.exports);
-// CONCATENATED MODULE: /Users/giscafer/Code/sinohealth/sinokit/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!/Users/giscafer/Code/sinohealth/sinokit/node_modules/vue-loader/lib??vue-loader-options!./lib/json-schema-editor/src/dialog/BooleanDialog.vue?vue&type=template&id=5fadee72&
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./lib/json-schema-editor/src/dialog/BooleanDialog.vue?vue&type=template&id=5fadee72&
 var BooleanDialogvue_type_template_id_5fadee72_render = function() {
   var _vm = this
   var _h = _vm.$createElement
@@ -19443,7 +19443,7 @@ BooleanDialogvue_type_template_id_5fadee72_render._withStripped = true
 
 // CONCATENATED MODULE: ./lib/json-schema-editor/src/dialog/BooleanDialog.vue?vue&type=template&id=5fadee72&
 
-// CONCATENATED MODULE: /Users/giscafer/Code/sinohealth/sinokit/node_modules/babel-loader/lib!/Users/giscafer/Code/sinohealth/sinokit/node_modules/vue-loader/lib??vue-loader-options!./lib/json-schema-editor/src/dialog/BooleanDialog.vue?vue&type=script&lang=js&
+// CONCATENATED MODULE: ./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./lib/json-schema-editor/src/dialog/BooleanDialog.vue?vue&type=script&lang=js&
 //
 //
 //
@@ -19557,7 +19557,7 @@ var BooleanDialog_component = Object(componentNormalizer["a" /* default */])(
 if (false) { var BooleanDialog_api; }
 BooleanDialog_component.options.__file = "lib/json-schema-editor/src/dialog/BooleanDialog.vue"
 /* harmony default export */ var BooleanDialog = (BooleanDialog_component.exports);
-// CONCATENATED MODULE: /Users/giscafer/Code/sinohealth/sinokit/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!/Users/giscafer/Code/sinohealth/sinokit/node_modules/vue-loader/lib??vue-loader-options!./lib/json-schema-editor/src/dialog/ObjectDialog.vue?vue&type=template&id=df0a9c00&
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./lib/json-schema-editor/src/dialog/ObjectDialog.vue?vue&type=template&id=df0a9c00&
 var ObjectDialogvue_type_template_id_df0a9c00_render = function() {
   var _vm = this
   var _h = _vm.$createElement
@@ -19644,7 +19644,7 @@ ObjectDialogvue_type_template_id_df0a9c00_render._withStripped = true
 
 // CONCATENATED MODULE: ./lib/json-schema-editor/src/dialog/ObjectDialog.vue?vue&type=template&id=df0a9c00&
 
-// CONCATENATED MODULE: /Users/giscafer/Code/sinohealth/sinokit/node_modules/babel-loader/lib!/Users/giscafer/Code/sinohealth/sinokit/node_modules/vue-loader/lib??vue-loader-options!./lib/json-schema-editor/src/dialog/ObjectDialog.vue?vue&type=script&lang=js&
+// CONCATENATED MODULE: ./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./lib/json-schema-editor/src/dialog/ObjectDialog.vue?vue&type=script&lang=js&
 //
 //
 //
@@ -19757,7 +19757,7 @@ var ObjectDialog_component = Object(componentNormalizer["a" /* default */])(
 if (false) { var ObjectDialog_api; }
 ObjectDialog_component.options.__file = "lib/json-schema-editor/src/dialog/ObjectDialog.vue"
 /* harmony default export */ var ObjectDialog = (ObjectDialog_component.exports);
-// CONCATENATED MODULE: /Users/giscafer/Code/sinohealth/sinokit/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!/Users/giscafer/Code/sinohealth/sinokit/node_modules/vue-loader/lib??vue-loader-options!./lib/json-schema-editor/src/dialog/RawDialog.vue?vue&type=template&id=53f27c47&scoped=true&
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./lib/json-schema-editor/src/dialog/RawDialog.vue?vue&type=template&id=53f27c47&scoped=true&
 var RawDialogvue_type_template_id_53f27c47_scoped_true_render = function() {
   var _vm = this
   var _h = _vm.$createElement
@@ -19811,7 +19811,7 @@ RawDialogvue_type_template_id_53f27c47_scoped_true_render._withStripped = true
 // EXTERNAL MODULE: ./lib/json-editor/index.js + 5 modules
 var json_editor = __webpack_require__(21);
 
-// CONCATENATED MODULE: /Users/giscafer/Code/sinohealth/sinokit/node_modules/babel-loader/lib!/Users/giscafer/Code/sinohealth/sinokit/node_modules/vue-loader/lib??vue-loader-options!./lib/json-schema-editor/src/dialog/RawDialog.vue?vue&type=script&lang=js&
+// CONCATENATED MODULE: ./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./lib/json-schema-editor/src/dialog/RawDialog.vue?vue&type=script&lang=js&
 //
 //
 //
@@ -19896,7 +19896,7 @@ RawDialog_component.options.__file = "lib/json-schema-editor/src/dialog/RawDialo
 
 
 
-// CONCATENATED MODULE: /Users/giscafer/Code/sinohealth/sinokit/node_modules/babel-loader/lib!/Users/giscafer/Code/sinohealth/sinokit/node_modules/vue-loader/lib??vue-loader-options!./lib/json-schema-editor/src/json-schema-editor.vue?vue&type=script&lang=js&
+// CONCATENATED MODULE: ./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./lib/json-schema-editor/src/json-schema-editor.vue?vue&type=script&lang=js&
 //
 //
 //

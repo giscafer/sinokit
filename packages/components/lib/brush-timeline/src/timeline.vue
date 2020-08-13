@@ -1,18 +1,36 @@
 <template>
-  <div>
-    <h3>时间轴2</h3>
-    <el-button type="primary" @click="handleZoom">缩放</el-button>
-    <div id="visualization"></div>
-    <svg width="960" height="14" />
+  <div class="brush-timeline">
+    <div id="vis-timeline"></div>
+    <svg width="100%" height="14" />
   </div>
 </template>
 <script>
 // https://observablehq.com/@d3/focus-context?collection=@d3/d3-brush
 import { Timeline, DataSet } from 'vis-timeline/standalone'
 import * as d3 from 'd3'
-import { brushHandle } from './utils'
+
+export const brushHandle = (context, selection, height) => {
+  document.querySelector('.overlay').setAttribute('fill', '#EBEDF8')
+  document.querySelector('.selection').setAttribute('fill', '#B4B9D2')
+  document.querySelector('.overlay').setAttribute('fill', '#EBEDF8')
+  document.querySelector('.handle--w').setAttribute('stroke-width', 1.5)
+  // document.querySelector('.handle--w').setAttribute('d', createArc(height));
+  // document.querySelector('.handle--e').setAttribute('d', createArc(height));
+
+  context
+    .select('.brush')
+    .select('path')
+    .attr('display', selection === null ? 'none' : null)
+    .attr(
+      'transform',
+      selection === null
+        ? null
+        : (d, i) => `translate(${selection[i]},${height / 2})`
+    )
+}
+
 export default {
-  name: 'TimelinePage',
+  name: 'BrushTimeline',
   props: {},
   data() {
     return {
@@ -40,7 +58,7 @@ export default {
       this.toggle = !this.toggle
     },
     createTimeline() {
-      var container = document.getElementById('visualization')
+      var container = document.getElementById('vis-timeline')
       // 注意：JavaScript Date 对象中，月份是从0开始
       const data = [
         {
@@ -129,7 +147,7 @@ export default {
       const height = 14
       const svg = d3.select('svg')
       const targetRect = document
-        .querySelector('#visualization')
+        .getElementById('vis-timeline')
         .getBoundingClientRect()
       svg.attr('width', targetRect.width)
       const width = targetRect.width
@@ -203,94 +221,94 @@ export default {
 $dotColor: #738dff;
 $textColor: #4865e9;
 $bgColor: #fff;
-.vis-timeline {
-  border: none;
-  // font-family: purisa, 'comic sans', cursive;
-  font-size: 14pt;
-  background: $bgColor;
-  .vis-panel.vis-bottom {
-    border: none !important;
-  }
-  .vis-panel.vis-top {
-    border-bottom: 1px solid #ededed !important;
-  }
-  .vis-minor {
-    display: none;
-  }
-  .vis-range {
-    display: none;
-  }
-  .vis-text {
-    div {
+
+.brush-timeline {
+  .vis-timeline {
+    border: none;
+    // font-family: purisa, 'comic sans', cursive;
+    font-size: 14pt;
+    background: $bgColor;
+    .vis-panel.vis-bottom {
+      border: none !important;
+    }
+    .vis-panel.vis-top {
+      border-bottom: 1px solid #ededed !important;
+    }
+    .vis-minor {
+      display: none;
+    }
+    .vis-range {
+      display: none;
+    }
+    .vis-text {
+      div {
+        visibility: hidden;
+      }
+    }
+    .vis-line {
       visibility: hidden;
     }
   }
-  .vis-line {
-    visibility: hidden;
-  }
-}
 
-.vis-item {
-  font-size: 15pt;
-  color: transparent;
-  background: transparent;
-  border: 0;
-  transform: translate(10px, 20px);
-  .vis-item-content {
-    .date {
-      font-size: 16px;
-      color: #333;
-    }
-    a {
-      font-size: 16px;
-      font-weight: normal;
-      font-stretch: normal;
-      line-height: 14px;
-      letter-spacing: 1px;
-      color: $textColor;
-      text-decoration: none;
+  .vis-box {
+    font-size: 15pt;
+    color: transparent;
+    background: transparent;
+    border: 0;
+    transform: translate(10px, 20px);
+    .vis-item-content {
+      .date {
+        font-size: 16px;
+        color: #333;
+      }
+      a {
+        font-size: 16px;
+        font-weight: normal;
+        font-stretch: normal;
+        line-height: 14px;
+        letter-spacing: 1px;
+        color: $textColor;
+        text-decoration: none;
+      }
     }
   }
-}
+  .vis-item,
+  .vis-item.vis-line {
+    border-width: 3px;
+  }
 
-.vis-item,
-.vis-item.vis-line {
-  border-width: 3px;
-}
+  .vis-item.vis-dot {
+    border-width: 10px;
+    border-radius: 10px;
+    border-color: $dotColor;
+    background-color: $dotColor;
+  }
 
-.vis-item.vis-dot {
-  border-width: 10px;
-  border-radius: 10px;
-  border-color: $dotColor;
-  background-color: $dotColor;
-}
+  .vis-item.vis-dot.vis-selected {
+    border-color: $dotColor;
+  }
+  .vis-item.vis-selected {
+    border-color: transparent;
+    background-color: transparent;
+  }
 
-.vis-item.vis-dot.vis-selected {
-  border-color: $dotColor;
-}
-.vis-item.vis-selected {
-  border-color: transparent;
-  background-color: transparent;
-}
+  .vis-time-axis .vis-text {
+    padding-top: 10px;
+    padding-left: 10px;
+  }
 
-.vis-time-axis .vis-text {
-  padding-top: 10px;
-  padding-left: 10px;
-}
+  .vis-time-axis .vis-text.vis-major {
+    font-weight: bold;
+  }
 
-.vis-time-axis .vis-text.vis-major {
-  font-weight: bold;
-}
+  .vis-time-axis .vis-grid.vis-minor {
+    border-width: 2px;
+  }
 
-.vis-time-axis .vis-grid.vis-minor {
-  border-width: 2px;
-}
-
-.vis-time-axis .vis-grid.vis-major {
-  border-width: 2px;
-  border: 0;
-}
-.brush {
-  background: #777;
+  .vis-time-axis .vis-grid.vis-major {
+    border-width: 2px;
+    border: 0;
+  }
 }
 </style>
+

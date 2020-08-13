@@ -10406,7 +10406,7 @@ module.exports = content.locals || {};
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: /Users/giscafer/Code/sinohealth/sinokit/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!/Users/giscafer/Code/sinohealth/sinokit/node_modules/vue-loader/lib??vue-loader-options!./lib/json-editor/src/json-editor.vue?vue&type=template&id=d3ee32fc&scoped=true&
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./lib/json-editor/src/json-editor.vue?vue&type=template&id=d3ee32fc&scoped=true&
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
@@ -10421,29 +10421,29 @@ render._withStripped = true
 
 // CONCATENATED MODULE: ./lib/json-editor/src/json-editor.vue?vue&type=template&id=d3ee32fc&scoped=true&
 
-// EXTERNAL MODULE: /Users/giscafer/Code/sinohealth/sinokit/node_modules/codemirror/lib/codemirror.js
+// EXTERNAL MODULE: ./node_modules/codemirror/lib/codemirror.js
 var codemirror = __webpack_require__(3);
 var codemirror_default = /*#__PURE__*/__webpack_require__.n(codemirror);
 
-// EXTERNAL MODULE: /Users/giscafer/Code/sinohealth/sinokit/node_modules/codemirror/addon/lint/lint.css
+// EXTERNAL MODULE: ./node_modules/codemirror/addon/lint/lint.css
 var lint = __webpack_require__(25);
 
-// EXTERNAL MODULE: /Users/giscafer/Code/sinohealth/sinokit/node_modules/codemirror/lib/codemirror.css
+// EXTERNAL MODULE: ./node_modules/codemirror/lib/codemirror.css
 var lib_codemirror = __webpack_require__(27);
 
-// EXTERNAL MODULE: /Users/giscafer/Code/sinohealth/sinokit/node_modules/codemirror/theme/idea.css
+// EXTERNAL MODULE: ./node_modules/codemirror/theme/idea.css
 var idea = __webpack_require__(29);
 
-// EXTERNAL MODULE: /Users/giscafer/Code/sinohealth/sinokit/node_modules/codemirror/mode/javascript/javascript.js
+// EXTERNAL MODULE: ./node_modules/codemirror/mode/javascript/javascript.js
 var javascript = __webpack_require__(34);
 
-// EXTERNAL MODULE: /Users/giscafer/Code/sinohealth/sinokit/node_modules/codemirror/addon/lint/lint.js
+// EXTERNAL MODULE: ./node_modules/codemirror/addon/lint/lint.js
 var lint_lint = __webpack_require__(35);
 
-// EXTERNAL MODULE: /Users/giscafer/Code/sinohealth/sinokit/node_modules/codemirror/addon/lint/json-lint.js
+// EXTERNAL MODULE: ./node_modules/codemirror/addon/lint/json-lint.js
 var json_lint = __webpack_require__(36);
 
-// CONCATENATED MODULE: /Users/giscafer/Code/sinohealth/sinokit/node_modules/babel-loader/lib!/Users/giscafer/Code/sinohealth/sinokit/node_modules/vue-loader/lib??vue-loader-options!./lib/json-editor/src/json-editor.vue?vue&type=script&lang=js&
+// CONCATENATED MODULE: ./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./lib/json-editor/src/json-editor.vue?vue&type=script&lang=js&
 //
 //
 //
@@ -10518,7 +10518,7 @@ __webpack_require__(31);
 // EXTERNAL MODULE: ./lib/json-editor/src/json-editor.vue?vue&type=style&index=0&id=d3ee32fc&scoped=true&lang=css&
 var json_editorvue_type_style_index_0_id_d3ee32fc_scoped_true_lang_css_ = __webpack_require__(37);
 
-// EXTERNAL MODULE: /Users/giscafer/Code/sinohealth/sinokit/node_modules/vue-loader/lib/runtime/componentNormalizer.js
+// EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
 var componentNormalizer = __webpack_require__(1);
 
 // CONCATENATED MODULE: ./lib/json-editor/src/json-editor.vue
