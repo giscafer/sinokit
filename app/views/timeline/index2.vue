@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3>时间轴</h3>
+    <h3>时间轴2</h3>
     <el-button type="primary" @click="handleZoom">缩放</el-button>
     <div id="visualization"></div>
     <svg width="960" height="50" />
@@ -21,6 +21,8 @@ export default {
       brushRange: 0,
       startDate: new Date(),
       endDate: new Date(),
+      itemData: [],
+      items: [],
       toggle: false,
     }
   },
@@ -41,9 +43,8 @@ export default {
     },
     createTimeline() {
       var container = document.getElementById('visualization')
-
-      // note that months are zero-based in the JavaScript Date object
-      var items = new DataSet([
+      // 注意：JavaScript Date 对象中，月份是从0开始
+      const data = [
         {
           start: new Date(2010, 1, 1),
           content:
@@ -84,7 +85,10 @@ export default {
           content:
             '<div><p class="date">2017-11-18</p><a href="" target="_blank">上市</a></div>',
         },
-      ])
+      ]
+
+      this.items = new DataSet(data)
+      this.itemData = data
       const minDate = new Date(2009, 1, 1)
       const maxDate = new Date(2018, 1, 1)
       const zoomMax = maxDate.getTime() - minDate.getTime()
@@ -112,13 +116,17 @@ export default {
         min: minDate,
         timeAxis: { scale: 'year', step: 1 },
       }
-      this.timeline = new Timeline(container, items, options)
+      this.timeline = new Timeline(container, this.items, options)
       window.timeline = this.timeline
       this.zoomRange = zoomMax - zoomMin
       console.log('this.zoomRange=', this.zoomRange)
       this.timeline.on('rangechanged', (event) => {
         const { start, end, byUser } = event
-        console.log(start, end, byUser, event)
+        console.log(
+          d3.timeFormat('%Y-%m')(start),
+          d3.timeFormat('%Y-%m')(end),
+          byUser
+        )
       })
       // timeline.fit() 自适应
       // timeline.zoomIn() // 放大
@@ -140,6 +148,7 @@ export default {
       const height = 20
       // console.log(width, height)
       const x = d3.scaleTime().range([0, width])
+      const xAxis2 = d3.axisBottom(x)
       const context = svg.append('g').attr('class', 'context')
 
       // let brushedSelection = this.brushRange[1] / 2
@@ -202,6 +211,17 @@ export default {
         .attr('class', 'brush')
         .call(brush)
         .call(brush.move, [this.brushRange[0], this.brushRange[1] / 2])
+      // 日期坐标
+      x.domain(
+        d3.extent(this.itemData, function (d) {
+          return d.start
+        })
+      )
+      context
+        .append('g')
+        .attr('class', 'axis axis--x axis2')
+        .attr('transform', 'translate(0,' + height + ')')
+        .call(xAxis2)
       this.timeline.zoomIn(brushWidth / this.brushRange[1])
     },
   },

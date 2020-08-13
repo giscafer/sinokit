@@ -1,6 +1,32 @@
 import { arc } from 'd3';
 
 /**
+ * 设置可视区域
+ * @param {Object} timeline
+ * @param {Date} minDate 最小日期
+ * @param {Date} maxDate 最大日期
+ * @param {Array} selection brush 锚点（起点和终点坐标，相减可知道宽度）
+ * @param {Number} brushRange brush 最大宽度
+ */
+/* export const setWindow = (
+  timeline,
+  minDate,
+  maxDate,
+  selection,
+  brushRange
+) => {
+  // brush 当前宽度
+  const brushWidth = selection[1] - selection[0];
+  const rangeTime = maxDate.getTime() - minDate.getTime();
+  // 根据 brush 当前宽度得到缩放比例
+  // 根据 brush 当前位置得到 window 可视区域起始和终止时间
+  const timeLength = (brushWidth / brushRange) * rangeTime;
+  const end = new Date(minDate.getTime() + Math.ceil(timeLength));
+  const brushStartRate = selection[0] / brushRange;
+  // 设置当前可视窗
+  timeline.setWindow(start, end);
+}; */
+/**
  * 判断是移动brush还是缩短伸长,true 是移动，false是伸缩
  * @param {Array<number>} selection
  * @param {Array<number>} prevSelection

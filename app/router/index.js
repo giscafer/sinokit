@@ -14,7 +14,7 @@ export const routes = [
   {
     path: '/timeline',
     name: '时光轴',
-    component: () => import('../views/timeline/index.vue'),
+    component: () => import('../views/timeline/index2.vue'),
     props: true
   },
   {
