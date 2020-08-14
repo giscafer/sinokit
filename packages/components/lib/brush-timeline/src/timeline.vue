@@ -110,11 +110,11 @@ export default {
       this.brushInit()
     },
     brushInit() {
-      const svg = select('svg')
       const height = this.height
       const targetRect = document
         .getElementById('vis-timeline')
         .getBoundingClientRect()
+      const svg = select('.brush-timeline>svg')
       svg.attr('width', targetRect.width)
       const width = targetRect.width
       const x = scaleTime().range([0, width])
@@ -129,7 +129,7 @@ export default {
         const timeX = s.map(x.invert, x)
         this.timeline.setWindow(timeX[0], timeX[1])
 
-        select('svg').call((context, selection) => {
+        svg.call((context, selection) => {
           brushHandle(context, selection, height)
         }, s)
       }
