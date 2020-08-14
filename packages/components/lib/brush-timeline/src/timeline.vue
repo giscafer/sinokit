@@ -1,7 +1,7 @@
 <template>
   <div class="brush-timeline">
     <div id="vis-timeline"></div>
-    <svg width="100%" height="14" />
+    <svg width="100%" :height="height" />
   </div>
 </template>
 <script>
@@ -42,6 +42,9 @@ export default {
       type: Array,
       default: () => [],
     },
+    height: { type: Number, default: 14 },
+    margin: { type: Number, default: 19 },
+    orientation: { type: String, default: 'top' },
   },
   data() {
     return {
@@ -57,27 +60,41 @@ export default {
   },
   methods: {
     createTimeline() {
-      var container = document.getElementById('vis-timeline')
+      const container = document.getElementById('vis-timeline')
       // 注意：JavaScript Date 对象中，月份是从0开始
+      const length = this.data.length
+      if (length === 0) return
+      // 重新年份计算，为了等间距
+      this.data.forEach((item, index) => {
+        item.start = new Date(`${2000 + index}-01-01`)
+      })
       const items = new DataSet(this.data)
-      const minDate = new Date(2009, 0, 1)
-      const maxDate = new Date(2018, 0, 1)
+      const minDate = new Date(`${this.data[0].start.getFullYear() - 1}/01/01`)
+      const maxDate = new Date(
+        `${this.data[length - 1].start.getFullYear() + 1}/01/01`
+      )
       const zoomMax = maxDate.getTime() - minDate.getTime()
       const zoomMin = 31104000000 // 月为缩放单位
       // const zoomMin = 31104000000 * 3 // 季度为缩放单位
       this.startDate = minDate
       this.endDate = maxDate
 
-      var options = {
+      const options = {
         zoomMin,
         zoomMax,
-        orientation: {
-          axis: 'top',
-          item: 'top',
-        },
+        orientation:
+          this.orientation === 'top'
+            ? {
+                axis: 'top',
+                item: 'top',
+              }
+            : {
+                axis: 'bottom',
+                item: 'bottom',
+              },
         margin: {
-          item: 19,
-          axis: 19,
+          item: this.margin,
+          axis: this.margin,
         },
         // zoomFriction: 10,
         zoomable: false,
@@ -93,8 +110,8 @@ export default {
       this.brushInit()
     },
     brushInit() {
-      const height = 14
       const svg = select('svg')
+      const height = this.height
       const targetRect = document
         .getElementById('vis-timeline')
         .getBoundingClientRect()
