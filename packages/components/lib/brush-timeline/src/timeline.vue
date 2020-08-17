@@ -111,8 +111,8 @@ export default {
         const timeX = s.map(x.invert, x)
         this.timeline.setWindow(timeX[0], timeX[1])
 
-        transformHandle(brushHandleLeft, s[0])
-        transformHandle(brushHandleRight, s[1])
+        transformHandle(brushHandleLeft, s[0], 'w')
+        transformHandle(brushHandleRight, s[1], 'e')
 
         brushHandle(svg, s, height)
       }
@@ -153,6 +153,16 @@ export default {
       document
         .querySelector('.overlay')
         .setAttribute('style', 'border-radius:6px;')
+      // 将 brush handle 移动偏移量配合复制三角形控制效果
+      const handleE = document.querySelector('.handle--e')
+      const handleW = document.querySelector('.handle--w')
+      handleE.setAttribute('transform', 'translate(-20,0)')
+      handleW.setAttribute('transform', 'translate(20,0)')
+      document.querySelector('.overlay').setAttribute('rx', 7)
+      document.querySelector('.overlay').setAttribute('ry', 7)
+      document.querySelector('.selection').setAttribute('rx', 7)
+      document.querySelector('.selection').setAttribute('ry', 7)
+      document.querySelector('.selection').setAttribute('stroke', '#dbdded')
       // 首次初始化
       const timeX = [this.brushRange[0], this.brushRange[1] / 2].map(
         x.invert,
