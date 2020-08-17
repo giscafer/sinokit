@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h3>时间轴</h3>
     <brush-timeline :data="timelineData"></brush-timeline>
   </div>
 </template>

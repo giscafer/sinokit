@@ -17,8 +17,8 @@ import Sidebar from '@/components/Sidebar'
 export default {
   name: 'app',
   components: {
-    Sidebar
-  }
+    Sidebar,
+  },
 }
 </script>
 
@@ -36,6 +36,8 @@ body {
   color: #2c3e50;
   display: flex;
   flex-direction: column;
+  background-color: #eee;
+
   height: 100%;
   .container {
     display: flex;
@@ -52,8 +54,10 @@ body {
     .main-content {
       flex: 1;
       margin: 0 auto;
-      padding: 20px;
+      padding: 24px 32px;
+      margin: 0 16px 12px 16px;
       overflow: auto;
+      background-color: #fff;
     }
   }
 }
