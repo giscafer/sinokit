@@ -14,26 +14,7 @@
 
 import { Timeline, DataSet } from 'vis-timeline/standalone'
 import { brushX, select, extent, event, scaleTime, axisBottom } from 'd3'
-
-export const brushHandle = (context, selection, height) => {
-  document.querySelector('.overlay').setAttribute('fill', '#EBEDF8')
-  document.querySelector('.selection').setAttribute('fill', '#B4B9D2')
-  document.querySelector('.overlay').setAttribute('fill', '#EBEDF8')
-  document.querySelector('.handle--w').setAttribute('stroke-width', 1.5)
-  // document.querySelector('.handle--w').setAttribute('d', createArc(height));
-  // document.querySelector('.handle--e').setAttribute('d', createArc(height));
-
-  context
-    .select('.brush')
-    .select('path')
-    .attr('display', selection === null ? 'none' : null)
-    .attr(
-      'transform',
-      selection === null
-        ? null
-        : (d, i) => `translate(${selection[i]},${height / 2})`
-    )
-}
+import { drawHandle, brushHandle, transformHandle } from './utils'
 
 export default {
   name: 'BrushTimeline',
@@ -120,7 +101,8 @@ export default {
       const x = scaleTime().range([0, width])
       const xAxis2 = axisBottom(x)
       const context = svg.append('g').attr('class', 'context')
-
+      let brushHandleLeft = null
+      let brushHandleRight = null
       const brushed = () => {
         if (event.sourceEvent && event.sourceEvent.type === 'zoom') return // ignore brush-by-zoom
         const s = event.selection
@@ -129,9 +111,10 @@ export default {
         const timeX = s.map(x.invert, x)
         this.timeline.setWindow(timeX[0], timeX[1])
 
-        svg.call((context, selection) => {
-          brushHandle(context, selection, height)
-        }, s)
+        transformHandle(brushHandleLeft, s[0])
+        transformHandle(brushHandleRight, s[1])
+
+        brushHandle(svg, s, height)
       }
       // 创建 brush
       const brush = brushX()
@@ -139,7 +122,8 @@ export default {
           [0, 0],
           [width, height],
         ])
-        .on('brush end', brushed)
+        .on('start brush end', brushed)
+
       this.brushRange = x.range()
 
       // 渲染brush
@@ -149,6 +133,8 @@ export default {
         .call(brush)
         .call(brush.move, [this.brushRange[0], this.brushRange[1] / 2])
 
+      brushHandleLeft = drawHandle(svg, 0, 'w')
+      brushHandleRight = drawHandle(svg, this.brushRange[1] / 2, 'e')
       // 日期坐标添加到brush作为参考依据
       x.domain(
         extent(
