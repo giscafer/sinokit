@@ -87,7 +87,7 @@ export default {
       }
       this.timeline = new Timeline(container, items, options)
       // 用来全局调试而已
-      window.timeline = this.timeline
+      window.brushTimeline = this.timeline
       this.brushInit()
     },
     brushInit() {
@@ -150,14 +150,13 @@ export default {
         .attr('style', 'display:none;')
         .attr('transform', 'translate(0,' + height + ')')
         .call(xAxis2)
-      document
-        .querySelector('.overlay')
-        .setAttribute('style', 'border-radius:6px;')
+
       // 将 brush handle 移动偏移量配合复制三角形控制效果
       const handleE = document.querySelector('.handle--e')
       const handleW = document.querySelector('.handle--w')
       handleE.setAttribute('transform', 'translate(-20,0)')
       handleW.setAttribute('transform', 'translate(20,0)')
+      // 圆角样式
       document.querySelector('.overlay').setAttribute('rx', 7)
       document.querySelector('.overlay').setAttribute('ry', 7)
       document.querySelector('.selection').setAttribute('rx', 7)
