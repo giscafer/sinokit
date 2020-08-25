@@ -8,7 +8,7 @@ const baseConfig = {
   output: {
     sourcemap: true,
     name: 'SinokitUtils',
-    format: 'es',
+    format: 'umd',
     file: join(cwd, 'dist/index.js')
   },
   plugins: [
