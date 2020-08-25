@@ -6,5 +6,5 @@
       "@sinokit/*": ["packages/*"]
     }
   },
-  "exclude": ["node_modules", "dist", "docs", "public"]
+  "exclude": ["node_modules", "docs", "public"]
 }

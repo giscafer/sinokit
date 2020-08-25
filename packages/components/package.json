@@ -9,7 +9,7 @@
   "homepage": "",
   "license": "ISC",
   "main": "dist/sinokit-components.common.js",
-  "unpkg": "dist/index.js",
+  "unpkg": "dist/sinokit-components.common.js",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
