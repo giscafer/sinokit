@@ -6,8 +6,8 @@
     "components"
   ],
   "author": "giscafer <giscafer@outlook.com>",
-  "homepage": "",
-  "license": "ISC",
+  "homepage": "https://github.com/giscafer/sinokit",
+  "license": "MIT",
   "main": "dist/sinokit-components.common.js",
   "unpkg": "dist/sinokit-components.common.js",
   "directories": {

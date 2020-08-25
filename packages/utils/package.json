@@ -6,8 +6,8 @@
     "utils"
   ],
   "author": "giscafer <giscafer@outlook.com>",
-  "homepage": "",
-  "license": "ISC",
+  "homepage": "https://github.com/giscafer/sinokit",
+  "license": "MIT",
   "main": "dist/index.js",
   "unpkg": "dist/index.js",
   "directories": {

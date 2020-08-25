@@ -8,12 +8,14 @@
 
 - 组件
 
-  - [柱状图](chart-bar.md)
+  - [JSON 编辑器](json-editor.md)
+  - [JSON Schema 编辑器](jsonschema-editor.md)
+  - [BrushTimeline 时间轴](brush-timeline.md)
 
 - 区块
 
-  - [属性配置](setting-demo.md)
+  - [规划中](./README.md)
 
 - 页面模板
 
-  - [事件处理](event-demo.md)
+  - [规划中](./README.md)

@@ -9,6 +9,7 @@ import CodeMirror from 'codemirror'
 import 'codemirror/addon/lint/lint.css'
 import 'codemirror/lib/codemirror.css'
 import 'codemirror/theme/idea.css'
+import 'codemirror/theme/rubyblue.css'
 require('script-loader!jsonlint')
 import 'codemirror/mode/javascript/javascript'
 import 'codemirror/addon/lint/lint'
@@ -21,9 +22,13 @@ export default {
       type: Object,
       default: () => ({}),
     },
-    readOnly: {
+    readonly: {
       type: Boolean,
       default: true,
+    },
+    theme: {
+      type: String,
+      default: 'idea',
     },
   },
   data() {
@@ -44,8 +49,8 @@ export default {
       lineNumbers: true,
       mode: 'application/json',
       gutters: ['CodeMirror-lint-markers'],
-      theme: 'idea',
-      readOnly: this.readOnly ? 'nocursor' : false,
+      theme: this.theme || 'idea',
+      readonly: this.readonly ? 'nocursor' : false,
       lint: true,
     })
 

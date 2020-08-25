@@ -1,6 +1,6 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[3],{
 
-/***/ 186:
+/***/ 188:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -417,7 +417,7 @@ render._withStripped = true
 // CONCATENATED MODULE: ./lib/json-schema-editor/src/Schema/SchemaItem.vue?vue&type=template&id=5e15a514&
 
 // EXTERNAL MODULE: ./node_modules/lodash/isUndefined.js
-var isUndefined = __webpack_require__(84);
+var isUndefined = __webpack_require__(86);
 var isUndefined_default = /*#__PURE__*/__webpack_require__.n(isUndefined);
 
 // EXTERNAL MODULE: ./lib/json-schema-editor/src/MockSelect/index.vue + 4 modules
@@ -567,7 +567,7 @@ component.options.__file = "lib/json-schema-editor/src/Schema/DropPlus.vue"
 var SchemaObject = __webpack_require__(29);
 
 // EXTERNAL MODULE: ./lib/json-schema-editor/src/Schema/SchemaArray.vue + 4 modules
-var SchemaArray = __webpack_require__(86);
+var SchemaArray = __webpack_require__(88);
 
 // EXTERNAL MODULE: ./lib/json-schema-editor/src/utils.js
 var utils = __webpack_require__(0);

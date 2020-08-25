@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <title>sinokit - Components for Vue.js 2.x.</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta name="description" content="ECharts 4.x for Vue.js 2.x." />
+    <meta
+      name="description"
+      content="Vue.js 组件库、基础组件、业务组件、区块、模板."
+    />
     <meta
       name="viewport"
       content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
@@ -25,18 +28,24 @@
   </head>
   <body>
     <div id="app"></div>
+
     <script src="./libs/vue.min.js"></script>
     <!-- <script src="//unpkg.com/vue/dist/vue.min.js"></script> -->
     <script src="./libs/docsify-demo-box-vue.min.js"></script>
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="./libs/element-ui@2.13.2.css" />
+    <!-- 引入组件库 -->
+    <script src="./libs/element-ui@2.13.2.js"></script>
     <!-- <script src="//unpkg.com/docsify-demo-box-vue/dist/docsify-demo-box-vue.min.js"></script> -->
     <script>
-      var jsResources =
+      let jsResources =
         '<scr' + 'ipt src="//unpkg.com/vue/dist/vue.js"></scr' + 'ipt>';
-      var cssResources =
-        '@import url("//cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css");';
-      var bootCode = 'var globalVariable = "leon"';
-      var globalVariable = 'leon';
-
+      /*  '\n<scr' +
+        `ipt src="//unpkg.com/element-ui/lib/index.js"></scr` +
+        'ipt>'; */
+      // let cssResources ='@import url("//unpkg.com/element-ui/lib/theme-default/index.css");';
+      let bootCode = '';
+      let cssResources = '';
       window.$docsify = {
         name: 'sinokit',
         repo: 'giscafer/sinokit', // connect to github
@@ -69,10 +78,7 @@
           let div = document.createElement('div');
           div.setAttribute('class', 'logo');
           let a = document.createElement('a');
-          a.setAttribute(
-            'href',
-            'http://192.168.16.65/tsc-internal/middle-platform/frontend/sinokit'
-          );
+          a.setAttribute('href', 'https://github.com/giscafer/sinokit');
           /*    let img = document.createElement('img');
           img.setAttribute('src', './_media/icon.svg');
           let titleImg = document.createElement('img');
@@ -112,9 +118,16 @@
       src="//unpkg.com/@sinokit/components@0.1.17/dist/sinokit-components.common.js"
       type="module"
     ></script>
+    <script
+      src="//unpkg.com/@sinokit/components@0.1.17/dist/1.js"
+      type="module"
+    ></script>
+    <script
+      src="//unpkg.com/@sinokit/components@0.1.17/dist/3.js"
+      type="module"
+    ></script>
     <script src="./libs/babel.min.js"></script>
     <!-- <script src="//unpkg.com/babel-standalone@6/babel.min.js"></script> -->
-    <!-- <script src="sinokit.umd.min.js"></script> -->
     <script src="./libs/search.min.js"></script>
     <!-- <script src="//unpkg.com/docsify/lib/plugins/search.js"></script> -->
   </body>
