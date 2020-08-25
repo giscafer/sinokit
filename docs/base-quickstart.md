@@ -18,7 +18,11 @@
 - [Github](https://giscafer.github.io/sinokit)
 - [Gitlab](http://192.168.16.65/tsc-internal/middle-platform/frontend/sinokit)
 
-本工程使用 [Lerna](https://lerna.js.org/) 来实现 `monorepo` 管理，延伸了解：
+## 其他
+
+文档基于 [docsify](https://github.com/docsifyjs/docsify)，模板样式参考 [ve-charts](https://github.com/vueblocks/ve-charts)
+
+工程使用 [Lerna](https://lerna.js.org/) monorepo 管理，延伸了解：
 
 - [lerna workflow 杂谈项目管理方式](https://github.com/pigcan/blog/issues/16)
 - [使用 lerna 优雅地管理多个 package](https://zhuanlan.zhihu.com/p/35237759)

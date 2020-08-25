@@ -29,34 +29,3 @@ import { JsonEditor } from '@sinokit/components'; // 引入单个组件，如 Js
 
 Vue.component('JsonEditor', JsonEditor);
 ```
-
-## 示例
-
-```html
-/*vue*/
-<desc>
-  `JsonEditor` 组件使用展示
-</desc>
-
-<template>
-  <div>
-    <div class="wrapper">
-      <json-editor :value="jsonObject" />
-    </div>
-  </div>
-</template>
-
-<script>
-  export default {
-    data() {
-      return {
-        jsonObject: {
-          author: 'giscafer',
-          email: 'test@outlook.com',
-          github: 'https://github.com/giscafer'
-        }
-      };
-    }
-  };
-</script>
-```
