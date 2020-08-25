@@ -15,6 +15,7 @@
 
 ## 源码
 
+- [Github](https://giscafer.github.io/sinokit)
 - [Gitlab](http://192.168.16.65/tsc-internal/middle-platform/frontend/sinokit)
 
 本工程使用 [Lerna](https://lerna.js.org/) 来实现 `monorepo` 管理，延伸了解：
