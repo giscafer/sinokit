@@ -6,7 +6,7 @@
     "components"
   ],
   "author": "giscafer <giscafer@outlook.com>",
-  "homepage": "https://github.com/giscafer/sinokit",
+  "homepage": "https://giscafer.github.io/sinokit",
   "license": "MIT",
   "main": "dist/sinokit-components.common.js",
   "unpkg": "dist/sinokit-components.common.js",
@@ -25,7 +25,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "http://192.168.16.65/tsc-internal/middle-platform/frontend/sinokit.git"
+    "url": "https://github.com/giscafer/sinokit.git"
   },
   "scripts": {
     "build:file": "node build/bin/build-entry.js",
