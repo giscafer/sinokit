@@ -11,34 +11,20 @@ JSON 编辑器，基于 `codemirror` 实现
 </desc>
 
 <template>
-  <div>
-    <div class="wrapper">
-      <el-button @click="handleToggleTheme">切换主题</el-button>
-      <json-editor :value="jsonObject" :readonly="false" :theme="theme" />
-    </div>
-  </div>
+  <json-editor :value="jsonObject" :readonly="false" :theme="theme" />
 </template>
 
 <script>
   export default {
     data() {
       return {
-        theme: 'idea',
+        theme: 'rubyblue',
         jsonObject: {
           author: 'giscafer',
           email: 'test@outlook.com',
           github: 'https://github.com/giscafer'
         }
       };
-    },
-    methods: {
-      handleToggleTheme() {
-        if (this.theme === 'idea') {
-          this.theme = 'rubyblue';
-        } else {
-          this.theme = 'idea';
-        }
-      }
     }
   };
 </script>

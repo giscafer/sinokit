@@ -7,6 +7,8 @@
 
 Vue.js 2.x 组件库、基础组件、业务组件、区块、模板
 
+组件文档：http://blog.giscafer.com/sinokit
+
 ## Usage
 
 ### demo
