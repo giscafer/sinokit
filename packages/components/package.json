@@ -11,10 +11,12 @@
   "main": "dist/sinokit-components.common.js",
   "unpkg": "dist/sinokit-components.common.js",
   "directories": {
+    "dist": "dist",
     "lib": "lib",
     "test": "__tests__"
   },
   "files": [
+    "dist",
     "lib"
   ],
   "publishConfig": {
