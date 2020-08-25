@@ -43,6 +43,9 @@ export default {
         this.jsonEditor.setValue(JSON.stringify(this.value, null, 2))
       }
     },
+    theme() {
+      this.jsonEditor.setTheme(this.theme)
+    },
   },
   mounted() {
     this.jsonEditor = CodeMirror.fromTextArea(this.$refs.textarea, {
@@ -53,7 +56,6 @@ export default {
       readonly: this.readonly ? 'nocursor' : false,
       lint: true,
     })
-
     this.jsonEditor.setValue(JSON.stringify(this.value, null, 2))
     this.jsonEditor.on('change', (cm) => {
       this.$emit('changed', cm.getValue())

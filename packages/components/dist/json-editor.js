@@ -10500,6 +10500,10 @@ __webpack_require__(43);
       if (value !== editorValue) {
         this.jsonEditor.setValue(JSON.stringify(this.value, null, 2));
       }
+    },
+
+    theme() {
+      this.jsonEditor.setTheme(this.theme);
     }
 
   },
