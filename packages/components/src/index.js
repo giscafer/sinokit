@@ -5,7 +5,11 @@ import JsonSchemaEditor from '../lib/json-schema-editor/index.js';
 import BrushTimeline from '../lib/brush-timeline/index.js';
 import { CustomEventPlugin } from '@sinokit/utils';
 
-const components = [JsonEditor, JsonSchemaEditor, BrushTimeline];
+const components = [
+  JsonEditor,
+  JsonSchemaEditor,
+  BrushTimeline
+];
 
 const install = function(Vue) {
   Vue.use(CustomEventPlugin);
@@ -13,6 +17,8 @@ const install = function(Vue) {
   components.forEach(component => {
     Vue.component(component.name, component);
   });
+
+
 };
 
 /* istanbul ignore if */

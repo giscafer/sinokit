@@ -1,6 +1,6 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[2],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[3],{
 
-/***/ 159:
+/***/ 185:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -417,11 +417,11 @@ render._withStripped = true
 // CONCATENATED MODULE: ./lib/json-schema-editor/src/Schema/SchemaItem.vue?vue&type=template&id=5e15a514&
 
 // EXTERNAL MODULE: ./node_modules/lodash/isUndefined.js
-var isUndefined = __webpack_require__(72);
+var isUndefined = __webpack_require__(84);
 var isUndefined_default = /*#__PURE__*/__webpack_require__.n(isUndefined);
 
 // EXTERNAL MODULE: ./lib/json-schema-editor/src/MockSelect/index.vue + 4 modules
-var MockSelect = __webpack_require__(22);
+var MockSelect = __webpack_require__(28);
 
 // CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./lib/json-schema-editor/src/Schema/DropPlus.vue?vue&type=template&id=6c12d169&scoped=true&
 var DropPlusvue_type_template_id_6c12d169_scoped_true_render = function() {
@@ -564,10 +564,10 @@ if (false) { var api; }
 component.options.__file = "lib/json-schema-editor/src/Schema/DropPlus.vue"
 /* harmony default export */ var DropPlus = (component.exports);
 // EXTERNAL MODULE: ./lib/json-schema-editor/src/Schema/SchemaObject.vue + 4 modules
-var SchemaObject = __webpack_require__(23);
+var SchemaObject = __webpack_require__(29);
 
 // EXTERNAL MODULE: ./lib/json-schema-editor/src/Schema/SchemaArray.vue + 4 modules
-var SchemaArray = __webpack_require__(73);
+var SchemaArray = __webpack_require__(86);
 
 // EXTERNAL MODULE: ./lib/json-schema-editor/src/utils.js
 var utils = __webpack_require__(0);

@@ -1,4 +1,5 @@
 {
   "json-editor": "./lib/json-editor/index.js",
-  "json-schema-editor": "./lib/json-schema-editor/index.js"
+  "json-schema-editor": "./lib/json-schema-editor/index.js",
+  "brush-timeline": "./lib/brush-timeline/index.js"
 }

@@ -1,7 +1,7 @@
 <template>
   <div class="ve-sidebar">
     <a class="logo" href>
-      <img src="../assets/img/logo.png" alt="logo" />
+      <img src="../assets/img/vue.svg" alt="logo" />
     </a>
     <div class="site-descrpition">SinoKit</div>
     <div class="sidebar-section">
