@@ -9,7 +9,7 @@ const baseConfig = {
   input: join(cwd, 'lib/index.js'),
   output: {
     sourcemap: true,
-    name: 'SinokitUtils',
+    name: '@sinokit/utils',
     format: 'umd',
     file: join(cwd, 'dist/index.js')
   },
