@@ -29,7 +29,7 @@ npm run build
 
 ## Other
 
-文档基于 [docsify](https://github.com/docsifyjs/docsify)
+文档基于 [docsify](https://github.com/docsifyjs/docsify)，模板样式参考 [ve-charts](https://github.com/vueblocks/ve-charts)
 
 工程使用 [Lerna](https://lerna.js.org/) monorepo 管理，延伸了解：
 
