@@ -1,6 +1,11 @@
 # sinokit
 
-vue 组件库、公共基础组件 or 业务组件、区块、模板
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+[![](https://img.shields.io/npm/v/@sinokit/components.svg?style=flat-square)](https://www.npmjs.com/package/@sinokit/components)
+[![](https://img.shields.io/npm/l/@sinokit/components.svg?style=flat-square)](https://www.npmjs.com/package/@sinokit/components)
+[![](https://img.shields.io/npm/dt/@sinokit/components.svg?style=flat-square)](https://www.npmjs.com/package/@sinokit/components)
+
+vue 组件库、基础组件、业务组件、区块、模板
 
 ## Project setup
 
