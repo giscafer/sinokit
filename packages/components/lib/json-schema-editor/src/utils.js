@@ -1,4 +1,4 @@
-import { logger } from '@sinokit/utils';
+import Vue from 'vue';
 
 export const JSONPATH_JOIN_CHAR = '.';
 export const lang = 'zh_CN';
@@ -163,8 +163,22 @@ export const uuid = () => {
     .substr(2, 5);
 };
 
-const cb = () => {};
-export const log = logger || cb;
+export const log = (...args) => {
+  if (process && process.env && process.env.NODE_ENV !== 'production') {
+    if (
+      args[0] &&
+      args[0] instanceof Vue &&
+      args[0].$vnode['componentOptions']
+    ) {
+      console.log(
+        `component[${args[0].$vnode['componentOptions']['tag']}]:`,
+        ...args.slice(1)
+      );
+    } else {
+      console.log(`LOG>>>`, ...args);
+    }
+  }
+};
 
 /**
  * val值不为空字符，null，undefined

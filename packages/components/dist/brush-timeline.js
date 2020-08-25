@@ -91,7 +91,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 183);
+/******/ 	return __webpack_require__(__webpack_require__.s = 184);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -203,7 +203,7 @@ function normalizeComponent (
 
 /***/ }),
 
-/***/ 181:
+/***/ 182:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -214,7 +214,7 @@ function normalizeComponent (
 
 /***/ }),
 
-/***/ 182:
+/***/ 183:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -232,7 +232,7 @@ ___CSS_LOADER_EXPORT___.push([module.i, ".brush-timeline .vis-timeline{border:no
 
 /***/ }),
 
-/***/ 183:
+/***/ 184:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -11687,7 +11687,7 @@ const brushHandle = () => {
 // CONCATENATED MODULE: ./lib/brush-timeline/src/timeline.vue?vue&type=script&lang=js&
  /* harmony default export */ var src_timelinevue_type_script_lang_js_ = (timelinevue_type_script_lang_js_); 
 // EXTERNAL MODULE: ./lib/brush-timeline/src/timeline.vue?vue&type=style&index=0&lang=scss&
-var timelinevue_type_style_index_0_lang_scss_ = __webpack_require__(181);
+var timelinevue_type_style_index_0_lang_scss_ = __webpack_require__(182);
 
 // EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
 var componentNormalizer = __webpack_require__(1);
@@ -11833,7 +11833,7 @@ function toComment(sourceMap) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var api = __webpack_require__(3);
-            var content = __webpack_require__(182);
+            var content = __webpack_require__(183);
 
             content = content.__esModule ? content.default : content;
 
