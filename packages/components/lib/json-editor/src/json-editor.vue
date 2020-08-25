@@ -44,7 +44,9 @@ export default {
       }
     },
     theme() {
-      this.jsonEditor.setTheme(this.theme)
+      this.jsonEditor.setOption({
+        theme: this.theme,
+      })
     },
   },
   mounted() {

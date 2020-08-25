@@ -11281,7 +11281,9 @@ __webpack_require__(43);
     },
 
     theme() {
-      this.jsonEditor.setTheme(this.theme);
+      this.jsonEditor.setOption({
+        theme: this.theme
+      });
     }
 
   },
