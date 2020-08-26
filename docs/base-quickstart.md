@@ -15,7 +15,7 @@
 
 ## 源码
 
-- [Github](https://giscafer.github.io/sinokit)
+- [Github](https://github.com/giscafer/sinokit)
 - [Gitlab](http://192.168.16.65/tsc-internal/middle-platform/frontend/sinokit)
 
 ## 其他
