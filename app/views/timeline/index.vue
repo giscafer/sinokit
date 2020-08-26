@@ -50,8 +50,11 @@ export default {
         },
       ],
       data2: [
-        { date: '2012-11-18', label: 'test' },
-        { date: '2017-11-18', label: 'test' },
+        { date: '2008-8-18', label: '牛市后金融危机' },
+        { date: '2015-6-18', label: '牛市' },
+        { date: '2018-6-18', label: '震荡市' },
+        { date: '2020-6-20', label: '突破3000点' },
+        { date: '2020-8-20', label: '3200点或许成为历史最低' },
       ],
     }
   },
