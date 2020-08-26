@@ -29,7 +29,7 @@ npm run docs
 npm run build
 ```
 
-# Contributing
+## Contributing
 
 - 欢迎 PR 一起共建
 

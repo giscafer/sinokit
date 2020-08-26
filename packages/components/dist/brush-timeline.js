@@ -11516,11 +11516,11 @@ const transformHandle = (g, selection, type) => {
   if (!g) return;
   g.attr('display', selection === null ? 'none' : null).attr('transform', selection === null ? null : `translate(${selection + (type === 'w' ? 2 : -44)},0)`);
 };
-const brushHandle = () => {
+const brushHandle = id => {
   // export const brushHandle = (context, selection, height) => {
-  document.querySelector('.overlay').setAttribute('fill', '#EBEDF8');
-  document.querySelector('.selection').setAttribute('fill', '#B4B9D2');
-  document.querySelector('.overlay').setAttribute('fill', '#EBEDF8');
+  document.querySelector(`#${id}>svg .overlay`).setAttribute('fill', '#EBEDF8');
+  document.querySelector(`#${id}>svg .selection`).setAttribute('fill', '#B4B9D2');
+  document.querySelector(`#${id}>svg .overlay`).setAttribute('fill', '#EBEDF8');
 };
 // CONCATENATED MODULE: ./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./lib/brush-timeline/src/timeline.vue?vue&type=script&lang=js&
 //
@@ -11671,7 +11671,7 @@ const brushHandle = () => {
         this.timeline.setWindow(timeX[0], timeX[1]);
         transformHandle(brushHandleLeft, s[0], 'w');
         transformHandle(brushHandleRight, s[1], 'e');
-        brushHandle(svg, s, height);
+        brushHandle(this.id);
       }; // 创建 brush
 
 
@@ -11691,16 +11691,16 @@ const brushHandle = () => {
       }));
       context.append('g').attr('class', 'axis axis--x brush-axis').attr('style', 'display:none;').attr('transform', 'translate(0,' + height + ')').call(xAxis2); // 将 brush handle 移动偏移量配合复制三角形控制效果
 
-      const handleE = document.querySelector('.handle--e');
-      const handleW = document.querySelector('.handle--w');
+      const handleE = document.querySelector(`#${this.id}>svg .handle--e`);
+      const handleW = document.querySelector(`#${this.id}>svg .handle--w`);
       handleE.setAttribute('transform', 'translate(-20,0)');
       handleW.setAttribute('transform', 'translate(20,0)'); // 圆角样式
 
-      document.querySelector('.overlay').setAttribute('rx', 7);
-      document.querySelector('.overlay').setAttribute('ry', 7);
-      document.querySelector('.selection').setAttribute('rx', 7);
-      document.querySelector('.selection').setAttribute('ry', 7);
-      document.querySelector('.selection').setAttribute('stroke', '#dbdded'); // 首次初始化
+      document.querySelector(`#${this.id}>svg .overlay`).setAttribute('rx', 7);
+      document.querySelector(`#${this.id}>svg .overlay`).setAttribute('ry', 7);
+      document.querySelector(`#${this.id}>svg .selection`).setAttribute('rx', 7);
+      document.querySelector(`#${this.id}>svg .selection`).setAttribute('ry', 7);
+      document.querySelector(`#${this.id}>svg .selection`).setAttribute('stroke', '#dbdded'); // 首次初始化
 
       const timeX = [this.brushRange[0], this.brushRange[1] / 2].map(x.invert, x);
       this.timeline.setWindow(timeX[0], timeX[1]);
