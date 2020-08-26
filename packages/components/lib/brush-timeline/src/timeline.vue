@@ -136,7 +136,7 @@ export default {
         transformHandle(brushHandleLeft, s[0], 'w')
         transformHandle(brushHandleRight, s[1], 'e')
 
-        brushHandle(svg, s, height)
+        brushHandle(this.id)
       }
       // 创建 brush
       const brush = brushX()
@@ -174,16 +174,18 @@ export default {
         .call(xAxis2)
 
       // 将 brush handle 移动偏移量配合复制三角形控制效果
-      const handleE = document.querySelector('.handle--e')
-      const handleW = document.querySelector('.handle--w')
+      const handleE = document.querySelector(`#${this.id}>svg .handle--e`)
+      const handleW = document.querySelector(`#${this.id}>svg .handle--w`)
       handleE.setAttribute('transform', 'translate(-20,0)')
       handleW.setAttribute('transform', 'translate(20,0)')
       // 圆角样式
-      document.querySelector('.overlay').setAttribute('rx', 7)
-      document.querySelector('.overlay').setAttribute('ry', 7)
-      document.querySelector('.selection').setAttribute('rx', 7)
-      document.querySelector('.selection').setAttribute('ry', 7)
-      document.querySelector('.selection').setAttribute('stroke', '#dbdded')
+      document.querySelector(`#${this.id}>svg .overlay`).setAttribute('rx', 7)
+      document.querySelector(`#${this.id}>svg .overlay`).setAttribute('ry', 7)
+      document.querySelector(`#${this.id}>svg .selection`).setAttribute('rx', 7)
+      document.querySelector(`#${this.id}>svg .selection`).setAttribute('ry', 7)
+      document
+        .querySelector(`#${this.id}>svg .selection`)
+        .setAttribute('stroke', '#dbdded')
       // 首次初始化
       const timeX = [this.brushRange[0], this.brushRange[1] / 2].map(
         x.invert,

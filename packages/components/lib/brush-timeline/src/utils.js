@@ -47,9 +47,11 @@ export const transformHandle = (g, selection, type) => {
   );
 };
 
-export const brushHandle = () => {
+export const brushHandle = id => {
   // export const brushHandle = (context, selection, height) => {
-  document.querySelector('.overlay').setAttribute('fill', '#EBEDF8');
-  document.querySelector('.selection').setAttribute('fill', '#B4B9D2');
-  document.querySelector('.overlay').setAttribute('fill', '#EBEDF8');
+  document.querySelector(`#${id}>svg .overlay`).setAttribute('fill', '#EBEDF8');
+  document
+    .querySelector(`#${id}>svg .selection`)
+    .setAttribute('fill', '#B4B9D2');
+  document.querySelector(`#${id}>svg .overlay`).setAttribute('fill', '#EBEDF8');
 };

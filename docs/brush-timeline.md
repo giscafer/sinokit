@@ -14,7 +14,6 @@
 
 <template>
   <div>
-    <h3>时间轴</h3>
     <brush-timeline :data="timelineData" render-type="json"></brush-timeline>
   </div>
 </template>
@@ -47,7 +46,6 @@
 
 <template>
   <div>
-    <h3>自定义HTML渲染时间轴</h3>
     <brush-timeline :data="timelineData" render-type="html"></brush-timeline>
   </div>
 </template>
