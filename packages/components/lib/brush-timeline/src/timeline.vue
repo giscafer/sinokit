@@ -1,5 +1,5 @@
 <template>
-  <div class="brush-timeline">
+  <div class="brush-timeline" :id="id">
     <div id="vis-timeline"></div>
     <svg width="100%" :height="height" />
   </div>
@@ -19,6 +19,10 @@ import { drawHandle, brushHandle, transformHandle } from './utils'
 export default {
   name: 'BrushTimeline',
   props: {
+    renderType: {
+      type: String,
+      default: 'html',
+    },
     data: {
       type: Array,
       default: () => [],
@@ -29,6 +33,7 @@ export default {
   },
   data() {
     return {
+      id: `vis-timeline-${Math.random().toString(16).substr(2)}`,
       timeline: null,
       brushRange: 0,
       startDate: new Date(),
@@ -41,18 +46,37 @@ export default {
   },
   methods: {
     createTimeline() {
-      const container = document.getElementById('vis-timeline')
+      const pcontainer = document.querySelector(`#${this.id}`)
+      const container = pcontainer.querySelector('#vis-timeline')
       // 注意：JavaScript Date 对象中，月份是从0开始
       const length = this.data.length
       if (length === 0) return
       // 重新年份计算，为了等间距
-      this.data.forEach((item, index) => {
-        item.start = new Date(`${2000 + index}-01-01`)
-      })
-      const items = new DataSet(this.data)
-      const minDate = new Date(`${this.data[0].start.getFullYear() - 1}/01/01`)
+      let dataSet
+      let dataSetData
+      if (this.renderType === 'html') {
+        this.data.forEach((item, index) => {
+          item.start = new Date(`${2000 + index}-01-01`)
+        })
+        dataSetData = this.data
+        dataSet = new DataSet(this.data)
+      } else if (this.renderType === 'json') {
+        const items = []
+        this.data.forEach((item, index) => {
+          const obj = {
+            start: new Date(`${2000 + index}-01-01`),
+            content: `<div><p class="date">${item.date}</p><a href="" target="_blank">${item.label}</a></div>`,
+          }
+          items.push(obj)
+        })
+        dataSetData = items
+        dataSet = new DataSet(items)
+      }
+      const minDate = new Date(
+        `${dataSetData[0].start.getFullYear() - 1}/01/01`
+      )
       const maxDate = new Date(
-        `${this.data[length - 1].start.getFullYear() + 1}/01/01`
+        `${dataSetData[length - 1].start.getFullYear() + 1}/01/01`
       )
       const zoomMax = maxDate.getTime() - minDate.getTime()
       const zoomMin = 31104000000 // 月为缩放单位
@@ -85,17 +109,15 @@ export default {
         min: minDate,
         timeAxis: { scale: 'year', step: 1 },
       }
-      this.timeline = new Timeline(container, items, options)
+      this.timeline = new Timeline(container, dataSet, options)
       // 用来全局调试而已
       window.brushTimeline = this.timeline
-      this.brushInit()
+      this.brushInit(container)
     },
-    brushInit() {
+    brushInit(container) {
       const height = this.height
-      const targetRect = document
-        .getElementById('vis-timeline')
-        .getBoundingClientRect()
-      const svg = select('.brush-timeline>svg')
+      const targetRect = container.getBoundingClientRect()
+      const svg = select(`#${this.id}>svg`)
       svg.attr('width', targetRect.width)
       const width = targetRect.width
       const x = scaleTime().range([0, width])

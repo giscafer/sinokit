@@ -244,7 +244,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "brush-timeline" }, [
+  return _c("div", { staticClass: "brush-timeline", attrs: { id: _vm.id } }, [
     _c("div", { attrs: { id: "vis-timeline" } }),
     _c("svg", { attrs: { width: "100%", height: _vm.height } })
   ])
@@ -11542,6 +11542,10 @@ const brushHandle = () => {
 /* harmony default export */ var timelinevue_type_script_lang_js_ = ({
   name: 'BrushTimeline',
   props: {
+    renderType: {
+      type: String,
+      default: 'html'
+    },
     data: {
       type: Array,
       default: () => []
@@ -11562,6 +11566,7 @@ const brushHandle = () => {
 
   data() {
     return {
+      id: `vis-timeline-${Math.random().toString(16).substr(2)}`,
       timeline: null,
       brushRange: 0,
       startDate: new Date(),
@@ -11577,17 +11582,36 @@ const brushHandle = () => {
 
   methods: {
     createTimeline() {
-      const container = document.getElementById('vis-timeline'); // 注意：JavaScript Date 对象中，月份是从0开始
+      const pcontainer = document.querySelector(`#${this.id}`);
+      const container = pcontainer.querySelector('#vis-timeline'); // 注意：JavaScript Date 对象中，月份是从0开始
 
       const length = this.data.length;
       if (length === 0) return; // 重新年份计算，为了等间距
 
-      this.data.forEach((item, index) => {
-        item.start = new Date(`${2000 + index}-01-01`);
-      });
-      const items = new vis_timeline_graph2d["a" /* DataSet */](this.data);
-      const minDate = new Date(`${this.data[0].start.getFullYear() - 1}/01/01`);
-      const maxDate = new Date(`${this.data[length - 1].start.getFullYear() + 1}/01/01`);
+      let dataSet;
+      let dataSetData;
+
+      if (this.renderType === 'html') {
+        this.data.forEach((item, index) => {
+          item.start = new Date(`${2000 + index}-01-01`);
+        });
+        dataSetData = this.data;
+        dataSet = new vis_timeline_graph2d["a" /* DataSet */](this.data);
+      } else if (this.renderType === 'json') {
+        const items = [];
+        this.data.forEach((item, index) => {
+          const obj = {
+            start: new Date(`${2000 + index}-01-01`),
+            content: `<div><p class="date">${item.date}</p><a href="" target="_blank">${item.label}</a></div>`
+          };
+          items.push(obj);
+        });
+        dataSetData = items;
+        dataSet = new vis_timeline_graph2d["a" /* DataSet */](items);
+      }
+
+      const minDate = new Date(`${dataSetData[0].start.getFullYear() - 1}/01/01`);
+      const maxDate = new Date(`${dataSetData[length - 1].start.getFullYear() + 1}/01/01`);
       const zoomMax = maxDate.getTime() - minDate.getTime();
       const zoomMin = 31104000000; // 月为缩放单位
       // const zoomMin = 31104000000 * 3 // 季度为缩放单位
@@ -11619,16 +11643,16 @@ const brushHandle = () => {
           step: 1
         }
       };
-      this.timeline = new vis_timeline_graph2d["b" /* Timeline */](container, items, options); // 用来全局调试而已
+      this.timeline = new vis_timeline_graph2d["b" /* Timeline */](container, dataSet, options); // 用来全局调试而已
 
       window.brushTimeline = this.timeline;
-      this.brushInit();
+      this.brushInit(container);
     },
 
-    brushInit() {
+    brushInit(container) {
       const height = this.height;
-      const targetRect = document.getElementById('vis-timeline').getBoundingClientRect();
-      const svg = src_select('.brush-timeline>svg');
+      const targetRect = container.getBoundingClientRect();
+      const svg = src_select(`#${this.id}>svg`);
       svg.attr('width', targetRect.width);
       const width = targetRect.width;
       const x = src_time().range([0, width]);

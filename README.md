@@ -29,6 +29,12 @@ npm run docs
 npm run build
 ```
 
+# Contributing
+
+- 欢迎 PR 一起共建
+
+> 增加新特性或者组件时，先建个 issue 讨论确定，有效沟通后再编码
+
 ## Other
 
 文档基于 [docsify](https://github.com/docsifyjs/docsify)，模板样式参考 [ve-charts](https://github.com/vueblocks/ve-charts)

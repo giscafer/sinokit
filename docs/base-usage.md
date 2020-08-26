@@ -5,7 +5,7 @@
 我们提供了 `@sinokit/包名` npm 包，通过下面命令即可完成安装，`SinoKit` 依赖于 `element` 与 `vue`，所以不要忘记安装依赖包。
 
 ```bash
-npm i sinokit -S
+npm i @sinokit/components -S
 ```
 
 ## 引入 @sinokit/components

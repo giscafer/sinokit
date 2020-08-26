@@ -2,6 +2,10 @@
   <div>
     <h3>时间轴</h3>
     <brush-timeline :data="timelineData"></brush-timeline>
+    <div style="margin-top:40px">
+      <h3>时间轴2</h3>
+      <brush-timeline :data="data2" render-type="json"></brush-timeline>
+    </div>
   </div>
 </template>
 <script>
@@ -44,6 +48,10 @@ export default {
           content:
             '<div><p class="date">2017-11-18</p><a href="" target="_blank">上市</a></div>',
         },
+      ],
+      data2: [
+        { date: '2012-11-18', label: 'test' },
+        { date: '2017-11-18', label: 'test' },
       ],
     }
   },

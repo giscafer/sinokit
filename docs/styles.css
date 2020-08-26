@@ -11,8 +11,8 @@ button.sidebar-toggle {
 }
 
 section.cover.show {
-  background-image: url(./_media/bg.jpg) !important;
-  background-size: cover !important;
+  /* background-image: url(./_media/bg.jpg) !important; */
+  /* background-size: cover !important; */
 }
 
 section.cover .cover-main > p:last-child {
@@ -62,7 +62,7 @@ section.cover .cover-main > ul > li > code {
 }
 
 section.cover .cover-main > p:last-child a:last-child > span {
-  color: #fed24a;
+  color: #3c78eb;
   position: relative;
   width: 0.5em;
   height: 0.5em;
