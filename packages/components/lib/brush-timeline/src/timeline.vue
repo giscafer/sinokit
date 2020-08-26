@@ -65,7 +65,7 @@ export default {
         this.data.forEach((item, index) => {
           const obj = {
             start: new Date(`${2000 + index}-01-01`),
-            content: `<div><p class="date">${item.date}</p><a href="" target="_blank">${item.label}</a></div>`,
+            content: `<div><p class="date">${item.date}</p><a href="javascript:void(0)">${item.label}</a></div>`,
           }
           items.push(obj)
         })

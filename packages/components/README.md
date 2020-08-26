@@ -7,7 +7,9 @@
 ## Usage
 
 ```js
-import SinokitComp from '@sinokit/components';
+import SinokitComponents from '@sinokit/components';
 
 Vue.use(SinokitComponents);
 ```
+
+详细用法见文档：http://blog.giscafer.com/sinokit/#/
