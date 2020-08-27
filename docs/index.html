@@ -23,14 +23,11 @@
       rel="stylesheet"
       href="https://unpkg.com/docsify/lib/themes/vue.css"
     />
-    <link rel="stylesheet" href="https://unpkg.com/vuep/dist/vuep.css" />
+    <!-- <link rel="stylesheet" href="https://unpkg.com/vuep/dist/vuep.css" /> -->
     <link
       rel="stylesheet"
       href="https://unpkg.com/element-ui/lib/theme-chalk/index.css"
     />
-    <!-- <link rel="stylesheet" href="./libs/element-ui@2.13.2.css" /> -->
-    <!-- <link rel="stylesheet" href="./libs/vue.css" /> -->
-    <!-- <link rel="stylesheet" href="./libs/vuep.css" /> -->
 
     <link rel="stylesheet" href="vue.css" />
     <link rel="stylesheet" href="styles.css" />
@@ -43,16 +40,19 @@
     <script src="https://unpkg.com/docsify/lib/docsify.min.js"></script>
     <script src="https://unpkg.com/docsify-demo-codesandbox-vue/dist/docsify-demo-codesandbox-vue.min.js"></script>
     <script>
-      let jsResources =
-        '<scr' +
-        'ipt src="https://unpkg.com/vue@2.6.12/dist/vue.js"></scr' +
-        'ipt>';
-      /*  '\n<scr' +
-        `ipt src="https://unpkg.com/element-ui/lib/index.js"></scr` +
-        'ipt>'; */
-      // let cssResources ='@import url("//unpkg.com/element-ui/lib/theme-default/index.css");';
-      let bootCode = '';
-      let cssResources = '';
+      let boxBootCode = `
+      import ElementUI from 'element-ui'
+      import 'element-ui/lib/theme-chalk/index.css'
+      import SinokitComponents from '@sinokit/components'
+      Vue.use(ElementUI, { size: 'small' })
+      Vue.use(SinokitComponents)
+      `;
+      // custom dependencies
+      let boxDependencies = {
+        'element-ui': '^2.13.2',
+        '@sinokit/components': '^0.1.23'
+      };
+
       window.$docsify = {
         name: 'sinokit',
         repo: 'giscafer/sinokit', // connect to github
@@ -74,7 +74,7 @@
           depth: 2
         },
         mergeNavbar: true,
-        plugins: [DemoBoxVue.create(jsResources, cssResources, bootCode)]
+        plugins: [DemoBoxVue.create(boxBootCode, boxDependencies)]
       };
 
       // remove sidebar's title and add my logo
@@ -86,14 +86,7 @@
           div.setAttribute('class', 'logo');
           let a = document.createElement('a');
           a.setAttribute('href', 'https://github.com/giscafer/sinokit');
-          /*    let img = document.createElement('img');
-          img.setAttribute('src', './_media/icon.svg');
-          let titleImg = document.createElement('img');
-          titleImg.setAttribute('src', './_media/logo_blue.svg');
-          a.appendChild(img);
-          div.appendChild(a);
-          parent.prepend(div);
-          div.appendChild(titleImg); */
+
           clearInterval(interval);
         }
       }, 0);
@@ -116,21 +109,21 @@
     <!-- <script src="./libs/vuep.min.js"></script> -->
     <!-- inject js file -->
 
-    <script src="https://unpkg.com/vuep/dist/vuep.min.js"></script>
+    <!-- <script src="https://unpkg.com/vuep/dist/vuep.min.js"></script> -->
     <script
       src="https://unpkg.com/@sinokit/utils@latest/dist/index.js"
       type="module"
     ></script>
     <script
-      src="https://unpkg.com/@sinokit/components@latest/dist/sinokit-components.common.js"
+      src="https://unpkg.com/@sinokit/components@latest/lib/sinokit-components.common.js"
       type="module"
     ></script>
     <script
-      src="https://unpkg.com/@sinokit/components@latest/dist/1.js"
+      src="https://unpkg.com/@sinokit/components@latest/lib/1.js"
       type="module"
     ></script>
     <script
-      src="https://unpkg.com/@sinokit/components@latest/dist/3.js"
+      src="https://unpkg.com/@sinokit/components@latest/lib/3.js"
       type="module"
     ></script>
     <!-- <script src="./libs/babel.min.js"></script> -->

@@ -15,8 +15,8 @@ module.exports = {
     filename: 'sinokit-components.common.js',
     chunkFilename: '[id].js',
     libraryExport: 'default',
-    library: 'SINOKIT',
-    libraryTarget: 'commonjs2'
+    library: 'SINOKITCOMPONENTS',
+    libraryTarget: 'umd'
   },
   resolve: {
     extensions: ['.js', '.vue', '.json'],

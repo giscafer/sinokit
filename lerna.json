@@ -1,7 +1,5 @@
 {
-  "packages": [
-    "packages/*"
-  ],
+  "packages": ["packages/*"],
   "command": {
     "publish": {
       "message": "chore(release): publish %s"
@@ -11,5 +9,5 @@
       "license": "MIT"
     }
   },
-  "version": "0.1.23"
+  "version": "0.1.24"
 }
