@@ -1,5 +1,14 @@
-module.exports =
-/******/ (function(modules) { // webpackBootstrap
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(typeof exports === 'object' && typeof module === 'object')
+		module.exports = factory(require("@sinokit/utils"), require("vue"));
+	else if(typeof define === 'function' && define.amd)
+		define(["@sinokit/utils", "vue"], factory);
+	else if(typeof exports === 'object')
+		exports["SINOKITCOMPONENTS"] = factory(require("@sinokit/utils"), require("vue"));
+	else
+		root["SINOKITCOMPONENTS"] = factory(root["@sinokit/utils"], root["Vue"]);
+})(window, function(__WEBPACK_EXTERNAL_MODULE__72__, __WEBPACK_EXTERNAL_MODULE__73__) {
+return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// install a JSONP callback for chunk loading
 /******/ 	function webpackJsonpCallback(data) {
 /******/ 		var chunkIds = data[0];
@@ -188,7 +197,7 @@ module.exports =
 /******/ 	// on error function for async loading
 /******/ 	__webpack_require__.oe = function(err) { console.error(err); throw err; };
 /******/
-/******/ 	var jsonpArray = window["webpackJsonpSINOKIT"] = window["webpackJsonpSINOKIT"] || [];
+/******/ 	var jsonpArray = window["webpackJsonpSINOKITCOMPONENTS"] = window["webpackJsonpSINOKITCOMPONENTS"] || [];
 /******/ 	var oldJsonpFunction = jsonpArray.push.bind(jsonpArray);
 /******/ 	jsonpArray.push = webpackJsonpCallback;
 /******/ 	jsonpArray = jsonpArray.slice();
@@ -55839,13 +55848,13 @@ component.options.__file = "src/json-schema-editor/src/Schema/SchemaArray.vue"
 /* 72 */
 /***/ (function(module, exports) {
 
-module.exports = require("@sinokit/utils");
+module.exports = __WEBPACK_EXTERNAL_MODULE__72__;
 
 /***/ }),
 /* 73 */
 /***/ (function(module, exports) {
 
-module.exports = require("vue");
+module.exports = __WEBPACK_EXTERNAL_MODULE__73__;
 
 /***/ }),
 /* 74 */,
@@ -74972,7 +74981,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 /* harmony default export */ var src = __webpack_exports__["default"] = ({
-  version: '0.1.22',
+  version: '0.1.23',
   install,
   JsonEditor: src_json_editor,
   JsonSchemaEditor: src_json_schema_editor,
@@ -74981,3 +74990,4 @@ if (typeof window !== 'undefined' && window.Vue) {
 
 /***/ })
 /******/ ])["default"];
+});

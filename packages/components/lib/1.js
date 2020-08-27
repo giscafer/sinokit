@@ -1,4 +1,4 @@
-(window["webpackJsonpSINOKIT"] = window["webpackJsonpSINOKIT"] || []).push([[1],{
+(window["webpackJsonpSINOKITCOMPONENTS"] = window["webpackJsonpSINOKITCOMPONENTS"] || []).push([[1],{
 
 /***/ 188:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
