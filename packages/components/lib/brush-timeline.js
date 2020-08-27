@@ -1,14 +1,5 @@
-(function webpackUniversalModuleDefinition(root, factory) {
-	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory();
-	else if(typeof define === 'function' && define.amd)
-		define([], factory);
-	else {
-		var a = factory();
-		for(var i in a) (typeof exports === 'object' ? exports : root)[i] = a[i];
-	}
-})(window, function() {
-return /******/ (function(modules) { // webpackBootstrap
+module.exports =
+/******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
 /******/
@@ -239,7 +230,7 @@ ___CSS_LOADER_EXPORT___.push([module.i, ".brush-timeline .vis-timeline{border:no
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./lib/brush-timeline/src/timeline.vue?vue&type=template&id=6419849f&
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./src/brush-timeline/src/timeline.vue?vue&type=template&id=50073804&
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
@@ -253,7 +244,7 @@ var staticRenderFns = []
 render._withStripped = true
 
 
-// CONCATENATED MODULE: ./lib/brush-timeline/src/timeline.vue?vue&type=template&id=6419849f&
+// CONCATENATED MODULE: ./src/brush-timeline/src/timeline.vue?vue&type=template&id=50073804&
 
 // EXTERNAL MODULE: ./node_modules/vis-timeline/standalone/esm/vis-timeline-graph2d.js
 var vis_timeline_graph2d = __webpack_require__(87);
@@ -11482,7 +11473,7 @@ function defaultConstrain(transform, extent, translateExtent) {
 
 
 
-// CONCATENATED MODULE: ./lib/brush-timeline/src/utils.js
+// CONCATENATED MODULE: ./src/brush-timeline/src/utils.js
 
 
 function drawPath(context) {
@@ -11522,7 +11513,7 @@ const brushHandle = id => {
   document.querySelector(`#${id}>svg .selection`).setAttribute('fill', '#B4B9D2');
   document.querySelector(`#${id}>svg .overlay`).setAttribute('fill', '#EBEDF8');
 };
-// CONCATENATED MODULE: ./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./lib/brush-timeline/src/timeline.vue?vue&type=script&lang=js&
+// CONCATENATED MODULE: ./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./src/brush-timeline/src/timeline.vue?vue&type=script&lang=js&
 //
 //
 //
@@ -11602,7 +11593,7 @@ const brushHandle = id => {
         this.data.forEach((item, index) => {
           const obj = {
             start: new Date(`${2000 + index}-01-01`),
-            content: `<div><p class="date">${item.date}</p><a href="" target="_blank">${item.label}</a></div>`
+            content: `<div><p class="date">${item.date}</p><a href="javascript:void(0)">${item.label}</a></div>`
           };
           items.push(obj);
         });
@@ -11708,15 +11699,15 @@ const brushHandle = id => {
 
   }
 });
-// CONCATENATED MODULE: ./lib/brush-timeline/src/timeline.vue?vue&type=script&lang=js&
+// CONCATENATED MODULE: ./src/brush-timeline/src/timeline.vue?vue&type=script&lang=js&
  /* harmony default export */ var src_timelinevue_type_script_lang_js_ = (timelinevue_type_script_lang_js_); 
-// EXTERNAL MODULE: ./lib/brush-timeline/src/timeline.vue?vue&type=style&index=0&lang=scss&
+// EXTERNAL MODULE: ./src/brush-timeline/src/timeline.vue?vue&type=style&index=0&lang=scss&
 var timelinevue_type_style_index_0_lang_scss_ = __webpack_require__(184);
 
 // EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
 var componentNormalizer = __webpack_require__(1);
 
-// CONCATENATED MODULE: ./lib/brush-timeline/src/timeline.vue
+// CONCATENATED MODULE: ./src/brush-timeline/src/timeline.vue
 
 
 
@@ -11738,9 +11729,9 @@ var component = Object(componentNormalizer["a" /* default */])(
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "lib/brush-timeline/src/timeline.vue"
+component.options.__file = "src/brush-timeline/src/timeline.vue"
 /* harmony default export */ var timeline = (component.exports);
-// CONCATENATED MODULE: ./lib/brush-timeline/index.js
+// CONCATENATED MODULE: ./src/brush-timeline/index.js
 
 /* istanbul ignore next */
 
@@ -54763,4 +54754,3 @@ var timeline = {
 /***/ })
 
 /******/ });
-});

@@ -7,16 +7,16 @@ const config = require('./config');
 module.exports = {
   mode: 'production',
   entry: {
-    app: ['./dist/index.js']
+    app: ['./src/index.js']
   },
   output: {
-    path: path.resolve(process.cwd(), './dist'),
+    path: path.resolve(process.cwd(), './lib'),
     publicPath: '/dist/',
     filename: 'sinokit-components.common.js',
     chunkFilename: '[id].js',
     libraryExport: 'default',
     library: 'SINOKIT',
-    libraryTarget: 'umd'
+    libraryTarget: 'commonjs2'
   },
   resolve: {
     extensions: ['.js', '.vue', '.json'],

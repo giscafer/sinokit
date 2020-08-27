@@ -20,6 +20,7 @@ npm run start
 ### Docs
 
 ```
+docsify init ./docs
 npm run docs
 ```
 
