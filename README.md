@@ -36,6 +36,10 @@ npm run build
 
 > 增加新特性或者组件时，先建个 issue 讨论确定，有效沟通后再编码
 
+## Related
+
+- [docsify-demo-codesandbox-vue](https://github.com/giscafer/docsify-demo-codesandbox-vue)
+
 ## Other
 
 文档基于 [docsify](https://github.com/docsifyjs/docsify)，模板样式参考 [ve-charts](https://github.com/vueblocks/ve-charts)

@@ -106,3 +106,4 @@
 |   `height`    | 滚动条 brush 的高度                   | `Number` |  `14`  |
 |   `margin`    | 文字和时间轴之间的 margin 距离        | `Number` |  `19`  |
 | `orientation` | 文字朝向                              | `String` | `top`  |
+|   `tooltip`   | 悬浮在节点上的 tooltip 文字展示       | `String` |   -    |

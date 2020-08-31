@@ -2,6 +2,15 @@
   <div class="brush-timeline" :id="id">
     <div id="vis-timeline"></div>
     <svg width="100%" :height="height" />
+    <div
+      class="timeline-tooltip timeline-tooltip-placement-top"
+      style="left: -1000px; top:0; transform-origin: 50% 45px;display:none"
+    >
+      <div class="timeline-tooltip-content">
+        <div class="timeline-tooltip-arrow"></div>
+        <div role="tooltip" class="timeline-tooltip-inner">prompt text</div>
+      </div>
+    </div>
   </div>
 </template>
 <script>
@@ -105,14 +114,48 @@ export default {
         zoomable: false,
         horizontalScroll: false,
         moveable: false,
+        showCurrentTime: false,
         max: maxDate,
         min: minDate,
         timeAxis: { scale: 'year', step: 1 },
+        tooltip: {
+          overflowMethod: 'cap',
+        },
       }
       this.timeline = new Timeline(container, dataSet, options)
       // 用来全局调试而已
       window.brushTimeline = this.timeline
       this.brushInit(container)
+
+      // tooltip
+      const tooltipEle = pcontainer.querySelector('.timeline-tooltip')
+      const vsgroup = pcontainer.querySelector('.vis-group')
+      const dotNodes = vsgroup.querySelectorAll('.vis-item.vis-dot')
+      const dotArr = [].slice.call(dotNodes)
+
+      const enterCbFn = (e) => {
+        const dateIndex = dotArr.indexOf(e.target)
+        const tooltipText = this.data[dateIndex].tooltip
+        if (!tooltipText) {
+          return
+        }
+        tooltipEle.querySelector(
+          '.timeline-tooltip-inner'
+        ).innerHTML = tooltipText
+        tooltipEle.style.display = 'block'
+        const tiprect = tooltipEle.getBoundingClientRect()
+        const dotrect = e.target.getBoundingClientRect()
+
+        tooltipEle.style.left = dotrect.left - 10 + 'px'
+        tooltipEle.style.top = dotrect.top - tiprect.height + 'px'
+      }
+      const leaveCbFn = () => {
+        tooltipEle.style.display = 'none'
+      }
+      dotNodes.forEach((element) => {
+        element.onmouseenter = enterCbFn
+        element.onmouseleave = leaveCbFn
+      })
     },
     brushInit(container) {
       const height = this.height
@@ -193,6 +236,14 @@ export default {
       )
       this.timeline.setWindow(timeX[0], timeX[1])
     },
+  },
+  beforeDestroy() {
+    document
+      .querySelectorAll(`#${this.id} .vis-group>.vis-item.vis-dot`)
+      .forEach((element) => {
+        element.onmouseenter = null
+        element.onmouseleave = null
+      })
   },
 }
 </script>
@@ -287,6 +338,71 @@ $bgColor: #fff;
   .vis-time-axis .vis-grid.vis-major {
     border-width: 2px;
     border: 0;
+  }
+  // tooltip
+  .timeline-tooltip {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: rgba(0, 0, 0, 0.65);
+    font-size: 14px;
+    font-variant: tabular-nums;
+    line-height: 1.5;
+    list-style: none;
+    font-feature-settings: 'tnum';
+    position: absolute;
+    z-index: 1060;
+    display: block;
+    max-width: 250px;
+    visibility: visible;
+  }
+  .timeline-tooltip-placement-top {
+    padding-bottom: 8px;
+  }
+
+  .timeline-tooltip-inner {
+    min-width: 30px;
+    min-height: 24px;
+    padding: 6px 8px;
+    color: #fff;
+    text-align: left;
+    text-decoration: none;
+    word-wrap: break-word;
+    background-color: rgba(0, 0, 0, 0.75);
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  }
+
+  .timeline-tooltip-arrow {
+    position: absolute;
+    bottom: -1px;
+    display: block;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    border: 5px solid;
+    border-color: #333 transparent transparent transparent;
+  }
+
+  .timeline-tooltip-placement-top .timeline-tooltip-arrow {
+    left: 20px;
+    // left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .timeline-tooltip-arrow:before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: block;
+    width: 5px;
+    height: 5px;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.75);
+    content: '';
+    pointer-events: auto;
   }
 }
 </style>
