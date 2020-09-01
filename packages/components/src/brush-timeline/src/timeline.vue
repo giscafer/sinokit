@@ -11,6 +11,11 @@
         <div role="tooltip" class="timeline-tooltip-inner">prompt text</div>
       </div>
     </div>
+    <div class="timeline-border-start" style="display:block"></div>
+    <div
+      class="timeline-border-end"
+      style="left: -1000px; top:0; transform-origin: 50% 45px;display:none"
+    ></div>
   </div>
 </template>
 <script>
@@ -23,7 +28,13 @@
 
 import { Timeline, DataSet } from 'vis-timeline/standalone'
 import { brushX, select, extent, event, scaleTime, axisBottom } from 'd3'
-import { drawHandle, brushHandle, transformHandle } from './utils'
+import {
+  drawHandle,
+  brushHandle,
+  transformHandle,
+  handleTooltip,
+  handleBorderStartEnd,
+} from './utils'
 
 export default {
   name: 'BrushTimeline',
@@ -96,6 +107,7 @@ export default {
       const options = {
         zoomMin,
         zoomMax,
+        start: minDate,
         orientation:
           this.orientation === 'top'
             ? {
@@ -128,34 +140,8 @@ export default {
       this.brushInit(container)
 
       // tooltip
-      const tooltipEle = pcontainer.querySelector('.timeline-tooltip')
-      const vsgroup = pcontainer.querySelector('.vis-group')
-      const dotNodes = vsgroup.querySelectorAll('.vis-item.vis-dot')
-      const dotArr = [].slice.call(dotNodes)
-
-      const enterCbFn = (e) => {
-        const dateIndex = dotArr.indexOf(e.target)
-        const tooltipText = this.data[dateIndex].tooltip
-        if (!tooltipText) {
-          return
-        }
-        tooltipEle.querySelector(
-          '.timeline-tooltip-inner'
-        ).innerHTML = tooltipText
-        tooltipEle.style.display = 'block'
-        const tiprect = tooltipEle.getBoundingClientRect()
-        const dotrect = e.target.getBoundingClientRect()
-
-        tooltipEle.style.left = dotrect.left - 10 + 'px'
-        tooltipEle.style.top = dotrect.top - tiprect.height + 'px'
-      }
-      const leaveCbFn = () => {
-        tooltipEle.style.display = 'none'
-      }
-      dotNodes.forEach((element) => {
-        element.onmouseenter = enterCbFn
-        element.onmouseleave = leaveCbFn
-      })
+      handleTooltip(pcontainer, this.data)
+      handleBorderStartEnd(pcontainer)
     },
     brushInit(container) {
       const height = this.height
@@ -341,6 +327,7 @@ $bgColor: #fff;
   }
   // tooltip
   .timeline-tooltip {
+    position: fixed;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -350,7 +337,6 @@ $bgColor: #fff;
     line-height: 1.5;
     list-style: none;
     font-feature-settings: 'tnum';
-    position: absolute;
     z-index: 1060;
     display: block;
     max-width: 250px;
@@ -403,6 +389,12 @@ $bgColor: #fff;
     background-color: rgba(0, 0, 0, 0.75);
     content: '';
     pointer-events: auto;
+  }
+
+  .timeline-border-start {
+    position: fixed;
+    border-top: 2px solid red;
+    height: 0;
   }
 }
 </style>
