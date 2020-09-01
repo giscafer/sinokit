@@ -33,7 +33,7 @@ import {
   brushHandle,
   transformHandle,
   handleTooltip,
-  handleBorderStartEnd,
+  // handleBorderStartEnd,
 } from './utils'
 
 export default {
@@ -140,8 +140,10 @@ export default {
       this.brushInit(container)
 
       // tooltip
-      handleTooltip(pcontainer, this.data)
-      handleBorderStartEnd(pcontainer)
+      setTimeout(() => {
+        handleTooltip(pcontainer, this.data)
+        // handleBorderStartEnd(pcontainer)
+      }, 200)
     },
     brushInit(container) {
       const height = this.height
@@ -393,7 +395,7 @@ $bgColor: #fff;
 
   .timeline-border-start {
     position: fixed;
-    border-top: 2px solid red;
+    border-top: 4px solid red;
     height: 0;
   }
 }

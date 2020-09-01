@@ -45,20 +45,26 @@ export const brushHandle = id => {
   document.querySelector(`#${id}>svg .overlay`).setAttribute('fill', '#EBEDF8');
 };
 /**
+ * 获取 translate x 轴偏移量
+ * @param {Element}} element
+ */
+const getOffsetX = element => {
+  const style = element.getAttribute('style');
+  const matchStr = style.match(/translate\((.*?)\)/)[1];
+  const offsetX = matchStr.split(',')[0] || '0';
+  return Number(offsetX.replace('px', ''));
+};
+/**
  * 因dot渲染顺序会变化，这里将node重新排序
  * @param {Array<Element>} dotNodes
  */
 const getSortNodes = dotNodes => {
   dotNodes.forEach(item => {
-    const style = item.getAttribute('style');
-    const matchStr = style.match(/translate\((.*?)\)/)[1];
-    const offsetX = matchStr.split(',')[0] || '0';
-    item.offsetX = Number(offsetX.replace('px', ''));
-    // console.log(item.offsetX);
+    item._offsetX = getOffsetX(item);
   });
   const nodes = [].slice
     .call(dotNodes)
-    .sort((a, b) => (a.offsetX > b.offsetX ? 1 : -1));
+    .sort((a, b) => (a._offsetX > b._offsetX ? 1 : -1));
   return nodes;
 };
 
@@ -95,7 +101,13 @@ export const handleBorderStartEnd = pcontainer => {
   const vsgroup = pcontainer.querySelector('.vis-group');
   const dotNodes = vsgroup.querySelectorAll('.vis-item.vis-dot');
   const dotArr = getSortNodes(dotNodes);
-
-  const rect = dotArr[0].getBoundingClientRect();
-  console.log(dotArr[0], rect);
+  const borderStartEl = pcontainer.querySelector('.timeline-border-start');
+  const firstDotEl = dotArr[0];
+  // const lastDotEl = dotArr[dotArr.length - 1];
+  const rect = firstDotEl.getBoundingClientRect();
+  const offsetX = getOffsetX(firstDotEl);
+  console.log(firstDotEl, offsetX, rect);
+  borderStartEl.style.width = rect.left + 'px';
+  // borderStartEl.style.width = offsetX + 'px';
+  borderStartEl.style.top = rect.top + 'px';
 };
