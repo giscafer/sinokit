@@ -2056,15 +2056,65 @@ var render = function() {
       ),
       _vm.$listeners
     ),
-    [
-      _c("div", { staticClass: "node" }),
-      _c("div", { staticClass: "tail" }),
-      _c("H3", [_vm._v("22323")])
-    ],
-    1
+    _vm._l(_vm.timelineList, function(item, index) {
+      return _c(
+        "div",
+        {
+          key: index,
+          staticClass: "timeline-item",
+          class: {
+            ellipsis: _vm.isEllipsis(index),
+            single: _vm.timelineList.length === 1
+          },
+          style: { width: _vm.itemWidth + "px" }
+        },
+        [
+          !_vm.isEllipsis(index)
+            ? [
+                _vm._m(0, true),
+                _vm.timelineList.length > 1
+                  ? _c("div", { staticClass: "tail" })
+                  : _vm._e(),
+                _c("div", { staticClass: "content" }, [
+                  _c("div", {
+                    staticClass: "title",
+                    domProps: { textContent: _vm._s(item.title) }
+                  }),
+                  _c("div", {
+                    staticClass: "description",
+                    domProps: { textContent: _vm._s(item.description) }
+                  })
+                ])
+              ]
+            : _vm._e(),
+          _vm.isEllipsis(index) ? [_vm._m(1, true)] : _vm._e()
+        ],
+        2
+      )
+    }),
+    0
   )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "node" }, [
+      _c("div", { staticClass: "center" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "ellipsis-item" }, [
+      _c("div", { staticClass: "node" }),
+      _c("div", { staticClass: "node" }),
+      _c("div", { staticClass: "node" })
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -2078,19 +2128,75 @@ render._withStripped = true
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ var overview_timelinevue_type_script_lang_js_ = ({
   name: 'OverviewTimeline',
-  props: {},
+  props: {
+    data: {
+      type: Array,
+      default: () => []
+    },
+    itemWidth: {
+      type: Number,
+      default: 200
+    }
+  },
 
   data() {
-    return {};
+    return {
+      timelineList: []
+    };
   },
+
+  watch: {
+    data() {
+      const length = this.data.length || 0; // TODO: 展示所有的时候删除这里的代码
+
+      if (length > 0) {
+        this.timelineList = this.data;
+      } else {
+        this.timelineList.length = 0;
+      }
+
+      console.table(this.timelineList);
+    }
+
+  },
+  computed: {},
 
   created() {},
 
-  mounted() {},
+  mounted() {
+    this.timelineList = this.data;
+  },
 
-  methods: {}
+  methods: {
+    isEllipsis(index) {
+      return index !== 0 && index !== this.timelineList.length - 1;
+    }
+
+  }
 });
 // CONCATENATED MODULE: ./src/overview-timeline/src/overview-timeline.vue?vue&type=script&lang=js&
  /* harmony default export */ var src_overview_timelinevue_type_script_lang_js_ = (overview_timelinevue_type_script_lang_js_); 
@@ -61196,7 +61302,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(false);
 // Module
-___CSS_LOADER_EXPORT___.push([module.i, ".node[data-v-6770f667]{position:absolute;bottom:0;transform:translateX(-50%);left:50%;background-color:#e4e7ed;border-radius:50%;display:flex;justify-content:center;align-items:center;width:12px;height:12px}.node.center[data-v-6770f667]{background-color:#74f5dd}.tail[data-v-6770f667]{position:absolute;bottom:5px;right:0;width:100%;border-top:2px solid #e4e7ed}.timeline-item:first-child .tail[data-v-6770f667]{width:50%}.timeline-item:last-child .tail[data-v-6770f667]{left:0;width:50%}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.i, ".overview-timeline-component[data-v-6770f667]{display:flex;justify-content:center;align-items:center}.node[data-v-6770f667]{display:flex;position:absolute;bottom:0;transform:translateX(-50%);background-color:#4865e9;border-radius:50%;justify-content:center;align-items:center;width:18px;height:18px;z-index:100}.node>.center[data-v-6770f667]{background-color:#fff;width:12px;height:12px;border-radius:50%}.single[data-v-6770f667]{display:flex;justify-content:center;align-items:center;text-align:center;flex-direction:column;position:relative}.single .node[data-v-6770f667]{left:0;margin:0 auto}.single .content[data-v-6770f667]{margin:0 auto}.tail[data-v-6770f667]{position:absolute;bottom:8px;right:0;width:100%;border-top:2px solid rgba(72,101,233,0.5)}.ellipsis-item[data-v-6770f667]{display:flex;width:30px;justify-content:space-between;background:transparent}.ellipsis-item>.node[data-v-6770f667]{position:relative;width:8px;height:8px;background:rgba(72,101,233,0.5)}.timeline-item[data-v-6770f667]{position:relative;display:inline-block;height:20px}.timeline-item.ellipsis[data-v-6770f667]{display:flex;align-items:center;width:44px !important;left:7px}.timeline-item .content[data-v-6770f667]{position:absolute;width:150px;top:30px;text-align:center;font-size:16px}.timeline-item .content .title[data-v-6770f667]{color:#333}.timeline-item .content .description[data-v-6770f667]{margin-top:10px;color:#a6aab8}.timeline-item:last-child .node[data-v-6770f667]{right:-10px}.timeline-item:last-child .content[data-v-6770f667]{position:absolute;right:-75px}.timeline-item:first-child .content[data-v-6770f667]{position:absolute;left:-75px}\n", ""]);
 // Exports
 /* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
 

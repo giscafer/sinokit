@@ -5,14 +5,14 @@
       :key="index"
       class="timeline-item"
       :style="{'width':itemWidth+'px'}"
-      :class="{'ellipsis':isEllipsis(index),'single':timelineList.length===1}"
+      :class="{'ellipsis':isEllipsis(index),'single':timelineList.length===1,'expand':!collapse}"
     >
       <template v-if="!isEllipsis(index)">
         <div class="node">
           <div class="center"></div>
         </div>
         <div class="tail" v-if="timelineList.length>1"></div>
-        <div class="content">
+        <div class="content" :style="{'left':collapse?'':((0.5-( 150/itemWidth)*0.5)*100+'%')}">
           <div class="title" v-text="item.title"></div>
           <div class="description" v-text="item.description"></div>
         </div>
@@ -39,6 +39,10 @@ export default {
       type: Number,
       default: 200,
     },
+    collapse: {
+      type: Boolean,
+      default: true,
+    },
   },
   data() {
     return {
@@ -47,24 +51,30 @@ export default {
   },
   watch: {
     data() {
-      const length = this.data.length || 0
-      // TODO: 展示所有的时候删除这里的代码
-      if (length > 0) {
-        this.timelineList = this.data
-      } else {
-        this.timelineList.length = 0
-      }
-      console.table(this.timelineList)
+      this.setTimelineList()
     },
   },
   computed: {},
   created() {},
   mounted() {
-    this.timelineList = this.data
+    this.setTimelineList()
   },
   methods: {
+    isHeadOrTail(index) {
+      return index === 0 || index === this.timelineList.length - 1
+    },
     isEllipsis(index) {
-      return index !== 0 && index !== this.timelineList.length - 1
+      return (
+        index !== 0 && index !== this.timelineList.length - 1 && this.collapse
+      )
+    },
+    setTimelineList() {
+      const length = this.data.length || 0
+      if (this.collapse && length > 2) {
+        this.timelineList = [this.data[0], this.data[1], this.data[2]]
+      } else {
+        this.timelineList = this.data
+      }
     },
   },
 }
@@ -130,6 +140,7 @@ $borderColor: rgba(72, 101, 233, 0.5);
     background: $borderColor;
   }
 }
+
 .timeline-item {
   position: relative;
   display: inline-block;
@@ -171,10 +182,26 @@ $borderColor: rgba(72, 101, 233, 0.5);
       left: -75px;
     }
   }
-  /*
-  &:last-child .tail {
-    left: 0;
-    width: 50%;
+}
+
+.expand {
+  .node {
+    left: 50%;
+  }
+  /*  .content {
+    left: 25% !important;
   } */
+  &:last-child {
+    .tail {
+      left: 0;
+      width: 50%;
+    }
+  }
+  &:first-child {
+    .tail {
+      left: 50%;
+      width: 50%;
+    }
+  }
 }
 </style>
