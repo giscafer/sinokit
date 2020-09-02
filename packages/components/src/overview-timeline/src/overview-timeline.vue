@@ -12,7 +12,7 @@
           <div class="center"></div>
         </div>
         <div class="tail" v-if="timelineList.length>1"></div>
-        <div class="content" :style="{'left':collapse?'':((0.5-( 150/itemWidth)*0.5)*100+'%')}">
+        <div class="content" :style="{'left':collapse?'':((0.5-( 200/itemWidth)*0.5)*100+'%')}">
           <div class="title" v-text="item.title"></div>
           <div class="description" v-text="item.description"></div>
         </div>
@@ -154,7 +154,7 @@ $borderColor: rgba(72, 101, 233, 0.5);
   }
   .content {
     position: absolute;
-    width: 150px;
+    width: 200px;
     top: 30px;
     text-align: center;
     font-size: 16px;
@@ -173,13 +173,13 @@ $borderColor: rgba(72, 101, 233, 0.5);
     }
     .content {
       position: absolute;
-      right: -75px;
+      right: -100px;
     }
   }
   &:first-child {
     .content {
       position: absolute;
-      left: -75px;
+      left: -100px;
     }
   }
 }
