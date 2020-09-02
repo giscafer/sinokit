@@ -7,10 +7,27 @@ export const routes = [
   {
     path: '/',
     name: '首页',
-    hidden: true, // 不现实在菜单
-    redirect: '/timeline'
+    hidden: true, // 不显示在菜单
+    redirect: '/overview-timeline'
   },
-
+  {
+    path: '/overview-timeline',
+    name: '概览时光轴',
+    component: () =>
+      import(
+        /* webpackChunkName: "overview-timeline" */ '../views/overview-timeline/index.vue'
+      ),
+    props: true
+  },
+  {
+    path: '/horizontal-timeline',
+    name: '水平时光轴',
+    component: () =>
+      import(
+        /* webpackChunkName: "horizontal-timeline" */ '../views/horizontal-timeline/index.vue'
+      ),
+    props: true
+  },
   {
     path: '/timeline',
     name: '时光轴',
@@ -22,7 +39,7 @@ export const routes = [
     name: 'JsonSchemaEditor',
     component: () =>
       import(
-        /* webpackChunkName: "json-schema-editor" */ '../views/json-schema-editor.vue'
+        /* webpackChunkName: "json-schema-editor" */ '../views/json-schema-editor/index.vue'
       ),
     props: true
   }

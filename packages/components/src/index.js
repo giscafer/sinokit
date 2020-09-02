@@ -4,11 +4,15 @@ import { CustomEventPlugin } from '@sinokit/utils';
 import JsonEditor from './json-editor/index.js';
 import JsonSchemaEditor from './json-schema-editor/index.js';
 import BrushTimeline from './brush-timeline/index.js';
+import HorizontalTimeline from './horizontal-timeline/index.js';
+import OverviewTimeline from './overview-timeline/index.js';
 
 const components = [
   JsonEditor,
   JsonSchemaEditor,
-  BrushTimeline
+  BrushTimeline,
+  HorizontalTimeline,
+  OverviewTimeline
 ];
 
 const install = function(Vue) {
@@ -27,9 +31,11 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 export default {
-  version: '0.1.23',
+  version: '0.1.25',
   install,
   JsonEditor,
   JsonSchemaEditor,
-  BrushTimeline
+  BrushTimeline,
+  HorizontalTimeline,
+  OverviewTimeline
 };

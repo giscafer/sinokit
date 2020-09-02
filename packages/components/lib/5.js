@@ -1,4 +1,4 @@
-(window["webpackJsonpSINOKITCOMPONENTS"] = window["webpackJsonpSINOKITCOMPONENTS"] || []).push([[1],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[5],{
 
 /***/ 198:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -417,11 +417,11 @@ render._withStripped = true
 // CONCATENATED MODULE: ./src/json-schema-editor/src/Schema/SchemaItem.vue?vue&type=template&id=653a0fd6&
 
 // EXTERNAL MODULE: ./node_modules/lodash/isUndefined.js
-var isUndefined = __webpack_require__(75);
+var isUndefined = __webpack_require__(90);
 var isUndefined_default = /*#__PURE__*/__webpack_require__.n(isUndefined);
 
 // EXTERNAL MODULE: ./src/json-schema-editor/src/MockSelect/index.vue + 4 modules
-var MockSelect = __webpack_require__(32);
+var MockSelect = __webpack_require__(33);
 
 // CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./src/json-schema-editor/src/Schema/DropPlus.vue?vue&type=template&id=9e2a1eac&scoped=true&
 var DropPlusvue_type_template_id_9e2a1eac_scoped_true_render = function() {
@@ -538,7 +538,7 @@ DropPlusvue_type_template_id_9e2a1eac_scoped_true_render._withStripped = true
 // CONCATENATED MODULE: ./src/json-schema-editor/src/Schema/DropPlus.vue?vue&type=script&lang=js&
  /* harmony default export */ var Schema_DropPlusvue_type_script_lang_js_ = (DropPlusvue_type_script_lang_js_); 
 // EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
-var componentNormalizer = __webpack_require__(1);
+var componentNormalizer = __webpack_require__(0);
 
 // CONCATENATED MODULE: ./src/json-schema-editor/src/Schema/DropPlus.vue
 
@@ -564,13 +564,13 @@ if (false) { var api; }
 component.options.__file = "src/json-schema-editor/src/Schema/DropPlus.vue"
 /* harmony default export */ var DropPlus = (component.exports);
 // EXTERNAL MODULE: ./src/json-schema-editor/src/Schema/SchemaObject.vue + 4 modules
-var SchemaObject = __webpack_require__(33);
+var SchemaObject = __webpack_require__(34);
 
 // EXTERNAL MODULE: ./src/json-schema-editor/src/Schema/SchemaArray.vue + 4 modules
-var SchemaArray = __webpack_require__(77);
+var SchemaArray = __webpack_require__(92);
 
 // EXTERNAL MODULE: ./src/json-schema-editor/src/utils.js
-var utils = __webpack_require__(0);
+var utils = __webpack_require__(1);
 
 // CONCATENATED MODULE: ./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./src/json-schema-editor/src/Schema/SchemaItem.vue?vue&type=script&lang=js&
 //

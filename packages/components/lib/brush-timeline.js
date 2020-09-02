@@ -91,12 +91,12 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 186);
+/******/ 	return __webpack_require__(__webpack_require__.s = 196);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 1:
+/***/ 0:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -203,18 +203,45 @@ function normalizeComponent (
 
 /***/ }),
 
-/***/ 184:
+/***/ 12:
+/***/ (function(module, exports) {
+
+var g;
+
+// This works in non-strict mode
+g = (function() {
+	return this;
+})();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || new Function("return this")();
+} catch (e) {
+	// This works if the window reference is available
+	if (typeof window === "object") g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
+
+
+/***/ }),
+
+/***/ 188:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_sass_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_timeline_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(26);
+/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_sass_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_timeline_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(29);
 /* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_sass_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_timeline_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_sass_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_timeline_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
 /* unused harmony reexport * */
  /* unused harmony default export */ var _unused_webpack_default_export = (_node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_sass_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_timeline_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default.a); 
 
 /***/ }),
 
-/***/ 185:
+/***/ 189:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -225,14 +252,14 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(false);
 // Module
-___CSS_LOADER_EXPORT___.push([module.i, ".brush-timeline .vis-timeline{border:none;font-size:14pt;background:#fff}.brush-timeline .vis-timeline .vis-panel.vis-bottom{border:none !important}.brush-timeline .vis-timeline .vis-panel.vis-top{border-bottom:1px solid #ededed !important}.brush-timeline .vis-timeline .vis-minor{display:none}.brush-timeline .vis-timeline .vis-range{display:none}.brush-timeline .vis-timeline .vis-text div{visibility:hidden}.brush-timeline .vis-timeline .vis-line{visibility:hidden}.brush-timeline .vis-box{font-size:15pt;color:transparent;background:transparent;border:0;transform:translate(10px, 20px)}.brush-timeline .vis-box .vis-item-content .date{font-size:16px;color:#333}.brush-timeline .vis-box .vis-item-content a{font-size:16px;font-weight:normal;font-stretch:normal;line-height:14px;letter-spacing:1px;color:#4865e9;text-decoration:none}.brush-timeline .vis-item,.brush-timeline .vis-item.vis-line{border-width:3px}.brush-timeline .vis-item.vis-dot{border-width:10px;border-radius:10px;border-color:#738dff;background-color:#738dff}.brush-timeline .vis-item.vis-dot.vis-selected{border-color:#738dff}.brush-timeline .vis-item.vis-selected{border-color:transparent;background-color:transparent}.brush-timeline .vis-time-axis .vis-text{padding-top:10px;padding-left:10px}.brush-timeline .vis-time-axis .vis-text.vis-major{font-weight:bold}.brush-timeline .vis-time-axis .vis-grid.vis-minor{border-width:2px}.brush-timeline .vis-time-axis .vis-grid.vis-major{border-width:2px;border:0}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.i, ".brush-timeline .vis-timeline{border:none;font-size:14pt;background:#fff}.brush-timeline .vis-timeline .vis-panel.vis-bottom{border:none !important}.brush-timeline .vis-timeline .vis-panel.vis-top{border-bottom:1px solid #ededed !important}.brush-timeline .vis-timeline .vis-minor{display:none}.brush-timeline .vis-timeline .vis-range{display:none}.brush-timeline .vis-timeline .vis-text div{visibility:hidden}.brush-timeline .vis-timeline .vis-line{visibility:hidden}.brush-timeline .vis-box{font-size:15pt;color:transparent;background:transparent;border:0;transform:translate(10px, 20px)}.brush-timeline .vis-box .vis-item-content .date{font-size:16px;color:#333}.brush-timeline .vis-box .vis-item-content a{font-size:16px;font-weight:normal;font-stretch:normal;line-height:14px;letter-spacing:1px;color:#4865e9;text-decoration:none}.brush-timeline .vis-item,.brush-timeline .vis-item.vis-line{border-width:3px}.brush-timeline .vis-item.vis-dot{border-width:10px;border-radius:10px;border-color:#738dff;background-color:#738dff}.brush-timeline .vis-item.vis-dot.vis-selected{border-color:#738dff}.brush-timeline .vis-item.vis-selected{border-color:transparent;background-color:transparent}.brush-timeline .vis-time-axis .vis-text{padding-top:10px;padding-left:10px}.brush-timeline .vis-time-axis .vis-text.vis-major{font-weight:bold}.brush-timeline .vis-time-axis .vis-grid.vis-minor{border-width:2px}.brush-timeline .vis-time-axis .vis-grid.vis-major{border-width:2px;border:0}.brush-timeline .timeline-tooltip{position:fixed;box-sizing:border-box;margin:0;padding:0;color:rgba(0,0,0,0.65);font-size:14px;font-variant:tabular-nums;line-height:1.5;list-style:none;font-feature-settings:'tnum';z-index:1060;display:block;max-width:250px;visibility:visible}.brush-timeline .timeline-tooltip-placement-top{padding-bottom:8px}.brush-timeline .timeline-tooltip-inner{min-width:30px;min-height:24px;padding:6px 8px;color:#fff;text-align:left;text-decoration:none;word-wrap:break-word;background-color:rgba(0,0,0,0.75);border-radius:4px;box-shadow:0 2px 8px rgba(0,0,0,0.15)}.brush-timeline .timeline-tooltip-arrow{position:absolute;bottom:-1px;display:block;width:0;height:0;overflow:hidden;border:5px solid;border-color:#333 transparent transparent transparent}.brush-timeline .timeline-tooltip-placement-top .timeline-tooltip-arrow{left:20px;transform:translateX(-50%)}.brush-timeline .timeline-tooltip-arrow:before{position:absolute;top:0;right:0;bottom:0;left:0;display:block;width:5px;height:5px;margin:auto;background-color:rgba(0,0,0,0.75);content:'';pointer-events:auto}.brush-timeline .timeline-border-start{position:fixed;border-top:4px solid red;height:0}\n", ""]);
 // Exports
 /* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
 
 
 /***/ }),
 
-/***/ 186:
+/***/ 196:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -246,17 +273,62 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "brush-timeline", attrs: { id: _vm.id } }, [
     _c("div", { attrs: { id: "vis-timeline" } }),
-    _c("svg", { attrs: { width: "100%", height: _vm.height } })
+    _c("svg", { attrs: { width: "100%", height: _vm.height } }),
+    _vm._m(0),
+    _c("div", {
+      staticClass: "timeline-border-start",
+      staticStyle: { display: "block" }
+    }),
+    _c("div", {
+      staticClass: "timeline-border-end",
+      staticStyle: {
+        left: "-1000px",
+        top: "0",
+        "transform-origin": "50% 45px",
+        display: "none"
+      }
+    })
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass: "timeline-tooltip timeline-tooltip-placement-top",
+        staticStyle: {
+          left: "-1000px",
+          top: "0",
+          "transform-origin": "50% 45px",
+          display: "none"
+        }
+      },
+      [
+        _c("div", { staticClass: "timeline-tooltip-content" }, [
+          _c("div", { staticClass: "timeline-tooltip-arrow" }),
+          _c(
+            "div",
+            {
+              staticClass: "timeline-tooltip-inner",
+              attrs: { role: "tooltip" }
+            },
+            [_vm._v("prompt text")]
+          )
+        ])
+      ]
+    )
+  }
+]
 render._withStripped = true
 
 
 // CONCATENATED MODULE: ./src/brush-timeline/src/timeline.vue?vue&type=template&id=50073804&
 
 // EXTERNAL MODULE: ./node_modules/vis-timeline/standalone/esm/vis-timeline-graph2d.js
-var vis_timeline_graph2d = __webpack_require__(87);
+var vis_timeline_graph2d = __webpack_require__(91);
 
 // CONCATENATED MODULE: ./node_modules/vis-timeline/standalone/esm/index.js
 
@@ -11496,18 +11568,6 @@ function drawPath(context) {
   context.closePath();
   return context;
 }
-/* function drawReact(context) {
-  context.rect();
-  context.lineTo(18, 11);
-  context.lineTo(18, 3);
-  context.closePath();
-  context.moveTo(28, 7);
-  context.lineTo(24, 3);
-  context.lineTo(24, 11);
-  context.closePath();
-  return context;
-} */
-
 
 function drawHandle(g, selection, type) {
   return g.select('.brush').append('path').attr('class', 'handle--custom').attr('fill', '#fff').attr('fill-opacity', 0.8).attr('stroke', '#fff').attr('stroke-width', 1.5).attr('type', type).attr('transform', `translate(${selection + (type === 'w' ? 2 : -44)},0)`).attr('d', drawPath(src_path()));
@@ -11522,7 +11582,91 @@ const brushHandle = id => {
   document.querySelector(`#${id}>svg .selection`).setAttribute('fill', '#B4B9D2');
   document.querySelector(`#${id}>svg .overlay`).setAttribute('fill', '#EBEDF8');
 };
+/**
+ * 获取 translate x 轴偏移量
+ * @param {Element}} element
+ */
+
+const getOffsetX = element => {
+  const style = element.getAttribute('style');
+  const matchStr = style.match(/translate\((.*?)\)/)[1];
+  const offsetX = matchStr.split(',')[0] || '0';
+  return Number(offsetX.replace('px', ''));
+};
+/**
+ * 因dot渲染顺序会变化，这里将node重新排序
+ * @param {Array<Element>} dotNodes
+ */
+
+
+const getSortNodes = dotNodes => {
+  dotNodes.forEach(item => {
+    item._offsetX = getOffsetX(item);
+  });
+  const nodes = [].slice.call(dotNodes).sort((a, b) => a._offsetX > b._offsetX ? 1 : -1);
+  return nodes;
+};
+
+const handleTooltip = (pcontainer, data) => {
+  const tooltipEle = pcontainer.querySelector('.timeline-tooltip');
+  const vsgroup = pcontainer.querySelector('.vis-group');
+  const dotNodes = vsgroup.querySelectorAll('.vis-item.vis-dot');
+  const dotArr = getSortNodes(dotNodes);
+
+  const enterCbFn = e => {
+    const dateIndex = dotArr.indexOf(e.target);
+    const tooltipText = data[dateIndex].tooltip;
+
+    if (!tooltipText) {
+      return;
+    }
+
+    tooltipEle.querySelector('.timeline-tooltip-inner').innerHTML = tooltipText;
+    tooltipEle.style.display = 'block';
+    const tiprect = tooltipEle.getBoundingClientRect();
+    const dotrect = e.target.getBoundingClientRect();
+    tooltipEle.style.left = dotrect.left - 10 + 'px';
+    tooltipEle.style.top = dotrect.top - tiprect.height + 'px';
+  };
+
+  const leaveCbFn = () => {
+    tooltipEle.style.display = 'none';
+  };
+
+  dotNodes.forEach(element => {
+    element.onmouseenter = enterCbFn;
+    element.onmouseleave = leaveCbFn;
+  });
+};
+const handleBorderStartEnd = pcontainer => {
+  const vsgroup = pcontainer.querySelector('.vis-group');
+  const dotNodes = vsgroup.querySelectorAll('.vis-item.vis-dot');
+  const dotArr = getSortNodes(dotNodes);
+  const borderStartEl = pcontainer.querySelector('.timeline-border-start');
+  const firstDotEl = dotArr[0]; // const lastDotEl = dotArr[dotArr.length - 1];
+
+  const rect = firstDotEl.getBoundingClientRect();
+  const offsetX = getOffsetX(firstDotEl);
+  console.log(firstDotEl, offsetX, rect);
+  borderStartEl.style.width = rect.left + 'px'; // borderStartEl.style.width = offsetX + 'px';
+
+  borderStartEl.style.top = rect.top + 'px';
+};
 // CONCATENATED MODULE: ./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./src/brush-timeline/src/timeline.vue?vue&type=script&lang=js&
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -11621,6 +11765,7 @@ const brushHandle = id => {
       const options = {
         zoomMin,
         zoomMax,
+        start: minDate,
         orientation: this.orientation === 'top' ? {
           axis: 'top',
           item: 'top'
@@ -11636,17 +11781,25 @@ const brushHandle = id => {
         zoomable: false,
         horizontalScroll: false,
         moveable: false,
+        showCurrentTime: false,
         max: maxDate,
         min: minDate,
         timeAxis: {
           scale: 'year',
           step: 1
+        },
+        tooltip: {
+          overflowMethod: 'cap'
         }
       };
       this.timeline = new vis_timeline_graph2d["b" /* Timeline */](container, dataSet, options); // 用来全局调试而已
 
       window.brushTimeline = this.timeline;
-      this.brushInit(container);
+      this.brushInit(container); // tooltip
+
+      setTimeout(() => {
+        handleTooltip(pcontainer, this.data); // handleBorderStartEnd(pcontainer)
+      }, 200);
     },
 
     brushInit(container) {
@@ -11706,15 +11859,23 @@ const brushHandle = id => {
       this.timeline.setWindow(timeX[0], timeX[1]);
     }
 
+  },
+
+  beforeDestroy() {
+    document.querySelectorAll(`#${this.id} .vis-group>.vis-item.vis-dot`).forEach(element => {
+      element.onmouseenter = null;
+      element.onmouseleave = null;
+    });
   }
+
 });
 // CONCATENATED MODULE: ./src/brush-timeline/src/timeline.vue?vue&type=script&lang=js&
  /* harmony default export */ var src_timelinevue_type_script_lang_js_ = (timelinevue_type_script_lang_js_); 
 // EXTERNAL MODULE: ./src/brush-timeline/src/timeline.vue?vue&type=style&index=0&lang=scss&
-var timelinevue_type_style_index_0_lang_scss_ = __webpack_require__(184);
+var timelinevue_type_style_index_0_lang_scss_ = __webpack_require__(188);
 
 // EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
-var componentNormalizer = __webpack_require__(1);
+var componentNormalizer = __webpack_require__(0);
 
 // CONCATENATED MODULE: ./src/brush-timeline/src/timeline.vue
 
@@ -11853,11 +12014,11 @@ function toComment(sourceMap) {
 
 /***/ }),
 
-/***/ 26:
+/***/ 29:
 /***/ (function(module, exports, __webpack_require__) {
 
 var api = __webpack_require__(3);
-            var content = __webpack_require__(185);
+            var content = __webpack_require__(189);
 
             content = content.__esModule ? content.default : content;
 
@@ -12154,34 +12315,7 @@ module.exports = function (list, options) {
 
 /***/ }),
 
-/***/ 52:
-/***/ (function(module, exports) {
-
-var g;
-
-// This works in non-strict mode
-g = (function() {
-	return this;
-})();
-
-try {
-	// This works if eval is allowed (see CSP)
-	g = g || new Function("return this")();
-} catch (e) {
-	// This works if the window reference is available
-	if (typeof window === "object") g = window;
-}
-
-// g can still be undefined, but nothing to do about it...
-// We return undefined, instead of nothing here, so it's
-// easier to handle this case. if(!global) { ...}
-
-module.exports = g;
-
-
-/***/ }),
-
-/***/ 87:
+/***/ 91:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -54758,7 +54892,7 @@ var timeline = {
 
 //# sourceMappingURL=vis-timeline-graph2d.js.map
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(52)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(12)))
 
 /***/ })
 
