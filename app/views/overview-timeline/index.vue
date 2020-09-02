@@ -9,7 +9,7 @@
       <overview-timeline :data="timelineList2"></overview-timeline>
     </div>
     <div class="margin-top-130">
-      <overview-timeline :data="timelineList3"></overview-timeline>
+      <overview-timeline :data="timelineList3" :itemWidth="300"></overview-timeline>
     </div>
   </div>
 </template>

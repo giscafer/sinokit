@@ -4,6 +4,7 @@
       v-for="(item, index) in timelineList"
       :key="index"
       class="timeline-item"
+      :style="{'width':itemWidth+'px'}"
       :class="{'ellipsis':isEllipsis(index),'single':timelineList.length===1}"
     >
       <template v-if="!isEllipsis(index)">
@@ -33,6 +34,10 @@ export default {
     data: {
       type: Array,
       default: () => [],
+    },
+    itemWidth: {
+      type: Number,
+      default: 200,
     },
   },
   data() {
@@ -128,12 +133,12 @@ $borderColor: rgba(72, 101, 233, 0.5);
 .timeline-item {
   position: relative;
   display: inline-block;
-  width: 200px;
+  // width: 200px;
   height: 20px;
   &.ellipsis {
     display: flex;
     align-items: center;
-    width: 36px;
+    width: 44px !important;
     left: 7px;
   }
   .content {
