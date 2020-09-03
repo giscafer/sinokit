@@ -3,25 +3,28 @@
     <div
       v-for="(item, index) in timelineList"
       :key="index"
-      class="timeline-item"
+      class="ov-timeline-item"
       :style="{'width':itemWidth+'px'}"
       :class="{'ellipsis':isEllipsis(index),'single':timelineList.length===1,'expand':!collapse}"
     >
       <template v-if="!isEllipsis(index)">
-        <div class="node">
+        <div class="ov-timeline-node">
           <div class="center"></div>
         </div>
-        <div class="tail" v-if="timelineList.length>1"></div>
-        <div class="content" :style="{'left':collapse?'':((0.5-( 200/itemWidth)*0.5)*100+'%')}">
-          <div class="title" v-text="item.title"></div>
-          <div class="description" v-text="item.description"></div>
+        <div class="ov-timeline-tail" v-if="timelineList.length>1"></div>
+        <div
+          class="ov-timeline-content"
+          :style="{'left':collapse?'':((0.5-( 200/itemWidth)*0.5)*100+'%')}"
+        >
+          <div class="ov-timeline-title" v-text="item.title"></div>
+          <div class="ov-timeline-description" v-text="item.description"></div>
         </div>
       </template>
       <template v-if="isEllipsis(index)">
         <div class="ellipsis-item">
-          <div class="node"></div>
-          <div class="node"></div>
-          <div class="node"></div>
+          <div class="ov-timeline-node"></div>
+          <div class="ov-timeline-node"></div>
+          <div class="ov-timeline-node"></div>
         </div>
       </template>
     </div>
@@ -82,12 +85,13 @@ export default {
 <style lang="scss" scoped>
 $nodeColor: rgba(72, 101, 233, 1);
 $borderColor: rgba(72, 101, 233, 0.5);
+$prefix: 'ov-timeline';
 .overview-timeline-component {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.node {
+.#{$prefix}-node {
   display: flex;
   position: absolute;
   bottom: 0;
@@ -113,15 +117,15 @@ $borderColor: rgba(72, 101, 233, 0.5);
   text-align: center;
   flex-direction: column;
   position: relative;
-  .node {
+  .#{$prefix}-node {
     left: 0;
     margin: 0 auto;
   }
-  .content {
+  .#{$prefix}-content {
     margin: 0 auto;
   }
 }
-.tail {
+.#{$prefix}-tail {
   position: absolute;
   bottom: 8px;
   right: 0;
@@ -133,7 +137,7 @@ $borderColor: rgba(72, 101, 233, 0.5);
   width: 30px;
   justify-content: space-between;
   background: transparent;
-  > .node {
+  > .#{$prefix}-node {
     position: relative;
     width: 8px;
     height: 8px;
@@ -141,7 +145,7 @@ $borderColor: rgba(72, 101, 233, 0.5);
   }
 }
 
-.timeline-item {
+.#{$prefix}-item {
   position: relative;
   display: inline-block;
   // width: 200px;
@@ -152,32 +156,32 @@ $borderColor: rgba(72, 101, 233, 0.5);
     width: 44px !important;
     left: 7px;
   }
-  .content {
+  .#{$prefix}-content {
     position: absolute;
     width: 200px;
     top: 30px;
     text-align: center;
     font-size: 16px;
-    .title {
+    .#{$prefix}-title {
       color: #333;
     }
-    .description {
+    .#{$prefix}-description {
       margin-top: 10px;
       color: #a6aab8;
     }
   }
 
   &:last-child {
-    .node {
+    .#{$prefix}-node {
       right: -10px;
     }
-    .content {
+    .#{$prefix}-content {
       position: absolute;
       right: -100px;
     }
   }
   &:first-child {
-    .content {
+    .#{$prefix}-content {
       position: absolute;
       left: -100px;
     }
@@ -185,20 +189,20 @@ $borderColor: rgba(72, 101, 233, 0.5);
 }
 
 .expand {
-  .node {
+  .#{$prefix}-node {
     left: 50%;
   }
-  /*  .content {
+  /*  .#{$prefix}-content {
     left: 25% !important;
   } */
   &:last-child {
-    .tail {
+    .#{$prefix}-tail {
       left: 0;
       width: 50%;
     }
   }
   &:first-child {
-    .tail {
+    .#{$prefix}-tail {
       left: 50%;
       width: 50%;
     }

@@ -13,7 +13,7 @@
 </desc>
 
 <template>
-  <div>
+  <div style="min-height:400px">
     <div>
       <overview-timeline :data="timelineList"></overview-timeline>
     </div>
@@ -59,13 +59,11 @@
 </desc>
 
 <template>
-  <div>
-    <div>
-      <overview-timeline
-        :data="timelineList"
-        :collapse="false"
-      ></overview-timeline>
-    </div>
+  <div style="min-height:200px">
+    <overview-timeline
+      :data="timelineList"
+      :collapse="false"
+    ></overview-timeline>
   </div>
 </template>
 
