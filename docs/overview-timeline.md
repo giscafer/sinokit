@@ -1,6 +1,6 @@
 # OverviewTimeline 时间轴
 
-可收起的时间轴
+概览时间轴，可收起的时间轴
 
 ## 示例
 
@@ -59,7 +59,7 @@
 </desc>
 
 <template>
-  <div style="min-height:200px">
+  <div style="min-height:200px;width:1100px;padding-top:30px;overflow-x:auto">
     <overview-timeline
       :data="timelineList"
       :collapse="false"
@@ -74,12 +74,9 @@
         timelineList: [
           { title: '1997年', description: '美国第一次上市' },
           { title: '2000年', description: '香港第一次上市' },
-          { title: '2000年', description: '香港第一次上市' },
-          { title: '2000年', description: '香港第一次上市' },
-          { title: '2000年', description: '香港第一次上市' },
-          { title: '2000年', description: '香港第一次上市' },
-          { title: '2000年', description: '香港第一次上市' },
-          { title: '2007年', description: '中国第一次上市' }
+          { title: '2002年', description: '香港第一次上市' },
+          { title: '2003年', description: '香港第一次上市' },
+          { title: '2004年', description: '香港第一次上市' }
         ]
       };
     }
