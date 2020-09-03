@@ -259,7 +259,8 @@ var render = function() {
           staticClass: "timeline-item",
           class: {
             ellipsis: _vm.isEllipsis(index),
-            single: _vm.timelineList.length === 1
+            single: _vm.timelineList.length === 1,
+            expand: !_vm.collapse
           },
           style: { width: _vm.itemWidth + "px" }
         },
@@ -270,16 +271,27 @@ var render = function() {
                 _vm.timelineList.length > 1
                   ? _c("div", { staticClass: "tail" })
                   : _vm._e(),
-                _c("div", { staticClass: "content" }, [
-                  _c("div", {
-                    staticClass: "title",
-                    domProps: { textContent: _vm._s(item.title) }
-                  }),
-                  _c("div", {
-                    staticClass: "description",
-                    domProps: { textContent: _vm._s(item.description) }
-                  })
-                ])
+                _c(
+                  "div",
+                  {
+                    staticClass: "content",
+                    style: {
+                      left: _vm.collapse
+                        ? ""
+                        : (0.5 - (200 / _vm.itemWidth) * 0.5) * 100 + "%"
+                    }
+                  },
+                  [
+                    _c("div", {
+                      staticClass: "title",
+                      domProps: { textContent: _vm._s(item.title) }
+                    }),
+                    _c("div", {
+                      staticClass: "description",
+                      domProps: { textContent: _vm._s(item.description) }
+                    })
+                  ]
+                )
               ]
             : _vm._e(),
           _vm.isEllipsis(index) ? [_vm._m(1, true)] : _vm._e()
@@ -355,6 +367,10 @@ render._withStripped = true
     itemWidth: {
       type: Number,
       default: 200
+    },
+    collapse: {
+      type: Boolean,
+      default: true
     }
   },
 
@@ -366,15 +382,7 @@ render._withStripped = true
 
   watch: {
     data() {
-      const length = this.data.length || 0; // TODO: 展示所有的时候删除这里的代码
-
-      if (length > 0) {
-        this.timelineList = this.data;
-      } else {
-        this.timelineList.length = 0;
-      }
-
-      console.table(this.timelineList);
+      this.setTimelineList();
     }
 
   },
@@ -383,12 +391,26 @@ render._withStripped = true
   created() {},
 
   mounted() {
-    this.timelineList = this.data;
+    this.setTimelineList();
   },
 
   methods: {
+    isHeadOrTail(index) {
+      return index === 0 || index === this.timelineList.length - 1;
+    },
+
     isEllipsis(index) {
-      return index !== 0 && index !== this.timelineList.length - 1;
+      return index !== 0 && index !== this.timelineList.length - 1 && this.collapse;
+    },
+
+    setTimelineList() {
+      const length = this.data.length || 0;
+
+      if (this.collapse && length > 2) {
+        this.timelineList = [this.data[0], this.data[1], this.data[2]];
+      } else {
+        this.timelineList = this.data;
+      }
     }
 
   }
@@ -479,7 +501,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(false);
 // Module
-___CSS_LOADER_EXPORT___.push([module.i, ".overview-timeline-component[data-v-6770f667]{display:flex;justify-content:center;align-items:center}.node[data-v-6770f667]{display:flex;position:absolute;bottom:0;transform:translateX(-50%);background-color:#4865e9;border-radius:50%;justify-content:center;align-items:center;width:18px;height:18px;z-index:100}.node>.center[data-v-6770f667]{background-color:#fff;width:12px;height:12px;border-radius:50%}.single[data-v-6770f667]{display:flex;justify-content:center;align-items:center;text-align:center;flex-direction:column;position:relative}.single .node[data-v-6770f667]{left:0;margin:0 auto}.single .content[data-v-6770f667]{margin:0 auto}.tail[data-v-6770f667]{position:absolute;bottom:8px;right:0;width:100%;border-top:2px solid rgba(72,101,233,0.5)}.ellipsis-item[data-v-6770f667]{display:flex;width:30px;justify-content:space-between;background:transparent}.ellipsis-item>.node[data-v-6770f667]{position:relative;width:8px;height:8px;background:rgba(72,101,233,0.5)}.timeline-item[data-v-6770f667]{position:relative;display:inline-block;height:20px}.timeline-item.ellipsis[data-v-6770f667]{display:flex;align-items:center;width:44px !important;left:7px}.timeline-item .content[data-v-6770f667]{position:absolute;width:150px;top:30px;text-align:center;font-size:16px}.timeline-item .content .title[data-v-6770f667]{color:#333}.timeline-item .content .description[data-v-6770f667]{margin-top:10px;color:#a6aab8}.timeline-item:last-child .node[data-v-6770f667]{right:-10px}.timeline-item:last-child .content[data-v-6770f667]{position:absolute;right:-75px}.timeline-item:first-child .content[data-v-6770f667]{position:absolute;left:-75px}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.i, ".overview-timeline-component[data-v-6770f667]{display:flex;justify-content:center;align-items:center}.node[data-v-6770f667]{display:flex;position:absolute;bottom:0;transform:translateX(-50%);background-color:#4865e9;border-radius:50%;justify-content:center;align-items:center;width:18px;height:18px;z-index:100}.node>.center[data-v-6770f667]{background-color:#fff;width:12px;height:12px;border-radius:50%}.single[data-v-6770f667]{display:flex;justify-content:center;align-items:center;text-align:center;flex-direction:column;position:relative}.single .node[data-v-6770f667]{left:0;margin:0 auto}.single .content[data-v-6770f667]{margin:0 auto}.tail[data-v-6770f667]{position:absolute;bottom:8px;right:0;width:100%;border-top:2px solid rgba(72,101,233,0.5)}.ellipsis-item[data-v-6770f667]{display:flex;width:30px;justify-content:space-between;background:transparent}.ellipsis-item>.node[data-v-6770f667]{position:relative;width:8px;height:8px;background:rgba(72,101,233,0.5)}.timeline-item[data-v-6770f667]{position:relative;display:inline-block;height:20px}.timeline-item.ellipsis[data-v-6770f667]{display:flex;align-items:center;width:44px !important;left:7px}.timeline-item .content[data-v-6770f667]{position:absolute;width:200px;top:30px;text-align:center;font-size:16px}.timeline-item .content .title[data-v-6770f667]{color:#333}.timeline-item .content .description[data-v-6770f667]{margin-top:10px;color:#a6aab8}.timeline-item:last-child .node[data-v-6770f667]{right:-10px}.timeline-item:last-child .content[data-v-6770f667]{position:absolute;right:-100px}.timeline-item:first-child .content[data-v-6770f667]{position:absolute;left:-100px}.expand .node[data-v-6770f667]{left:50%}.expand:last-child .tail[data-v-6770f667]{left:0;width:50%}.expand:first-child .tail[data-v-6770f667]{left:50%;width:50%}\n", ""]);
 // Exports
 /* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
 
