@@ -11,6 +11,13 @@ Vue.js 2.x 组件库、基础组件、业务组件、区块、模板
 
 ## Usage
 
+### Install dependencies
+
+```
+lerna bootstrap
+npm install
+```
+
 ### demo
 
 ```
