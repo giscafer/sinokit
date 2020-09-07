@@ -5,7 +5,7 @@
       :key="index"
       class="ov-timeline-item"
       :style="{'width':itemWidth+'px'}"
-      :class="{'ellipsis':isEllipsis(index),'single':timelineList.length===1,'expand':!collapse}"
+      :class="{'ov-timeline-ellipsis':isEllipsis(index),'single':timelineList.length===1,'expand':!collapse}"
     >
       <template v-if="!isEllipsis(index)">
         <div class="ov-timeline-node">
@@ -21,7 +21,7 @@
         </div>
       </template>
       <template v-if="isEllipsis(index)">
-        <div class="ellipsis-item">
+        <div class="ov-timeline-ellipsis-item">
           <div class="ov-timeline-node"></div>
           <div class="ov-timeline-node"></div>
           <div class="ov-timeline-node"></div>
@@ -89,7 +89,8 @@ $prefix: 'ov-timeline';
 .overview-timeline-component {
   display: flex;
   justify-content: center;
-  align-items: center;
+  min-height: 100px;
+  padding-top: 10px;
 }
 .#{$prefix}-node {
   display: flex;
@@ -132,30 +133,30 @@ $prefix: 'ov-timeline';
   width: 100%;
   border-top: 2px solid $borderColor;
 }
-.ellipsis-item {
+.#{$prefix}-ellipsis {
   display: flex;
-  width: 30px;
-  justify-content: space-between;
-  background: transparent;
-  > .#{$prefix}-node {
-    position: relative;
-    width: 8px;
-    height: 8px;
-    background: $borderColor;
+  align-items: center;
+  width: 44px !important;
+  left: 7px;
+  &-item {
+    display: flex;
+    width: 30px;
+    justify-content: space-between;
+    background: transparent;
+    margin: 0 auto;
+    > .#{$prefix}-node {
+      position: relative;
+      width: 8px;
+      height: 8px;
+      background: $borderColor;
+    }
   }
 }
-
 .#{$prefix}-item {
   position: relative;
   display: inline-block;
   // width: 200px;
   height: 20px;
-  &.ellipsis {
-    display: flex;
-    align-items: center;
-    width: 44px !important;
-    left: 7px;
-  }
   .#{$prefix}-content {
     position: absolute;
     width: 200px;
