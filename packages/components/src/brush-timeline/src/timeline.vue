@@ -50,12 +50,17 @@ export default {
     height: { type: Number, default: 14 },
     margin: { type: Number, default: 19 },
     orientation: { type: String, default: 'top' },
+    nowrap: {
+      type: Boolean,
+      default: false,
+    },
   },
   data() {
     return {
       id: `vis-timeline-${Math.random().toString(16).substr(2)}`,
       timeline: null,
       brushRange: 0,
+      brushMaxWidth: 500, // brush 最大可缩放的宽度
       startDate: new Date(),
       endDate: new Date(),
     }
@@ -156,10 +161,32 @@ export default {
       const context = svg.append('g').attr('class', 'context')
       let brushHandleLeft = null
       let brushHandleRight = null
+      let brush = null
       const brushed = () => {
-        console.log(event)
-        if (event.sourceEvent && event.sourceEvent.type === 'zoom') return // ignore brush-by-zoom
+        if (event.sourceEvent && event.sourceEvent.type === 'zoom') {
+          console.log('zzom')
+          return // ignore brush-by-zoom
+        }
         const s = event.selection
+        console.log(s)
+        // 控制超过最大宽度的时候，不能再伸长（解决产品要求的换行问题）
+        if (this.nowrap && s[1] - s[0] > this.brushMaxWidth) {
+          console.log(1, s[1] - s[0])
+          s[1] = s[0] + this.brushMaxWidth
+          // 控制 brush 和 handle 的位置
+          svg.select('.handle--e').attr('x', s[1])
+          svg.select('.selection').attr('width', this.brushMaxWidth)
+        }
+        /*  brush.extent([
+          [s[0], height],
+          [s[1], height],
+        ]) */
+        console.log(
+          JSON.stringify([
+            [s[0], height],
+            [s[1], height],
+          ])
+        )
         // console.log(s.map(x.invert, x).map((d) => timeFormat('%Y-%m')(d)))
         // 根据 brush 位置渲染 缩放和定位timeline
         const timeX = s.map(x.invert, x)
@@ -171,12 +198,13 @@ export default {
         brushHandle(this.id)
       }
       // 创建 brush
-      const brush = brushX()
+      brush = brushX()
         .extent([
           [0, 0],
           [width, height],
         ])
-        .on('start brush end', brushed)
+        .on('start end', brushed)
+        .on('brush', brushed)
 
       this.brushRange = x.range()
 
@@ -186,6 +214,9 @@ export default {
       const { length } = this.data
       if (length <= 3) {
         initLen = this.brushRange[1]
+      }
+      if (this.nowrap && initLen > this.brushMaxWidth) {
+        initLen = this.brushMaxWidth
       }
       context
         .append('g')

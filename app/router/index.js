@@ -30,8 +30,14 @@ export const routes = [
   },
   {
     path: '/timeline',
-    name: '时光轴',
+    name: 'Brush 时光轴',
     component: () => import('../views/timeline/index.vue'),
+    props: true
+  },
+  {
+    path: '/timeline1',
+    name: 'Brush 时光轴test',
+    component: () => import('../views/timeline/index1.vue'),
     props: true
   },
   {
