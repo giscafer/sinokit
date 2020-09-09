@@ -98,7 +98,7 @@ export default {
       const maxDate = new Date(
         `${dataSetData[length - 1].start.getFullYear() + 1}/01/01`
       )
-      const zoomMax = maxDate.getTime() - minDate.getTime()
+      const zoomMax = (maxDate.getTime() - minDate.getTime()) / 1
       const zoomMin = 31104000000 // 月为缩放单位
       // const zoomMin = 31104000000 * 3 // 季度为缩放单位
       this.startDate = minDate
@@ -157,6 +157,7 @@ export default {
       let brushHandleLeft = null
       let brushHandleRight = null
       const brushed = () => {
+        console.log(event)
         if (event.sourceEvent && event.sourceEvent.type === 'zoom') return // ignore brush-by-zoom
         const s = event.selection
         // console.log(s.map(x.invert, x).map((d) => timeFormat('%Y-%m')(d)))
@@ -180,14 +181,21 @@ export default {
       this.brushRange = x.range()
 
       // 渲染brush
+      // 初始化长度
+      let initLen = this.brushRange[1] / 2
+      const { length } = this.data
+      if (length <= 3) {
+        initLen = this.brushRange[1]
+      }
       context
         .append('g')
         .attr('class', 'brush')
         .call(brush)
-        .call(brush.move, [this.brushRange[0], this.brushRange[1] / 2])
+        // 初始化拉伸brush
+        .call(brush.move, [this.brushRange[0], initLen])
 
       brushHandleLeft = drawHandle(svg, 0, 'w')
-      brushHandleRight = drawHandle(svg, this.brushRange[1] / 2, 'e')
+      brushHandleRight = drawHandle(svg, initLen, 'e')
       // 日期坐标添加到brush作为参考依据
       x.domain(
         extent(
@@ -218,10 +226,7 @@ export default {
         .querySelector(`#${this.id}>svg .selection`)
         .setAttribute('stroke', '#dbdded')
       // 首次初始化
-      const timeX = [this.brushRange[0], this.brushRange[1] / 2].map(
-        x.invert,
-        x
-      )
+      const timeX = [this.brushRange[0], initLen].map(x.invert, x)
       this.timeline.setWindow(timeX[0], timeX[1])
     },
   },

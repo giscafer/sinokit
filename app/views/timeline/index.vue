@@ -1,7 +1,9 @@
 <template>
-  <div>
-    <h3>时间轴</h3>
-    <brush-timeline :data="timelineData"></brush-timeline>
+  <div style="margin:16px 16px 32px 16px">
+    <h3>时间轴，数据量小时</h3>
+    <brush-timeline :data="timelineData1" render-type="json"></brush-timeline>
+    <h3>时间轴2</h3>
+    <brush-timeline :data="timelineData2"></brush-timeline>
     <div style="margin-top:40px">
       <h3>时间轴2</h3>
       <brush-timeline :data="data2" render-type="json"></brush-timeline>
@@ -15,7 +17,12 @@ export default {
   data() {
     return {
       // 注意：JavaScript Date 对象中，月份是从0开始
-      timelineData: [
+      timelineData1: [
+        { date: '2015-6-18', tooltip: '牛市2', label: '牛市' },
+        { date: '2015-6-18', tooltip: '牛市2', label: '牛市' },
+        { date: '2015-6-18', tooltip: '牛市2', label: '牛市' },
+      ],
+      timelineData2: [
         {
           tooltip: 'tooltip-1',
           content:
@@ -65,6 +72,17 @@ export default {
         },
         { date: '2015-6-18', tooltip: '牛市2', label: '牛市' },
         { date: '2018-6-18', tooltip: '震荡市3', label: '震荡市' },
+        { date: '2018-6-18', tooltip: '突破3000点4', label: '突破3000点4' },
+        { date: '2018-6-18', tooltip: '突破3000点4', label: '突破3000点4' },
+        { date: '2018-6-18', tooltip: '突破3000点4', label: '突破3000点4' },
+        { date: '2018-6-18', tooltip: '突破3000点4', label: '突破3000点4' },
+        { date: '2018-6-18', tooltip: '突破3000点4', label: '突破3000点4' },
+        { date: '2018-6-18', tooltip: '突破3000点4', label: '突破3000点4' },
+        { date: '2018-6-18', tooltip: '突破3000点4', label: '突破3000点4' },
+        { date: '2018-6-18', tooltip: '突破3000点4', label: '突破3000点4' },
+        { date: '2018-6-18', tooltip: '突破3000点4', label: '突破3000点4' },
+        { date: '2018-6-18', tooltip: '突破3000点4', label: '突破3000点4' },
+        { date: '2018-6-18', tooltip: '突破3000点4', label: '突破3000点4' },
         { date: '2020-6-20', tooltip: '突破3000点4', label: '突破3000点' },
         {
           date: '2020-8-20',
