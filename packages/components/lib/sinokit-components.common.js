@@ -2063,7 +2063,7 @@ var render = function() {
           key: index,
           staticClass: "ov-timeline-item",
           class: {
-            ellipsis: _vm.isEllipsis(index),
+            "ov-timeline-ellipsis": _vm.isEllipsis(index),
             single: _vm.timelineList.length === 1,
             expand: !_vm.collapse
           },
@@ -2120,7 +2120,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "ellipsis-item" }, [
+    return _c("div", { staticClass: "ov-timeline-ellipsis-item" }, [
       _c("div", { staticClass: "ov-timeline-node" }),
       _c("div", { staticClass: "ov-timeline-node" }),
       _c("div", { staticClass: "ov-timeline-node" })
@@ -61327,7 +61327,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(false);
 // Module
-___CSS_LOADER_EXPORT___.push([module.i, ".overview-timeline-component[data-v-6770f667]{display:flex;justify-content:center;align-items:center}.ov-timeline-node[data-v-6770f667]{display:flex;position:absolute;bottom:0;transform:translateX(-50%);background-color:#4865e9;border-radius:50%;justify-content:center;align-items:center;width:18px;height:18px;z-index:100}.ov-timeline-node>.center[data-v-6770f667]{background-color:#fff;width:12px;height:12px;border-radius:50%}.single[data-v-6770f667]{display:flex;justify-content:center;align-items:center;text-align:center;flex-direction:column;position:relative}.single .ov-timeline-node[data-v-6770f667]{left:0;margin:0 auto}.single .ov-timeline-content[data-v-6770f667]{margin:0 auto}.ov-timeline-tail[data-v-6770f667]{position:absolute;bottom:8px;right:0;width:100%;border-top:2px solid rgba(72,101,233,0.5)}.ellipsis-item[data-v-6770f667]{display:flex;width:30px;justify-content:space-between;background:transparent}.ellipsis-item>.ov-timeline-node[data-v-6770f667]{position:relative;width:8px;height:8px;background:rgba(72,101,233,0.5)}.ov-timeline-item[data-v-6770f667]{position:relative;display:inline-block;height:20px}.ov-timeline-item.ellipsis[data-v-6770f667]{display:flex;align-items:center;width:44px !important;left:7px}.ov-timeline-item .ov-timeline-content[data-v-6770f667]{position:absolute;width:200px;top:30px;text-align:center;font-size:16px}.ov-timeline-item .ov-timeline-content .ov-timeline-title[data-v-6770f667]{color:#333}.ov-timeline-item .ov-timeline-content .ov-timeline-description[data-v-6770f667]{margin-top:10px;color:#a6aab8}.ov-timeline-item:last-child .ov-timeline-node[data-v-6770f667]{right:-10px}.ov-timeline-item:last-child .ov-timeline-content[data-v-6770f667]{position:absolute;right:-100px}.ov-timeline-item:first-child .ov-timeline-content[data-v-6770f667]{position:absolute;left:-100px}.expand .ov-timeline-node[data-v-6770f667]{left:50%}.expand:last-child .ov-timeline-tail[data-v-6770f667]{left:0;width:50%}.expand:first-child .ov-timeline-tail[data-v-6770f667]{left:50%;width:50%}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.i, ".overview-timeline-component[data-v-6770f667]{display:flex;justify-content:center;min-height:100px;padding-top:10px}.ov-timeline-node[data-v-6770f667]{display:flex;position:absolute;bottom:0;transform:translateX(-50%);background-color:#4865e9;border-radius:50%;justify-content:center;align-items:center;width:18px;height:18px;z-index:100}.ov-timeline-node>.center[data-v-6770f667]{background-color:#fff;width:12px;height:12px;border-radius:50%}.single[data-v-6770f667]{display:flex;justify-content:center;align-items:center;text-align:center;flex-direction:column;position:relative}.single .ov-timeline-node[data-v-6770f667]{left:0;margin:0 auto}.single .ov-timeline-content[data-v-6770f667]{margin:0 auto}.ov-timeline-tail[data-v-6770f667]{position:absolute;bottom:8px;right:0;width:100%;border-top:2px solid rgba(72,101,233,0.5)}.ov-timeline-ellipsis[data-v-6770f667]{display:flex;align-items:center;width:44px !important;left:7px}.ov-timeline-ellipsis-item[data-v-6770f667]{display:flex;width:30px;justify-content:space-between;background:transparent;margin:0 auto}.ov-timeline-ellipsis-item>.ov-timeline-node[data-v-6770f667]{position:relative;width:8px;height:8px;background:rgba(72,101,233,0.5)}.ov-timeline-item[data-v-6770f667]{position:relative;display:inline-block;height:20px}.ov-timeline-item .ov-timeline-content[data-v-6770f667]{position:absolute;width:200px;top:30px;text-align:center;font-size:16px}.ov-timeline-item .ov-timeline-content .ov-timeline-title[data-v-6770f667]{color:#333}.ov-timeline-item .ov-timeline-content .ov-timeline-description[data-v-6770f667]{margin-top:10px;color:#a6aab8}.ov-timeline-item:last-child .ov-timeline-node[data-v-6770f667]{right:-10px}.ov-timeline-item:last-child .ov-timeline-content[data-v-6770f667]{position:absolute;right:-100px}.ov-timeline-item:first-child .ov-timeline-content[data-v-6770f667]{position:absolute;left:-100px}.expand .ov-timeline-node[data-v-6770f667]{left:50%}.expand:last-child .ov-timeline-tail[data-v-6770f667]{left:0;width:50%}.expand:first-child .ov-timeline-tail[data-v-6770f667]{left:50%;width:50%}\n", ""]);
 // Exports
 /* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
 
@@ -76141,6 +76141,15 @@ const handleBorderStartEnd = pcontainer => {
     orientation: {
       type: String,
       default: 'top'
+    },
+    nowrap: {
+      type: Boolean,
+      default: false
+    },
+    brushMaxWidth: {
+      // brush 最大可缩放的宽度
+      type: Number,
+      default: 500
     }
   },
 
@@ -76149,6 +76158,8 @@ const handleBorderStartEnd = pcontainer => {
       id: `vis-timeline-${Math.random().toString(16).substr(2)}`,
       timeline: null,
       brushRange: 0,
+      gap: 310,
+      // 两个节点之间的距离，原来计算当行最多可以展示多少个，以便确定不换行时brush 的宽度
       startDate: new Date(),
       endDate: new Date()
     };
@@ -76192,7 +76203,7 @@ const handleBorderStartEnd = pcontainer => {
 
       const minDate = new Date(`${dataSetData[0].start.getFullYear() - 1}/01/01`);
       const maxDate = new Date(`${dataSetData[length - 1].start.getFullYear() + 1}/01/01`);
-      const zoomMax = maxDate.getTime() - minDate.getTime();
+      const zoomMax = (maxDate.getTime() - minDate.getTime()) / 1;
       const zoomMin = 31104000000; // 月为缩放单位
       // const zoomMin = 31104000000 * 3 // 季度为缩放单位
 
@@ -76249,27 +76260,80 @@ const handleBorderStartEnd = pcontainer => {
       const context = svg.append('g').attr('class', 'context');
       let brushHandleLeft = null;
       let brushHandleRight = null;
+      let brush = null;
+      let slider = null;
+      let startSelection = [];
+      let preSelection = [-1, -1]; // 缓存上一次位置
+
+      let direction = 1; // 判断resize 方向，左边1，右边2
+      // let frstBrush
 
       const brushed = () => {
-        if (on_event.sourceEvent && on_event.sourceEvent.type === 'zoom') return; // ignore brush-by-zoom
+        const s = on_event.selection;
+        let wx = s[0];
+        let ex = s[1];
 
-        const s = on_event.selection; // console.log(s.map(x.invert, x).map((d) => timeFormat('%Y-%m')(d)))
-        // 根据 brush 位置渲染 缩放和定位timeline
+        if (this.nowrap) {
+          if (on_event.type === 'start') {
+            startSelection = s;
+          }
+
+          if (startSelection[0] === s[0]) {
+            direction = 2;
+          } else if (startSelection[1] === s[1]) {
+            direction = 1;
+          }
+
+          if (startSelection.join(',') === s.join(',')) {
+            wx = preSelection[0];
+            ex = preSelection[1];
+          } // 控制超过最大宽度的时候，不能再伸长（解决产品要求的换行问题）
+
+
+          if (s[1] - s[0] > this.brushMaxWidth) {
+            wx = direction === 2 ? s[1] - this.brushMaxWidth : s[0];
+            ex = direction === 2 ? s[1] : s[0] + this.brushMaxWidth; // 控制 brush 和 handle 的位置
+
+            svg.select('.selection').attr('x', wx);
+            svg.select('.selection').attr('width', this.brushMaxWidth);
+
+            if (on_event.type !== 'start') {
+              slider.call(brush.move, [wx, ex]);
+              preSelection = [wx, ex];
+            }
+          }
+        } // 根据 brush 位置渲染 缩放和定位timeline
+
 
         const timeX = s.map(x.invert, x);
         this.timeline.setWindow(timeX[0], timeX[1]);
-        transformHandle(brushHandleLeft, s[0], 'w');
-        transformHandle(brushHandleRight, s[1], 'e');
+        transformHandle(brushHandleLeft, wx, 'w');
+        transformHandle(brushHandleRight, ex, 'e');
         brushHandle(this.id);
       }; // 创建 brush
 
 
-      const brush = brushX().extent([[0, 0], [width, height]]).on('start brush end', brushed);
+      brush = brushX().extent([[0, 0], [width, height]]).on('start', brushed).on('brush', brushed).on(' end', brushed);
       this.brushRange = x.range(); // 渲染brush
+      // 初始化长度
 
-      context.append('g').attr('class', 'brush').call(brush).call(brush.move, [this.brushRange[0], this.brushRange[1] / 2]);
+      let initLen = this.brushRange[1] / 2;
+      const {
+        length
+      } = this.data;
+
+      if (length <= 3) {
+        initLen = this.brushRange[1];
+      }
+
+      if (this.nowrap && initLen > this.brushMaxWidth) {
+        initLen = this.brushMaxWidth;
+      }
+
+      slider = context.append('g').attr('class', 'brush').call(brush) // 初始化拉伸brush
+      .call(brush.move, [this.brushRange[0], initLen]);
       brushHandleLeft = drawHandle(svg, 0, 'w');
-      brushHandleRight = drawHandle(svg, this.brushRange[1] / 2, 'e'); // 日期坐标添加到brush作为参考依据
+      brushHandleRight = drawHandle(svg, initLen, 'e'); // 日期坐标添加到brush作为参考依据
 
       x.domain(src_extent([{
         start: this.startDate
@@ -76291,7 +76355,7 @@ const handleBorderStartEnd = pcontainer => {
       document.querySelector(`#${this.id}>svg .selection`).setAttribute('ry', 7);
       document.querySelector(`#${this.id}>svg .selection`).setAttribute('stroke', '#dbdded'); // 首次初始化
 
-      const timeX = [this.brushRange[0], this.brushRange[1] / 2].map(x.invert, x);
+      const timeX = [this.brushRange[0], initLen].map(x.invert, x);
       this.timeline.setWindow(timeX[0], timeX[1]);
     }
 
@@ -76373,7 +76437,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 /* harmony default export */ var src = __webpack_exports__["default"] = ({
-  version: '0.2.0',
+  version: '0.2.2',
   install,
   JsonEditor: src_json_editor,
   JsonSchemaEditor: src_json_schema_editor,

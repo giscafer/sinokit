@@ -11705,6 +11705,15 @@ const handleBorderStartEnd = pcontainer => {
     orientation: {
       type: String,
       default: 'top'
+    },
+    nowrap: {
+      type: Boolean,
+      default: false
+    },
+    brushMaxWidth: {
+      // brush 最大可缩放的宽度
+      type: Number,
+      default: 500
     }
   },
 
@@ -11713,6 +11722,8 @@ const handleBorderStartEnd = pcontainer => {
       id: `vis-timeline-${Math.random().toString(16).substr(2)}`,
       timeline: null,
       brushRange: 0,
+      gap: 310,
+      // 两个节点之间的距离，原来计算当行最多可以展示多少个，以便确定不换行时brush 的宽度
       startDate: new Date(),
       endDate: new Date()
     };
@@ -11756,7 +11767,7 @@ const handleBorderStartEnd = pcontainer => {
 
       const minDate = new Date(`${dataSetData[0].start.getFullYear() - 1}/01/01`);
       const maxDate = new Date(`${dataSetData[length - 1].start.getFullYear() + 1}/01/01`);
-      const zoomMax = maxDate.getTime() - minDate.getTime();
+      const zoomMax = (maxDate.getTime() - minDate.getTime()) / 1;
       const zoomMin = 31104000000; // 月为缩放单位
       // const zoomMin = 31104000000 * 3 // 季度为缩放单位
 
@@ -11813,27 +11824,80 @@ const handleBorderStartEnd = pcontainer => {
       const context = svg.append('g').attr('class', 'context');
       let brushHandleLeft = null;
       let brushHandleRight = null;
+      let brush = null;
+      let slider = null;
+      let startSelection = [];
+      let preSelection = [-1, -1]; // 缓存上一次位置
+
+      let direction = 1; // 判断resize 方向，左边1，右边2
+      // let frstBrush
 
       const brushed = () => {
-        if (on_event.sourceEvent && on_event.sourceEvent.type === 'zoom') return; // ignore brush-by-zoom
+        const s = on_event.selection;
+        let wx = s[0];
+        let ex = s[1];
 
-        const s = on_event.selection; // console.log(s.map(x.invert, x).map((d) => timeFormat('%Y-%m')(d)))
-        // 根据 brush 位置渲染 缩放和定位timeline
+        if (this.nowrap) {
+          if (on_event.type === 'start') {
+            startSelection = s;
+          }
+
+          if (startSelection[0] === s[0]) {
+            direction = 2;
+          } else if (startSelection[1] === s[1]) {
+            direction = 1;
+          }
+
+          if (startSelection.join(',') === s.join(',')) {
+            wx = preSelection[0];
+            ex = preSelection[1];
+          } // 控制超过最大宽度的时候，不能再伸长（解决产品要求的换行问题）
+
+
+          if (s[1] - s[0] > this.brushMaxWidth) {
+            wx = direction === 2 ? s[1] - this.brushMaxWidth : s[0];
+            ex = direction === 2 ? s[1] : s[0] + this.brushMaxWidth; // 控制 brush 和 handle 的位置
+
+            svg.select('.selection').attr('x', wx);
+            svg.select('.selection').attr('width', this.brushMaxWidth);
+
+            if (on_event.type !== 'start') {
+              slider.call(brush.move, [wx, ex]);
+              preSelection = [wx, ex];
+            }
+          }
+        } // 根据 brush 位置渲染 缩放和定位timeline
+
 
         const timeX = s.map(x.invert, x);
         this.timeline.setWindow(timeX[0], timeX[1]);
-        transformHandle(brushHandleLeft, s[0], 'w');
-        transformHandle(brushHandleRight, s[1], 'e');
+        transformHandle(brushHandleLeft, wx, 'w');
+        transformHandle(brushHandleRight, ex, 'e');
         brushHandle(this.id);
       }; // 创建 brush
 
 
-      const brush = brushX().extent([[0, 0], [width, height]]).on('start brush end', brushed);
+      brush = brushX().extent([[0, 0], [width, height]]).on('start', brushed).on('brush', brushed).on(' end', brushed);
       this.brushRange = x.range(); // 渲染brush
+      // 初始化长度
 
-      context.append('g').attr('class', 'brush').call(brush).call(brush.move, [this.brushRange[0], this.brushRange[1] / 2]);
+      let initLen = this.brushRange[1] / 2;
+      const {
+        length
+      } = this.data;
+
+      if (length <= 3) {
+        initLen = this.brushRange[1];
+      }
+
+      if (this.nowrap && initLen > this.brushMaxWidth) {
+        initLen = this.brushMaxWidth;
+      }
+
+      slider = context.append('g').attr('class', 'brush').call(brush) // 初始化拉伸brush
+      .call(brush.move, [this.brushRange[0], initLen]);
       brushHandleLeft = drawHandle(svg, 0, 'w');
-      brushHandleRight = drawHandle(svg, this.brushRange[1] / 2, 'e'); // 日期坐标添加到brush作为参考依据
+      brushHandleRight = drawHandle(svg, initLen, 'e'); // 日期坐标添加到brush作为参考依据
 
       x.domain(src_extent([{
         start: this.startDate
@@ -11855,7 +11919,7 @@ const handleBorderStartEnd = pcontainer => {
       document.querySelector(`#${this.id}>svg .selection`).setAttribute('ry', 7);
       document.querySelector(`#${this.id}>svg .selection`).setAttribute('stroke', '#dbdded'); // 首次初始化
 
-      const timeX = [this.brushRange[0], this.brushRange[1] / 2].map(x.invert, x);
+      const timeX = [this.brushRange[0], initLen].map(x.invert, x);
       this.timeline.setWindow(timeX[0], timeX[1]);
     }
 
