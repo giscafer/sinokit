@@ -54,7 +54,7 @@ export default {
       type: Boolean,
       default: false,
     },
-    brushMaxWidth: {
+    brushWidth: {
       // brush 最大可缩放的宽度
       type: Number,
       default: 500,
@@ -68,9 +68,17 @@ export default {
       gap: 310, // 两个节点之间的距离，原来计算当行最多可以展示多少个，以便确定不换行时brush 的宽度
       startDate: new Date(),
       endDate: new Date(),
+      brushMaxWidth: 500,
     }
   },
-  created() {},
+  watch: {
+    brushWidth(val) {
+      this.brushMaxWidth = val
+    },
+  },
+  created() {
+    this.brushMaxWidth = this.brushWidth
+  },
   mounted() {
     this.createTimeline()
   },
@@ -174,7 +182,7 @@ export default {
       // let frstBrush
       const brushed = () => {
         const s = event.selection
-        console.log(event.type, s)
+        // console.log(event.type, s)
         let wx = s[0]
         let ex = s[1]
         if (event.type === 'start') {
@@ -200,7 +208,7 @@ export default {
             // 控制 brush 和 handle 的位置
             svg.select('.selection').attr('x', wx)
             svg.select('.selection').attr('width', this.brushMaxWidth)
-            if (event.type !== 'start') {
+            if (event.type !== 'start' && slider) {
               slider.call(brush.move, [wx, ex])
               preSelection = [wx, ex]
             }
@@ -209,7 +217,6 @@ export default {
         // 根据 brush 位置渲染 缩放和定位timeline
         const timeX = s.map(x.invert, x)
         this.timeline.setWindow(timeX[0], timeX[1])
-        console.log(wx, ex)
         transformHandle(brushHandleLeft, wx, 'w')
         transformHandle(brushHandleRight, ex, 'e')
 
@@ -233,10 +240,13 @@ export default {
       const { length } = this.data
       if (length <= 3) {
         initLen = this.brushRange[1]
-      }
-      if (this.nowrap && initLen > this.brushMaxWidth) {
+        if (this.nowrap) {
+          this.brushMaxWidth = initLen
+        }
+      } else if (this.nowrap && initLen > this.brushMaxWidth) {
         initLen = this.brushMaxWidth
       }
+
       slider = context
         .append('g')
         .attr('class', 'brush')
