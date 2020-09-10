@@ -162,38 +162,34 @@ export default {
       let brushHandleLeft = null
       let brushHandleRight = null
       let brush = null
+
+      let preSelection = [-1, -1] // 缓存上一次位置
+      let direction = 1 // 判断resize 方向，左边1，右边2
       const brushed = () => {
-        if (event.sourceEvent && event.sourceEvent.type === 'zoom') {
-          console.log('zzom')
-          return // ignore brush-by-zoom
-        }
         const s = event.selection
-        console.log(s)
-        // 控制超过最大宽度的时候，不能再伸长（解决产品要求的换行问题）
-        if (this.nowrap && s[1] - s[0] > this.brushMaxWidth) {
-          console.log(1, s[1] - s[0])
-          s[1] = s[0] + this.brushMaxWidth
-          // 控制 brush 和 handle 的位置
-          svg.select('.handle--e').attr('x', s[1])
-          svg.select('.selection').attr('width', this.brushMaxWidth)
+
+        if (preSelection[0] === s[0]) {
+          direction = 2
+        } else if (preSelection[1] === s[1]) {
+          direction = 1
         }
-        /*  brush.extent([
-          [s[0], height],
-          [s[1], height],
-        ]) */
-        console.log(
-          JSON.stringify([
-            [s[0], height],
-            [s[1], height],
-          ])
-        )
-        // console.log(s.map(x.invert, x).map((d) => timeFormat('%Y-%m')(d)))
+        preSelection = s
+
         // 根据 brush 位置渲染 缩放和定位timeline
         const timeX = s.map(x.invert, x)
         this.timeline.setWindow(timeX[0], timeX[1])
-
-        transformHandle(brushHandleLeft, s[0], 'w')
-        transformHandle(brushHandleRight, s[1], 'e')
+        let wx = s[0]
+        let ex = s[1]
+        // 控制超过最大宽度的时候，不能再伸长（解决产品要求的换行问题）
+        if (this.nowrap && s[1] - s[0] > this.brushMaxWidth) {
+          wx = direction === 2 ? s[1] - this.brushMaxWidth : s[0]
+          ex = direction === 2 ? s[1] : s[0] + this.brushMaxWidth
+          // 控制 brush 和 handle 的位置
+          svg.select('.selection').attr('x', wx)
+          svg.select('.selection').attr('width', this.brushMaxWidth)
+        }
+        transformHandle(brushHandleLeft, wx, 'w')
+        transformHandle(brushHandleRight, ex, 'e')
 
         brushHandle(this.id)
       }
@@ -203,8 +199,9 @@ export default {
           [0, 0],
           [width, height],
         ])
-        .on('start end', brushed)
+        .on('start', brushed)
         .on('brush', brushed)
+        .on(' end', brushed)
 
       this.brushRange = x.range()
 
