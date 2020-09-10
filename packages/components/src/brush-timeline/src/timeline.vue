@@ -174,12 +174,14 @@ export default {
       // let frstBrush
       const brushed = () => {
         const s = event.selection
+        console.log(event.type, s)
         let wx = s[0]
         let ex = s[1]
+        if (event.type === 'start') {
+          startSelection = s
+          preSelection = s
+        }
         if (this.nowrap) {
-          if (event.type === 'start') {
-            startSelection = s
-          }
           if (startSelection[0] === s[0]) {
             direction = 2
           } else if (startSelection[1] === s[1]) {
@@ -207,6 +209,7 @@ export default {
         // 根据 brush 位置渲染 缩放和定位timeline
         const timeX = s.map(x.invert, x)
         this.timeline.setWindow(timeX[0], timeX[1])
+        console.log(wx, ex)
         transformHandle(brushHandleLeft, wx, 'w')
         transformHandle(brushHandleRight, ex, 'e')
 
