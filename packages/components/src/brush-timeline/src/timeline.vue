@@ -54,13 +54,18 @@ export default {
       type: Boolean,
       default: false,
     },
+    brushMaxWidth: {
+      // brush 最大可缩放的宽度
+      type: Number,
+      default: 500,
+    },
   },
   data() {
     return {
       id: `vis-timeline-${Math.random().toString(16).substr(2)}`,
       timeline: null,
       brushRange: 0,
-      brushMaxWidth: 500, // brush 最大可缩放的宽度
+      gap: 310, // 两个节点之间的距离，原来计算当行最多可以展示多少个，以便确定不换行时brush 的宽度
       startDate: new Date(),
       endDate: new Date(),
     }
@@ -162,32 +167,46 @@ export default {
       let brushHandleLeft = null
       let brushHandleRight = null
       let brush = null
-
+      let slider = null
+      let startSelection = []
       let preSelection = [-1, -1] // 缓存上一次位置
       let direction = 1 // 判断resize 方向，左边1，右边2
+      // let frstBrush
       const brushed = () => {
         const s = event.selection
+        let wx = s[0]
+        let ex = s[1]
+        if (this.nowrap) {
+          if (event.type === 'start') {
+            startSelection = s
+          }
+          if (startSelection[0] === s[0]) {
+            direction = 2
+          } else if (startSelection[1] === s[1]) {
+            direction = 1
+          }
 
-        if (preSelection[0] === s[0]) {
-          direction = 2
-        } else if (preSelection[1] === s[1]) {
-          direction = 1
+          if (startSelection.join(',') === s.join(',')) {
+            wx = preSelection[0]
+            ex = preSelection[1]
+          }
+
+          // 控制超过最大宽度的时候，不能再伸长（解决产品要求的换行问题）
+          if (s[1] - s[0] > this.brushMaxWidth) {
+            wx = direction === 2 ? s[1] - this.brushMaxWidth : s[0]
+            ex = direction === 2 ? s[1] : s[0] + this.brushMaxWidth
+            // 控制 brush 和 handle 的位置
+            svg.select('.selection').attr('x', wx)
+            svg.select('.selection').attr('width', this.brushMaxWidth)
+            if (event.type !== 'start') {
+              slider.call(brush.move, [wx, ex])
+              preSelection = [wx, ex]
+            }
+          }
         }
-        preSelection = s
-
         // 根据 brush 位置渲染 缩放和定位timeline
         const timeX = s.map(x.invert, x)
         this.timeline.setWindow(timeX[0], timeX[1])
-        let wx = s[0]
-        let ex = s[1]
-        // 控制超过最大宽度的时候，不能再伸长（解决产品要求的换行问题）
-        if (this.nowrap && s[1] - s[0] > this.brushMaxWidth) {
-          wx = direction === 2 ? s[1] - this.brushMaxWidth : s[0]
-          ex = direction === 2 ? s[1] : s[0] + this.brushMaxWidth
-          // 控制 brush 和 handle 的位置
-          svg.select('.selection').attr('x', wx)
-          svg.select('.selection').attr('width', this.brushMaxWidth)
-        }
         transformHandle(brushHandleLeft, wx, 'w')
         transformHandle(brushHandleRight, ex, 'e')
 
@@ -215,7 +234,7 @@ export default {
       if (this.nowrap && initLen > this.brushMaxWidth) {
         initLen = this.brushMaxWidth
       }
-      context
+      slider = context
         .append('g')
         .attr('class', 'brush')
         .call(brush)

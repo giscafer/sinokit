@@ -95,15 +95,55 @@
 </script>
 ```
 
+### 缩放不换行
+
+```html
+/*vue*/
+<desc>
+  `nowrap` 设置为true
+</desc>
+
+<template>
+  <div>
+    <brush-timeline
+      :data="timelineData"
+      render-type="json"
+      :nowrap="true"
+    ></brush-timeline>
+  </div>
+</template>
+
+<script>
+  export default {
+    data() {
+      return {
+        // 注意：JavaScript Date 对象中，月份是从0开始
+        timelineData: [
+          { date: '2008-8-18', label: '牛市后金融危机' },
+          { date: '2015-6-18', label: '牛市' },
+          { date: '2015-6-18', label: '牛市' },
+          { date: '2015-6-18', label: '牛市' },
+          { date: '2018-6-18', label: '震荡市' },
+          { date: '2020-6-20', label: '突破3000点' },
+          { date: '2020-8-20', label: '3200点或许成为历史最低' }
+        ]
+      };
+    }
+  };
+</script>
+```
+
 ## API
 
 ### Attributes
 
-|     参数      | 说明                                  |   类型   | 默认值 |
-| :-----------: | ------------------------------------- | :------: | :----: |
-| `render-type` | 数据渲染方式，有两种：`html` 、`json` | `String` | `html` |
-|    `data`     | 渲染的时间数据                        | `Object` |   -    |
-|   `height`    | 滚动条 brush 的高度                   | `Number` |  `14`  |
-|   `margin`    | 文字和时间轴之间的 margin 距离        | `Number` |  `19`  |
-| `orientation` | 文字朝向                              | `String` | `top`  |
-|   `tooltip`   | 悬浮在节点上的 tooltip 文字展示       | `String` |   -    |
+|      参数       | 说明                                                                |   类型    | 默认值  |
+| :-------------: | ------------------------------------------------------------------- | :-------: | :-----: |
+|  `render-type`  | 数据渲染方式，有两种：`html` 、`json`                               | `String`  | `html`  |
+|     `data`      | 渲染的时间数据                                                      | `Object`  |    -    |
+|    `height`     | 滚动条 brush 的高度                                                 | `Number`  |  `14`   |
+|    `margin`     | 文字和时间轴之间的 margin 距离                                      | `Number`  |  `19`   |
+|  `orientation`  | 文字朝向                                                            | `String`  |  `top`  |
+|    `tooltip`    | 悬浮在节点上的 tooltip 文字展示                                     | `String`  |    -    |
+|    `nowrap`     | 是否换行，本质是限制 brush resize 拉长的限制                        | `Boolean` | `false` |
+| `brushMaxWidth` | Brush 最大宽度（对应控制 timeline 缩小)，当 nowrap 为 true 时才生效 | `Number`  |  `500`  |
