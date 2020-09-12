@@ -20,20 +20,46 @@ export default {
         },
         { date: '2015-6-18', tooltip: '牛市2', label: '牛市' },
         { date: '2018-6-18', tooltip: '震荡市3', label: '震荡市' },
+        {
+          date: '2018-6-18',
+          tooltip: '突破3000点4',
+          label:
+            '突破3000点4突破3000点4突破3000点4突破3000点4突破3000点4突破3000点4突破3000点4突破3000点4突破3000点4突破3000点4突破3000点4突破3000点4突破3000点4突破3000点4突破3000点4突破3000点4突破3000点4突破3000点4突破3000点4突破3000点4',
+        },
+        {
+          date: '2018-6-18',
+          tooltip: '突破3000点4',
+          label:
+            'Efficacy-Labeling Change Width Clinical Data Efficacy-Labeling Change Width Clinical Data Efficacy-Labeling Clinical Data',
+        },
+        {
+          date: '2018-6-18',
+          tooltip: '突破3000点4',
+          label: 'Efficacy-Labeling Change Width Clinical Data Clinical',
+        },
         { date: '2018-6-18', tooltip: '突破3000点4', label: '突破3000点4' },
+        {
+          date: '2018-6-18',
+          tooltip: '突破3000点4',
+          label: 'Efficacy-Labeling Change Width Clinical Data',
+        },
         { date: '2018-6-18', tooltip: '突破3000点4', label: '突破3000点4' },
-        { date: '2018-6-18', tooltip: '突破3000点4', label: '突破3000点4' },
-        { date: '2018-6-18', tooltip: '突破3000点4', label: '突破3000点4' },
-        { date: '2018-6-18', tooltip: '突破3000点4', label: '突破3000点4' },
-        { date: '2018-6-18', tooltip: '突破3000点4', label: '突破3000点4' },
-        { date: '2018-6-18', tooltip: '突破3000点4', label: '突破3000点4' },
+        {
+          date: '2018-6-18',
+          tooltip: '突破3000点4',
+          label: 'Efficacy-Labeling Change Width Clinical Data',
+        },
         { date: '2018-6-18', tooltip: '突破3000点4', label: '突破3000点4' },
         {
           date: '2018-6-18',
           tooltip: '突破3000点4',
           label: '3200点或许成为历史最低',
         },
-        { date: '2018-6-18', tooltip: '突破3000点4', label: '突破3000点4' },
+        {
+          date: '2018-6-18',
+          tooltip: '突破3000点4',
+          label: 'Efficacy-Labeling Change Width Clinical Data',
+        },
         { date: '2018-6-18', tooltip: '突破3000点4', label: '突破3000点4' },
         {
           date: '2020-6-20',

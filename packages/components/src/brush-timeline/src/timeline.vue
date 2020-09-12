@@ -57,7 +57,7 @@ export default {
     brushWidth: {
       // brush 最大可缩放的宽度
       type: Number,
-      default: 500,
+      default: 400,
     },
   },
   data() {
@@ -68,7 +68,8 @@ export default {
       gap: 310, // 两个节点之间的距离，原来计算当行最多可以展示多少个，以便确定不换行时brush 的宽度
       startDate: new Date(),
       endDate: new Date(),
-      brushMaxWidth: 500,
+      brushMaxWidth: 400,
+      titleLength: 52,
     }
   },
   watch: {
@@ -101,9 +102,17 @@ export default {
       } else if (this.renderType === 'json') {
         const items = []
         this.data.forEach((item, index) => {
+          const cutLabel = item.label && item.label.length > this.titleLength
+          const label = cutLabel
+            ? item.label.substr(0, this.titleLength - 2) + '..'
+            : item.label
           const obj = {
             start: new Date(`${2000 + index}-01-01`),
-            content: `<div><p class="date">${item.date}</p><a href="javascript:void(0)">${item.label}</a></div>`,
+            content: `<div><p class="date">${item.date}</p><a href="${
+              item.url ? item.url : 'javascript:void(0)'
+            }" ${cutLabel ? `title="${item.label}"` : ''} ${
+              item.url ? 'target="_blank"' : ''
+            }>${label}</a></div>`,
           }
           items.push(obj)
         })
@@ -332,7 +341,11 @@ $bgColor: #fff;
       visibility: hidden;
     }
   }
-
+  .vis-item-content {
+    max-width: 250px;
+    white-space: pre-wrap;
+    // border: 1px solid #333;
+  }
   .vis-box {
     font-size: 15pt;
     color: transparent;
