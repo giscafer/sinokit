@@ -33,7 +33,6 @@ import {
   brushHandle,
   transformHandle,
   handleTooltip,
-  // handleBorderStartEnd,
 } from './utils'
 
 export default {
@@ -57,7 +56,7 @@ export default {
     brushWidth: {
       // brush 最大可缩放的宽度
       type: Number,
-      default: 400,
+      default: 700,
     },
   },
   data() {
@@ -65,11 +64,12 @@ export default {
       id: `vis-timeline-${Math.random().toString(16).substr(2)}`,
       timeline: null,
       brushRange: 0,
-      gap: 310, // 两个节点之间的距离，原来计算当行最多可以展示多少个，以便确定不换行时brush 的宽度
       startDate: new Date(),
       endDate: new Date(),
       brushMaxWidth: 400,
       titleLength: 52,
+      gap: 380, // 两个节点之间的距离，原来计算当行最多可以展示多少个，以便确定不换行时brush 的宽度
+      monthTimeStramp: 60 * 60 * 1000 * 24 * 30 * 12,
     }
   },
   watch: {
@@ -188,6 +188,8 @@ export default {
       let startSelection = []
       let preSelection = [-1, -1] // 缓存上一次位置
       let direction = 1 // 判断resize 方向，左边1，右边2
+      // let setWindowTimer = null
+
       // let frstBrush
       const brushed = () => {
         const s = event.selection
@@ -214,6 +216,7 @@ export default {
           if (s[1] - s[0] > this.brushMaxWidth) {
             wx = direction === 2 ? s[1] - this.brushMaxWidth : s[0]
             ex = direction === 2 ? s[1] : s[0] + this.brushMaxWidth
+            console.log(event.type, wx, ex, this.brushMaxWidth)
             // 控制 brush 和 handle 的位置
             svg.select('.selection').attr('x', wx)
             svg.select('.selection').attr('width', this.brushMaxWidth)
@@ -224,8 +227,23 @@ export default {
           }
         }
         // 根据 brush 位置渲染 缩放和定位timeline
-        const timeX = s.map(x.invert, x)
+        /*    if (event.type === 'end') { */
+        const timeX = [wx, ex].map(x.invert, x)
         this.timeline.setWindow(timeX[0], timeX[1])
+        /*  } else {
+          if (setWindowTimer) {
+            clearTimeout(setWindowTimer)
+            setWindowTimer = null
+          }
+          setWindowTimer = setTimeout(() => {
+            const timeX = [wx, ex].map(x.invert, x)
+            this.timeline.setWindow(timeX[0], timeX[1])
+            if (setWindowTimer) {
+              clearTimeout(setWindowTimer)
+              setWindowTimer = null
+            }
+          }, 100)
+        } */
         transformHandle(brushHandleLeft, wx, 'w')
         transformHandle(brushHandleRight, ex, 'e')
 
@@ -245,14 +263,25 @@ export default {
 
       // 渲染brush
       // 初始化长度
-      let initLen = this.brushRange[1] / 2
       const { length } = this.data
+      const brushWidth = this.brushRange[1]
+      let initLen = brushWidth / 2
+
       if (length <= 3) {
-        initLen = this.brushRange[1]
+        initLen = brushWidth
         if (this.nowrap) {
           this.brushMaxWidth = initLen
         }
-      } else if (this.nowrap && initLen > this.brushMaxWidth) {
+      } else if (this.nowrap) {
+        // 动态计算brush 不换行时最大应该设置多长
+        const years = this.data.length
+        const gapCount = Math.floor(brushWidth / this.gap)
+        // console.log(gapCount, years)
+        if (gapCount >= years) {
+          this.brushMaxWidth = brushWidth
+        } else {
+          this.brushMaxWidth = Math.ceil(brushWidth * (gapCount / years))
+        }
         initLen = this.brushMaxWidth
       }
 
