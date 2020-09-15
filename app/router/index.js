@@ -48,6 +48,15 @@ export const routes = [
         /* webpackChunkName: "json-schema-editor" */ '../views/json-schema-editor/index.vue'
       ),
     props: true
+  },
+  {
+    path: '/query-tags',
+    name: 'Query Tags',
+    component: () =>
+      import(
+        /* webpackChunkName: "json-schema-editor" */ '../views/query-tags/index.vue'
+      ),
+    props: true
   }
 ];
 

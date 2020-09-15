@@ -6,13 +6,15 @@ import JsonSchemaEditor from './json-schema-editor/index.js';
 import BrushTimeline from './brush-timeline/index.js';
 import HorizontalTimeline from './horizontal-timeline/index.js';
 import OverviewTimeline from './overview-timeline/index.js';
+import QueryTags from './query-tags/index.js';
 
 const components = [
   JsonEditor,
   JsonSchemaEditor,
   BrushTimeline,
   HorizontalTimeline,
-  OverviewTimeline
+  OverviewTimeline,
+  QueryTags
 ];
 
 const install = function(Vue) {
@@ -31,11 +33,12 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 export default {
-  version: '0.2.2',
+  version: '0.2.3',
   install,
   JsonEditor,
   JsonSchemaEditor,
   BrushTimeline,
   HorizontalTimeline,
-  OverviewTimeline
+  OverviewTimeline,
+  QueryTags
 };

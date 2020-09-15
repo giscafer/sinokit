@@ -11584,7 +11584,7 @@ render._withStripped = true
 /* harmony default export */ var SchemaObjectvue_type_script_lang_js_ = ({
   name: 'SchemaObject',
   components: {
-    'schema-item': () => __webpack_require__.e(/* import() */ 5).then(__webpack_require__.bind(null, 198))
+    'schema-item': () => __webpack_require__.e(/* import() */ 6).then(__webpack_require__.bind(null, 199))
   },
   props: {
     prefix: {

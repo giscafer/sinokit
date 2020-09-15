@@ -252,7 +252,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(false);
 // Module
-___CSS_LOADER_EXPORT___.push([module.i, ".brush-timeline .vis-timeline{border:none;font-size:14pt;background:#fff}.brush-timeline .vis-timeline .vis-panel.vis-bottom{border:none !important}.brush-timeline .vis-timeline .vis-panel.vis-top{border-bottom:1px solid #ededed !important}.brush-timeline .vis-timeline .vis-minor{display:none}.brush-timeline .vis-timeline .vis-range{display:none}.brush-timeline .vis-timeline .vis-text div{visibility:hidden}.brush-timeline .vis-timeline .vis-line{visibility:hidden}.brush-timeline .vis-box{font-size:15pt;color:transparent;background:transparent;border:0;transform:translate(10px, 20px)}.brush-timeline .vis-box .vis-item-content .date{font-size:16px;color:#333}.brush-timeline .vis-box .vis-item-content a{font-size:16px;font-weight:normal;font-stretch:normal;line-height:14px;letter-spacing:1px;color:#4865e9;text-decoration:none}.brush-timeline .vis-item,.brush-timeline .vis-item.vis-line{border-width:3px}.brush-timeline .vis-item.vis-dot{border-width:10px;border-radius:10px;border-color:#738dff;background-color:#738dff}.brush-timeline .vis-item.vis-dot.vis-selected{border-color:#738dff}.brush-timeline .vis-item.vis-selected{border-color:transparent;background-color:transparent}.brush-timeline .vis-time-axis .vis-text{padding-top:10px;padding-left:10px}.brush-timeline .vis-time-axis .vis-text.vis-major{font-weight:bold}.brush-timeline .vis-time-axis .vis-grid.vis-minor{border-width:2px}.brush-timeline .vis-time-axis .vis-grid.vis-major{border-width:2px;border:0}.brush-timeline .timeline-tooltip{position:fixed;box-sizing:border-box;margin:0;padding:0;color:rgba(0,0,0,0.65);font-size:14px;font-variant:tabular-nums;line-height:1.5;list-style:none;font-feature-settings:'tnum';z-index:1060;display:block;max-width:250px;visibility:visible}.brush-timeline .timeline-tooltip-placement-top{padding-bottom:8px}.brush-timeline .timeline-tooltip-inner{min-width:30px;min-height:24px;padding:6px 8px;color:#fff;text-align:left;text-decoration:none;word-wrap:break-word;background-color:rgba(0,0,0,0.75);border-radius:4px;box-shadow:0 2px 8px rgba(0,0,0,0.15)}.brush-timeline .timeline-tooltip-arrow{position:absolute;bottom:-1px;display:block;width:0;height:0;overflow:hidden;border:5px solid;border-color:#333 transparent transparent transparent}.brush-timeline .timeline-tooltip-placement-top .timeline-tooltip-arrow{left:20px;transform:translateX(-50%)}.brush-timeline .timeline-tooltip-arrow:before{position:absolute;top:0;right:0;bottom:0;left:0;display:block;width:5px;height:5px;margin:auto;background-color:rgba(0,0,0,0.75);content:'';pointer-events:auto}.brush-timeline .timeline-border-start{position:fixed;border-top:4px solid red;height:0}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.i, ".brush-timeline .vis-timeline{border:none;font-size:14pt;background:#fff}.brush-timeline .vis-timeline .vis-panel.vis-bottom{border:none !important}.brush-timeline .vis-timeline .vis-panel.vis-top{border-bottom:1px solid #ededed !important}.brush-timeline .vis-timeline .vis-minor{display:none}.brush-timeline .vis-timeline .vis-range{display:none}.brush-timeline .vis-timeline .vis-text div{visibility:hidden}.brush-timeline .vis-timeline .vis-line{visibility:hidden}.brush-timeline .vis-item-content{max-width:250px;white-space:pre-wrap}.brush-timeline .vis-box{font-size:15pt;color:transparent;background:transparent;border:0;transform:translate(10px, 20px)}.brush-timeline .vis-box .vis-item-content .date{font-size:16px;color:#333}.brush-timeline .vis-box .vis-item-content a{font-size:16px;font-weight:normal;font-stretch:normal;line-height:14px;letter-spacing:1px;color:#4865e9;text-decoration:none}.brush-timeline .vis-item,.brush-timeline .vis-item.vis-line{border-width:3px}.brush-timeline .vis-item.vis-dot{border-width:10px;border-radius:10px;border-color:#738dff;background-color:#738dff}.brush-timeline .vis-item.vis-dot.vis-selected{border-color:#738dff}.brush-timeline .vis-item.vis-selected{border-color:transparent;background-color:transparent}.brush-timeline .vis-time-axis .vis-text{padding-top:10px;padding-left:10px}.brush-timeline .vis-time-axis .vis-text.vis-major{font-weight:bold}.brush-timeline .vis-time-axis .vis-grid.vis-minor{border-width:2px}.brush-timeline .vis-time-axis .vis-grid.vis-major{border-width:2px;border:0}.brush-timeline .timeline-tooltip{position:fixed;box-sizing:border-box;margin:0;padding:0;color:rgba(0,0,0,0.65);font-size:14px;font-variant:tabular-nums;line-height:1.5;list-style:none;font-feature-settings:'tnum';z-index:1060;display:block;max-width:250px;visibility:visible}.brush-timeline .timeline-tooltip-placement-top{padding-bottom:8px}.brush-timeline .timeline-tooltip-inner{min-width:30px;min-height:24px;padding:6px 8px;color:#fff;text-align:left;text-decoration:none;word-wrap:break-word;background-color:rgba(0,0,0,0.75);border-radius:4px;box-shadow:0 2px 8px rgba(0,0,0,0.15)}.brush-timeline .timeline-tooltip-arrow{position:absolute;bottom:-1px;display:block;width:0;height:0;overflow:hidden;border:5px solid;border-color:#333 transparent transparent transparent}.brush-timeline .timeline-tooltip-placement-top .timeline-tooltip-arrow{left:20px;transform:translateX(-50%)}.brush-timeline .timeline-tooltip-arrow:before{position:absolute;top:0;right:0;bottom:0;left:0;display:block;width:5px;height:5px;margin:auto;background-color:rgba(0,0,0,0.75);content:'';pointer-events:auto}.brush-timeline .timeline-border-start{position:fixed;border-top:4px solid red;height:0}\n", ""]);
 // Exports
 /* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
 
@@ -11710,10 +11710,10 @@ const handleBorderStartEnd = pcontainer => {
       type: Boolean,
       default: false
     },
-    brushMaxWidth: {
+    brushWidth: {
       // brush 最大可缩放的宽度
       type: Number,
-      default: 500
+      default: 700
     }
   },
 
@@ -11722,14 +11722,26 @@ const handleBorderStartEnd = pcontainer => {
       id: `vis-timeline-${Math.random().toString(16).substr(2)}`,
       timeline: null,
       brushRange: 0,
-      gap: 310,
-      // 两个节点之间的距离，原来计算当行最多可以展示多少个，以便确定不换行时brush 的宽度
       startDate: new Date(),
-      endDate: new Date()
+      endDate: new Date(),
+      brushMaxWidth: 400,
+      titleLength: 52,
+      gap: 380,
+      // 两个节点之间的距离，原来计算当行最多可以展示多少个，以便确定不换行时brush 的宽度
+      monthTimeStramp: 60 * 60 * 1000 * 24 * 30 * 12
     };
   },
 
-  created() {},
+  watch: {
+    brushWidth(val) {
+      this.brushMaxWidth = val;
+    }
+
+  },
+
+  created() {
+    this.brushMaxWidth = this.brushWidth;
+  },
 
   mounted() {
     this.createTimeline();
@@ -11755,9 +11767,11 @@ const handleBorderStartEnd = pcontainer => {
       } else if (this.renderType === 'json') {
         const items = [];
         this.data.forEach((item, index) => {
+          const cutLabel = item.label && item.label.length > this.titleLength;
+          const label = cutLabel ? item.label.substr(0, this.titleLength - 2) + '..' : item.label;
           const obj = {
             start: new Date(`${2000 + index}-01-01`),
-            content: `<div><p class="date">${item.date}</p><a href="javascript:void(0)">${item.label}</a></div>`
+            content: `<div><p class="date">${item.date}</p><a href="${item.url ? item.url : 'javascript:void(0)'}" ${cutLabel ? `title="${item.label}"` : ''} ${item.url ? 'target="_blank"' : ''}>${label}</a></div>`
           };
           items.push(obj);
         });
@@ -11830,18 +11844,21 @@ const handleBorderStartEnd = pcontainer => {
       let preSelection = [-1, -1]; // 缓存上一次位置
 
       let direction = 1; // 判断resize 方向，左边1，右边2
+      // let setWindowTimer = null
       // let frstBrush
 
       const brushed = () => {
-        const s = on_event.selection;
+        const s = on_event.selection; // console.log(event.type, s)
+
         let wx = s[0];
         let ex = s[1];
 
-        if (this.nowrap) {
-          if (on_event.type === 'start') {
-            startSelection = s;
-          }
+        if (on_event.type === 'start') {
+          startSelection = s;
+          preSelection = s;
+        }
 
+        if (this.nowrap) {
           if (startSelection[0] === s[0]) {
             direction = 2;
           } else if (startSelection[1] === s[1]) {
@@ -11856,21 +11873,39 @@ const handleBorderStartEnd = pcontainer => {
 
           if (s[1] - s[0] > this.brushMaxWidth) {
             wx = direction === 2 ? s[1] - this.brushMaxWidth : s[0];
-            ex = direction === 2 ? s[1] : s[0] + this.brushMaxWidth; // 控制 brush 和 handle 的位置
+            ex = direction === 2 ? s[1] : s[0] + this.brushMaxWidth;
+            console.log(on_event.type, wx, ex, this.brushMaxWidth); // 控制 brush 和 handle 的位置
 
             svg.select('.selection').attr('x', wx);
             svg.select('.selection').attr('width', this.brushMaxWidth);
 
-            if (on_event.type !== 'start') {
+            if (on_event.type !== 'start' && slider) {
               slider.call(brush.move, [wx, ex]);
               preSelection = [wx, ex];
             }
           }
         } // 根据 brush 位置渲染 缩放和定位timeline
 
+        /*    if (event.type === 'end') { */
 
-        const timeX = s.map(x.invert, x);
+
+        const timeX = [wx, ex].map(x.invert, x);
         this.timeline.setWindow(timeX[0], timeX[1]);
+        /*  } else {
+          if (setWindowTimer) {
+            clearTimeout(setWindowTimer)
+            setWindowTimer = null
+          }
+          setWindowTimer = setTimeout(() => {
+            const timeX = [wx, ex].map(x.invert, x)
+            this.timeline.setWindow(timeX[0], timeX[1])
+            if (setWindowTimer) {
+              clearTimeout(setWindowTimer)
+              setWindowTimer = null
+            }
+          }, 100)
+        } */
+
         transformHandle(brushHandleLeft, wx, 'w');
         transformHandle(brushHandleRight, ex, 'e');
         brushHandle(this.id);
@@ -11881,16 +11916,29 @@ const handleBorderStartEnd = pcontainer => {
       this.brushRange = x.range(); // 渲染brush
       // 初始化长度
 
-      let initLen = this.brushRange[1] / 2;
       const {
         length
       } = this.data;
+      const brushWidth = this.brushRange[1];
+      let initLen = brushWidth / 2;
 
       if (length <= 3) {
-        initLen = this.brushRange[1];
-      }
+        initLen = brushWidth;
 
-      if (this.nowrap && initLen > this.brushMaxWidth) {
+        if (this.nowrap) {
+          this.brushMaxWidth = initLen;
+        }
+      } else if (this.nowrap) {
+        // 动态计算brush 不换行时最大应该设置多长
+        const years = this.data.length;
+        const gapCount = Math.floor(brushWidth / this.gap); // console.log(gapCount, years)
+
+        if (gapCount >= years) {
+          this.brushMaxWidth = brushWidth;
+        } else {
+          this.brushMaxWidth = Math.ceil(brushWidth * (gapCount / years));
+        }
+
         initLen = this.brushMaxWidth;
       }
 
