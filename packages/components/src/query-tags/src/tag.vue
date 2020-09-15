@@ -18,6 +18,7 @@
 export default {
   name: 'STag',
   props: {
+    field: String,
     text: String,
     closable: Boolean,
     type: String,
@@ -60,7 +61,7 @@ export default {
   methods: {
     handleClose(event) {
       event.stopPropagation()
-      this.$emit('close', event)
+      this.$emit('close', this.field)
     },
     handleClick(event) {
       this.$emit('click', event)

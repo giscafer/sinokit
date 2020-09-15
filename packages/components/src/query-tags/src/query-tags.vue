@@ -8,11 +8,18 @@
         v-for="item of tagList"
         :key="item.field"
         :closable="true"
+        :field="item.field"
         v-show="!item.hide"
+        @close="handleRemove"
       >{{item.label}}：{{item.value}}</s-tag>
     </div>
     <div class="item">
-      <button class="tag-operate" v-text="isCollapse?'展开':'收起'" @click="handleToggle"></button>
+      <button
+        v-if="showToggleBtn"
+        class="tag-operate"
+        v-text="isCollapse?'展开':'收起'"
+        @click="handleToggle"
+      ></button>
     </div>
   </div>
 </template>
@@ -38,26 +45,51 @@ export default {
     isCollapse() {
       return this.tagList.some((item) => item.hide)
     },
+    showToggleBtn() {
+      return this.tagList.length > this.countOneRow
+    },
   },
   created() {},
   mounted() {
-    console.log(this.$refs.tagHostRef)
-    const tagRect = this.$refs.tagHostRef.getBoundingClientRect()
-    this.countOneRow = Math.floor(tagRect.width / 168)
-    const newData = this.data.map((item, index) => {
-      if (index >= this.countOneRow) {
-        item.hide = true
-      }
-      return item
-    })
-    this.tagList = newData
+    this.renderTag(true, true)
+    window.addEventListener('resize', this.renderTag)
   },
   methods: {
     handleToggle() {
-      this.tagList.forEach((item) => {
-        // item
-      })
+      this.renderTag(!this.isCollapse)
     },
+    handleRemove(field) {
+      console.log(field)
+      if (field) {
+        for (let i = 0; i < this.tagList.length; i++) {
+          const item = this.tagList[i]
+          if (item.field === field) {
+            this.tagList.splice(i, 1)
+            this.renderTag()
+            return
+          }
+        }
+      }
+    },
+    renderTag(hide = true, first = false) {
+      const data = first ? this.data : this.tagList
+      const tagRect = this.$refs.tagHostRef.getBoundingClientRect()
+      const count = Math.floor(tagRect.width / this.tagWidth)
+      this.countOneRow = Math.floor(
+        (tagRect.width - count * 10) / this.tagWidth
+      )
+      const newData = data.map((item, index) => {
+        item.hide = false
+        if (index >= this.countOneRow) {
+          item.hide = hide
+        }
+        return item
+      })
+      this.tagList = newData
+    },
+  },
+  beforeDestroy() {
+    window.removeEventListener('resize', this.renderTag)
   },
 }
 </script>
@@ -74,7 +106,7 @@ export default {
 .tag-operate {
   width: 60px;
   height: 30px;
-  background: #a3b2f4;
+  background: #a3b2f44d;
   border-radius: 4px;
   color: #4865e9;
   font-size: 16px;
