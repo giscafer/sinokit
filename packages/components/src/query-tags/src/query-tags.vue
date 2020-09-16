@@ -1,6 +1,6 @@
 <template>
   <div class="query-tags">
-    <div class="item">
+    <div class="item start">
       <s-tag :border="false" style="width:80px">查询条件：</s-tag>
     </div>
     <div class="item tags" ref="tagHostRef">
@@ -11,13 +11,17 @@
         :field="item.field"
         v-show="!item.hide"
         @close="handleRemove"
-      >{{item.label}}：{{item.value}}</s-tag>
+      >
+        <el-tooltip placement="top" effect="dark" :content="tooltipContent(item)">
+          <span>{{item.label}}：{{formatValue(item.value)}}</span>
+        </el-tooltip>
+      </s-tag>
     </div>
-    <div class="item">
+    <div class="item end">
       <button
         v-if="showToggleBtn"
         class="tag-operate"
-        v-text="isCollapse?'展开':'收起'"
+        v-text="collapsed?'展开':'收起'"
         @click="handleToggle"
       ></button>
     </div>
@@ -33,13 +37,23 @@ export default {
       type: Array,
       default: () => [],
     },
+    collapse: {
+      type: Boolean,
+      default: true,
+    },
   },
   data() {
     return {
-      tagWidth: 168, // 每个tag宽度（样式写死）
+      tagWidth: 200, // 每个tag宽度（样式写死）
       countOneRow: 4,
+      collapsed: true,
       tagList: [],
     }
+  },
+  watch: {
+    data() {
+      this.renderTag(true, true)
+    },
   },
   computed: {
     isCollapse() {
@@ -55,10 +69,39 @@ export default {
     window.addEventListener('resize', this.renderTag)
   },
   methods: {
+    tooltipContent(item) {
+      return `${item.label}：${this.formatValue(item.value)}`
+    },
+    formatDate(date, seperator = '/') {
+      const year = date.getFullYear()
+      const month = date.getMonth() + 1
+      const day = date.getDate()
+
+      return [year, month, day]
+        .map((n) => {
+          const m = n.toString()
+          return m[1] ? m : '0' + m
+        })
+        .join(seperator)
+    },
+    formatValue(val) {
+      if (Array.isArray(val)) {
+        if (val[0] instanceof Date || val[0].format) {
+          return val.map((d) => this.formatDate(d)).join(',')
+        }
+        return val.join(',')
+      } else if (val === 'ASC' || val === 'DESC') {
+        return val === 'ASC' ? '升序' : '降序'
+      } else if (typeof val === 'boolean') {
+        return val ? '是' : '否'
+      }
+      return val
+    },
     handleToggle() {
-      this.renderTag(!this.isCollapse)
+      this.collapsed = !this.collapsed
+      this.renderTag(this.collapsed)
       if (this.showToggleBtn) {
-        this.$emit('toggleChange', this.isCollapse)
+        this.$emit('toggleChange', this.collapsed)
       }
     },
     handleRemove(field) {
@@ -66,10 +109,10 @@ export default {
         for (let i = 0; i < this.tagList.length; i++) {
           const item = this.tagList[i]
           if (item.field === field) {
-            console.log(field, i)
             this.tagList.splice(i, 1)
             // this.renderTag()
-            this.$emit('change', item)
+            this.checkCollapse()
+            this.$emit('change', { item, collapsed: this.collapsed })
             return
           }
         }
@@ -84,12 +127,16 @@ export default {
       )
       const newData = data.map((item, index) => {
         item.hide = false
-        if (index >= this.countOneRow) {
+        if (index >= this.countOneRow && this.collapsed) {
           item.hide = hide
         }
         return item
       })
       this.tagList = newData
+      this.checkCollapse()
+    },
+    checkCollapse() {
+      this.collapsed = this.tagList.some((item) => item.hide)
     },
   },
   beforeDestroy() {

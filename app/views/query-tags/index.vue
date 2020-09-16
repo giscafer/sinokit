@@ -17,29 +17,44 @@ export default {
     return {
       queryFieldList: [
         {
-          label: '原研商品名',
-          field: 'tradeName',
+          label: '姓名',
+          field: 'name',
           value: '莫德凯撒',
         },
         {
-          label: '原研商品名',
-          field: 'tradeName1',
-          value: '莫德凯撒',
+          label: '年龄',
+          field: 'age',
+          value: 29,
         },
         {
-          label: '原研商品名',
-          field: 'tradeName2',
-          value: '莫德凯撒',
+          label: '国籍',
+          field: 'country',
+          value: '中国',
         },
         {
-          label: '原研商品名',
-          field: 'tradeName3',
-          value: '莫德凯撒',
+          label: '性别',
+          field: 'sex',
+          value: '男',
         },
         {
-          label: '原研商品名',
-          field: 'tradeName4',
-          value: '莫德凯撒',
+          label: '爱好',
+          field: 'hobby',
+          value: '游戏',
+        },
+        {
+          label: '住址',
+          field: 'address',
+          value: '广东省广州市天河区石牌桥',
+        },
+        {
+          label: '学历',
+          field: 'education',
+          value: '博士',
+        },
+        {
+          label: '公司',
+          field: 'company',
+          value: 'League of Legends',
         },
       ],
     }

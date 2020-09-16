@@ -9,9 +9,10 @@
 - 组件
 
   - [JSON 编辑器](json-editor.md)
+  - [QueryTags 查询条件](query-tags.md)
   - [JSON Schema 编辑器](jsonschema-editor.md)
   - [BrushTimeline 时间轴](brush-timeline.md)
-  - [OverviewTimeline 时间轴](overview-timeline.md)
+  - [概览时间轴](overview-timeline.md)
 
 - 区块
 

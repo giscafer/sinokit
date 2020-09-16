@@ -80,7 +80,7 @@ $prefix: 's-tag';
   display: inline-block;
   background-color: $bgColor;
   height: 30px;
-  width: 168px;
+  width: 200px;
   // line-height: 30px;
   font-size: 16px;
   color: $fontColor;
@@ -95,7 +95,7 @@ $prefix: 's-tag';
     height: 100%;
     padding: 0 10px;
     line-height: 30px;
-    width: 138px;
+    width: 178px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -113,7 +113,7 @@ $prefix: 's-tag';
     vertical-align: middle;
     color: #a6aab8;
     top: -8px;
-    right: 12px;
+    right: 20px;
   }
   &.noborder {
     border: 0;
