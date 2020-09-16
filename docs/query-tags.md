@@ -14,12 +14,7 @@
 
 <template>
   <div style="min-height:400px">
-    <s-query-tags
-      :data="queryFieldList"
-      @change="handleChange"
-      @toggleChange="handleToggleChange"
-      >中等标签</s-query-tags
-    >
+    <s-query-tags :data="queryFieldList">中等标签</s-query-tags>
   </div>
 </template>
 
