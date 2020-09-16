@@ -90,6 +90,7 @@ $prefix: 's-tag';
   white-space: nowrap;
   margin-right: 10px;
   margin-top: 6px;
+
   .tag-label {
     display: inline-block;
     height: 100%;
@@ -99,6 +100,7 @@ $prefix: 's-tag';
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    box-sizing: border-box;
   }
   &__close {
     position: relative;

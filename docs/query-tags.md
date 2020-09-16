@@ -14,7 +14,7 @@
 
 <template>
   <div style="min-height:180px">
-    <s-query-tags :data="queryFieldList">中等标签</s-query-tags>
+    <s-query-tags :data="queryFieldList">查询条件：</s-query-tags>
   </div>
 </template>
 

@@ -2,11 +2,7 @@
   <div>
     <h3>Query Tags</h3>
 
-    <s-query-tags
-      :data="queryFieldList"
-      @change="handleChange"
-      @toggleChange="handleToggleChange"
-    >中等标签</s-query-tags>
+    <s-query-tags :data="queryFieldList" @toggleChange="handleToggleChange">查询条件：</s-query-tags>
   </div>
 </template>
 <script>

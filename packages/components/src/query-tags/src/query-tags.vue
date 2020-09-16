@@ -1,7 +1,9 @@
 <template>
   <div class="query-tags">
     <div class="item start">
-      <s-tag :border="false" style="width:80px">查询条件：</s-tag>
+      <s-tag :border="false" style="width:80px">
+        <slot></slot>
+      </s-tag>
     </div>
     <div class="item tags" ref="tagHostRef">
       <s-tag
