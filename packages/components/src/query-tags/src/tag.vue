@@ -95,7 +95,7 @@ $prefix: 's-tag';
     height: 100%;
     padding: 0 10px;
     line-height: 30px;
-    width: 178px;
+    width: 198px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;

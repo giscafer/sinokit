@@ -13,7 +13,7 @@
 </desc>
 
 <template>
-  <div style="min-height:400px">
+  <div style="min-height:180px">
     <s-query-tags :data="queryFieldList">中等标签</s-query-tags>
   </div>
 </template>
