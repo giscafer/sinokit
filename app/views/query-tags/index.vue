@@ -2,7 +2,11 @@
   <div>
     <h3>Query Tags</h3>
 
-    <s-query-tags :data="queryFieldList">中等标签</s-query-tags>
+    <s-query-tags
+      :data="queryFieldList"
+      @change="handleChange"
+      @toggleChange="handleToggleChange"
+    >中等标签</s-query-tags>
   </div>
 </template>
 <script>
@@ -42,7 +46,14 @@ export default {
   },
   created() {},
   mounted() {},
-  methods: {},
+  methods: {
+    handleChange(e) {
+      console.log(e)
+    },
+    handleToggleChange(e) {
+      console.log(e)
+    },
+  },
 }
 </script>
 <style lang="scss" scoped>

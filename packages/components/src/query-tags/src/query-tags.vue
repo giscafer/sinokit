@@ -57,15 +57,19 @@ export default {
   methods: {
     handleToggle() {
       this.renderTag(!this.isCollapse)
+      if (this.showToggleBtn) {
+        this.$emit('toggleChange', this.isCollapse)
+      }
     },
     handleRemove(field) {
-      console.log(field)
       if (field) {
         for (let i = 0; i < this.tagList.length; i++) {
           const item = this.tagList[i]
           if (item.field === field) {
+            console.log(field, i)
             this.tagList.splice(i, 1)
-            this.renderTag()
+            // this.renderTag()
+            this.$emit('change', item)
             return
           }
         }
