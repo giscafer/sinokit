@@ -36,7 +36,7 @@ import {
 } from './utils'
 
 export default {
-  name: 'BrushTimeline',
+  name: 'SBrushTimeline',
   props: {
     renderType: {
       type: String,

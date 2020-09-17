@@ -1,12 +1,12 @@
 <template>
   <div style="margin:16px 16px 32px 16px">
     <h3>时间轴，数据量小时</h3>
-    <brush-timeline :data="timelineData1" render-type="json"></brush-timeline>
+    <s-brush-timeline :data="timelineData1" render-type="json"></s-brush-timeline>
     <h3>时间轴2</h3>
-    <brush-timeline :data="timelineData2"></brush-timeline>
+    <s-brush-timeline :data="timelineData2"></s-brush-timeline>
     <div style="margin-top:40px">
       <h3>时间轴2</h3>
-      <brush-timeline :data="data2" render-type="json"></brush-timeline>
+      <s-brush-timeline :data="data2" render-type="json"></s-brush-timeline>
     </div>
   </div>
 </template>

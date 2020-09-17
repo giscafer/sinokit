@@ -144,7 +144,7 @@ import {
   ArrayDialog,
   BooleanDialog,
   ObjectDialog,
-  RawDialog
+  RawDialog,
 } from './dialog'
 import {
   SCHEMA_TYPE,
@@ -155,10 +155,10 @@ import {
   defaultInitSchemaData,
   handleSchemaRequired,
   cloneObject,
-  deleteData
+  deleteData,
 } from './utils'
 export default {
-  name: 'JsonSchemaEditor',
+  name: 'SJsonSchemaEditor',
   components: {
     MockSelect,
     SchemaJson,
@@ -168,18 +168,18 @@ export default {
     ArrayDialog,
     BooleanDialog,
     ObjectDialog,
-    RawDialog
+    RawDialog,
   },
   props: {
     schema: { type: Object, default: () => {} },
     isMock: { type: Boolean, default: false },
     showTitle: { type: Boolean, default: false },
     showDefaultValue: { type: Boolean, default: false },
-    showRaw: { type: Boolean, default: false }
+    showRaw: { type: Boolean, default: false },
   },
   data() {
     const visibleObj = {}
-    SCHEMA_TYPE.map(type => {
+    SCHEMA_TYPE.map((type) => {
       visibleObj[type] = false
     })
     const initSchema = this.schema || defaultInitSchemaData
@@ -194,7 +194,7 @@ export default {
       basicDialogVisible: false,
       basicModalData: { title: '', value: '' },
       settingDialogVisible: visibleObj,
-      settingModalData: {}
+      settingModalData: {},
     }
   },
   watch: {
@@ -202,8 +202,8 @@ export default {
       handler(newVal) {
         log(this, 'watch', newVal)
       },
-      deep: true
-    }
+      deep: true,
+    },
   },
   mounted() {
     log(this, this.schemaData)
@@ -384,7 +384,7 @@ export default {
         pRequiredData = get(cloneSchema, requirePrefix)
       }
       let requiredData = [].concat(pRequiredData.required || [])
-      requiredData = requiredData.map(item => {
+      requiredData = requiredData.map((item) => {
         if (item === name) return value
         return item
       })
@@ -452,7 +452,7 @@ export default {
           field === 'title' ? '标题' : field === 'default' ? '默认值' : '描述',
         value: parentData[field],
         editorId: this.editorId,
-        ...opts
+        ...opts,
       })
     },
     handleSaveShowEdit(opts) {
@@ -491,7 +491,7 @@ export default {
         isRoot,
         prefix,
         editorId: this.editorId,
-        ...parentData
+        ...parentData,
       }
     },
     // 高级设置更新 schema
@@ -527,7 +527,7 @@ export default {
       // console.log(schema)
       this.$emit('schema-change', schema)
       this.$emit('update:schema', schema)
-    }
-  }
+    },
+  },
 }
 </script>

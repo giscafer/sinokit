@@ -4,28 +4,26 @@
       <el-col :span="6">
         <el-button size="mini" type="primary" @click="handleChangeSchema">changeSchema2</el-button>
         <el-button size="mini" type="info" @click="handlePageParams">Toggle Page Params</el-button>
-        <json-editor :value="schema" :readOnly="false"></json-editor>
+        <s-json-editor :value="schema" :readOnly="false"></s-json-editor>
       </el-col>
       <el-col :span="18">
-        <JsonSchemaEditor
+        <s-json-schema-editor
           :key="schemaKey"
           :schema.sync="schema"
           :show-raw="true"
           :show-default-value="true"
           :is-mock="false"
           @schema-change="onSchemaChange"
-        />
+        ></s-json-schema-editor>
       </el-col>
     </el-row>
   </div>
 </template>
 <script>
-// import { JsonSchemaEditor } from '@sinokit/components'
 import cloneDeep from 'lodash/cloneDeep'
 import { warningToast } from '@sinokit/utils'
 export default {
   name: 'BasicDialog',
-  // components: { JsonSchemaEditor },
   props: {},
   data() {
     return {

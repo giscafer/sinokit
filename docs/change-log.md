@@ -2,6 +2,13 @@
 
 ---
 
+## v0.2.6
+
+新增组件
+
+- OverviewTimline
+- QueryTags
+
 ## v0.1.20
 
 新增组件和文档完善实现

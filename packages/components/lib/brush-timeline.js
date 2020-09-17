@@ -11785,7 +11785,7 @@ const handleBorderStartEnd = pcontainer => {
 
 
 /* harmony default export */ var timelinevue_type_script_lang_js_ = ({
-  name: 'BrushTimeline',
+  name: 'SBrushTimeline',
   props: {
     renderType: {
       type: String,

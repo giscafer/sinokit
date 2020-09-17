@@ -82,6 +82,7 @@ section.cover .cover-main > p:last-child a:last-child > span {
 
 aside.sidebar {
   width: 240px;
+  padding-top: 12px;
   box-shadow: 0 0 10px 0 rgba(131, 142, 162, 0.22);
 }
 

@@ -13,7 +13,10 @@
 </desc>
 
 <template>
-  <json-schema-editor :schema.sync="schema" :is-mock="false" />
+  <s-json-schema-editor
+    :schema.sync="schema"
+    :is-mock="false"
+  ></s-json-schema-editor>
 </template>
 <script>
   export default {
@@ -56,7 +59,7 @@
         <json-editor :value="schema" :readonly="false"></json-editor>
       </el-col>
       <el-col :span="18">
-        <json-schema-editor
+        <s-json-schema-editor
           :key="schemaKey"
           :schema.sync="schema"
           :show-default-value="true"

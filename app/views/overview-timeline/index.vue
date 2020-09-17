@@ -3,16 +3,16 @@
     <h3>概览时间轴</h3>
     <br />
     <div>
-      <overview-timeline :data="timelineList"></overview-timeline>
+      <s-overview-timeline :data="timelineList"></s-overview-timeline>
     </div>
     <div class="margin-top-130">
-      <overview-timeline :data="timelineList2"></overview-timeline>
+      <s-overview-timeline :data="timelineList2"></s-overview-timeline>
     </div>
     <div class="margin-top-130">
-      <overview-timeline :data="timelineList3" :itemWidth="300"></overview-timeline>
+      <s-overview-timeline :data="timelineList3" :itemWidth="300"></s-overview-timeline>
     </div>
     <div class="margin-top-130">
-      <overview-timeline :data="timelineList4" :collapse="false" :itemWidth="400"></overview-timeline>
+      <s-overview-timeline :data="timelineList4" :collapse="false" :itemWidth="400"></s-overview-timeline>
     </div>
   </div>
 </template>

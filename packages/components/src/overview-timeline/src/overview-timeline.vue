@@ -32,7 +32,7 @@
 </template>
 <script>
 export default {
-  name: 'OverviewTimeline',
+  name: 'SOverviewTimeline',
   props: {
     data: {
       type: Array,

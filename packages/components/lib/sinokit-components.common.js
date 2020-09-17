@@ -1674,7 +1674,7 @@ class MouseMove {
 //
 
 /* harmony default export */ var horizontal_timelinevue_type_script_lang_js_ = ({
-  name: 'HorizontalTimeline',
+  name: 'SHorizontalTimeline',
   directives: {
     inserted: {
       inserted: (el, binding) => {
@@ -2166,7 +2166,7 @@ render._withStripped = true
 //
 //
 /* harmony default export */ var overview_timelinevue_type_script_lang_js_ = ({
-  name: 'OverviewTimeline',
+  name: 'SOverviewTimeline',
   props: {
     data: {
       type: Array,
@@ -61504,7 +61504,7 @@ __webpack_require__(102);
 
 
 /* harmony default export */ var json_editorvue_type_script_lang_js_ = ({
-  name: 'JsonEditor',
+  name: 'SJsonEditor',
   props: {
     value: {
       type: Object,
@@ -64293,7 +64293,7 @@ RawDialog_component.options.__file = "src/json-schema-editor/src/dialog/RawDialo
 
 
 /* harmony default export */ var json_schema_editorvue_type_script_lang_js_ = ({
-  name: 'JsonSchemaEditor',
+  name: 'SJsonSchemaEditor',
   components: {
     MockSelect: MockSelect["a" /* default */],
     SchemaJson: Schema,
@@ -76222,7 +76222,7 @@ const handleBorderStartEnd = pcontainer => {
 
 
 /* harmony default export */ var timelinevue_type_script_lang_js_ = ({
-  name: 'BrushTimeline',
+  name: 'SBrushTimeline',
   props: {
     renderType: {
       type: String,
@@ -77026,7 +77026,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 /* harmony default export */ var src = __webpack_exports__["default"] = ({
-  version: '0.2.4',
+  version: '0.2.5',
   install,
   JsonEditor: src_json_editor,
   JsonSchemaEditor: src_json_schema_editor,

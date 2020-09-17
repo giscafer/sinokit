@@ -9,22 +9,22 @@
 ```html
 /*vue*/
 <desc>
-  `OverviewTimeline` 组件使用展示，`itemWidth` 控制每个节点宽度，默认收起节点
+  `s-overview-timeline` 组件使用展示，`itemWidth` 控制每个节点宽度，默认收起节点
 </desc>
 
 <template>
   <div style="min-height:400px">
     <div>
-      <overview-timeline :data="timelineList"></overview-timeline>
+      <s-overview-timeline :data="timelineList"></s-overview-timeline>
     </div>
     <div style="margin-top:130px">
-      <overview-timeline :data="timelineList2"></overview-timeline>
+      <s-overview-timeline :data="timelineList2"></s-overview-timeline>
     </div>
     <div style="margin-top:130px">
-      <overview-timeline
+      <s-overview-timeline
         :data="timelineList3"
         :itemWidth="300"
-      ></overview-timeline>
+      ></s-overview-timeline>
     </div>
   </div>
 </template>
@@ -55,15 +55,15 @@
 ```html
 /*vue*/
 <desc>
-  `OverviewTimeline` 组件使用展示，`collapse` 控制是否展开隐藏节点
+  `s-overview-timeline` 组件使用展示，`collapse` 控制是否展开隐藏节点
 </desc>
 
 <template>
   <div style="min-height:200px;width:1100px;padding-top:30px;overflow-x:auto">
-    <overview-timeline
+    <s-overview-timeline
       :data="timelineList"
       :collapse="false"
-    ></overview-timeline>
+    ></s-overview-timeline>
   </div>
 </template>
 

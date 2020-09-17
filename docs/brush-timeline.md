@@ -6,15 +6,20 @@
 
 ### 常规用法
 
+尝试一下拉动伸缩滚动条长度，控制时间轴内容的缩放
+
 ```html
 /*vue*/
 <desc>
-  `BrushTimeline` 组件使用展示，`render-type="json"` 格式数据
+  `s-brush-timeline` 组件使用展示，`render-type="json"` 格式数据
 </desc>
 
 <template>
   <div>
-    <brush-timeline :data="timelineData" render-type="json"></brush-timeline>
+    <s-brush-timeline
+      :data="timelineData"
+      render-type="json"
+    ></s-brush-timeline>
   </div>
 </template>
 
@@ -41,12 +46,15 @@
 ```html
 /*vue*/
 <desc>
-  `BrushTimeline` 组件使用展示，`render-type="html"` 自定义 html 模板
+  `s-brush-timeline` 组件使用展示，`render-type="html"` 自定义 html 模板
 </desc>
 
 <template>
   <div>
-    <brush-timeline :data="timelineData" render-type="html"></brush-timeline>
+    <s-brush-timeline
+      :data="timelineData"
+      render-type="html"
+    ></s-brush-timeline>
   </div>
 </template>
 
@@ -97,6 +105,8 @@
 
 ### 缩放不换行
 
+限制最大放大倍数，固定间距避免换行
+
 ```html
 /*vue*/
 <desc>
@@ -105,11 +115,11 @@
 
 <template>
   <div>
-    <brush-timeline
+    <s-brush-timeline
       :data="timelineData"
       render-type="json"
       :nowrap="true"
-    ></brush-timeline>
+    ></s-brush-timeline>
   </div>
 </template>
 

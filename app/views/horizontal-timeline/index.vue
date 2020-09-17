@@ -1,5 +1,5 @@
 <template>
-  <horizontal-timeline
+  <s-horizontal-timeline
     :rightComplete="rightComplete"
     :leftComplete="leftComplete"
     :positionId="20"
@@ -13,7 +13,7 @@
       </div>
     </template>
     <template v-slot:time="slotProps">{{slotProps.item.time}}</template>
-  </horizontal-timeline>
+  </s-horizontal-timeline>
 </template>
 
 <script>

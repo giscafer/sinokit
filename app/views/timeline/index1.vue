@@ -2,7 +2,7 @@
   <div style="margin:16px 16px 32px 16px">
     <div style="margin-top:40px">
       <h3>时间轴2</h3>
-      <brush-timeline :data="data2" render-type="json" :nowrap="true"></brush-timeline>
+      <s-brush-timeline :data="data2" render-type="json" :nowrap="true"></s-brush-timeline>
     </div>
   </div>
 </template>

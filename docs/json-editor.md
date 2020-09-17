@@ -7,11 +7,15 @@ JSON 编辑器，基于 `codemirror` 实现
 ```html
 /*vue*/
 <desc>
-  `JsonEditor` 组件使用展示，`readonly` 控制是否可编辑
+  `s-json-editor` 组件使用展示，`readonly` 控制是否可编辑
 </desc>
 
 <template>
-  <json-editor :value="jsonObject" :readonly="false" :theme="theme" />
+  <s-json-editor
+    :value="jsonObject"
+    :readonly="false"
+    :theme="theme"
+  ></s-json-editor>
 </template>
 
 <script>

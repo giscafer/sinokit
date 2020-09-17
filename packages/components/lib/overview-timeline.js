@@ -462,7 +462,7 @@ render._withStripped = true
 //
 //
 /* harmony default export */ var overview_timelinevue_type_script_lang_js_ = ({
-  name: 'OverviewTimeline',
+  name: 'SOverviewTimeline',
   props: {
     data: {
       type: Array,

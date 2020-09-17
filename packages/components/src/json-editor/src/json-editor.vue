@@ -16,7 +16,7 @@ import 'codemirror/addon/lint/lint'
 import 'codemirror/addon/lint/json-lint'
 
 export default {
-  name: 'JsonEditor',
+  name: 'SJsonEditor',
   props: {
     value: {
       type: Object,

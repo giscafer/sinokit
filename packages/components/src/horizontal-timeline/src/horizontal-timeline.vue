@@ -109,7 +109,7 @@
 <script>
 import MouseMove from './MouseMove'
 export default {
-  name: 'HorizontalTimeline',
+  name: 'SHorizontalTimeline',
   directives: {
     inserted: {
       inserted: (el, binding) => {

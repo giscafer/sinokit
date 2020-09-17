@@ -11281,7 +11281,7 @@ __webpack_require__(50);
 
 
 /* harmony default export */ var json_editorvue_type_script_lang_js_ = ({
-  name: 'JsonEditor',
+  name: 'SJsonEditor',
   props: {
     value: {
       type: Object,
@@ -20331,7 +20331,7 @@ RawDialog_component.options.__file = "src/json-schema-editor/src/dialog/RawDialo
 
 
 /* harmony default export */ var json_schema_editorvue_type_script_lang_js_ = ({
-  name: 'JsonSchemaEditor',
+  name: 'SJsonSchemaEditor',
   components: {
     MockSelect: MockSelect["a" /* default */],
     SchemaJson: Schema,

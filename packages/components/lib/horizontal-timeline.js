@@ -828,7 +828,7 @@ class MouseMove {
 //
 
 /* harmony default export */ var horizontal_timelinevue_type_script_lang_js_ = ({
-  name: 'HorizontalTimeline',
+  name: 'SHorizontalTimeline',
   directives: {
     inserted: {
       inserted: (el, binding) => {

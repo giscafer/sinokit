@@ -10478,7 +10478,7 @@ __webpack_require__(50);
 
 
 /* harmony default export */ var json_editorvue_type_script_lang_js_ = ({
-  name: 'JsonEditor',
+  name: 'SJsonEditor',
   props: {
     value: {
       type: Object,
