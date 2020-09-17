@@ -56,7 +56,7 @@
         <el-button size="mini" type="info" @click="handlePageParams"
           >Toggle 分页参数</el-button
         >
-        <json-editor :value="schema" :readonly="false"></json-editor>
+        <s-json-editor :value="schema" :readonly="false"></s-json-editor>
       </el-col>
       <el-col :span="18">
         <s-json-schema-editor
