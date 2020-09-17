@@ -13,7 +13,7 @@
 </desc>
 
 <template>
-  <div style="min-height:180px">
+  <div style="min-height:130px">
     <s-query-tags :data="queryFieldList">查询条件：</s-query-tags>
   </div>
 </template>

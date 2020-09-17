@@ -1,4 +1,4 @@
-# BrushTimeline 时间轴
+# BrushTimeline 可缩放时间轴
 
 基于 `d3-brush` 实现的时间轴，可缩放、拖动
 

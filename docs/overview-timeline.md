@@ -1,6 +1,6 @@
-# OverviewTimeline 时间轴
+# OverviewTimeline 概览时间轴
 
-概览时间轴，可收起的时间轴
+概览时间轴，默认折叠，可收起的时间轴
 
 ## 示例
 
