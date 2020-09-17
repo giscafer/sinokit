@@ -11,6 +11,13 @@ Vue.js 2.x 组件库、基础组件、业务组件、区块、模板
 
 ## Usage
 
+### Install dependencies
+
+```
+lerna bootstrap
+npm install
+```
+
 ### demo
 
 ```
@@ -20,7 +27,6 @@ npm run start
 ### Docs
 
 ```
-docsify init ./docs
 npm run docs
 ```
 
@@ -35,6 +41,10 @@ npm run build
 - 欢迎 PR 一起共建
 
 > 增加新特性或者组件时，先建个 issue 讨论确定，有效沟通后再编码
+
+## Related
+
+- [docsify-demo-codesandbox-vue](https://github.com/giscafer/docsify-demo-codesandbox-vue)
 
 ## Other
 

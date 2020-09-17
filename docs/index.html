@@ -50,13 +50,13 @@
       // custom dependencies
       let boxDependencies = {
         'element-ui': '^2.13.2',
-        '@sinokit/components': '^0.1.23'
+        '@sinokit/components': SINOKITCOMPONENTS.version
       };
 
       window.$docsify = {
         name: 'sinokit',
         repo: 'giscafer/sinokit', // connect to github
-        loadSidebar: true,
+        loadSidebar: '_sidebar.md',
         coverpage: true,
         themeColor: '#3c78eb',
         homepage: 'base-quickstart.md',
