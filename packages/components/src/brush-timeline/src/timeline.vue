@@ -106,13 +106,14 @@ export default {
           const label = cutLabel
             ? item.label.substr(0, this.titleLength - 2) + '..'
             : item.label
+          const titleStr = cutLabel ? `title="${item.label}"` : ''
           const obj = {
             start: new Date(`${2000 + index}-01-01`),
-            content: `<div><p class="date">${item.date}</p><a href="${
-              item.url ? item.url : 'javascript:void(0)'
-            }" ${cutLabel ? `title="${item.label}"` : ''} ${
-              item.url ? 'target="_blank"' : ''
-            }>${label}</a></div>`,
+            content: `<div><p class="date">${item.date}</p>${
+              item.url
+                ? `<a href="${item.url}" ${titleStr} target="_blank">${label}</a></div>`
+                : `<span ${titleStr} style="color:#333333e6">${label}</span>`
+            }`,
           }
           items.push(obj)
         })
