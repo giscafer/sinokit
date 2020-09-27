@@ -144,18 +144,26 @@ aside.sidebar ul li a {
 }
 
 aside.sidebar ul:first-child > li:first-child > p {
-  background: url(./_media/sidebar1.svg) no-repeat 48px;
+  background: url(./_media/menu.svg) no-repeat 48px;
+  background-size: 24px;
 }
 
 aside.sidebar ul:first-child > li:nth-child(2) > p {
-  background: url(./_media/sidebar2.svg) no-repeat 48px;
+  background: url(./_media/components.svg) no-repeat 48px;
+  background-size: 24px;
 }
 
 aside.sidebar ul:first-child > li:nth-child(3) > p {
-  background: url(./_media/sidebar3.svg) no-repeat 48px;
+  background: url(./_media/blocks.svg) no-repeat 48px;
+  background-size: 28px;
 }
 aside.sidebar ul:first-child > li:nth-child(4) > p {
-  background: url(./_media/sidebar3.svg) no-repeat 48px;
+  background: url(./_media/template.svg) no-repeat 48px;
+  background-size: 24px;
+}
+aside.sidebar ul:first-child > li:nth-child(5) > p {
+  background: url(./_media/sidebar-template.svg) no-repeat 48px;
+  background-size: 28px;
 }
 
 aside.sidebar ul li.active > a {
