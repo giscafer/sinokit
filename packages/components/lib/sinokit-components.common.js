@@ -76405,9 +76405,6 @@ var ellipsisvue_type_template_id_3f5b5211_render = function() {
   return _c(
     "div",
     [
-      _c("el-tooltip", { attrs: { placement: "top", content: "11111" } }, [
-        _c("span", [_vm._v(" 222 ")])
-      ]),
       _vm.tooltip && _vm.fullLength > _vm.length
         ? _c("el-tooltip", { attrs: { placement: "top" } }, [
             _c("div", {
@@ -76429,9 +76426,6 @@ ellipsisvue_type_template_id_3f5b5211_render._withStripped = true
 // CONCATENATED MODULE: ./src/ellipsis/src/ellipsis.vue?vue&type=template&id=3f5b5211&
 
 // CONCATENATED MODULE: ./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./src/ellipsis/src/ellipsis.vue?vue&type=script&lang=js&
-//
-//
-//
 //
 //
 //
