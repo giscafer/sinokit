@@ -365,16 +365,18 @@ var render = function() {
       [_vm._t("title", [_vm._v("\n      " + _vm._s(_vm.title) + "\n    ")])],
       2
     ),
-    _c(
-      "div",
-      { staticClass: "description" },
-      [
-        _vm._t("description", [
-          _vm._v("\n      " + _vm._s(_vm.description) + "\n    ")
-        ])
-      ],
-      2
-    ),
+    _vm.description
+      ? _c(
+          "div",
+          { staticClass: "description" },
+          [
+            _vm._t("description", [
+              _vm._v("\n      " + _vm._s(_vm.description) + "\n    ")
+            ])
+          ],
+          2
+        )
+      : _vm._e(),
     _vm.$slots.default
       ? _c("div", { staticClass: "extra" }, [_vm._t("default")], 2)
       : _vm._e(),

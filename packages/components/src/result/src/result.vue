@@ -15,7 +15,7 @@
         {{ title }}
       </slot>
     </div>
-    <div class="description">
+    <div class="description" v-if="description">
       <slot name="description">
         {{ description }}
       </slot>

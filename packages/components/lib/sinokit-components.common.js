@@ -76275,16 +76275,18 @@ var resultvue_type_template_id_20ecb051_scoped_true_render = function() {
       [_vm._t("title", [_vm._v("\n      " + _vm._s(_vm.title) + "\n    ")])],
       2
     ),
-    _c(
-      "div",
-      { staticClass: "description" },
-      [
-        _vm._t("description", [
-          _vm._v("\n      " + _vm._s(_vm.description) + "\n    ")
-        ])
-      ],
-      2
-    ),
+    _vm.description
+      ? _c(
+          "div",
+          { staticClass: "description" },
+          [
+            _vm._t("description", [
+              _vm._v("\n      " + _vm._s(_vm.description) + "\n    ")
+            ])
+          ],
+          2
+        )
+      : _vm._e(),
     _vm.$slots.default
       ? _c("div", { staticClass: "extra" }, [_vm._t("default")], 2)
       : _vm._e(),
@@ -76551,7 +76553,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 /* harmony default export */ var src = __webpack_exports__["default"] = ({
-  version: '0.2.6',
+  version: '0.2.7',
   install,
   JsonEditor: src_json_editor,
   JsonSchemaEditor: src_json_schema_editor,

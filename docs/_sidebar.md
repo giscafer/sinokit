@@ -11,7 +11,7 @@
   - [倒计时](count-down.md)
   - [结果页](result.md)
   - [文本省略](ellipsis.md)
-  - [查询条件 Tags](query-tags.md)
+  - [查询条件展示](query-tags.md)
   - [JSON 编辑器](json-editor.md)
   - [概览时间轴](overview-timeline.md)
   - [可缩放时间轴](brush-timeline.md)

@@ -22,7 +22,22 @@ export default {
   `s-count-down` 组件使用展示
 </desc>
 
-<s-count-down :target="new Date().getTime() + 3000000" />
+<template>
+  <s-count-down :target="new Date().getTime() + 3000000" class="count" />
+</template>
+
+<script>
+  export default {
+    data() {
+      return {};
+    }
+  };
+</script>
+<style>
+  .count {
+    font-size: 24px;
+  }
+</style>
 ```
 
 ## API

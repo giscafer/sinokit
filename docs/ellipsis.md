@@ -22,11 +22,21 @@ export default {
   `s-ellipsis` 组件使用展示
 </desc>
 
-<s-ellipsis :length="100" tooltip>
-  There were injuries alleged in three cases in 2015, and a fourth incident in
-  September, according to the safety recall report. After meeting with US
-  regulators in October, the firm decided to issue a voluntary recall.
-</s-ellipsis>
+<template>
+  <s-ellipsis :length="100" tooltip>
+    There were injuries alleged in three cases in 2015, and a fourth incident in
+    September, according to the safety recall report. After meeting with US
+    regulators in October, the firm decided to issue a voluntary recall.
+  </s-ellipsis>
+</template>
+
+<script>
+  export default {
+    data() {
+      return {};
+    }
+  };
+</script>
 ```
 
 ## API
