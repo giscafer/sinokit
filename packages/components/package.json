@@ -1,6 +1,6 @@
 {
   "name": "@sinokit/components",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "description": "组件",
   "keywords": [
     "components"
@@ -35,7 +35,7 @@
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "dependencies": {
-    "@sinokit/utils": "^0.2.0",
+    "@sinokit/utils": "^0.2.7",
     "codemirror": "^5.56.0",
     "d3": "^5.16.0",
     "element-ui": "^2.13.2",
