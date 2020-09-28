@@ -2,7 +2,9 @@
   "json-editor": "./src/json-editor/index.js",
   "json-schema-editor": "./src/json-schema-editor/index.js",
   "brush-timeline": "./src/brush-timeline/index.js",
-  "horizontal-timeline": "./src/horizontal-timeline/index.js",
   "overview-timeline": "./src/overview-timeline/index.js",
-  "query-tags": "./src/query-tags/index.js"
+  "query-tags": "./src/query-tags/index.js",
+  "count-down": "./src/count-down/index.js",
+  "result": "./src/result/index.js",
+  "ellipsis": "./src/ellipsis/index.js"
 }

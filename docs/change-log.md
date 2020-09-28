@@ -2,6 +2,14 @@
 
 ---
 
+## v0.2.7
+
+新增组件
+
+- Ellipsis
+- Result
+- CountDown
+
 ## v0.2.6
 
 新增组件

@@ -20,15 +20,6 @@ export const routes = [
     props: true
   },
   {
-    path: '/horizontal-timeline',
-    name: '水平时光轴',
-    component: () =>
-      import(
-        /* webpackChunkName: "horizontal-timeline" */ '../views/horizontal-timeline/index.vue'
-      ),
-    props: true
-  },
-  {
     path: '/timeline',
     name: 'Brush 时光轴',
     component: () => import('../views/timeline/index.vue'),
@@ -55,6 +46,33 @@ export const routes = [
     component: () =>
       import(
         /* webpackChunkName: "json-schema-editor" */ '../views/query-tags/index.vue'
+      ),
+    props: true
+  },
+  {
+    path: '/result',
+    name: 'Result',
+    component: () =>
+      import(
+        /* webpackChunkName: "json-schema-editor" */ '../views/result/index.vue'
+      ),
+    props: true
+  },
+  {
+    path: '/ellipsis',
+    name: 'Ellipsis',
+    component: () =>
+      import(
+        /* webpackChunkName: "json-schema-editor" */ '../views/ellipsis/index.vue'
+      ),
+    props: true
+  },
+  {
+    path: '/count-down',
+    name: 'CountDown',
+    component: () =>
+      import(
+        /* webpackChunkName: "json-schema-editor" */ '../views/count-down/index.vue'
       ),
     props: true
   }

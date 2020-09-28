@@ -91,7 +91,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 202);
+/******/ 	return __webpack_require__(__webpack_require__.s = 201);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -304,7 +304,7 @@ function toComment(sourceMap) {
 
 /***/ }),
 
-/***/ 12:
+/***/ 18:
 /***/ (function(module, exports) {
 
 var g;
@@ -335,7 +335,7 @@ module.exports = g;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_sass_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_timeline_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(29);
+/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_sass_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_timeline_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(28);
 /* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_sass_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_timeline_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_sass_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_timeline_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
 /* unused harmony reexport * */
  /* unused harmony default export */ var _unused_webpack_default_export = (_node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_sass_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_timeline_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default.a); 
@@ -360,7 +360,7 @@ ___CSS_LOADER_EXPORT___.push([module.i, ".brush-timeline .vis-timeline{border:no
 
 /***/ }),
 
-/***/ 202:
+/***/ 201:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -11870,9 +11870,10 @@ const handleBorderStartEnd = pcontainer => {
         this.data.forEach((item, index) => {
           const cutLabel = item.label && item.label.length > this.titleLength;
           const label = cutLabel ? item.label.substr(0, this.titleLength - 2) + '..' : item.label;
+          const titleStr = cutLabel ? `title="${item.label}"` : '';
           const obj = {
             start: new Date(`${2000 + index}-01-01`),
-            content: `<div><p class="date">${item.date}</p><a href="${item.url ? item.url : 'javascript:void(0)'}" ${cutLabel ? `title="${item.label}"` : ''} ${item.url ? 'target="_blank"' : ''}>${label}</a></div>`
+            content: `<div><p class="date">${item.date}</p>${item.url ? `<a href="${item.url}" ${titleStr} target="_blank">${label}</a></div>` : `<span ${titleStr} style="color:#333333e6">${label}</span>`}`
           };
           items.push(obj);
         });
@@ -12126,7 +12127,7 @@ timeline.install = function (Vue) {
 
 /***/ }),
 
-/***/ 29:
+/***/ 28:
 /***/ (function(module, exports, __webpack_require__) {
 
 var api = __webpack_require__(3);
@@ -55004,7 +55005,7 @@ var timeline = {
 
 //# sourceMappingURL=vis-timeline-graph2d.js.map
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(12)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(18)))
 
 /***/ })
 

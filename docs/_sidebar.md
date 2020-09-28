@@ -8,8 +8,9 @@
 
 - 组件
 
+  - [倒计时](count-down.md)
+  - [查询条件 Tags](query-tags.md)
   - [JSON 编辑器](json-editor.md)
-  - [QueryTags 查询条件](query-tags.md)
   - [概览时间轴](overview-timeline.md)
   - [可缩放时间轴](brush-timeline.md)
   - [JSON Schema 编辑器](jsonschema-editor.md)
