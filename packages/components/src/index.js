@@ -9,6 +9,7 @@ import QueryTags from './query-tags/index.js';
 import CountDown from './count-down/index.js';
 import Result from './result/index.js';
 import Ellipsis from './ellipsis/index.js';
+import NumberInfo from './number-info/index.js';
 
 const components = [
   JsonEditor,
@@ -18,7 +19,8 @@ const components = [
   QueryTags,
   CountDown,
   Result,
-  Ellipsis
+  Ellipsis,
+  NumberInfo
 ];
 
 const install = function(Vue) {
@@ -37,7 +39,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 export default {
-  version: '0.2.7',
+  version: '0.2.8',
   install,
   JsonEditor,
   JsonSchemaEditor,
@@ -46,5 +48,6 @@ export default {
   QueryTags,
   CountDown,
   Result,
-  Ellipsis
+  Ellipsis,
+  NumberInfo
 };

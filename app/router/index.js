@@ -75,6 +75,15 @@ export const routes = [
         /* webpackChunkName: "json-schema-editor" */ '../views/count-down/index.vue'
       ),
     props: true
+  },
+  {
+    path: '/number-info',
+    name: 'NumberInfo',
+    component: () =>
+      import(
+        /* webpackChunkName: "json-schema-editor" */ '../views/number-info/index.vue'
+      ),
+    props: true
   }
 ];
 
