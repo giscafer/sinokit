@@ -9,6 +9,8 @@
 - 组件
 
   - [倒计时](count-down.md)
+  - [结果页](result.md)
+  - [文本省略](ellipsis.md)
   - [查询条件 Tags](query-tags.md)
   - [JSON 编辑器](json-editor.md)
   - [概览时间轴](overview-timeline.md)
