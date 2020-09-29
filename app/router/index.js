@@ -43,46 +43,37 @@ export const routes = [
   {
     path: '/query-tags',
     name: 'Query Tags',
-    component: () =>
-      import(
-        /* webpackChunkName: "json-schema-editor" */ '../views/query-tags/index.vue'
-      ),
+    component: () => import('../views/query-tags/index.vue'),
     props: true
   },
   {
     path: '/result',
     name: 'Result',
-    component: () =>
-      import(
-        /* webpackChunkName: "json-schema-editor" */ '../views/result/index.vue'
-      ),
+    component: () => import('../views/result/index.vue'),
     props: true
   },
   {
     path: '/ellipsis',
     name: 'Ellipsis',
-    component: () =>
-      import(
-        /* webpackChunkName: "json-schema-editor" */ '../views/ellipsis/index.vue'
-      ),
+    component: () => import('../views/ellipsis/index.vue'),
     props: true
   },
   {
     path: '/count-down',
     name: 'CountDown',
-    component: () =>
-      import(
-        /* webpackChunkName: "json-schema-editor" */ '../views/count-down/index.vue'
-      ),
+    component: () => import('../views/count-down/index.vue'),
     props: true
   },
   {
     path: '/number-info',
     name: 'NumberInfo',
-    component: () =>
-      import(
-        /* webpackChunkName: "json-schema-editor" */ '../views/number-info/index.vue'
-      ),
+    component: () => import('../views/number-info/index.vue'),
+    props: true
+  },
+  {
+    path: '/components-demo/sticky',
+    name: 'Sticky',
+    component: () => import('../views/components-demo/sticky.vue'),
     props: true
   }
 ];

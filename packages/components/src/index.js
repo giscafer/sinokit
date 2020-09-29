@@ -10,6 +10,7 @@ import CountDown from './count-down/index.js';
 import Result from './result/index.js';
 import Ellipsis from './ellipsis/index.js';
 import NumberInfo from './number-info/index.js';
+import Sticky from './sticky/index.js';
 
 const components = [
   JsonEditor,
@@ -20,7 +21,8 @@ const components = [
   CountDown,
   Result,
   Ellipsis,
-  NumberInfo
+  NumberInfo,
+  Sticky
 ];
 
 const install = function(Vue) {
@@ -39,7 +41,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 export default {
-  version: '0.2.8',
+  version: '0.2.9',
   install,
   JsonEditor,
   JsonSchemaEditor,
@@ -49,5 +51,6 @@ export default {
   CountDown,
   Result,
   Ellipsis,
-  NumberInfo
+  NumberInfo,
+  Sticky
 };

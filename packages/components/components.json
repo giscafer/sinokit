@@ -7,5 +7,6 @@
   "count-down": "./src/count-down/index.js",
   "result": "./src/result/index.js",
   "ellipsis": "./src/ellipsis/index.js",
-  "number-info": "./src/number-info/index.js"
+  "number-info": "./src/number-info/index.js",
+  "sticky": "./src/sticky/index.js"
 }

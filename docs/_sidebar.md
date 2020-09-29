@@ -8,14 +8,15 @@
 
 - 组件
 
-  - [倒计时](count-down.md)
-  - [结果页](result.md)
-  - [文本省略](ellipsis.md)
-  - [查询条件展示](query-tags.md)
-  - [JSON 编辑器](json-editor.md)
-  - [概览时间轴](overview-timeline.md)
-  - [可缩放时间轴](brush-timeline.md)
-  - [JSON Schema 编辑器](jsonschema-editor.md)
+  - [悬浮](./components/sticky.md)
+  - [倒计时](./components/count-down.md)
+  - [结果页](./components/result.md)
+  - [文本省略](./components/ellipsis.md)
+  - [查询条件展示](./components/query-tags.md)
+  - [JSON 编辑器](./components/json-editor.md)
+  - [概览时间轴](./components/overview-timeline.md)
+  - [可缩放时间轴](./components/brush-timeline.md)
+  - [JSON Schema 编辑器](./components/jsonschema-editor.md)
 
 - 区块
 
