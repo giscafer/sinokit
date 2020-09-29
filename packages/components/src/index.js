@@ -11,6 +11,7 @@ import Result from './result/index.js';
 import Ellipsis from './ellipsis/index.js';
 import NumberInfo from './number-info/index.js';
 import Sticky from './sticky/index.js';
+import BacktoTop from './backto-top/index.js';
 
 const components = [
   JsonEditor,
@@ -22,7 +23,8 @@ const components = [
   Result,
   Ellipsis,
   NumberInfo,
-  Sticky
+  Sticky,
+  BacktoTop
 ];
 
 const install = function(Vue) {
@@ -52,5 +54,6 @@ export default {
   Result,
   Ellipsis,
   NumberInfo,
-  Sticky
+  Sticky,
+  BacktoTop
 };

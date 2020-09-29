@@ -91,7 +91,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 211);
+/******/ 	return __webpack_require__(__webpack_require__.s = 214);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -203,7 +203,7 @@ function normalizeComponent (
 
 /***/ }),
 
-/***/ 211:
+/***/ 214:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -277,10 +277,16 @@ render._withStripped = true
     className: {
       type: String,
       default: ''
+    },
+    // 滚动的容器，空则默认为 window
+    appendTo: {
+      type: String,
+      default: ''
     }
   },
 
   data() {
+    this.appendToEl = window;
     return {
       active: false,
       position: '',
@@ -292,7 +298,12 @@ render._withStripped = true
 
   mounted() {
     this.height = this.$el.getBoundingClientRect().height;
-    window.addEventListener('scroll', this.handleScroll);
+
+    if (this.appendTo) {
+      this.appendToEl = document.querySelector(this.appendTo);
+    }
+
+    this.appendToEl.addEventListener('scroll', this.handleScroll);
     window.addEventListener('resize', this.handleResize);
   },
 
@@ -301,7 +312,7 @@ render._withStripped = true
   },
 
   destroyed() {
-    window.removeEventListener('scroll', this.handleScroll);
+    this.appendToEl.removeEventListener('scroll', this.handleScroll);
     window.removeEventListener('resize', this.handleResize);
   },
 
@@ -311,7 +322,6 @@ render._withStripped = true
         return;
       }
 
-      console.log(this.active);
       this.position = 'fixed';
       this.active = true;
       this.width = this.width + 'px';
@@ -337,7 +347,6 @@ render._withStripped = true
       const width = this.$el.getBoundingClientRect().width;
       this.width = width || 'auto';
       const offsetTop = this.$el.getBoundingClientRect().top;
-      console.log(offsetTop, this.stickyTop);
 
       if (offsetTop < this.stickyTop) {
         this.sticky();

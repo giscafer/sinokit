@@ -91,7 +91,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 208);
+/******/ 	return __webpack_require__(__webpack_require__.s = 211);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -304,7 +304,7 @@ function toComment(sourceMap) {
 
 /***/ }),
 
-/***/ 200:
+/***/ 201:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -315,7 +315,7 @@ function toComment(sourceMap) {
 
 /***/ }),
 
-/***/ 201:
+/***/ 202:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -333,7 +333,7 @@ ___CSS_LOADER_EXPORT___.push([module.i, ".result[data-v-20ecb051]{text-align:cen
 
 /***/ }),
 
-/***/ 208:
+/***/ 211:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -460,7 +460,7 @@ const resultEnum = ['success', 'error'];
 // CONCATENATED MODULE: ./src/result/src/result.vue?vue&type=script&lang=js&
  /* harmony default export */ var src_resultvue_type_script_lang_js_ = (resultvue_type_script_lang_js_); 
 // EXTERNAL MODULE: ./src/result/src/result.vue?vue&type=style&index=0&id=20ecb051&lang=scss&scoped=true&
-var resultvue_type_style_index_0_id_20ecb051_lang_scss_scoped_true_ = __webpack_require__(200);
+var resultvue_type_style_index_0_id_20ecb051_lang_scss_scoped_true_ = __webpack_require__(201);
 
 // EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
 var componentNormalizer = __webpack_require__(0);
@@ -775,7 +775,7 @@ module.exports = function (list, options) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var api = __webpack_require__(3);
-            var content = __webpack_require__(201);
+            var content = __webpack_require__(202);
 
             content = content.__esModule ? content.default : content;
 

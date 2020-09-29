@@ -26,7 +26,7 @@ export default {
   <div>
     <s-sticky :z-index="10" class-name="sub-navbar">
       <el-dropdown trigger="click">
-        <el-button plain>
+        <el-button plain style="width: 150px">
           Platform<i class="el-icon-caret-bottom el-icon--right"></i>
         </el-button>
         <el-dropdown-menu slot="dropdown" class="no-border">
@@ -63,6 +63,7 @@ export default {
           type="datetime"
           format="yyyy-MM-dd HH:mm:ss"
           placeholder="Release time"
+          style="width: 300px"
         />
       </div>
 
@@ -85,7 +86,7 @@ export default {
       <div>这里是占位符</div>
       <div>这里是占位符</div>
       <s-sticky :sticky-top="150">
-        <el-button type="primary"> placeholder</el-button>
+        <el-button type="primary"> Sticky Button</el-button>
       </s-sticky>
       <div>这里是占位符</div>
       <div>这里是占位符</div>
@@ -142,14 +143,18 @@ export default {
   .time-container {
     display: inline-block;
   }
+  .sub-navbar {
+    width: 100%;
+    background: #20b6f9;
+  }
 </style>
 ```
 
 ## API
 
-| 参数      | 说明                   | 类型    | 默认值   |
-| --------- | ---------------------- | ------- | -------- |
-| stickyTop | 距离顶部开始悬浮       | boolean | `0`      |
-| zIndex    | 图层高度               | number  | `1`      |
-| appendTo  | 悬浮参照物，滚动的元素 | number  | `window` |
-| className | 自定义 class           | string  | -        |
+| 参数      | 说明                   | 类型   | 默认值 |
+| --------- | ---------------------- | ------ | ------ |
+| stickyTop | 距离顶部开始悬浮       | number | `0`    |
+| zIndex    | 图层高度               | number | `1`    |
+| appendTo  | 悬浮参照物，滚动的元素 | string | -      |
+| className | 自定义 class           | string | -      |

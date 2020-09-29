@@ -8,10 +8,11 @@
 
 - 组件
 
+  - [文本省略](./components/ellipsis.md)
+  - [回到顶部](./components/backto-top.md)
   - [悬浮](./components/sticky.md)
   - [倒计时](./components/count-down.md)
   - [结果页](./components/result.md)
-  - [文本省略](./components/ellipsis.md)
   - [查询条件展示](./components/query-tags.md)
   - [JSON 编辑器](./components/json-editor.md)
   - [概览时间轴](./components/overview-timeline.md)

@@ -75,6 +75,12 @@ export const routes = [
     name: 'Sticky',
     component: () => import('../views/components-demo/sticky.vue'),
     props: true
+  },
+  {
+    path: '/components-demo/backto-top',
+    name: 'BackToTop',
+    component: () => import('../views/components-demo/backto-top.vue'),
+    props: true
   }
 ];
 
