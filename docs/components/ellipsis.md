@@ -5,7 +5,7 @@
 按需加载引用方式：
 
 ```javascript
-import Ellipsis from '@sinokit/components/ellipsis';
+import { Ellipsis } from '@sinokit/components';
 
 export default {
   components: {

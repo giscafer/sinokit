@@ -5,7 +5,7 @@
 按需加载引用方式：
 
 ```javascript
-import Result from '@sinokit/components/result';
+import { Result } from '@sinokit/components';
 
 export default {
   components: {
