@@ -2,6 +2,8 @@
 
 快速回到顶部按钮。
 
+## 使用方式
+
 按需加载引用方式：
 
 ```javascript
@@ -121,8 +123,7 @@ export default {
       <div>这里是占位符</div>
       <div>这里是占位符</div>
     </div>
-    <!-- you can add element-ui's tooltip -->
-    <el-tooltip placement="top" content="tooltip">
+    <el-tooltip placement="top" content="回到顶部">
       <s-back-to-top
         :custom-style="myBackToTopStyle"
         :visibility-height="300"

@@ -2,10 +2,12 @@
 
 倒计时组件。
 
+## 使用方式
+
 按需加载引用方式：
 
 ```javascript
-import CountDown from '@sinokit/components/count-down';
+import { CountDown } from '@sinokit/components';
 
 export default {
   components: {
@@ -35,7 +37,8 @@ export default {
 </script>
 <style>
   .count {
-    font-size: 24px;
+    font-size: 26px;
+    font-weight: 600;
   }
 </style>
 ```

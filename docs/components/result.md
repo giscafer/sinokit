@@ -2,10 +2,12 @@
 
 用于反馈一系列操作任务的处理结果。
 
+## 使用方式
+
 按需加载引用方式：
 
 ```javascript
-import Result from '@sinokit/components/result';
+import { Result } from '@sinokit/components';
 
 export default {
   components: {

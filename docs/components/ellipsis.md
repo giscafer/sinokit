@@ -2,10 +2,12 @@
 
 文本过长自动处理省略号，支持按照文本长度和最大行数两种方式截取。
 
+## 使用方式
+
 按需加载引用方式：
 
 ```javascript
-import Ellipsis from '@sinokit/components/ellipsis';
+import { Ellipsis } from '@sinokit/components';
 
 export default {
   components: {

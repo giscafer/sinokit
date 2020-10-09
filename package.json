@@ -1,6 +1,6 @@
 {
   "name": "sinokit",
-  "version": "0.1.1",
+  "version": "0.2.11",
   "private": true,
   "scripts": {
     "start": "npm run serve",
@@ -29,7 +29,8 @@
     "lodash": "^4.17.19",
     "mockjs": "^1.1.0",
     "vis-timeline": "^7.3.7",
-    "vue": "^2.6.11"
+    "vue": "^2.6.11",
+    "vue-json-schema-editor-visual": "^0.2.1"
   },
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.10.4",

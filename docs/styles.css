@@ -166,14 +166,19 @@ aside.sidebar ul:first-child > li:nth-child(2) > p {
 }
 
 aside.sidebar ul:first-child > li:nth-child(3) > p {
+  background: url(./_media/components.svg) no-repeat 48px;
+  background-size: 24px;
+}
+aside.sidebar ul:first-child > li:nth-child(4) > p {
   background: url(./_media/blocks.svg) no-repeat 48px;
   background-size: 28px;
 }
-aside.sidebar ul:first-child > li:nth-child(4) > p {
+
+aside.sidebar ul:first-child > li:nth-child(5) > p {
   background: url(./_media/template.svg) no-repeat 48px;
   background-size: 24px;
 }
-aside.sidebar ul:first-child > li:nth-child(5) > p {
+aside.sidebar ul:first-child > li:nth-child(6) > p {
   background: url(./_media/sidebar-template.svg) no-repeat 48px;
   background-size: 28px;
 }

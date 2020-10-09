@@ -17,16 +17,19 @@
   - [JSON 编辑器](./components/json-editor.md)
   - [概览时间轴](./components/overview-timeline.md)
   - [可缩放时间轴](./components/brush-timeline.md)
+
+* 独立组件
+
   - [JSON Schema 编辑器](./components/jsonschema-editor.md)
 
-- 区块
+* 区块
 
   - [规划中](./README.md)
 
-- 页面模板
+* 页面模板
 
   - [规划中](./README.md)
 
-- 工程模板
+* 工程模板
 
   - [后台管理](./admin-template.md)
