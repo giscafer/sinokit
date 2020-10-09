@@ -91,7 +91,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 194);
+/******/ 	return __webpack_require__(__webpack_require__.s = 55);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -304,319 +304,11 @@ function toComment(sourceMap) {
 
 /***/ }),
 
-/***/ 15:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./src/overview-timeline/src/overview-timeline.vue?vue&type=template&id=6770f667&scoped=true&
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    _vm._g(
-      _vm._b(
-        { staticClass: "overview-timeline-component" },
-        "div",
-        _vm.$attrs,
-        false
-      ),
-      _vm.$listeners
-    ),
-    _vm._l(_vm.timelineList, function(item, index) {
-      return _c(
-        "div",
-        {
-          key: index,
-          staticClass: "ov-timeline-item",
-          class: {
-            "ov-timeline-ellipsis": _vm.isEllipsis(index),
-            single: _vm.timelineList.length === 1,
-            expand: !_vm.collapse
-          },
-          style: { width: _vm.itemWidth + "px" }
-        },
-        [
-          !_vm.isEllipsis(index)
-            ? [
-                _vm._m(0, true),
-                _vm.timelineList.length > 1
-                  ? _c("div", { staticClass: "ov-timeline-tail" })
-                  : _vm._e(),
-                _c(
-                  "div",
-                  {
-                    staticClass: "ov-timeline-content",
-                    style: {
-                      left: _vm.collapse
-                        ? ""
-                        : (0.5 - (200 / _vm.itemWidth) * 0.5) * 100 + "%"
-                    }
-                  },
-                  [
-                    _c("div", {
-                      staticClass: "ov-timeline-title",
-                      domProps: { textContent: _vm._s(item.title) }
-                    }),
-                    _c("div", {
-                      staticClass: "ov-timeline-description",
-                      domProps: { textContent: _vm._s(item.description) }
-                    })
-                  ]
-                )
-              ]
-            : _vm._e(),
-          _vm.isEllipsis(index) ? [_vm._m(1, true)] : _vm._e()
-        ],
-        2
-      )
-    }),
-    0
-  )
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "ov-timeline-node" }, [
-      _c("div", { staticClass: "center" })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "ov-timeline-ellipsis-item" }, [
-      _c("div", { staticClass: "ov-timeline-node" }),
-      _c("div", { staticClass: "ov-timeline-node" }),
-      _c("div", { staticClass: "ov-timeline-node" })
-    ])
-  }
-]
-render._withStripped = true
-
-
-// CONCATENATED MODULE: ./src/overview-timeline/src/overview-timeline.vue?vue&type=template&id=6770f667&scoped=true&
-
-// CONCATENATED MODULE: ./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./src/overview-timeline/src/overview-timeline.vue?vue&type=script&lang=js&
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-/* harmony default export */ var overview_timelinevue_type_script_lang_js_ = ({
-  name: 'SOverviewTimeline',
-  props: {
-    data: {
-      type: Array,
-      default: () => []
-    },
-    itemWidth: {
-      type: Number,
-      default: 200
-    },
-    collapse: {
-      type: Boolean,
-      default: true
-    }
-  },
-
-  data() {
-    return {
-      timelineList: []
-    };
-  },
-
-  watch: {
-    data() {
-      this.setTimelineList();
-    }
-
-  },
-  computed: {},
-
-  created() {},
-
-  mounted() {
-    this.setTimelineList();
-  },
-
-  methods: {
-    isHeadOrTail(index) {
-      return index === 0 || index === this.timelineList.length - 1;
-    },
-
-    isEllipsis(index) {
-      return index !== 0 && index !== this.timelineList.length - 1 && this.collapse;
-    },
-
-    setTimelineList() {
-      const length = this.data.length || 0;
-
-      if (this.collapse && length > 2) {
-        this.timelineList = [this.data[0], this.data[1], this.data[2]];
-      } else {
-        this.timelineList = this.data;
-      }
-    }
-
-  }
-});
-// CONCATENATED MODULE: ./src/overview-timeline/src/overview-timeline.vue?vue&type=script&lang=js&
- /* harmony default export */ var src_overview_timelinevue_type_script_lang_js_ = (overview_timelinevue_type_script_lang_js_); 
-// EXTERNAL MODULE: ./src/overview-timeline/src/overview-timeline.vue?vue&type=style&index=0&id=6770f667&lang=scss&scoped=true&
-var overview_timelinevue_type_style_index_0_id_6770f667_lang_scss_scoped_true_ = __webpack_require__(195);
-
-// EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
-var componentNormalizer = __webpack_require__(0);
-
-// CONCATENATED MODULE: ./src/overview-timeline/src/overview-timeline.vue
-
-
-
-
-
-
-/* normalize component */
-
-var component = Object(componentNormalizer["a" /* default */])(
-  src_overview_timelinevue_type_script_lang_js_,
-  render,
-  staticRenderFns,
-  false,
-  null,
-  "6770f667",
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "src/overview-timeline/src/overview-timeline.vue"
-/* harmony default export */ var overview_timeline = __webpack_exports__["a"] = (component.exports);
-
-/***/ }),
-
-/***/ 18:
-/***/ (function(module, exports) {
-
-var g;
-
-// This works in non-strict mode
-g = (function() {
-	return this;
-})();
-
-try {
-	// This works if eval is allowed (see CSP)
-	g = g || new Function("return this")();
-} catch (e) {
-	// This works if the window reference is available
-	if (typeof window === "object") g = window;
-}
-
-// g can still be undefined, but nothing to do about it...
-// We return undefined, instead of nothing here, so it's
-// easier to handle this case. if(!global) { ...}
-
-module.exports = g;
-
-
-/***/ }),
-
-/***/ 194:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* WEBPACK VAR INJECTION */(function(global) {/* harmony import */ var _src_overview_timeline_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(15);
-
-
-_src_overview_timeline_vue__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"].install = Vue => {
-  Vue.component(_src_overview_timeline_vue__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"].name, _src_overview_timeline_vue__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"]);
-};
-
-let GlobalVue = null;
-
-if (typeof window !== 'undefined') {
-  GlobalVue = window.Vue;
-} else if (typeof global !== 'undefined') {
-  GlobalVue = global.Vue;
-}
-
-if (GlobalVue) {
-  GlobalVue.use(_src_overview_timeline_vue__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"]);
-}
-
-/* harmony default export */ __webpack_exports__["default"] = (_src_overview_timeline_vue__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"]);
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(18)))
-
-/***/ }),
-
-/***/ 195:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_sass_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_overview_timeline_vue_vue_type_style_index_0_id_6770f667_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(29);
-/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_sass_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_overview_timeline_vue_vue_type_style_index_0_id_6770f667_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_sass_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_overview_timeline_vue_vue_type_style_index_0_id_6770f667_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
-/* unused harmony reexport * */
- /* unused harmony default export */ var _unused_webpack_default_export = (_node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_sass_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_overview_timeline_vue_vue_type_style_index_0_id_6770f667_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default.a); 
-
-/***/ }),
-
-/***/ 196:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
-// Imports
-
-var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(false);
-// Module
-___CSS_LOADER_EXPORT___.push([module.i, ".overview-timeline-component[data-v-6770f667]{display:flex;justify-content:center;min-height:100px;padding-top:10px}.ov-timeline-node[data-v-6770f667]{display:flex;position:absolute;bottom:0;transform:translateX(-50%);background-color:#4865e9;border-radius:50%;justify-content:center;align-items:center;width:18px;height:18px;z-index:100}.ov-timeline-node>.center[data-v-6770f667]{background-color:#fff;width:12px;height:12px;border-radius:50%}.single[data-v-6770f667]{display:flex;justify-content:center;align-items:center;text-align:center;flex-direction:column;position:relative}.single .ov-timeline-node[data-v-6770f667]{left:0;margin:0 auto}.single .ov-timeline-content[data-v-6770f667]{margin:0 auto}.ov-timeline-tail[data-v-6770f667]{position:absolute;bottom:8px;right:0;width:100%;border-top:2px solid rgba(72,101,233,0.5)}.ov-timeline-ellipsis[data-v-6770f667]{display:flex;align-items:center;width:44px !important;left:7px}.ov-timeline-ellipsis-item[data-v-6770f667]{display:flex;width:30px;justify-content:space-between;background:transparent;margin:0 auto}.ov-timeline-ellipsis-item>.ov-timeline-node[data-v-6770f667]{position:relative;width:8px;height:8px;background:rgba(72,101,233,0.5)}.ov-timeline-item[data-v-6770f667]{position:relative;display:inline-block;height:20px}.ov-timeline-item .ov-timeline-content[data-v-6770f667]{position:absolute;width:200px;top:30px;text-align:center;font-size:16px}.ov-timeline-item .ov-timeline-content .ov-timeline-title[data-v-6770f667]{color:#333}.ov-timeline-item .ov-timeline-content .ov-timeline-description[data-v-6770f667]{margin-top:10px;color:#a6aab8}.ov-timeline-item:last-child .ov-timeline-node[data-v-6770f667]{right:-10px}.ov-timeline-item:last-child .ov-timeline-content[data-v-6770f667]{position:absolute;right:-100px}.ov-timeline-item:first-child .ov-timeline-content[data-v-6770f667]{position:absolute;left:-100px}.expand .ov-timeline-node[data-v-6770f667]{left:50%}.expand:last-child .ov-timeline-tail[data-v-6770f667]{left:0;width:50%}.expand:first-child .ov-timeline-tail[data-v-6770f667]{left:50%;width:50%}\n", ""]);
-// Exports
-/* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
-
-
-/***/ }),
-
-/***/ 29:
+/***/ 12:
 /***/ (function(module, exports, __webpack_require__) {
 
-var api = __webpack_require__(3);
-            var content = __webpack_require__(196);
+var api = __webpack_require__(2);
+            var content = __webpack_require__(57);
 
             content = content.__esModule ? content.default : content;
 
@@ -637,7 +329,7 @@ module.exports = content.locals || {};
 
 /***/ }),
 
-/***/ 3:
+/***/ 2:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -910,6 +602,314 @@ module.exports = function (list, options) {
     lastIdentifiers = newLastIdentifiers;
   };
 };
+
+/***/ }),
+
+/***/ 22:
+/***/ (function(module, exports) {
+
+var g;
+
+// This works in non-strict mode
+g = (function() {
+	return this;
+})();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || new Function("return this")();
+} catch (e) {
+	// This works if the window reference is available
+	if (typeof window === "object") g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
+
+
+/***/ }),
+
+/***/ 4:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./src/overview-timeline/src/overview-timeline.vue?vue&type=template&id=6770f667&scoped=true&
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    _vm._g(
+      _vm._b(
+        { staticClass: "overview-timeline-component" },
+        "div",
+        _vm.$attrs,
+        false
+      ),
+      _vm.$listeners
+    ),
+    _vm._l(_vm.timelineList, function(item, index) {
+      return _c(
+        "div",
+        {
+          key: index,
+          staticClass: "ov-timeline-item",
+          class: {
+            "ov-timeline-ellipsis": _vm.isEllipsis(index),
+            single: _vm.timelineList.length === 1,
+            expand: !_vm.collapse
+          },
+          style: { width: _vm.itemWidth + "px" }
+        },
+        [
+          !_vm.isEllipsis(index)
+            ? [
+                _vm._m(0, true),
+                _vm.timelineList.length > 1
+                  ? _c("div", { staticClass: "ov-timeline-tail" })
+                  : _vm._e(),
+                _c(
+                  "div",
+                  {
+                    staticClass: "ov-timeline-content",
+                    style: {
+                      left: _vm.collapse
+                        ? ""
+                        : (0.5 - (200 / _vm.itemWidth) * 0.5) * 100 + "%"
+                    }
+                  },
+                  [
+                    _c("div", {
+                      staticClass: "ov-timeline-title",
+                      domProps: { textContent: _vm._s(item.title) }
+                    }),
+                    _c("div", {
+                      staticClass: "ov-timeline-description",
+                      domProps: { textContent: _vm._s(item.description) }
+                    })
+                  ]
+                )
+              ]
+            : _vm._e(),
+          _vm.isEllipsis(index) ? [_vm._m(1, true)] : _vm._e()
+        ],
+        2
+      )
+    }),
+    0
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "ov-timeline-node" }, [
+      _c("div", { staticClass: "center" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "ov-timeline-ellipsis-item" }, [
+      _c("div", { staticClass: "ov-timeline-node" }),
+      _c("div", { staticClass: "ov-timeline-node" }),
+      _c("div", { staticClass: "ov-timeline-node" })
+    ])
+  }
+]
+render._withStripped = true
+
+
+// CONCATENATED MODULE: ./src/overview-timeline/src/overview-timeline.vue?vue&type=template&id=6770f667&scoped=true&
+
+// CONCATENATED MODULE: ./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./src/overview-timeline/src/overview-timeline.vue?vue&type=script&lang=js&
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ var overview_timelinevue_type_script_lang_js_ = ({
+  name: 'SOverviewTimeline',
+  props: {
+    data: {
+      type: Array,
+      default: () => []
+    },
+    itemWidth: {
+      type: Number,
+      default: 200
+    },
+    collapse: {
+      type: Boolean,
+      default: true
+    }
+  },
+
+  data() {
+    return {
+      timelineList: []
+    };
+  },
+
+  watch: {
+    data() {
+      this.setTimelineList();
+    }
+
+  },
+  computed: {},
+
+  created() {},
+
+  mounted() {
+    this.setTimelineList();
+  },
+
+  methods: {
+    isHeadOrTail(index) {
+      return index === 0 || index === this.timelineList.length - 1;
+    },
+
+    isEllipsis(index) {
+      return index !== 0 && index !== this.timelineList.length - 1 && this.collapse;
+    },
+
+    setTimelineList() {
+      const length = this.data.length || 0;
+
+      if (this.collapse && length > 2) {
+        this.timelineList = [this.data[0], this.data[1], this.data[2]];
+      } else {
+        this.timelineList = this.data;
+      }
+    }
+
+  }
+});
+// CONCATENATED MODULE: ./src/overview-timeline/src/overview-timeline.vue?vue&type=script&lang=js&
+ /* harmony default export */ var src_overview_timelinevue_type_script_lang_js_ = (overview_timelinevue_type_script_lang_js_); 
+// EXTERNAL MODULE: ./src/overview-timeline/src/overview-timeline.vue?vue&type=style&index=0&id=6770f667&lang=scss&scoped=true&
+var overview_timelinevue_type_style_index_0_id_6770f667_lang_scss_scoped_true_ = __webpack_require__(56);
+
+// EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
+var componentNormalizer = __webpack_require__(0);
+
+// CONCATENATED MODULE: ./src/overview-timeline/src/overview-timeline.vue
+
+
+
+
+
+
+/* normalize component */
+
+var component = Object(componentNormalizer["a" /* default */])(
+  src_overview_timelinevue_type_script_lang_js_,
+  render,
+  staticRenderFns,
+  false,
+  null,
+  "6770f667",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "src/overview-timeline/src/overview-timeline.vue"
+/* harmony default export */ var overview_timeline = __webpack_exports__["a"] = (component.exports);
+
+/***/ }),
+
+/***/ 55:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function(global) {/* harmony import */ var _src_overview_timeline_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
+
+
+_src_overview_timeline_vue__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"].install = Vue => {
+  Vue.component(_src_overview_timeline_vue__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"].name, _src_overview_timeline_vue__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"]);
+};
+
+let GlobalVue = null;
+
+if (typeof window !== 'undefined') {
+  GlobalVue = window.Vue;
+} else if (typeof global !== 'undefined') {
+  GlobalVue = global.Vue;
+}
+
+if (GlobalVue) {
+  GlobalVue.use(_src_overview_timeline_vue__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"]);
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (_src_overview_timeline_vue__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"]);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(22)))
+
+/***/ }),
+
+/***/ 56:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_sass_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_overview_timeline_vue_vue_type_style_index_0_id_6770f667_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(12);
+/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_sass_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_overview_timeline_vue_vue_type_style_index_0_id_6770f667_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_sass_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_overview_timeline_vue_vue_type_style_index_0_id_6770f667_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
+/* unused harmony reexport * */
+ /* unused harmony default export */ var _unused_webpack_default_export = (_node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_sass_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_overview_timeline_vue_vue_type_style_index_0_id_6770f667_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ 57:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(false);
+// Module
+___CSS_LOADER_EXPORT___.push([module.i, ".overview-timeline-component[data-v-6770f667]{display:flex;justify-content:center;min-height:100px;padding-top:10px}.ov-timeline-node[data-v-6770f667]{display:flex;position:absolute;bottom:0;transform:translateX(-50%);background-color:#4865e9;border-radius:50%;justify-content:center;align-items:center;width:18px;height:18px;z-index:100}.ov-timeline-node>.center[data-v-6770f667]{background-color:#fff;width:12px;height:12px;border-radius:50%}.single[data-v-6770f667]{display:flex;justify-content:center;align-items:center;text-align:center;flex-direction:column;position:relative}.single .ov-timeline-node[data-v-6770f667]{left:0;margin:0 auto}.single .ov-timeline-content[data-v-6770f667]{margin:0 auto}.ov-timeline-tail[data-v-6770f667]{position:absolute;bottom:8px;right:0;width:100%;border-top:2px solid rgba(72,101,233,0.5)}.ov-timeline-ellipsis[data-v-6770f667]{display:flex;align-items:center;width:44px !important;left:7px}.ov-timeline-ellipsis-item[data-v-6770f667]{display:flex;width:30px;justify-content:space-between;background:transparent;margin:0 auto}.ov-timeline-ellipsis-item>.ov-timeline-node[data-v-6770f667]{position:relative;width:8px;height:8px;background:rgba(72,101,233,0.5)}.ov-timeline-item[data-v-6770f667]{position:relative;display:inline-block;height:20px}.ov-timeline-item .ov-timeline-content[data-v-6770f667]{position:absolute;width:200px;top:30px;text-align:center;font-size:16px}.ov-timeline-item .ov-timeline-content .ov-timeline-title[data-v-6770f667]{color:#333}.ov-timeline-item .ov-timeline-content .ov-timeline-description[data-v-6770f667]{margin-top:10px;color:#a6aab8}.ov-timeline-item:last-child .ov-timeline-node[data-v-6770f667]{right:-10px}.ov-timeline-item:last-child .ov-timeline-content[data-v-6770f667]{position:absolute;right:-100px}.ov-timeline-item:first-child .ov-timeline-content[data-v-6770f667]{position:absolute;left:-100px}.expand .ov-timeline-node[data-v-6770f667]{left:50%}.expand:last-child .ov-timeline-tail[data-v-6770f667]{left:0;width:50%}.expand:first-child .ov-timeline-tail[data-v-6770f667]{left:50%;width:50%}\n", ""]);
+// Exports
+/* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
+
 
 /***/ })
 

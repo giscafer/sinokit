@@ -1,6 +1,17 @@
 # JSON Schema 编辑器
 
-一个高效易用的基于 Vue 的 json-schema 编辑器。 模仿 Yapi React 版本 [json-schema-editor-visual](https://github.com/YMFE/json-schema-editor-visual) 实现
+一个高效易用的基于 Vue 的 json-schema 编辑器。 模仿 Yapi 实现，组件源码见 [vue-json-schema-editor-visual](https://github.com/giscafer/vue-json-schema-editor-visual)
+
+该组件使用概率较低，所以独立出来不放在 `@sinokit/components`
+
+## 使用方式
+
+安装 `npm i vue-json-schema-editor-visual -S`，然后代码引入：
+
+```javascript
+import JsonSchemaEditor from 'vue-json-schema-editor-visual';
+Vue.use(JsonSchemaEditor);
+```
 
 ## 示例
 

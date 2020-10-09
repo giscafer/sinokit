@@ -2,7 +2,6 @@
 
 import { CustomEventPlugin } from '@sinokit/utils';
 import JsonEditor from './json-editor/index.js';
-import JsonSchemaEditor from './json-schema-editor/index.js';
 import BrushTimeline from './brush-timeline/index.js';
 import OverviewTimeline from './overview-timeline/index.js';
 import QueryTags from './query-tags/index.js';
@@ -15,7 +14,6 @@ import BacktoTop from './backto-top/index.js';
 
 const components = [
   JsonEditor,
-  JsonSchemaEditor,
   BrushTimeline,
   OverviewTimeline,
   QueryTags,
@@ -43,10 +41,9 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 export default {
-  version: '0.2.9',
+  version: '0.2.10',
   install,
   JsonEditor,
-  JsonSchemaEditor,
   BrushTimeline,
   OverviewTimeline,
   QueryTags,

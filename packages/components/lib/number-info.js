@@ -91,7 +91,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 213);
+/******/ 	return __webpack_require__(__webpack_require__.s = 74);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -304,164 +304,32 @@ function toComment(sourceMap) {
 
 /***/ }),
 
-/***/ 203:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ 16:
+/***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_sass_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_number_info_vue_vue_type_style_index_0_id_242a9361_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(33);
-/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_sass_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_number_info_vue_vue_type_style_index_0_id_242a9361_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_sass_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_number_info_vue_vue_type_style_index_0_id_242a9361_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
-/* unused harmony reexport * */
- /* unused harmony default export */ var _unused_webpack_default_export = (_node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_sass_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_number_info_vue_vue_type_style_index_0_id_242a9361_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default.a); 
+var api = __webpack_require__(2);
+            var content = __webpack_require__(65);
 
-/***/ }),
+            content = content.__esModule ? content.default : content;
 
-/***/ 204:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+            if (typeof content === 'string') {
+              content = [[module.i, content, '']];
+            }
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
-// Imports
+var options = {};
 
-var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(false);
-// Module
-___CSS_LOADER_EXPORT___.push([module.i, ".s-number-info-subtitle[data-v-242a9361]{color:rgba(0,0,0,0.45098);font-size:14px;height:22px;line-height:22px;overflow:hidden;text-overflow:ellipsis;word-break:break-all;white-space:nowrap}.s-number-info-value[data-v-242a9361]{margin-top:4px;font-size:0;overflow:hidden;text-overflow:ellipsis;word-break:break-all;white-space:nowrap}.s-number-info-value>span[data-v-242a9361]{color:rgba(0,0,0,0.85098);display:inline-block;line-height:32px;height:32px;font-size:24px;margin-right:32px}.s-number-info-value .sub-total[data-v-242a9361]{color:rgba(0,0,0,0.45098);font-size:16px;vertical-align:top;margin-right:0}.s-number-info-value .sub-total i[data-v-242a9361]{font-size:12px;transform:scale(0.82);margin-left:4px}.s-number-info-value .sub-total .el-icon-caret-top[data-v-242a9361]{color:#f5222d}.s-number-info-value .sub-total .el-icon-caret-bottom[data-v-242a9361]{color:#52c41a}\n", ""]);
-// Exports
-/* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
+options.insert = "head";
+options.singleton = false;
 
+var update = api(content, options);
+
+
+
+module.exports = content.locals || {};
 
 /***/ }),
 
-/***/ 213:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-// ESM COMPAT FLAG
-__webpack_require__.r(__webpack_exports__);
-
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./src/number-info/src/number-info.vue?vue&type=template&id=242a9361&scoped=true&
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "s-number-info" },
-    [
-      _vm._t("subtitle", [
-        _c("div", { staticClass: "s-number-info-subtitle" }, [
-          _vm._v(
-            "\n      " +
-              _vm._s(
-                typeof _vm.subTitle === "string" ? _vm.subTitle : _vm.subTitle()
-              ) +
-              "\n    "
-          )
-        ])
-      ]),
-      _c("div", { staticClass: "s-number-info-value" }, [
-        _c("span", [_vm._v(_vm._s(_vm.total))]),
-        _c("span", { staticClass: "sub-total" }, [
-          _vm._v("\n      " + _vm._s(_vm.subTotal) + "\n      "),
-          _c("i", {
-            class: "el-icon-caret-" + (_vm.status === "up" ? "top" : "bottom")
-          })
-        ])
-      ])
-    ],
-    2
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-
-
-// CONCATENATED MODULE: ./src/number-info/src/number-info.vue?vue&type=template&id=242a9361&scoped=true&
-
-// CONCATENATED MODULE: ./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./src/number-info/src/number-info.vue?vue&type=script&lang=js&
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-/* harmony default export */ var number_infovue_type_script_lang_js_ = ({
-  name: 'SNumberInfo',
-  props: {
-    total: {
-      type: Number,
-      required: true
-    },
-    subTotal: {
-      type: Number,
-      required: true
-    },
-    subTitle: {
-      type: [String, Function],
-      default: ''
-    },
-    status: {
-      type: String,
-      default: 'up'
-    }
-  },
-
-  data() {
-    return {};
-  }
-
-});
-// CONCATENATED MODULE: ./src/number-info/src/number-info.vue?vue&type=script&lang=js&
- /* harmony default export */ var src_number_infovue_type_script_lang_js_ = (number_infovue_type_script_lang_js_); 
-// EXTERNAL MODULE: ./src/number-info/src/number-info.vue?vue&type=style&index=0&id=242a9361&lang=scss&scoped=true&
-var number_infovue_type_style_index_0_id_242a9361_lang_scss_scoped_true_ = __webpack_require__(203);
-
-// EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
-var componentNormalizer = __webpack_require__(0);
-
-// CONCATENATED MODULE: ./src/number-info/src/number-info.vue
-
-
-
-
-
-
-/* normalize component */
-
-var component = Object(componentNormalizer["a" /* default */])(
-  src_number_infovue_type_script_lang_js_,
-  render,
-  staticRenderFns,
-  false,
-  null,
-  "242a9361",
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "src/number-info/src/number-info.vue"
-/* harmony default export */ var number_info = (component.exports);
-// CONCATENATED MODULE: ./src/number-info/index.js
-
-/* harmony default export */ var src_number_info = __webpack_exports__["default"] = (number_info);
-
-/***/ }),
-
-/***/ 3:
+/***/ 2:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -737,28 +605,160 @@ module.exports = function (list, options) {
 
 /***/ }),
 
-/***/ 33:
-/***/ (function(module, exports, __webpack_require__) {
+/***/ 64:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-var api = __webpack_require__(3);
-            var content = __webpack_require__(204);
+"use strict";
+/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_sass_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_number_info_vue_vue_type_style_index_0_id_242a9361_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(16);
+/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_sass_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_number_info_vue_vue_type_style_index_0_id_242a9361_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_sass_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_number_info_vue_vue_type_style_index_0_id_242a9361_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
+/* unused harmony reexport * */
+ /* unused harmony default export */ var _unused_webpack_default_export = (_node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_sass_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_number_info_vue_vue_type_style_index_0_id_242a9361_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default.a); 
 
-            content = content.__esModule ? content.default : content;
+/***/ }),
 
-            if (typeof content === 'string') {
-              content = [[module.i, content, '']];
-            }
+/***/ 65:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-var options = {};
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
 
-options.insert = "head";
-options.singleton = false;
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(false);
+// Module
+___CSS_LOADER_EXPORT___.push([module.i, ".s-number-info-subtitle[data-v-242a9361]{color:rgba(0,0,0,0.45098);font-size:14px;height:22px;line-height:22px;overflow:hidden;text-overflow:ellipsis;word-break:break-all;white-space:nowrap}.s-number-info-value[data-v-242a9361]{margin-top:4px;font-size:0;overflow:hidden;text-overflow:ellipsis;word-break:break-all;white-space:nowrap}.s-number-info-value>span[data-v-242a9361]{color:rgba(0,0,0,0.85098);display:inline-block;line-height:32px;height:32px;font-size:24px;margin-right:32px}.s-number-info-value .sub-total[data-v-242a9361]{color:rgba(0,0,0,0.45098);font-size:16px;vertical-align:top;margin-right:0}.s-number-info-value .sub-total i[data-v-242a9361]{font-size:12px;transform:scale(0.82);margin-left:4px}.s-number-info-value .sub-total .el-icon-caret-top[data-v-242a9361]{color:#f5222d}.s-number-info-value .sub-total .el-icon-caret-bottom[data-v-242a9361]{color:#52c41a}\n", ""]);
+// Exports
+/* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
 
-var update = api(content, options);
+
+/***/ }),
+
+/***/ 74:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+// ESM COMPAT FLAG
+__webpack_require__.r(__webpack_exports__);
+
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./src/number-info/src/number-info.vue?vue&type=template&id=242a9361&scoped=true&
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "s-number-info" },
+    [
+      _vm._t("subtitle", [
+        _c("div", { staticClass: "s-number-info-subtitle" }, [
+          _vm._v(
+            "\n      " +
+              _vm._s(
+                typeof _vm.subTitle === "string" ? _vm.subTitle : _vm.subTitle()
+              ) +
+              "\n    "
+          )
+        ])
+      ]),
+      _c("div", { staticClass: "s-number-info-value" }, [
+        _c("span", [_vm._v(_vm._s(_vm.total))]),
+        _c("span", { staticClass: "sub-total" }, [
+          _vm._v("\n      " + _vm._s(_vm.subTotal) + "\n      "),
+          _c("i", {
+            class: "el-icon-caret-" + (_vm.status === "up" ? "top" : "bottom")
+          })
+        ])
+      ])
+    ],
+    2
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+// CONCATENATED MODULE: ./src/number-info/src/number-info.vue?vue&type=template&id=242a9361&scoped=true&
+
+// CONCATENATED MODULE: ./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./src/number-info/src/number-info.vue?vue&type=script&lang=js&
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ var number_infovue_type_script_lang_js_ = ({
+  name: 'SNumberInfo',
+  props: {
+    total: {
+      type: Number,
+      required: true
+    },
+    subTotal: {
+      type: Number,
+      required: true
+    },
+    subTitle: {
+      type: [String, Function],
+      default: ''
+    },
+    status: {
+      type: String,
+      default: 'up'
+    }
+  },
+
+  data() {
+    return {};
+  }
+
+});
+// CONCATENATED MODULE: ./src/number-info/src/number-info.vue?vue&type=script&lang=js&
+ /* harmony default export */ var src_number_infovue_type_script_lang_js_ = (number_infovue_type_script_lang_js_); 
+// EXTERNAL MODULE: ./src/number-info/src/number-info.vue?vue&type=style&index=0&id=242a9361&lang=scss&scoped=true&
+var number_infovue_type_style_index_0_id_242a9361_lang_scss_scoped_true_ = __webpack_require__(64);
+
+// EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
+var componentNormalizer = __webpack_require__(0);
+
+// CONCATENATED MODULE: ./src/number-info/src/number-info.vue
 
 
 
-module.exports = content.locals || {};
+
+
+
+/* normalize component */
+
+var component = Object(componentNormalizer["a" /* default */])(
+  src_number_infovue_type_script_lang_js_,
+  render,
+  staticRenderFns,
+  false,
+  null,
+  "242a9361",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "src/number-info/src/number-info.vue"
+/* harmony default export */ var number_info = (component.exports);
+// CONCATENATED MODULE: ./src/number-info/index.js
+
+/* harmony default export */ var src_number_info = __webpack_exports__["default"] = (number_info);
 
 /***/ })
 

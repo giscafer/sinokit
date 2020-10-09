@@ -7,7 +7,7 @@
 		var a = typeof exports === 'object' ? factory(require("@sinokit/utils")) : factory(root["@sinokit/utils"]);
 		for(var i in a) (typeof exports === 'object' ? exports : root)[i] = a[i];
 	}
-})(window, function(__WEBPACK_EXTERNAL_MODULE__73__) {
+})(window, function(__WEBPACK_EXTERNAL_MODULE__23__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -91,7 +91,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 212);
+/******/ 	return __webpack_require__(__webpack_require__.s = 73);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -203,7 +203,14 @@ function normalizeComponent (
 
 /***/ }),
 
-/***/ 212:
+/***/ 23:
+/***/ (function(module, exports) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE__23__;
+
+/***/ }),
+
+/***/ 73:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -239,7 +246,7 @@ render._withStripped = true
 // CONCATENATED MODULE: ./src/ellipsis/src/ellipsis.vue?vue&type=template&id=3f5b5211&
 
 // EXTERNAL MODULE: external "@sinokit/utils"
-var utils_ = __webpack_require__(73);
+var utils_ = __webpack_require__(23);
 
 // CONCATENATED MODULE: ./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./src/ellipsis/src/ellipsis.vue?vue&type=script&lang=js&
 //
@@ -343,13 +350,6 @@ component.options.__file = "src/ellipsis/src/ellipsis.vue"
 // CONCATENATED MODULE: ./src/ellipsis/index.js
 
 /* harmony default export */ var src_ellipsis = __webpack_exports__["default"] = (ellipsis);
-
-/***/ }),
-
-/***/ 73:
-/***/ (function(module, exports) {
-
-module.exports = __WEBPACK_EXTERNAL_MODULE__73__;
 
 /***/ })
 
