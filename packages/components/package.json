@@ -39,9 +39,7 @@
     "codemirror": "^5.56.0",
     "d3": "^5.16.0",
     "element-ui": "^2.13.2",
-    "json-schema-faker": "^0.5.0-rcv.24",
     "lodash": "^4.17.19",
-    "mockjs": "^1.1.0",
     "vis-timeline": "^7.3.7",
     "vue": "^2.6.11"
   },
