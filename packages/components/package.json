@@ -29,7 +29,7 @@
   },
   "scripts": {
     "build:file": "node build/bin/build-entry.js",
-    "clean": "rimraf dist",
+    "clean": "rimraf lib",
     "build": "npm run clean && npm run build:file && webpack --config build/webpack.conf.js && webpack --config build/webpack.common.js && webpack --config build/webpack.component.js",
     "lint": "eslint  lib/**/* build/**/* --quiet",
     "test": "echo \"Error: run tests from root\" && exit 1"
