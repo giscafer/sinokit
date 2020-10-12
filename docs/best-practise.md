@@ -88,4 +88,4 @@
 
 ---
 
-> 欢迎补充……
+> 欢迎补充…… 在 [Github 编辑](https://github.com/giscafer/sinokit/blob/master/docs/best-practise.md) 文档
