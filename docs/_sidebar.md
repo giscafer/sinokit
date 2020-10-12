@@ -5,6 +5,7 @@
   - [介绍](base-quickstart.md)
   - [开始使用](base-usage.md)
   - [更新日志](change-log.md)
+  - [最佳实践](best-practise.md)
 
 - 组件
 
