@@ -3,6 +3,7 @@ const resolve = require('rollup-plugin-node-resolve');
 const multiInput = require('rollup-plugin-multi-input').default;
 const babel = require('rollup-plugin-babel');
 const replace = require('rollup-plugin-replace');
+
 const pkg = require('./package.json');
 const files = require('./files.json');
 
@@ -43,13 +44,7 @@ const commonPlugins = [
 const baseConfig = [
   // 打包全部
   {
-    input: join(cwd, './index.js'),
-    /* output: {
-    sourcemap: true,
-    name: '@sinokit/utils',
-    format: 'umd',
-    file: join(cwd, 'dist/index.js')
-  }, */
+    input: join(cwd, './src/index.js'),
     output: [
       {
         file: pkg.main,
@@ -59,7 +54,7 @@ const baseConfig = [
       {
         file: pkg.unpkg,
         format: 'umd',
-        name: 'Sinokit-Uitls',
+        name: '@sinokit/utils',
         ...resolutions
       },
       {
@@ -75,10 +70,9 @@ const baseConfig = [
   {
     input: [
       ...Object.keys(files).map(key => {
-        return files[key];
+        return files[key].replace('./', './src/');
       })
     ],
-
     output: {
       format: 'esm',
       dir: 'dist'

@@ -13,7 +13,10 @@
 </template>
 
 <script>
-import { cutStrByFullLength, getStrFullLength } from '@sinokit/utils'
+import {
+  cutStrByFullLength,
+  getStrFullLength,
+} from '@sinokit/utils/dist/string-util'
 
 export default {
   name: 'SEllipsis',

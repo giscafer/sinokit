@@ -2,8 +2,12 @@
   <div>
     <el-row>
       <el-col :span="6">
-        <el-button size="mini" type="primary" @click="handleChangeSchema">changeSchema2</el-button>
-        <el-button size="mini" type="info" @click="handlePageParams">Toggle Page Params</el-button>
+        <el-button size="mini" type="primary" @click="handleChangeSchema"
+          >changeSchema2</el-button
+        >
+        <el-button size="mini" type="info" @click="handlePageParams"
+          >Toggle Page Params</el-button
+        >
         <s-json-editor :value="schema" :readOnly="false"></s-json-editor>
       </el-col>
       <el-col :span="18">
@@ -21,7 +25,7 @@
 </template>
 <script>
 import cloneDeep from 'lodash/cloneDeep'
-import { warningToast } from '@sinokit/utils'
+import { warningToast } from '@sinokit/utils/dist/vue/toast'
 export default {
   name: 'BasicDialog',
   props: {},
