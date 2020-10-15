@@ -4,17 +4,24 @@
       v-for="(item, index) in timelineList"
       :key="index"
       class="ov-timeline-item"
-      :style="{'width':itemWidth+'px'}"
-      :class="{'ov-timeline-ellipsis':isEllipsis(index),'single':timelineList.length===1,'expand':!collapse}"
+      :style="{ width: itemWidth + 'px' }"
+      :class="{
+        'ov-timeline-ellipsis': isEllipsis(index),
+        single: timelineList.length === 1,
+        expand: !collapse,
+        collapse: collapse && !isEllipsis(index),
+      }"
     >
       <template v-if="!isEllipsis(index)">
         <div class="ov-timeline-node">
           <div class="center"></div>
         </div>
-        <div class="ov-timeline-tail" v-if="timelineList.length>1"></div>
+        <div class="ov-timeline-tail" v-if="timelineList.length > 1"></div>
         <div
           class="ov-timeline-content"
-          :style="{'left':collapse?'':((0.5-( 200/itemWidth)*0.5)*100+'%')}"
+          :style="{
+            left: collapse ? '' : (0.5 - (200 / itemWidth) * 0.5) * 100 + '%',
+          }"
         >
           <div class="ov-timeline-title" v-text="item.title"></div>
           <div class="ov-timeline-description" v-text="item.description"></div>
@@ -46,6 +53,10 @@ export default {
       type: Boolean,
       default: true,
     },
+    max: {
+      type: Number,
+      default: 4,
+    },
   },
   data() {
     return {
@@ -67,17 +78,47 @@ export default {
       return index === 0 || index === this.timelineList.length - 1
     },
     isEllipsis(index) {
+      /* if (!this.collapse) {
+        return (
+          index !== 0 &&
+          index !== this.timelineList.length - 1 &&
+          this.collapse &&
+          this.timelineList.length > this.max
+          // index !== 0 && index !== this.timelineList.length - 1 && this.collapse
+        )
+      } */
+      const length = this.timelineList.length
+      console.log(
+        index,
+        index !== 0,
+        this.collapse,
+        index === length - 2,
+        length > this.max
+      )
+      if (index === length - 2) {
+        console.log('index === length - 2', index)
+      }
       return (
-        index !== 0 && index !== this.timelineList.length - 1 && this.collapse
+        index !== 0 &&
+        this.collapse &&
+        index === length - 2 &&
+        this.data.length > this.max
       )
     },
     setTimelineList() {
       const length = this.data.length || 0
-      if (this.collapse && length > 2) {
-        this.timelineList = [this.data[0], this.data[1], this.data[2]]
+      let list = []
+      if (this.collapse && length > this.max) {
+        let count = -1
+        while (count++ < this.max - 2) {
+          list.push(this.data[count])
+        }
+        list.push(this.data[this.data.length - 1]) // last one
       } else {
-        this.timelineList = this.data
+        list = this.data
       }
+      console.log(list)
+      this.timelineList = list
     },
   },
 }
@@ -85,17 +126,16 @@ export default {
 <style lang="scss" scoped>
 $nodeColor: rgba(72, 101, 233, 1);
 $borderColor: rgba(72, 101, 233, 0.5);
-$prefix: 'ov-timeline';
 .overview-timeline-component {
   display: flex;
   justify-content: center;
   min-height: 100px;
   padding-top: 10px;
 }
-.#{$prefix}-node {
+.ov-timeline-node {
   display: flex;
   position: absolute;
-  bottom: 0;
+  top: 0;
   transform: translateX(-50%);
   background-color: $nodeColor;
   border-radius: 50%;
@@ -111,29 +151,30 @@ $prefix: 'ov-timeline';
     border-radius: 50%;
   }
 }
-.single {
+.ov-timeline-item.single-node {
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   flex-direction: column;
   position: relative;
-  .#{$prefix}-node {
-    left: 0;
+  .ov-timeline-node {
+    left: 0 !important;
     margin: 0 auto;
   }
-  .#{$prefix}-content {
+  .ov-timeline-content {
+    width: 100%;
     margin: 0 auto;
   }
 }
-.#{$prefix}-tail {
+.ov-timeline-tail {
   position: absolute;
-  bottom: 8px;
+  top: 8px;
   right: 0;
   width: 100%;
   border-top: 2px solid $borderColor;
 }
-.#{$prefix}-ellipsis {
+.ov-timeline-ellipsis {
   display: flex;
   align-items: center;
   width: 44px !important;
@@ -144,7 +185,7 @@ $prefix: 'ov-timeline';
     justify-content: space-between;
     background: transparent;
     margin: 0 auto;
-    > .#{$prefix}-node {
+    > .ov-timeline-node {
       position: relative;
       width: 8px;
       height: 8px;
@@ -152,58 +193,64 @@ $prefix: 'ov-timeline';
     }
   }
 }
-.#{$prefix}-item {
+.ov-timeline-item {
   position: relative;
   display: inline-block;
   // width: 200px;
   height: 20px;
-  .#{$prefix}-content {
-    position: absolute;
+  .ov-timeline-content {
+    // position: absolute;
     width: 200px;
-    top: 30px;
+    margin-top: 20px;
     text-align: center;
     font-size: 16px;
-    .#{$prefix}-title {
+    .ov-timeline-title {
       color: #333;
     }
-    .#{$prefix}-description {
+    .ov-timeline-description {
       margin-top: 10px;
       color: #a6aab8;
     }
   }
 
   &:last-child {
-    .#{$prefix}-node {
+    .ov-timeline-node {
       right: -10px;
     }
-    .#{$prefix}-content {
-      position: absolute;
+    .ov-timeline-content {
+      // position: absolute;
       right: -100px;
     }
   }
-  &:first-child {
-    .#{$prefix}-content {
-      position: absolute;
-      left: -100px;
-    }
-  }
+  // &:first-child {
+  //   .ov-timeline-content {
+  //     // position: absolute;
+  //     // left: -100px;
+  //   }
+  // }
 }
-
+.collapse,
 .expand {
-  .#{$prefix}-node {
+  display: flex;
+  width: 400px;
+  height: 100px;
+  justify-content: center;
+  align-items: center;
+
+  .ov-timeline-node {
     left: 50%;
   }
-  /*  .#{$prefix}-content {
+  /*  .ov-timeline-content {
     left: 25% !important;
   } */
   &:last-child {
-    .#{$prefix}-tail {
+    .ov-timeline-tail {
       left: 0;
       width: 50%;
     }
   }
   &:first-child {
-    .#{$prefix}-tail {
+    .ov-timeline-tail {
       left: 50%;
       width: 50%;
     }
