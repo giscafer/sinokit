@@ -91,7 +91,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 74);
+/******/ 	return __webpack_require__(__webpack_require__.s = 73);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -308,7 +308,7 @@ function toComment(sourceMap) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var api = __webpack_require__(2);
-            var content = __webpack_require__(65);
+            var content = __webpack_require__(64);
 
             content = content.__esModule ? content.default : content;
 
@@ -605,7 +605,7 @@ module.exports = function (list, options) {
 
 /***/ }),
 
-/***/ 64:
+/***/ 63:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -616,7 +616,7 @@ module.exports = function (list, options) {
 
 /***/ }),
 
-/***/ 65:
+/***/ 64:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -634,7 +634,7 @@ ___CSS_LOADER_EXPORT___.push([module.i, ".s-number-info-subtitle[data-v-242a9361
 
 /***/ }),
 
-/***/ 74:
+/***/ 73:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -727,7 +727,7 @@ render._withStripped = true
 // CONCATENATED MODULE: ./src/number-info/src/number-info.vue?vue&type=script&lang=js&
  /* harmony default export */ var src_number_infovue_type_script_lang_js_ = (number_infovue_type_script_lang_js_); 
 // EXTERNAL MODULE: ./src/number-info/src/number-info.vue?vue&type=style&index=0&id=242a9361&lang=scss&scoped=true&
-var number_infovue_type_style_index_0_id_242a9361_lang_scss_scoped_true_ = __webpack_require__(64);
+var number_infovue_type_style_index_0_id_242a9361_lang_scss_scoped_true_ = __webpack_require__(63);
 
 // EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
 var componentNormalizer = __webpack_require__(0);
