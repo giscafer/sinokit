@@ -1,3 +1,5 @@
+import 'vue';
+
 function logger() {
 }
 

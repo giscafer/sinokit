@@ -11,10 +11,12 @@ const cwd = __dirname;
 
 const resolutions = {
   globals: {
-    react: 'Vue'
+    vue: 'Vue'
   },
   exports: 'named'
 };
+
+const external = ['vue'];
 
 const commonPlugins = [
   resolve({
@@ -63,6 +65,7 @@ const baseConfig = [
         ...resolutions
       }
     ],
+    external,
     plugins: [...commonPlugins]
   },
   // 多入口打包，实现按需加载
@@ -77,6 +80,7 @@ const baseConfig = [
       format: 'esm',
       dir: 'dist'
     },
+    external,
     plugins: [
       multiInput(),
       resolve({
