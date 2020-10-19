@@ -18,7 +18,7 @@ import { downloadRepository } from './templates/utils';
 import { PackageJson } from './types';
 import { getNodeEngineRequirement, safePackageName } from './utils';
 const pkg = require('../package.json');
-const prog = sade('tsdx');
+const prog = sade('sino');
 
 prog
   .version(pkg.version)

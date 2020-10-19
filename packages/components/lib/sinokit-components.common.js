@@ -68589,7 +68589,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 /* harmony default export */ var src = __webpack_exports__["default"] = ({
-  version: '0.2.13',
+  version: '0.2.16',
   install,
   JsonEditor: src_json_editor,
   BrushTimeline: brush_timeline,
