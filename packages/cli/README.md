@@ -4,6 +4,8 @@
 
 SinoKit 脚手架工具
 
+![](./demo.png)
+
 ## Quick Start
 
 快速使用 cli 工具：
