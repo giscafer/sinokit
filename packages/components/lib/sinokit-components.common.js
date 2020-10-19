@@ -1,12 +1,12 @@
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("@sinokit/utils"));
+		module.exports = factory(require("vue"));
 	else if(typeof define === 'function' && define.amd)
-		define(["@sinokit/utils"], factory);
+		define(["vue"], factory);
 	else if(typeof exports === 'object')
-		exports["SINOKITCOMPONENTS"] = factory(require("@sinokit/utils"));
+		exports["SINOKITCOMPONENTS"] = factory(require("vue"));
 	else
-		root["SINOKITCOMPONENTS"] = factory(root["@sinokit/utils"]);
+		root["SINOKITCOMPONENTS"] = factory(root["Vue"]);
 })(window, function(__WEBPACK_EXTERNAL_MODULE__26__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -55148,8 +55148,73 @@ ___CSS_LOADER_EXPORT___.push([module.i, "\n.back-to-ceiling[data-v-3a8f819e] {\n
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
-// EXTERNAL MODULE: external "@sinokit/utils"
-var utils_ = __webpack_require__(26);
+// EXTERNAL MODULE: external {"root":"Vue","commonjs":"vue","commonjs2":"vue","amd":"vue"}
+var external_root_Vue_commonjs_vue_commonjs2_vue_amd_vue_ = __webpack_require__(26);
+var external_root_Vue_commonjs_vue_commonjs2_vue_amd_vue_default = /*#__PURE__*/__webpack_require__.n(external_root_Vue_commonjs_vue_commonjs2_vue_amd_vue_);
+
+// CONCATENATED MODULE: ../utils/dist/vue/event.js
+
+
+/**
+ * @author: giscafer ,https://github.com/giscafer
+ * @date: 2020-05-21 17:21:29
+ * @description: 用一个Vue实例封装事件常用的方法并赋值给全局的变量，以便在任何一个组件都可调用这些方法来实现全局事件管理
+ *
+ * 使用如下：
+ * mounted(){
+    this.$event.on('change_value',id);
+    this.$event.emit('change_value',1);
+    ...
+  }
+ */
+var eventHub = new external_root_Vue_commonjs_vue_commonjs2_vue_amd_vue_default.a({
+  methods: {
+    on: function on() {
+      for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+        args[_key] = arguments[_key];
+      }
+
+      this.$on.apply(this, args);
+    },
+    emit: function emit() {
+      for (var _len2 = arguments.length, args = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+        args[_key2] = arguments[_key2];
+      }
+
+      this.$emit.apply(this, args);
+    },
+    off: function off() {
+      for (var _len3 = arguments.length, args = new Array(_len3), _key3 = 0; _key3 < _len3; _key3++) {
+        args[_key3] = arguments[_key3];
+      }
+
+      this.$off.apply(this, args);
+    },
+    once: function once() {
+      for (var _len4 = arguments.length, args = new Array(_len4), _key4 = 0; _key4 < _len4; _key4++) {
+        args[_key4] = arguments[_key4];
+      }
+
+      this.$once.apply(this, args);
+    }
+  }
+});
+/* const CustomEventPlugin = V =>
+  Object.defineProperty(V.prototype, '$event', {
+    value: eventHub,
+    writable: true
+  }); */
+
+var CustomEventPlugin = {
+  install: function install(V) {
+    Object.defineProperty(V.prototype, '$event', {
+      value: eventHub,
+      writable: true
+    });
+  }
+};
+
+/* harmony default export */ var vue_event = (CustomEventPlugin);
 
 // CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./src/json-editor/src/json-editor.vue?vue&type=template&id=09ebc5e1&scoped=true&
 var render = function() {
@@ -68511,7 +68576,7 @@ backto_top.install = function (Vue) {
 const components = [src_json_editor, brush_timeline, overview_timeline["a" /* default */], src_query_tags, src_count_down, src_result_0, src_ellipsis, src_number_info, src_sticky, src_backto_top];
 
 const install = function (Vue) {
-  Vue.use(utils_["CustomEventPlugin"]);
+  Vue.use(vue_event);
   components.forEach(component => {
     Vue.component(component.name, component);
   });
