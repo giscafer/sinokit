@@ -1,7 +1,7 @@
 {
   "name": "@sinokit/cli",
   "author": "giscafer",
-  "version": "0.2.24",
+  "version": "0.2.23",
   "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/cli.esm.js",
@@ -50,6 +50,10 @@
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/giscafer/sinokit.git"
   },
   "devDependencies": {
     "@size-limit/preset-small-lib": "^4.6.0",
