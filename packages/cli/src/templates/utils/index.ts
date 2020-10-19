@@ -33,14 +33,14 @@ export const downloadRepository = (
   destination = 'sino-cli-demo'
 ): Promise<any> => {
   return new Promise((resolve, reject) => {
-    console.log(`https://github.com:${repository}#master`);
+    console.log(`from https://github.com:${repository}#master`);
     download(
       `https://github.com:${repository}#master`,
       destination,
       { clone: true },
       (err: any) => {
         if (!err) {
-          resolve(111);
+          resolve();
         } else {
           reject(err);
         }

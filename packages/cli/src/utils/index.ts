@@ -1,8 +1,8 @@
+import camelCase from 'camelcase';
 import fs from 'fs-extra';
 import path from 'path';
-import camelCase from 'camelcase';
-
-import { PackageJson } from './types';
+import shell from 'shelljs';
+import { PackageJson } from '../types';
 
 // Remove the package name scope if it exists
 export const removeScope = (name: string) => name.replace(/^@.*\//, '');
@@ -38,16 +38,39 @@ export function clearConsole() {
   );
 }
 
-export function getReactVersion({
-  dependencies,
-  devDependencies,
-}: PackageJson) {
-  return (
-    (dependencies && dependencies.react) ||
-    (devDependencies && devDependencies.react)
-  );
-}
-
 export function getNodeEngineRequirement({ engines }: PackageJson) {
   return engines && engines.node;
+}
+
+export function getAuthorName() {
+  let author = '';
+
+  author = shell
+    .exec('npm config get init-author-name', { silent: true })
+    .stdout.trim();
+  if (author) return author;
+
+  author = shell
+    .exec('git config --global user.name', { silent: true })
+    .stdout.trim();
+  if (author) {
+    setAuthorName(author);
+    return author;
+  }
+
+  author = shell
+    .exec('npm config get init-author-email', { silent: true })
+    .stdout.trim();
+  if (author) return author;
+
+  author = shell
+    .exec('git config --global user.email', { silent: true })
+    .stdout.trim();
+  if (author) return author;
+
+  return author;
+}
+
+export function setAuthorName(author: string) {
+  shell.exec(`npm config set init-author-name "${author}"`, { silent: true });
 }

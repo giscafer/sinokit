@@ -8,15 +8,19 @@ import ora from 'ora';
 import path from 'path';
 import sade from 'sade';
 import semver from 'semver';
-import shell from 'shelljs';
-import getInstallArgs from './getInstallArgs';
-import getInstallCmd from './getInstallCmd';
-import logError from './logError';
-import * as Messages from './messages';
 import { templates } from './templates';
 import { downloadRepository } from './templates/utils';
 import { PackageJson } from './types';
-import { getNodeEngineRequirement, safePackageName } from './utils';
+import {
+  getAuthorName,
+  getNodeEngineRequirement,
+  safePackageName,
+  setAuthorName,
+} from './utils';
+import getInstallArgs from './utils/getInstallArgs';
+import getInstallCmd from './utils/getInstallCmd';
+import logError from './utils/logError';
+import * as Messages from './utils/messages';
 const pkg = require('../package.json');
 const prog = sade('sino');
 
@@ -95,29 +99,24 @@ prog
         template = await prompt.run();
       }
 
-      bootSpinner.start();
-      // copy the template
-      /*     await fs.copy(
-        path.resolve(__dirname, `../templates/${template}`),
-        projectPath,
-        {
-          overwrite: true,
-        }
-      ); */
-      const downloadSuccess = await downloadRepository(
+      bootSpinner.start(`${chalk.bold.green('git clone')}...`);
+
+      const downloadResolve = await downloadRepository(
         templates[template],
         pkg
       );
-      console.log(downloadSuccess);
+      if (!downloadResolve) {
+        bootSpinner.succeed(`${chalk.bold.green('git clone finish!')}`);
+      }
+
       // fix gitignore
       /*   await fs.copy(
-        path.resolve('./templates', './gitignore'),
+        path.resolve(__dirname,'../templates/gitignore'),
         path.resolve(projectPath, './.gitignore')
       ); */
-
       // update license year and author
       let license: string = await fs.readFile(
-        path.resolve('./templates', 'LICENSE'),
+        path.resolve(__dirname, '../templates/LICENSE'),
         { encoding: 'utf-8' }
       );
 
@@ -189,38 +188,5 @@ prog
       process.exit(1);
     }
   });
-
-function getAuthorName() {
-  let author = '';
-
-  author = shell
-    .exec('npm config get init-author-name', { silent: true })
-    .stdout.trim();
-  if (author) return author;
-
-  author = shell
-    .exec('git config --global user.name', { silent: true })
-    .stdout.trim();
-  if (author) {
-    setAuthorName(author);
-    return author;
-  }
-
-  author = shell
-    .exec('npm config get init-author-email', { silent: true })
-    .stdout.trim();
-  if (author) return author;
-
-  author = shell
-    .exec('git config --global user.email', { silent: true })
-    .stdout.trim();
-  if (author) return author;
-
-  return author;
-}
-
-function setAuthorName(author: string) {
-  shell.exec(`npm config set init-author-name "${author}"`, { silent: true });
-}
 
 prog.parse(process.argv);

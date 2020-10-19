@@ -1,7 +1,7 @@
 {
   "name": "@sinokit/cli",
   "author": "giscafer",
-  "version": "0.2.17",
+  "version": "0.2.24",
   "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/cli.esm.js",
@@ -15,12 +15,13 @@
   },
   "scripts": {
     "start": "tsdx watch",
-    "build": "tsdx build",
+    "build": "tsdx build && npm run post-build",
     "test": "tsdx test",
     "lint": "tsdx lint",
-    "prepare": "tsdx build",
+    "prepare": "tsdx build  && npm run post-build",
     "size": "size-limit",
-    "analyze": "size-limit --why"
+    "analyze": "size-limit --why",
+    "post-build": "node prebuild.js"
   },
   "husky": {
     "hooks": {
@@ -64,6 +65,7 @@
   },
   "dependencies": {
     "ansi-escapes": "^4.3.1",
+    "camelcase": "^6.1.0",
     "chalk": "^4.1.0",
     "download-git-repo": "^3.0.2",
     "enquirer": "^2.3.6",
@@ -74,5 +76,11 @@
     "semver": "^7.3.2",
     "shelljs": "^0.8.4"
   },
+  "keywords": [
+    "sinokit",
+    "typescript",
+    "cli",
+    "vue cli"
+  ],
   "gitHead": "f07f4543a45f5adbae748a48849ef6a87217c36d"
 }
