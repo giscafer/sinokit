@@ -37,7 +37,7 @@
   "dependencies": {
     "vue": "^2.6.11"
   },
-  "gitHead": "b35250e6a74a16a75b6c68cbd6c4040d0cc1dd5b",
+  "gitHead": "24c64757b0cb3115bef0010a764829f6a10b6f3e",
   "devDependencies": {
     "rimraf": "^3.0.2",
     "rollup": "^2.30.0",

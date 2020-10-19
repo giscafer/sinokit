@@ -43,6 +43,10 @@
       "limit": "10 KB"
     }
   ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "devDependencies": {
     "@size-limit/preset-small-lib": "^4.6.0",
     "@types/fs-extra": "^9.0.2",
@@ -66,5 +70,6 @@
     "sade": "^1.7.4",
     "semver": "^7.3.2",
     "shelljs": "^0.8.4"
-  }
+  },
+  "gitHead": "24c64757b0cb3115bef0010a764829f6a10b6f3e"
 }
