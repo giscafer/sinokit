@@ -1,7 +1,10 @@
 {
+  "name": "@sinokit/cli",
+  "author": "giscafer",
   "version": "0.2.15",
   "license": "MIT",
   "main": "dist/index.js",
+  "module": "dist/cli.esm.js",
   "typings": "dist/index.d.ts",
   "files": [
     "dist",
@@ -30,9 +33,6 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "cli",
-  "author": "giscafer",
-  "module": "dist/cli.esm.js",
   "size-limit": [
     {
       "path": "dist/cli.cjs.production.min.js",
@@ -71,5 +71,5 @@
     "semver": "^7.3.2",
     "shelljs": "^0.8.4"
   },
-  "gitHead": "24c64757b0cb3115bef0010a764829f6a10b6f3e"
+  "gitHead": "f07f4543a45f5adbae748a48849ef6a87217c36d"
 }
