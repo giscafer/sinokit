@@ -42,7 +42,7 @@
           { title: '1997年', description: '美国第一次上市' },
           { title: '2000年', description: '香港第一次上市' },
           { title: '2000年', description: '香港第一次上市' },
-          { title: '2007年', description: '中国第一次上市' }
+          { title: '2007年', description: '中国第一次上市' },
           { title: '2008年', description: '中国第8次上市' }
         ]
       };
