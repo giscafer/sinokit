@@ -5,7 +5,7 @@
   "typings": "dist/index.d.ts",
   "files": [
     "dist",
-    "src"
+    "templates"
   ],
   "engines": {
     "node": ">=10"
@@ -46,10 +46,26 @@
   ],
   "devDependencies": {
     "@size-limit/preset-small-lib": "^4.6.0",
+    "@types/fs-extra": "^9.0.2",
+    "@types/sade": "^1.7.2",
+    "@types/semver": "^7.3.4",
+    "@types/shelljs": "^0.8.8",
     "husky": "^4.3.0",
     "size-limit": "^4.6.0",
     "tsdx": "^0.14.1",
     "tslib": "^2.0.3",
     "typescript": "^4.0.3"
+  },
+  "dependencies": {
+    "ansi-escapes": "^4.3.1",
+    "chalk": "^4.1.0",
+    "download-git-repo": "^3.0.2",
+    "enquirer": "^2.3.6",
+    "execa": "^4.0.3",
+    "fs-extra": "^9.0.1",
+    "ora": "^5.1.0",
+    "sade": "^1.7.4",
+    "semver": "^7.3.2",
+    "shelljs": "^0.8.4"
   }
 }
