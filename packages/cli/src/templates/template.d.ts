@@ -1,6 +1,7 @@
+/* tslint:disable */
 import { PackageJson } from 'type-fest';
 
-interface Template {
+export interface Template {
   dependencies: string[];
   name: string;
   packageJson: PackageJson;

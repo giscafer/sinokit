@@ -25,13 +25,6 @@ export interface WatchOpts extends BuildOpts {
   onFailure?: string;
 }
 
-export interface NormalizedOpts
-  extends Omit<WatchOpts, 'name' | 'input' | 'format'> {
-  name: string;
-  input: string[];
-  format: [ModuleFormat, ...ModuleFormat[]];
-}
-
 export interface SinoOptions extends SharedOpts {
   // Name of package
   name: string;
