@@ -1,6 +1,17 @@
 # BrushTimeline 可缩放时间轴
 
-基于 `d3-brush` 实现的时间轴，可缩放、拖动
+基于 `d3-brush` 实现的时间轴，可缩放、拖动。
+
+该组件使用频率较低，所以独立封装成组件
+
+## 使用方式
+
+安装 `npm i vue-brush-timeline -S`，然后代码引入：
+
+```javascript
+import SBrushTimeline from 'vue-brush-timeline';
+Vue.use(SBrushTimeline);
+```
 
 ## 示例
 

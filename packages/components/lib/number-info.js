@@ -91,7 +91,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 73);
+/******/ 	return __webpack_require__(__webpack_require__.s = 47);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -304,11 +304,11 @@ function toComment(sourceMap) {
 
 /***/ }),
 
-/***/ 16:
+/***/ 10:
 /***/ (function(module, exports, __webpack_require__) {
 
 var api = __webpack_require__(2);
-            var content = __webpack_require__(64);
+            var content = __webpack_require__(39);
 
             content = content.__esModule ? content.default : content;
 
@@ -605,18 +605,18 @@ module.exports = function (list, options) {
 
 /***/ }),
 
-/***/ 63:
+/***/ 38:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_sass_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_number_info_vue_vue_type_style_index_0_id_242a9361_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(16);
+/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_sass_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_number_info_vue_vue_type_style_index_0_id_242a9361_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(10);
 /* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_sass_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_number_info_vue_vue_type_style_index_0_id_242a9361_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_sass_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_number_info_vue_vue_type_style_index_0_id_242a9361_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
 /* unused harmony reexport * */
  /* unused harmony default export */ var _unused_webpack_default_export = (_node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_sass_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_number_info_vue_vue_type_style_index_0_id_242a9361_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default.a); 
 
 /***/ }),
 
-/***/ 64:
+/***/ 39:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -634,7 +634,7 @@ ___CSS_LOADER_EXPORT___.push([module.i, ".s-number-info-subtitle[data-v-242a9361
 
 /***/ }),
 
-/***/ 73:
+/***/ 47:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -727,7 +727,7 @@ render._withStripped = true
 // CONCATENATED MODULE: ./src/number-info/src/number-info.vue?vue&type=script&lang=js&
  /* harmony default export */ var src_number_infovue_type_script_lang_js_ = (number_infovue_type_script_lang_js_); 
 // EXTERNAL MODULE: ./src/number-info/src/number-info.vue?vue&type=style&index=0&id=242a9361&lang=scss&scoped=true&
-var number_infovue_type_style_index_0_id_242a9361_lang_scss_scoped_true_ = __webpack_require__(63);
+var number_infovue_type_style_index_0_id_242a9361_lang_scss_scoped_true_ = __webpack_require__(38);
 
 // EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
 var componentNormalizer = __webpack_require__(0);

@@ -2,7 +2,6 @@
 
 import CustomEventPlugin from '@sinokit/utils/dist/vue/event';
 import JsonEditor from './json-editor/index.js';
-import BrushTimeline from './brush-timeline/index.js';
 import OverviewTimeline from './overview-timeline/index.js';
 import QueryTags from './query-tags/index.js';
 import CountDown from './count-down/index.js';
@@ -14,7 +13,6 @@ import BacktoTop from './backto-top/index.js';
 
 const components = [
   JsonEditor,
-  BrushTimeline,
   OverviewTimeline,
   QueryTags,
   CountDown,
@@ -41,10 +39,9 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 export default {
-  version: '0.2.17',
+  version: '0.3.0',
   install,
   JsonEditor,
-  BrushTimeline,
   OverviewTimeline,
   QueryTags,
   CountDown,
