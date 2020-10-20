@@ -6,6 +6,7 @@
 
 `SinoKit` 有以下几种模块：
 
+- `@sinokit/cli` 命令行工工具
 - `@sinokit/components` 组件库，含基础通用组件&业务组件
 - `@sinokit/utils` 工具包
 
@@ -16,7 +17,7 @@
 ## 源码
 
 - [Github](https://github.com/giscafer/sinokit)
-- [Gitlab](http://192.168.16.65/tsc-internal/middle-platform/frontend/sinokit)
+- [Gitlab](http://gitlab.sinohealth.cn/share-code/sinokit)
 
 ## 其他
 

@@ -29,3 +29,46 @@ import { JsonEditor } from '@sinokit/components'; // 引入单个组件，如 Js
 
 Vue.component('JsonEditor', JsonEditor);
 ```
+
+## @sinokit/cli
+
+安装工具，即可全局使用 `sino` 命令
+
+```
+npm i @sinokit/cli -g
+```
+
+使用 `sino create` 命令从模板创建工程
+
+```bash
+sino create vue-demo
+cd vue-demo
+npm run dev
+```
+
+> 更多功能开发中…
+
+## @sinokit/utils
+
+安装
+
+```
+npm i @sinokit/utils -S
+```
+
+vue 相关函数使用
+
+```js
+import CustomEventPlugin from '@sinokit/utils/dist/vue/event';
+```
+
+string 相关函数使用
+
+```js
+import { getStrFullLength } from '@sinokit/utils/dist/string-util';
+
+const fullLength = getStrFullLength('演示如何使用utils工具函数');
+console.log(fullLength);
+```
+
+> 持续迭代更新……

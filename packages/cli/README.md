@@ -1,6 +1,6 @@
 # @sinokit/cli
 
-![NPM version](https://img.shields.io/npm/v/@sinokit/cli.svg?style=flat-square)
+[![NPM version](https://img.shields.io/npm/v/@sinokit/cli.svg?style=flat-square)](https://www.npmjs.com/package/@sinokit/cli)
 
 SinoKit 脚手架工具
 
