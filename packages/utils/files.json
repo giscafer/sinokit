@@ -1,0 +1,8 @@
+{
+  "dom-handler": "./dom/dom-handler.js",
+  "resize-event": "./dom/resize-event.js",
+  "string-util": "./string-util.js",
+  "event": "./vue/event.js",
+  "toast": "./vue/toast.js",
+  "logger": "./vue/logger.js"
+}

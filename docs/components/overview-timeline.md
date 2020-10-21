@@ -42,7 +42,8 @@
           { title: '1997年', description: '美国第一次上市' },
           { title: '2000年', description: '香港第一次上市' },
           { title: '2000年', description: '香港第一次上市' },
-          { title: '2007年', description: '中国第一次上市' }
+          { title: '2007年', description: '中国第一次上市' },
+          { title: '2008年', description: '中国第8次上市' }
         ]
       };
     }
@@ -76,7 +77,8 @@
           { title: '2000年', description: '香港第一次上市' },
           { title: '2002年', description: '香港第一次上市' },
           { title: '2003年', description: '香港第一次上市' },
-          { title: '2004年', description: '香港第一次上市' }
+          { title: '2003年', description: '香港第一次上市' },
+          { title: '200x年', description: '香港第x次上市' }
         ]
       };
     }
@@ -88,8 +90,9 @@
 
 ### Attributes
 
-|    参数     | 说明                 |   类型    | 默认值 |
-| :---------: | -------------------- | :-------: | :----: |
-|   `data`    | 渲染数据             |  `Array`  |   -    |
-| `collapse`  | 控制是否展开隐藏节点 | `Boolean` | `true` |
-| `itemWidth` | 节点宽度             | `Number`  | `200`  |
+|    参数     | 说明                                       |   类型    | 默认值 |
+| :---------: | ------------------------------------------ | :-------: | :----: |
+|   `data`    | 渲染数据                                   |  `Array`  |   -    |
+| `collapse`  | 控制是否展开隐藏节点                       | `Boolean` | `true` |
+| `itemWidth` | 节点宽度                                   | `Number`  | `200`  |
+|    `max`    | 节点展示数量（当 collapse 为 true 时有效） | `Number`  |  `4`   |

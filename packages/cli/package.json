@@ -1,0 +1,90 @@
+{
+  "name": "@sinokit/cli",
+  "author": "giscafer",
+  "version": "0.3.1",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "module": "dist/cli.esm.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "templates"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "tsdx build && npm run post-build",
+    "test": "tsdx test",
+    "lint": "tsdx lint",
+    "prepare": "tsdx build  && npm run post-build",
+    "size": "size-limit",
+    "analyze": "size-limit --why",
+    "post-build": "node prebuild.js"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "prettier": {
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "size-limit": [
+    {
+      "path": "dist/cli.cjs.production.min.js",
+      "limit": "10 KB"
+    },
+    {
+      "path": "dist/cli.esm.js",
+      "limit": "10 KB"
+    }
+  ],
+  "bin": {
+    "sino": "./dist/index.js"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/giscafer/sinokit.git"
+  },
+  "devDependencies": {
+    "@size-limit/preset-small-lib": "^4.6.0",
+    "@types/fs-extra": "^9.0.2",
+    "@types/sade": "^1.7.2",
+    "@types/semver": "^7.3.4",
+    "@types/shelljs": "^0.8.8",
+    "husky": "^4.3.0",
+    "size-limit": "^4.6.0",
+    "tsdx": "^0.14.1",
+    "tslib": "^2.0.3",
+    "typescript": "^4.0.3"
+  },
+  "dependencies": {
+    "ansi-escapes": "^4.3.1",
+    "camelcase": "^6.1.0",
+    "chalk": "^4.1.0",
+    "download-git-repo": "^3.0.2",
+    "enquirer": "^2.3.6",
+    "execa": "^4.0.3",
+    "fs-extra": "^9.0.1",
+    "ora": "^5.1.0",
+    "sade": "^1.7.4",
+    "semver": "^7.3.2",
+    "shelljs": "^0.8.4"
+  },
+  "keywords": [
+    "sinokit",
+    "typescript",
+    "cli",
+    "vue cli"
+  ],
+  "gitHead": "e8d065d77641274fe22a6c4111a33893c9e622ab"
+}
