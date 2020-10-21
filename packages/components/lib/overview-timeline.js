@@ -91,7 +91,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 55);
+/******/ 	return __webpack_require__(__webpack_require__.s = 54);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -308,7 +308,7 @@ function toComment(sourceMap) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var api = __webpack_require__(2);
-            var content = __webpack_require__(57);
+            var content = __webpack_require__(56);
 
             content = content.__esModule ? content.default : content;
 
@@ -662,7 +662,8 @@ var render = function() {
           class: {
             "ov-timeline-ellipsis": _vm.isEllipsis(index),
             single: _vm.timelineList.length === 1,
-            expand: !_vm.collapse
+            expand: !_vm.collapse,
+            collapse: _vm.collapse && !_vm.isEllipsis(index)
           },
           style: { width: _vm.itemWidth + "px" }
         },
@@ -762,6 +763,13 @@ render._withStripped = true
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ var overview_timelinevue_type_script_lang_js_ = ({
   name: 'SOverviewTimeline',
   props: {
@@ -776,6 +784,10 @@ render._withStripped = true
     collapse: {
       type: Boolean,
       default: true
+    },
+    max: {
+      type: Number,
+      default: 4
     }
   },
 
@@ -805,17 +817,43 @@ render._withStripped = true
     },
 
     isEllipsis(index) {
-      return index !== 0 && index !== this.timelineList.length - 1 && this.collapse;
+      /* if (!this.collapse) {
+        return (
+          index !== 0 &&
+          index !== this.timelineList.length - 1 &&
+          this.collapse &&
+          this.timelineList.length > this.max
+          // index !== 0 && index !== this.timelineList.length - 1 && this.collapse
+        )
+      } */
+      const length = this.timelineList.length;
+      console.log(index, index !== 0, this.collapse, index === length - 2, length > this.max);
+
+      if (index === length - 2) {
+        console.log('index === length - 2', index);
+      }
+
+      return index !== 0 && this.collapse && index === length - 2 && this.data.length > this.max;
     },
 
     setTimelineList() {
       const length = this.data.length || 0;
+      let list = [];
 
-      if (this.collapse && length > 2) {
-        this.timelineList = [this.data[0], this.data[1], this.data[2]];
+      if (this.collapse && length > this.max) {
+        let count = -1;
+
+        while (count++ < this.max - 2) {
+          list.push(this.data[count]);
+        }
+
+        list.push(this.data[this.data.length - 1]); // last one
       } else {
-        this.timelineList = this.data;
+        list = this.data;
       }
+
+      console.log(list);
+      this.timelineList = list;
     }
 
   }
@@ -823,7 +861,7 @@ render._withStripped = true
 // CONCATENATED MODULE: ./src/overview-timeline/src/overview-timeline.vue?vue&type=script&lang=js&
  /* harmony default export */ var src_overview_timelinevue_type_script_lang_js_ = (overview_timelinevue_type_script_lang_js_); 
 // EXTERNAL MODULE: ./src/overview-timeline/src/overview-timeline.vue?vue&type=style&index=0&id=6770f667&lang=scss&scoped=true&
-var overview_timelinevue_type_style_index_0_id_6770f667_lang_scss_scoped_true_ = __webpack_require__(56);
+var overview_timelinevue_type_style_index_0_id_6770f667_lang_scss_scoped_true_ = __webpack_require__(55);
 
 // EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
 var componentNormalizer = __webpack_require__(0);
@@ -855,7 +893,7 @@ component.options.__file = "src/overview-timeline/src/overview-timeline.vue"
 
 /***/ }),
 
-/***/ 55:
+/***/ 54:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -884,7 +922,7 @@ if (GlobalVue) {
 
 /***/ }),
 
-/***/ 56:
+/***/ 55:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -895,7 +933,7 @@ if (GlobalVue) {
 
 /***/ }),
 
-/***/ 57:
+/***/ 56:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -906,7 +944,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(false);
 // Module
-___CSS_LOADER_EXPORT___.push([module.i, ".overview-timeline-component[data-v-6770f667]{display:flex;justify-content:center;min-height:100px;padding-top:10px}.ov-timeline-node[data-v-6770f667]{display:flex;position:absolute;bottom:0;transform:translateX(-50%);background-color:#4865e9;border-radius:50%;justify-content:center;align-items:center;width:18px;height:18px;z-index:100}.ov-timeline-node>.center[data-v-6770f667]{background-color:#fff;width:12px;height:12px;border-radius:50%}.single[data-v-6770f667]{display:flex;justify-content:center;align-items:center;text-align:center;flex-direction:column;position:relative}.single .ov-timeline-node[data-v-6770f667]{left:0;margin:0 auto}.single .ov-timeline-content[data-v-6770f667]{margin:0 auto}.ov-timeline-tail[data-v-6770f667]{position:absolute;bottom:8px;right:0;width:100%;border-top:2px solid rgba(72,101,233,0.5)}.ov-timeline-ellipsis[data-v-6770f667]{display:flex;align-items:center;width:44px !important;left:7px}.ov-timeline-ellipsis-item[data-v-6770f667]{display:flex;width:30px;justify-content:space-between;background:transparent;margin:0 auto}.ov-timeline-ellipsis-item>.ov-timeline-node[data-v-6770f667]{position:relative;width:8px;height:8px;background:rgba(72,101,233,0.5)}.ov-timeline-item[data-v-6770f667]{position:relative;display:inline-block;height:20px}.ov-timeline-item .ov-timeline-content[data-v-6770f667]{position:absolute;width:200px;top:30px;text-align:center;font-size:16px}.ov-timeline-item .ov-timeline-content .ov-timeline-title[data-v-6770f667]{color:#333}.ov-timeline-item .ov-timeline-content .ov-timeline-description[data-v-6770f667]{margin-top:10px;color:#a6aab8}.ov-timeline-item:last-child .ov-timeline-node[data-v-6770f667]{right:-10px}.ov-timeline-item:last-child .ov-timeline-content[data-v-6770f667]{position:absolute;right:-100px}.ov-timeline-item:first-child .ov-timeline-content[data-v-6770f667]{position:absolute;left:-100px}.expand .ov-timeline-node[data-v-6770f667]{left:50%}.expand:last-child .ov-timeline-tail[data-v-6770f667]{left:0;width:50%}.expand:first-child .ov-timeline-tail[data-v-6770f667]{left:50%;width:50%}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.i, ".overview-timeline-component[data-v-6770f667]{display:flex;justify-content:center;min-height:100px;padding-top:10px}.ov-timeline-node[data-v-6770f667]{display:flex;position:absolute;top:0;transform:translateX(-50%);background-color:#4865e9;border-radius:50%;justify-content:center;align-items:center;width:18px;height:18px;z-index:100}.ov-timeline-node>.center[data-v-6770f667]{background-color:#fff;width:12px;height:12px;border-radius:50%}.ov-timeline-item.single-node[data-v-6770f667]{display:flex;justify-content:center;align-items:center;text-align:center;flex-direction:column;position:relative}.ov-timeline-item.single-node .ov-timeline-node[data-v-6770f667]{left:0 !important;margin:0 auto}.ov-timeline-item.single-node .ov-timeline-content[data-v-6770f667]{width:100%;margin:0 auto}.ov-timeline-tail[data-v-6770f667]{position:absolute;top:8px;right:0;width:100%;border-top:2px solid rgba(72,101,233,0.5)}.ov-timeline-ellipsis[data-v-6770f667]{display:flex;align-items:center;width:44px !important;left:7px}.ov-timeline-ellipsis-item[data-v-6770f667]{display:flex;width:30px;justify-content:space-between;background:transparent;margin:0 auto}.ov-timeline-ellipsis-item>.ov-timeline-node[data-v-6770f667]{position:relative;width:8px;height:8px;background:rgba(72,101,233,0.5)}.ov-timeline-item[data-v-6770f667]{position:relative;display:inline-block;height:20px}.ov-timeline-item .ov-timeline-content[data-v-6770f667]{width:200px;margin-top:20px;text-align:center;font-size:16px}.ov-timeline-item .ov-timeline-content .ov-timeline-title[data-v-6770f667]{color:#333}.ov-timeline-item .ov-timeline-content .ov-timeline-description[data-v-6770f667]{margin-top:10px;color:#a6aab8}.ov-timeline-item:last-child .ov-timeline-node[data-v-6770f667]{right:-10px}.ov-timeline-item:last-child .ov-timeline-content[data-v-6770f667]{right:-100px}.collapse[data-v-6770f667],.expand[data-v-6770f667]{display:flex;width:400px;height:100px;justify-content:center;align-items:center}.collapse .ov-timeline-node[data-v-6770f667],.expand .ov-timeline-node[data-v-6770f667]{left:50%}.collapse:last-child .ov-timeline-tail[data-v-6770f667],.expand:last-child .ov-timeline-tail[data-v-6770f667]{left:0;width:50%}.collapse:first-child .ov-timeline-tail[data-v-6770f667],.expand:first-child .ov-timeline-tail[data-v-6770f667]{left:50%;width:50%}\n", ""]);
 // Exports
 /* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
 

@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="./docs/_media/vue.svg" width="126"/>
+<img src="./docs/_media/logo.png" width="126"/>
 
 # sinokit
 

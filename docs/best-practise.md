@@ -80,12 +80,17 @@
 - [sortablejs](https://github.com/SortableJS/sortablejs) 使用拖放创建列表并重新排序。
 - [xlsx](https://github.com/SheetJS/sheetjs) SheetJS Community Edition——电子表格数据工具包 （Excel 数据处理）
 
-### 其他 vue 组件
+### 其他 vue 功能组件
 
+- [v-viewer](https://github.com/mirari/v-viewer) Vue 图片浏览组件 v-viewer，支持旋转、缩放、翻转等操作
 - [vue-dropzone](https://github.com/rowanwins/vue-dropzone) 一个带有图像预览的拖放文件上传工具
 - [vuedraggable](https://github.com/SortableJS/Vue.Draggable) 基于`sortablejs` 的 Vue 组件，允许拖放和与视图模型数组同步。
 - [vue-split-pane](https://github.com/PanJiaChen/vue-split-pane) 使用 vue2.0 构建的拆分窗格组件，可以垂直拆分或水平拆分。
 
+### 其他 vue 业务场景组件
+
+- [vue-luck-draw](https://github.com/LuckDraw/vue-luck-draw) 抽奖工具
+
 ---
 
-> 欢迎补充……
+> 欢迎补充…… 在 [Github 编辑](https://github.com/giscafer/sinokit/blob/master/docs/best-practise.md) 文档

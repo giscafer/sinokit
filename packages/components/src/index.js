@@ -41,7 +41,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 export default {
-  version: '0.2.10',
+  version: '0.2.11',
   install,
   JsonEditor,
   BrushTimeline,

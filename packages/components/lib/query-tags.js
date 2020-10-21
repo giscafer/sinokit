@@ -91,7 +91,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 69);
+/******/ 	return __webpack_require__(__webpack_require__.s = 68);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -308,7 +308,7 @@ function toComment(sourceMap) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var api = __webpack_require__(2);
-            var content = __webpack_require__(59);
+            var content = __webpack_require__(58);
 
             content = content.__esModule ? content.default : content;
 
@@ -333,7 +333,7 @@ module.exports = content.locals || {};
 /***/ (function(module, exports, __webpack_require__) {
 
 var api = __webpack_require__(2);
-            var content = __webpack_require__(61);
+            var content = __webpack_require__(60);
 
             content = content.__esModule ? content.default : content;
 
@@ -630,7 +630,7 @@ module.exports = function (list, options) {
 
 /***/ }),
 
-/***/ 58:
+/***/ 57:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -641,7 +641,7 @@ module.exports = function (list, options) {
 
 /***/ }),
 
-/***/ 59:
+/***/ 58:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -659,7 +659,7 @@ ___CSS_LOADER_EXPORT___.push([module.i, ".s-tag[data-v-51409e77]{position:relati
 
 /***/ }),
 
-/***/ 60:
+/***/ 59:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -670,7 +670,7 @@ ___CSS_LOADER_EXPORT___.push([module.i, ".s-tag[data-v-51409e77]{position:relati
 
 /***/ }),
 
-/***/ 61:
+/***/ 60:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -688,7 +688,7 @@ ___CSS_LOADER_EXPORT___.push([module.i, ".query-tags[data-v-f553269e]{display:fl
 
 /***/ }),
 
-/***/ 69:
+/***/ 68:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -898,7 +898,7 @@ tagvue_type_template_id_51409e77_scoped_true_render._withStripped = true
 // CONCATENATED MODULE: ./src/query-tags/src/tag.vue?vue&type=script&lang=js&
  /* harmony default export */ var src_tagvue_type_script_lang_js_ = (tagvue_type_script_lang_js_); 
 // EXTERNAL MODULE: ./src/query-tags/src/tag.vue?vue&type=style&index=0&id=51409e77&lang=scss&scoped=true&
-var tagvue_type_style_index_0_id_51409e77_lang_scss_scoped_true_ = __webpack_require__(58);
+var tagvue_type_style_index_0_id_51409e77_lang_scss_scoped_true_ = __webpack_require__(57);
 
 // EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
 var componentNormalizer = __webpack_require__(0);
@@ -1101,7 +1101,7 @@ component.options.__file = "src/query-tags/src/tag.vue"
 // CONCATENATED MODULE: ./src/query-tags/src/query-tags.vue?vue&type=script&lang=js&
  /* harmony default export */ var src_query_tagsvue_type_script_lang_js_ = (query_tagsvue_type_script_lang_js_); 
 // EXTERNAL MODULE: ./src/query-tags/src/query-tags.vue?vue&type=style&index=0&id=f553269e&lang=scss&scoped=true&
-var query_tagsvue_type_style_index_0_id_f553269e_lang_scss_scoped_true_ = __webpack_require__(60);
+var query_tagsvue_type_style_index_0_id_f553269e_lang_scss_scoped_true_ = __webpack_require__(59);
 
 // CONCATENATED MODULE: ./src/query-tags/src/query-tags.vue
 
