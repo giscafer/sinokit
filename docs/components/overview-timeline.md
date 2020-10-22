@@ -90,9 +90,10 @@
 
 ### Attributes
 
-|    参数     | 说明                                       |   类型    | 默认值 |
-| :---------: | ------------------------------------------ | :-------: | :----: |
-|   `data`    | 渲染数据                                   |  `Array`  |   -    |
-| `collapse`  | 控制是否展开隐藏节点                       | `Boolean` | `true` |
-| `itemWidth` | 节点宽度                                   | `Number`  | `200`  |
-|    `max`    | 节点展示数量（当 collapse 为 true 时有效） | `Number`  |  `4`   |
+|    参数     | 说明                                                |   类型    |  默认值  |
+| :---------: | --------------------------------------------------- | :-------: | :------: |
+|   `data`    | 渲染数据                                            |  `Array`  |    -     |
+| `collapse`  | 控制是否展开隐藏节点                                | `Boolean` |  `true`  |
+| `itemWidth` | 节点宽度                                            | `Number`  |  `200`   |
+|    `max`    | 节点展示数量（当 collapse 为 true 时有效）          | `Number`  |   `4`    |
+|   `align`   | flex`justify-content`布局方向，靠左对齐、居中、靠右 | `String`  | `center` |

@@ -1,5 +1,12 @@
 <template>
-  <div class="overview-timeline-component" v-bind="$attrs" v-on="$listeners">
+  <div
+    class="overview-timeline-component"
+    v-bind="$attrs"
+    v-on="$listeners"
+    :style="{
+      'justify-content': align,
+    }"
+  >
     <div
       v-for="(item, index) in timelineList"
       :key="index"
@@ -56,6 +63,11 @@ export default {
     max: {
       type: Number,
       default: 4,
+    },
+    // 'left','center', 'right'
+    align: {
+      type: String,
+      default: 'center',
     },
   },
   data() {
