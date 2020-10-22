@@ -91,7 +91,11 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/
 /******/ 	// Load entry module and return exports
+<<<<<<< HEAD
 /******/ 	return __webpack_require__(__webpack_require__.s = 74);
+=======
+/******/ 	return __webpack_require__(__webpack_require__.s = 48);
+>>>>>>> master
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -203,7 +207,11 @@ function normalizeComponent (
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ 74:
+=======
+/***/ 48:
+>>>>>>> master
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

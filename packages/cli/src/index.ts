@@ -8,6 +8,7 @@ import ora from 'ora';
 import path from 'path';
 import sade from 'sade';
 import semver from 'semver';
+<<<<<<< HEAD
 import shell from 'shelljs';
 import getInstallArgs from './getInstallArgs';
 import getInstallCmd from './getInstallCmd';
@@ -19,6 +20,23 @@ import { PackageJson } from './types';
 import { getNodeEngineRequirement, safePackageName } from './utils';
 const pkg = require('../package.json');
 const prog = sade('tsdx');
+=======
+import { templates } from './templates';
+import { downloadRepository } from './templates/utils';
+import { PackageJson } from './types';
+import {
+  getAuthorName,
+  getNodeEngineRequirement,
+  safePackageName,
+  setAuthorName,
+} from './utils';
+import getInstallArgs from './utils/getInstallArgs';
+import getInstallCmd from './utils/getInstallCmd';
+import logError from './utils/logError';
+import * as Messages from './utils/messages';
+const pkg = require('../package.json');
+const prog = sade('sino');
+>>>>>>> master
 
 prog
   .version(pkg.version)
@@ -95,6 +113,7 @@ prog
         template = await prompt.run();
       }
 
+<<<<<<< HEAD
       bootSpinner.start();
       // copy the template
       /*     await fs.copy(
@@ -118,6 +137,26 @@ prog
       // update license year and author
       let license: string = await fs.readFile(
         path.resolve('./templates', 'LICENSE'),
+=======
+      bootSpinner.start(`${chalk.bold.green('git clone')}...`);
+
+      const downloadResolve = await downloadRepository(
+        templates[template],
+        pkg
+      );
+      if (!downloadResolve) {
+        bootSpinner.succeed(`${chalk.bold.green('git clone finish!')}`);
+      }
+
+      // fix gitignore
+      /*   await fs.copy(
+        path.resolve(__dirname,'../templates/gitignore'),
+        path.resolve(projectPath, './.gitignore')
+      ); */
+      // update license year and author
+      let license: string = await fs.readFile(
+        path.resolve(__dirname, '../templates/LICENSE'),
+>>>>>>> master
         { encoding: 'utf-8' }
       );
 
@@ -190,6 +229,7 @@ prog
     }
   });
 
+<<<<<<< HEAD
 function getAuthorName() {
   let author = '';
 
@@ -223,4 +263,6 @@ function setAuthorName(author: string) {
   shell.exec(`npm config set init-author-name "${author}"`, { silent: true });
 }
 
+=======
+>>>>>>> master
 prog.parse(process.argv);

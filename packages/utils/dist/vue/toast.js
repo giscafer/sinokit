@@ -1,5 +1,4 @@
-import '../_rollupPluginBabelHelpers-e1b33a40.js';
-import { V as Vue } from '../vue.runtime.esm-59f908bb.js';
+import Vue from 'vue';
 
 /**
  * @author: giscafer ,https://github.com/giscafer

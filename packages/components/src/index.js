@@ -2,7 +2,6 @@
 
 import { CustomEventPlugin } from '@sinokit/utils';
 import JsonEditor from './json-editor/index.js';
-import BrushTimeline from './brush-timeline/index.js';
 import OverviewTimeline from './overview-timeline/index.js';
 import QueryTags from './query-tags/index.js';
 import CountDown from './count-down/index.js';
@@ -11,10 +10,10 @@ import Ellipsis from './ellipsis/index.js';
 import NumberInfo from './number-info/index.js';
 import Sticky from './sticky/index.js';
 import BacktoTop from './backto-top/index.js';
+import FullScreen from './full-screen/index.js';
 
 const components = [
   JsonEditor,
-  BrushTimeline,
   OverviewTimeline,
   QueryTags,
   CountDown,
@@ -22,7 +21,8 @@ const components = [
   Ellipsis,
   NumberInfo,
   Sticky,
-  BacktoTop
+  BacktoTop,
+  FullScreen
 ];
 
 const install = function(Vue) {
@@ -41,10 +41,13 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 export default {
+<<<<<<< HEAD
   version: '0.2.11',
+=======
+  version: '0.3.1',
+>>>>>>> master
   install,
   JsonEditor,
-  BrushTimeline,
   OverviewTimeline,
   QueryTags,
   CountDown,
@@ -52,5 +55,6 @@ export default {
   Ellipsis,
   NumberInfo,
   Sticky,
-  BacktoTop
+  BacktoTop,
+  FullScreen
 };

@@ -2,7 +2,7 @@
 
 一个高效易用的基于 Vue 的 json-schema 编辑器。 模仿 Yapi 实现，组件源码见 [vue-json-schema-editor-visual](https://github.com/giscafer/vue-json-schema-editor-visual)
 
-该组件使用概率较低，所以独立出来不放在 `@sinokit/components`
+该组件使用频率较低，所以独立封装成组件
 
 ## 使用方式
 

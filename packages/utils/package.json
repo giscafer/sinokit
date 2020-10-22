@@ -1,6 +1,6 @@
 {
   "name": "@sinokit/utils",
-  "version": "0.2.7",
+  "version": "0.3.1",
   "description": "工具函数",
   "keywords": [
     "utils"
@@ -37,7 +37,7 @@
   "dependencies": {
     "vue": "^2.6.11"
   },
-  "gitHead": "b35250e6a74a16a75b6c68cbd6c4040d0cc1dd5b",
+  "gitHead": "e8d065d77641274fe22a6c4111a33893c9e622ab",
   "devDependencies": {
     "rimraf": "^3.0.2",
     "rollup": "^2.30.0",

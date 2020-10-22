@@ -1,6 +1,5 @@
 {
   "json-editor": "./src/json-editor/index.js",
-  "brush-timeline": "./src/brush-timeline/index.js",
   "overview-timeline": "./src/overview-timeline/index.js",
   "query-tags": "./src/query-tags/index.js",
   "count-down": "./src/count-down/index.js",
@@ -8,5 +7,6 @@
   "ellipsis": "./src/ellipsis/index.js",
   "number-info": "./src/number-info/index.js",
   "sticky": "./src/sticky/index.js",
-  "backto-top": "./src/backto-top/index.js"
+  "backto-top": "./src/backto-top/index.js",
+  "full-screen": "./src/full-screen/index.js"
 }

@@ -25,6 +25,7 @@ export interface WatchOpts extends BuildOpts {
   onFailure?: string;
 }
 
+<<<<<<< HEAD
 export interface NormalizedOpts
   extends Omit<WatchOpts, 'name' | 'input' | 'format'> {
   name: string;
@@ -33,6 +34,9 @@ export interface NormalizedOpts
 }
 
 export interface TsdxOptions extends SharedOpts {
+=======
+export interface SinoOptions extends SharedOpts {
+>>>>>>> master
   // Name of package
   name: string;
   // path to file

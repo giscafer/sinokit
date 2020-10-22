@@ -2,7 +2,7 @@
 
 ![NPM version](https://img.shields.io/npm/v/@sinokit/components.svg?style=flat-square)
 
-组件
+Sinokit 组件
 
 ## Usage
 

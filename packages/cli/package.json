@@ -1,7 +1,16 @@
 {
+<<<<<<< HEAD
   "version": "0.1.0",
   "license": "MIT",
   "main": "dist/index.js",
+=======
+  "name": "@sinokit/cli",
+  "author": "giscafer",
+  "version": "0.3.1",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "module": "dist/cli.esm.js",
+>>>>>>> master
   "typings": "dist/index.d.ts",
   "files": [
     "dist",
@@ -12,6 +21,7 @@
   },
   "scripts": {
     "start": "tsdx watch",
+<<<<<<< HEAD
     "build": "tsdx build",
     "test": "tsdx test",
     "lint": "tsdx lint",
@@ -20,6 +30,16 @@
     "analyze": "size-limit --why"
   },
   "peerDependencies": {},
+=======
+    "build": "tsdx build && npm run post-build",
+    "test": "tsdx test",
+    "lint": "tsdx lint",
+    "prepare": "tsdx build  && npm run post-build",
+    "size": "size-limit",
+    "analyze": "size-limit --why",
+    "post-build": "node prebuild.js"
+  },
+>>>>>>> master
   "husky": {
     "hooks": {
       "pre-commit": "tsdx lint"
@@ -31,9 +51,12 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
+<<<<<<< HEAD
   "name": "cli",
   "author": "giscafer",
   "module": "dist/cli.esm.js",
+=======
+>>>>>>> master
   "size-limit": [
     {
       "path": "dist/cli.cjs.production.min.js",
@@ -44,6 +67,20 @@
       "limit": "10 KB"
     }
   ],
+<<<<<<< HEAD
+=======
+  "bin": {
+    "sino": "./dist/index.js"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/giscafer/sinokit.git"
+  },
+>>>>>>> master
   "devDependencies": {
     "@size-limit/preset-small-lib": "^4.6.0",
     "@types/fs-extra": "^9.0.2",
@@ -58,6 +95,10 @@
   },
   "dependencies": {
     "ansi-escapes": "^4.3.1",
+<<<<<<< HEAD
+=======
+    "camelcase": "^6.1.0",
+>>>>>>> master
     "chalk": "^4.1.0",
     "download-git-repo": "^3.0.2",
     "enquirer": "^2.3.6",
@@ -67,5 +108,16 @@
     "sade": "^1.7.4",
     "semver": "^7.3.2",
     "shelljs": "^0.8.4"
+<<<<<<< HEAD
   }
+=======
+  },
+  "keywords": [
+    "sinokit",
+    "typescript",
+    "cli",
+    "vue cli"
+  ],
+  "gitHead": "e8d065d77641274fe22a6c4111a33893c9e622ab"
+>>>>>>> master
 }
