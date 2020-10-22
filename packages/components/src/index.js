@@ -10,6 +10,7 @@ import Ellipsis from './ellipsis/index.js';
 import NumberInfo from './number-info/index.js';
 import Sticky from './sticky/index.js';
 import BacktoTop from './backto-top/index.js';
+import FullScreen from './full-screen/index.js';
 
 const components = [
   JsonEditor,
@@ -20,7 +21,8 @@ const components = [
   Ellipsis,
   NumberInfo,
   Sticky,
-  BacktoTop
+  BacktoTop,
+  FullScreen
 ];
 
 const install = function(Vue) {
@@ -39,7 +41,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 export default {
-  version: '0.3.0',
+  version: '0.3.1',
   install,
   JsonEditor,
   OverviewTimeline,
@@ -49,5 +51,6 @@ export default {
   Ellipsis,
   NumberInfo,
   Sticky,
-  BacktoTop
+  BacktoTop,
+  FullScreen
 };

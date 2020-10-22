@@ -81,6 +81,12 @@ export const routes = [
     name: 'BackToTop',
     component: () => import('../views/components-demo/backto-top.vue'),
     props: true
+  },
+  {
+    path: '/components-demo/full-screen',
+    name: 'FullScreen',
+    component: () => import('../views/full-screen/index.vue'),
+    props: true
   }
 ];
 
