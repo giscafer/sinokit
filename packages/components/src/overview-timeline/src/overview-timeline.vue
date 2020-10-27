@@ -186,13 +186,17 @@ $borderColor: rgba(72, 101, 233, 0.5);
   width: 100%;
   border-top: 2px solid $borderColor;
 }
+.ov-timeline-item.ov-timeline-ellipsis {
+  display: flex;
+  height: 16px;
+}
 .ov-timeline-ellipsis {
   display: flex;
   align-items: center;
   width: 44px !important;
-  left: 7px;
+  left: 4px;
   &-item {
-    display: flex;
+    display: flex !important;
     width: 30px;
     justify-content: space-between;
     background: transparent;
