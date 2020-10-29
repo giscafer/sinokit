@@ -27,7 +27,7 @@
           v-if="showContentLine"
           class="dashed-line"
           :style="{
-            'background-image': `linear-gradient(to top, ${color} 0%, ${color} 50%, transparent 50%)`,
+            'background-image': `linear-gradient(0deg, ${color} 0%, ${color} 50%, transparent 50%)`,
           }"
         ></div>
         <div
@@ -335,9 +335,9 @@ $borderColor: rgba(72, 101, 233, 0.5);
   position: absolute;
   bottom: 100px;
   width: 2px;
-  height: 20px;
-  // border: 1px dashed $borderColor;
+  height: 40px;
+  opacity: 0.5;
   background-size: 2px 12px;
-  background-repeat: repeat-x;
+  background-repeat: repeat-y;
 }
 </style>
