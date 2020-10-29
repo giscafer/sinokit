@@ -90,15 +90,6 @@ export default {
       return index === 0 || index === this.timelineList.length - 1
     },
     isEllipsis(index) {
-      /* if (!this.collapse) {
-        return (
-          index !== 0 &&
-          index !== this.timelineList.length - 1 &&
-          this.collapse &&
-          this.timelineList.length > this.max
-          // index !== 0 && index !== this.timelineList.length - 1 && this.collapse
-        )
-      } */
       const length = this.timelineList.length
       console.log(
         index,
@@ -129,7 +120,7 @@ export default {
       } else {
         list = this.data
       }
-      console.log(list)
+      // console.log(list)
       this.timelineList = list
     },
   },
