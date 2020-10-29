@@ -20,12 +20,25 @@
       }"
     >
       <template v-if="!isEllipsis(index)">
-        <div class="ov-timeline-node">
+        <div class="ov-timeline-node" :style="{ 'background-color': color }">
           <div class="center"></div>
         </div>
-        <div class="ov-timeline-tail" v-if="timelineList.length > 1"></div>
+        <div
+          v-if="showContentLine"
+          class="dashed-line"
+          :style="{
+            'background-image': `linear-gradient(to top, ${color} 0%, ${color} 50%, transparent 50%)`,
+          }"
+        ></div>
+        <div
+          v-if="timelineList.length > 1"
+          class="ov-timeline-tail"
+          :class="{ dashed: lineType === 'dashed', infinite: infinite }"
+          :style="tailStyle"
+        ></div>
         <div
           class="ov-timeline-content"
+          :class="{ 'algin-top': contentAlign === 'top' }"
           :style="{
             left: collapse ? '' : (0.5 - (200 / itemWidth) * 0.5) * 100 + '%',
           }"
@@ -64,10 +77,32 @@ export default {
       type: Number,
       default: 4,
     },
-    // 'left','center', 'right'
     align: {
       type: String,
       default: 'center',
+    },
+    lineType: {
+      type: String,
+      default: 'solid',
+    },
+    color: {
+      type: String,
+      default: 'rgba(72, 101, 233, 1)',
+    },
+    // 首位线是否延伸
+    infinite: {
+      type: Boolean,
+      default: false,
+    },
+    // 内容位置方向 bottom/top
+    contentAlign: {
+      type: String,
+      default: 'bottom',
+    },
+    // 内容虚线
+    showContentLine: {
+      type: Boolean,
+      default: false,
     },
   },
   data() {
@@ -80,7 +115,21 @@ export default {
       this.setTimelineList()
     },
   },
-  computed: {},
+  computed: {
+    tailStyle() {
+      const c = {
+        opacity: 0.5,
+      }
+      if (this.lineType === 'dashed') {
+        c[
+          'background-image'
+        ] = `linear-gradient(to right, ${this.color} 0%, ${this.color} 50%, transparent 50%)`
+      } else {
+        c['background-color'] = this.color
+      }
+      return c
+    },
+  },
   created() {},
   mounted() {
     this.setTimelineList()
@@ -91,16 +140,6 @@ export default {
     },
     isEllipsis(index) {
       const length = this.timelineList.length
-      console.log(
-        index,
-        index !== 0,
-        this.collapse,
-        index === length - 2,
-        length > this.max
-      )
-      if (index === length - 2) {
-        console.log('index === length - 2', index)
-      }
       return (
         index !== 0 &&
         this.collapse &&
@@ -170,13 +209,7 @@ $borderColor: rgba(72, 101, 233, 0.5);
     margin: 0 auto;
   }
 }
-.ov-timeline-tail {
-  position: absolute;
-  top: 8px;
-  right: 0;
-  width: 100%;
-  border-top: 2px solid $borderColor;
-}
+
 .ov-timeline-item.ov-timeline-ellipsis {
   display: flex;
   height: 16px;
@@ -218,6 +251,12 @@ $borderColor: rgba(72, 101, 233, 0.5);
       margin-top: 10px;
       color: #a6aab8;
     }
+
+    &.algin-top {
+      position: absolute;
+      bottom: 150px;
+      right: 0 !important;
+    }
   }
 
   &:last-child {
@@ -254,13 +293,51 @@ $borderColor: rgba(72, 101, 233, 0.5);
     .ov-timeline-tail {
       left: 0;
       width: 50%;
+      &.infinite {
+        width: 150%;
+      }
     }
   }
   &:first-child {
     .ov-timeline-tail {
       left: 50%;
       width: 50%;
+      &.infinite {
+        left: -50%;
+        width: 150%;
+      }
     }
   }
+}
+
+.ov-timeline-tail {
+  position: absolute;
+  top: 8px;
+  right: 0;
+  width: 100%;
+  border-top: 2px solid $borderColor;
+}
+.ov-timeline-tail.dashed {
+  border-radius: 1px;
+  width: 100%;
+  height: 2px;
+  background-image: linear-gradient(
+    to right,
+    $borderColor 0%,
+    $borderColor 50%,
+    transparent 50%
+  );
+  background-size: 12px 2px;
+  background-repeat: repeat-x;
+  border-top: 0;
+}
+.dashed-line {
+  position: absolute;
+  bottom: 100px;
+  width: 2px;
+  height: 20px;
+  // border: 1px dashed $borderColor;
+  background-size: 2px 12px;
+  background-repeat: repeat-x;
 }
 </style>

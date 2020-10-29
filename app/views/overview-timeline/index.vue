@@ -15,7 +15,14 @@
       ></s-overview-timeline>
     </div>
     <div class="margin-top-130">
-      <s-overview-timeline :data="timelineList4"></s-overview-timeline>
+      <s-overview-timeline
+        :data="timelineList4"
+        :infinite="true"
+        :showContentLine="true"
+        line-type="dashed"
+        color="#ffa45f"
+        contentAlign="top"
+      ></s-overview-timeline>
     </div>
     <div class="margin-top-130">
       <s-overview-timeline
