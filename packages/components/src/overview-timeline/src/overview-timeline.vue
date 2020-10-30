@@ -311,6 +311,17 @@ $borderColor: rgba(72, 101, 233, 0.5);
       width: 50%;
       &.infinite {
         width: 150%;
+        &:before {
+          content: '';
+          position: absolute;
+          top: -3px;
+          right: -1px;
+          width: 7px;
+          height: 7px;
+          border-top: 2px solid #ffa45f;
+          border-right: 2px solid #ffa45f;
+          transform: rotate(45deg);
+        }
       }
     }
   }

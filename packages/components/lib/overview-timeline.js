@@ -672,7 +672,8 @@ var render = function() {
             "ov-timeline-ellipsis": _vm.isEllipsis(index),
             single: _vm.timelineList.length === 1,
             expand: !_vm.collapse,
-            collapse: _vm.collapse && !_vm.isEllipsis(index)
+            collapse: _vm.collapse && !_vm.isEllipsis(index),
+            "algin-top": _vm.contentAlign === "top"
           },
           style: { width: _vm.itemWidth + "px" }
         },
@@ -714,7 +715,6 @@ var render = function() {
                   "div",
                   {
                     staticClass: "ov-timeline-content",
-                    class: { "algin-top": _vm.contentAlign === "top" },
                     style: {
                       left: _vm.collapse
                         ? ""
@@ -722,16 +722,19 @@ var render = function() {
                     }
                   },
                   [
-                    _c("div", {
-                      staticClass: "ov-timeline-title",
-                      domProps: { textContent: _vm._s(item.title) }
-                    }),
-                    _c("div", {
-                      staticClass: "ov-timeline-description",
-                      domProps: { textContent: _vm._s(item.description) }
-                    }),
-                    _vm._t("content"),
-                    _vm._t("default")
+                    !_vm.customContent
+                      ? _c("div", {
+                          staticClass: "ov-timeline-title",
+                          domProps: { textContent: _vm._s(item.title) }
+                        })
+                      : _vm._e(),
+                    !_vm.customContent
+                      ? _c("div", {
+                          staticClass: "ov-timeline-description",
+                          domProps: { textContent: _vm._s(item.description) }
+                        })
+                      : _vm._e(),
+                    _vm._t("default", null, { item: item })
                   ],
                   2
                 )
@@ -763,6 +766,13 @@ render._withStripped = true
 // CONCATENATED MODULE: ./src/overview-timeline/src/overview-timeline.vue?vue&type=template&id=6770f667&scoped=true&
 
 // CONCATENATED MODULE: ./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./src/overview-timeline/src/overview-timeline.vue?vue&type=script&lang=js&
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -869,6 +879,11 @@ render._withStripped = true
     showContentLine: {
       type: Boolean,
       default: false
+    },
+    // 自定义渲染内容
+    customContent: {
+      type: Boolean,
+      default: false
     }
   },
 
@@ -905,7 +920,6 @@ render._withStripped = true
 
   mounted() {
     this.setTimelineList();
-    console.log(this.$slots);
   },
 
   methods: {
@@ -996,7 +1010,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(false);
 // Module
-___CSS_LOADER_EXPORT___.push([module.i, ".overview-timeline-component[data-v-6770f667]{display:flex;justify-content:center;min-height:100px;padding-top:10px}.ov-timeline-node[data-v-6770f667]{display:flex;position:absolute;top:0;transform:translateX(-50%);background-color:#4865e9;border-radius:50%;justify-content:center;align-items:center;width:18px;height:18px;z-index:100}.ov-timeline-node>.center[data-v-6770f667]{background-color:#fff;width:12px;height:12px;border-radius:50%}.ov-timeline-item.single-node[data-v-6770f667]{display:flex;justify-content:center;align-items:center;text-align:center;flex-direction:column;position:relative}.ov-timeline-item.single-node .ov-timeline-node[data-v-6770f667]{left:0 !important;margin:0 auto}.ov-timeline-item.single-node .ov-timeline-content[data-v-6770f667]{width:100%;margin:0 auto}.ov-timeline-item.ov-timeline-ellipsis[data-v-6770f667]{display:flex;height:16px}.ov-timeline-ellipsis[data-v-6770f667]{display:flex;align-items:center;width:44px !important;left:4px}.ov-timeline-ellipsis-item[data-v-6770f667]{display:flex !important;width:30px;justify-content:space-between;background:transparent;margin:0 auto}.ov-timeline-ellipsis-item>.ov-timeline-node[data-v-6770f667]{position:relative;width:8px;height:8px;background:rgba(72,101,233,0.5)}.ov-timeline-item[data-v-6770f667]{position:relative;display:inline-block;height:20px}.ov-timeline-item .ov-timeline-content[data-v-6770f667]{width:200px;margin-top:20px;text-align:center;font-size:16px}.ov-timeline-item .ov-timeline-content .ov-timeline-title[data-v-6770f667]{color:#333}.ov-timeline-item .ov-timeline-content .ov-timeline-description[data-v-6770f667]{margin-top:10px;color:#a6aab8}.ov-timeline-item .ov-timeline-content.algin-top[data-v-6770f667]{position:absolute;bottom:150px;right:0 !important}.ov-timeline-item:last-child .ov-timeline-node[data-v-6770f667]{right:-10px}.ov-timeline-item:last-child .ov-timeline-content[data-v-6770f667]{right:-100px}.collapse[data-v-6770f667],.expand[data-v-6770f667]{display:flex;width:400px;height:100px;justify-content:center;align-items:center}.collapse .ov-timeline-node[data-v-6770f667],.expand .ov-timeline-node[data-v-6770f667]{left:50%}.collapse:last-child .ov-timeline-tail[data-v-6770f667],.expand:last-child .ov-timeline-tail[data-v-6770f667]{left:0;width:50%}.collapse:last-child .ov-timeline-tail.infinite[data-v-6770f667],.expand:last-child .ov-timeline-tail.infinite[data-v-6770f667]{width:150%}.collapse:first-child .ov-timeline-tail[data-v-6770f667],.expand:first-child .ov-timeline-tail[data-v-6770f667]{left:50%;width:50%}.collapse:first-child .ov-timeline-tail.infinite[data-v-6770f667],.expand:first-child .ov-timeline-tail.infinite[data-v-6770f667]{left:-50%;width:150%}.ov-timeline-tail[data-v-6770f667]{position:absolute;top:8px;right:0;width:100%;border-top:2px solid rgba(72,101,233,0.5)}.ov-timeline-tail.dashed[data-v-6770f667]{border-radius:1px;width:100%;height:2px;background-image:linear-gradient(to right, rgba(72,101,233,0.5) 0%, rgba(72,101,233,0.5) 50%, transparent 50%);background-size:12px 2px;background-repeat:repeat-x;border-top:0}.dashed-line[data-v-6770f667]{position:absolute;bottom:100px;width:2px;height:40px;opacity:0.5;background-size:2px 12px;background-repeat:repeat-y}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.i, ".overview-timeline-component[data-v-6770f667]{display:flex;justify-content:center;min-height:100px;padding-top:10px}.ov-timeline-node[data-v-6770f667]{display:flex;position:absolute;top:0;transform:translateX(-50%);background-color:#4865e9;border-radius:50%;justify-content:center;align-items:center;width:18px;height:18px;z-index:100}.ov-timeline-node>.center[data-v-6770f667]{background-color:#fff;width:12px;height:12px;border-radius:50%}.ov-timeline-item.single-node[data-v-6770f667]{display:flex;justify-content:center;align-items:center;text-align:center;flex-direction:column;position:relative}.ov-timeline-item.single-node .ov-timeline-node[data-v-6770f667]{left:0 !important;margin:0 auto}.ov-timeline-item.single-node .ov-timeline-content[data-v-6770f667]{width:100%;margin:0 auto}.ov-timeline-item.ov-timeline-ellipsis[data-v-6770f667]{display:flex;height:16px}.ov-timeline-ellipsis[data-v-6770f667]{display:flex;align-items:center;width:44px !important;left:4px}.ov-timeline-ellipsis-item[data-v-6770f667]{display:flex !important;width:30px;justify-content:space-between;background:transparent;margin:0 auto}.ov-timeline-ellipsis-item>.ov-timeline-node[data-v-6770f667]{position:relative;width:8px;height:8px;background:rgba(72,101,233,0.5)}.ov-timeline-item[data-v-6770f667]{position:relative;display:inline-block;height:20px}.ov-timeline-item .ov-timeline-content[data-v-6770f667]{width:200px;margin-top:20px;text-align:center;font-size:16px}.ov-timeline-item .ov-timeline-content .ov-timeline-title[data-v-6770f667]{color:#333}.ov-timeline-item .ov-timeline-content .ov-timeline-description[data-v-6770f667]{margin-top:10px;color:#a6aab8}.ov-timeline-item.algin-top .ov-timeline-node[data-v-6770f667]{top:calc(90% - 8px)}.ov-timeline-item.algin-top .ov-timeline-tail[data-v-6770f667]{top:calc(90%)}.ov-timeline-item.algin-top .dashed-line[data-v-6770f667]{bottom:16px}.ov-timeline-item.algin-top .ov-timeline-content[data-v-6770f667]{position:absolute;bottom:50px;right:0 !important}.ov-timeline-item:last-child .ov-timeline-node[data-v-6770f667]{right:-10px}.ov-timeline-item:last-child .ov-timeline-content[data-v-6770f667]{right:-100px}.collapse[data-v-6770f667],.expand[data-v-6770f667]{display:flex;width:400px;height:100px;justify-content:center;align-items:center}.collapse .ov-timeline-node[data-v-6770f667],.expand .ov-timeline-node[data-v-6770f667]{left:50%}.collapse:last-child .ov-timeline-tail[data-v-6770f667],.expand:last-child .ov-timeline-tail[data-v-6770f667]{left:0;width:50%}.collapse:last-child .ov-timeline-tail.infinite[data-v-6770f667],.expand:last-child .ov-timeline-tail.infinite[data-v-6770f667]{width:150%}.collapse:last-child .ov-timeline-tail.infinite[data-v-6770f667]:before,.expand:last-child .ov-timeline-tail.infinite[data-v-6770f667]:before{content:'';position:absolute;top:-3px;right:-1px;width:7px;height:7px;border-top:2px solid #ffa45f;border-right:2px solid #ffa45f;transform:rotate(45deg)}.collapse:first-child .ov-timeline-tail[data-v-6770f667],.expand:first-child .ov-timeline-tail[data-v-6770f667]{left:50%;width:50%}.collapse:first-child .ov-timeline-tail.infinite[data-v-6770f667],.expand:first-child .ov-timeline-tail.infinite[data-v-6770f667]{left:-50%;width:150%}.ov-timeline-tail[data-v-6770f667]{position:absolute;top:8px;right:0;width:100%;border-top:2px solid rgba(72,101,233,0.5)}.ov-timeline-tail.dashed[data-v-6770f667]{border-radius:1px;width:100%;height:2px;background-image:linear-gradient(to right, rgba(72,101,233,0.5) 0%, rgba(72,101,233,0.5) 50%, transparent 50%);background-size:12px 2px;background-repeat:repeat-x;border-top:0}.dashed-line[data-v-6770f667]{position:absolute;bottom:100px;width:2px;height:40px;opacity:0.5;background-size:2px 12px;background-repeat:repeat-y}\n", ""]);
 // Exports
 /* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
 
