@@ -101,11 +101,11 @@
     <s-overview-timeline
       :data="timelineList"
       :infinite="true"
-      :showContentLine="true"
+      :show-content-line="true"
+      :custom-content="true"
       line-type="dashed"
       color="#ffa45f"
-      contentAlign="top"
-      :customContent="true"
+      content-align="top"
     >
       <template #default="{ item }">
         <p>🐥{{ item.title }}</p>
