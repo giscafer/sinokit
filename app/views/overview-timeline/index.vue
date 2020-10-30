@@ -12,9 +12,12 @@
       <s-overview-timeline :data="timelineList3" :itemWidth="300">
       </s-overview-timeline>
     </div>
-    <div class="margin-top-130">
+    <div
+      class="margin-top-130"
+      style="width: 900px; overflow: auto; margin: 0 auto; padding-bottom: 20px"
+    >
       <s-overview-timeline
-        :data="timelineList4"
+        :data="timelineList5"
         :infinite="true"
         :showContentLine="true"
         line-type="dashed"

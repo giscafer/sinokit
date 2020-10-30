@@ -6,6 +6,7 @@
     :style="{
       'justify-content': align,
     }"
+    :class="{ infinite: infinite }"
   >
     <div
       v-for="(item, index) in timelineList"
@@ -158,13 +159,14 @@ export default {
         index !== 0 &&
         this.collapse &&
         index === length - 2 &&
-        this.data.length > this.max
+        this.data.length > this.max &&
+        !this.infinite
       )
     },
     setTimelineList() {
       const length = this.data.length || 0
       let list = []
-      if (this.collapse && length > this.max) {
+      if (this.collapse && length > this.max && !this.infinite) {
         let count = -1
         while (count++ < this.max - 2) {
           list.push(this.data[count])
@@ -186,6 +188,11 @@ $borderColor: rgba(72, 101, 233, 0.5);
   justify-content: center;
   min-height: 100px;
   padding-top: 10px;
+  &.infinite {
+    // max-width: 900px;
+    // overflow: auto;
+    min-width: 1200px;
+  }
 }
 .ov-timeline-node {
   display: flex;
@@ -297,7 +304,7 @@ $borderColor: rgba(72, 101, 233, 0.5);
 .expand {
   display: flex;
   width: 400px;
-  height: 100px;
+  height: 150px;
   justify-content: center;
   align-items: center;
 

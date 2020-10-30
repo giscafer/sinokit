@@ -95,7 +95,9 @@
 </desc>
 
 <template>
-  <div style="min-height:200px;width:1100px;padding-top:30px;overflow-x:auto">
+  <div
+    style="min-height:200px;width: 900px; overflow: auto; margin: 0 auto; padding-bottom: 20px"
+  >
     <s-overview-timeline
       :data="timelineList"
       :infinite="true"
