@@ -9,10 +9,8 @@
       <s-overview-timeline :data="timelineList2"></s-overview-timeline>
     </div>
     <div class="margin-top-130">
-      <s-overview-timeline
-        :data="timelineList3"
-        :itemWidth="300"
-      ></s-overview-timeline>
+      <s-overview-timeline :data="timelineList3" :itemWidth="300">
+      </s-overview-timeline>
     </div>
     <div class="margin-top-130">
       <s-overview-timeline
@@ -22,13 +20,17 @@
         line-type="dashed"
         color="#ffa45f"
         contentAlign="top"
-      ></s-overview-timeline>
+        :customContent="true"
+      >
+        <template #default="{ item }">
+          <p>{{ item.title }}</p>
+          <p>{{ item.description }}</p>
+        </template>
+      </s-overview-timeline>
     </div>
     <div class="margin-top-130">
-      <s-overview-timeline
-        :data="timelineList5"
-        :collapse="false"
-      ></s-overview-timeline>
+      <s-overview-timeline :data="timelineList5" :collapse="false">
+      </s-overview-timeline>
     </div>
     <div class="margin-top-130">
       <s-overview-timeline :data="timelineList5"></s-overview-timeline>

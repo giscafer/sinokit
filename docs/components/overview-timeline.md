@@ -86,14 +86,64 @@
 </script>
 ```
 
+### 自定义渲染样式
+
+```html
+/*vue*/
+<desc>
+  `s-overview-timeline` 自定义渲染样式
+</desc>
+
+<template>
+  <div style="min-height:200px;width:1100px;padding-top:30px;overflow-x:auto">
+    <s-overview-timeline
+      :data="timelineList"
+      :infinite="true"
+      :showContentLine="true"
+      line-type="dashed"
+      color="#ffa45f"
+      contentAlign="top"
+      :customContent="true"
+    >
+      <template #default="{ item }">
+        <p>🐥{{ item.title }}</p>
+        <p>{{ item.description }}</p>
+      </template>
+    </s-overview-timeline>
+  </div>
+</template>
+
+<script>
+  export default {
+    data() {
+      return {
+        timelineList: [
+          { title: '1997年', description: '美国第一次上市' },
+          { title: '2000年', description: '香港第一次上市' },
+          { title: '2002年', description: '香港第一次上市' },
+          { title: '2003年', description: '香港第一次上市' },
+          { title: '2003年', description: '香港第一次上市' },
+          { title: '200x年', description: '香港第x次上市' }
+        ]
+      };
+    }
+  };
+</script>
+```
+
 ## API
 
 ### Attributes
 
-|    参数     | 说明                                                |   类型    |  默认值  |
-| :---------: | --------------------------------------------------- | :-------: | :------: |
-|   `data`    | 渲染数据                                            |  `Array`  |    -     |
-| `collapse`  | 控制是否展开隐藏节点                                | `Boolean` |  `true`  |
-| `itemWidth` | 节点宽度                                            | `Number`  |  `200`   |
-|    `max`    | 节点展示数量（当 collapse 为 true 时有效）          | `Number`  |   `4`    |
-|   `align`   | flex`justify-content`布局方向，靠左对齐、居中、靠右 | `String`  | `center` |
+|      参数       | 说明                                                      |   类型    |  默认值  |
+| :-------------: | --------------------------------------------------------- | :-------: | :------: |
+|     `data`      | 渲染数据                                                  |  `Array`  |    -     |
+|   `collapse`    | 控制是否展开隐藏节点                                      | `Boolean` |  `true`  |
+|   `itemWidth`   | 节点宽度                                                  | `Number`  |  `200`   |
+|      `max`      | 节点展示数量（当 collapse 为 true 时有效）                | `Number`  |   `4`    |
+|     `align`     | flex 布局 `justify-content`布局方向，靠左对齐、居中、靠右 | `String`  | `center` |
+| `customContent` | 是否自定义 content 内容，配合默认的 slot 槽做判断         | `Boolean` | `false`  |
+
+## TODO
+
+`this.$slots` 获取不到东西很奇怪，故多加了 `customContent` 属性判断，优化时可以去掉

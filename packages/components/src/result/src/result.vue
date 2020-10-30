@@ -59,6 +59,7 @@ export default {
   },
   computed: {
     localIsSuccess: function () {
+      console.log(this.$slots)
       return this.type === resultEnum[0]
     },
   },

@@ -8,7 +8,7 @@ import * as Toast from './vue/toast.js';
 import * as Logger from './vue/logger.js';
 
 export default {
-  version: '0.3.0',
+  version: '0.3.1',
   DomHandler,
   ResizeEvent,
   StringUtil,

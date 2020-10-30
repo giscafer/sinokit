@@ -17,6 +17,7 @@
         single: timelineList.length === 1,
         expand: !collapse,
         collapse: collapse && !isEllipsis(index),
+        'algin-top': contentAlign === 'top',
       }"
     >
       <template v-if="!isEllipsis(index)">
@@ -38,13 +39,21 @@
         ></div>
         <div
           class="ov-timeline-content"
-          :class="{ 'algin-top': contentAlign === 'top' }"
           :style="{
             left: collapse ? '' : (0.5 - (200 / itemWidth) * 0.5) * 100 + '%',
           }"
         >
-          <div class="ov-timeline-title" v-text="item.title"></div>
-          <div class="ov-timeline-description" v-text="item.description"></div>
+          <div
+            v-if="!customContent"
+            class="ov-timeline-title"
+            v-text="item.title"
+          ></div>
+          <div
+            v-if="!customContent"
+            class="ov-timeline-description"
+            v-text="item.description"
+          ></div>
+          <slot :item="item"></slot>
         </div>
       </template>
       <template v-if="isEllipsis(index)">
@@ -104,6 +113,11 @@ export default {
       type: Boolean,
       default: false,
     },
+    // 自定义渲染内容
+    customContent: {
+      type: Boolean,
+      default: false,
+    },
   },
   data() {
     return {
@@ -159,7 +173,6 @@ export default {
       } else {
         list = this.data
       }
-      // console.log(list)
       this.timelineList = list
     },
   },
@@ -251,10 +264,21 @@ $borderColor: rgba(72, 101, 233, 0.5);
       margin-top: 10px;
       color: #a6aab8;
     }
+  }
 
-    &.algin-top {
+  &.algin-top {
+    .ov-timeline-node {
+      top: calc(90% - 8px);
+    }
+    .ov-timeline-tail {
+      top: calc(90%);
+    }
+    .dashed-line {
+      bottom: 16px;
+    }
+    .ov-timeline-content {
       position: absolute;
-      bottom: 150px;
+      bottom: 50px;
       right: 0 !important;
     }
   }
@@ -268,12 +292,6 @@ $borderColor: rgba(72, 101, 233, 0.5);
       right: -100px;
     }
   }
-  // &:first-child {
-  //   .ov-timeline-content {
-  //     // position: absolute;
-  //     // left: -100px;
-  //   }
-  // }
 }
 .collapse,
 .expand {
@@ -286,9 +304,7 @@ $borderColor: rgba(72, 101, 233, 0.5);
   .ov-timeline-node {
     left: 50%;
   }
-  /*  .ov-timeline-content {
-    left: 25% !important;
-  } */
+
   &:last-child {
     .ov-timeline-tail {
       left: 0;

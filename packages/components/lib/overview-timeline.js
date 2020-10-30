@@ -650,7 +650,12 @@ var render = function() {
     "div",
     _vm._g(
       _vm._b(
-        { staticClass: "overview-timeline-component" },
+        {
+          staticClass: "overview-timeline-component",
+          style: {
+            "justify-content": _vm.align
+          }
+        },
         "div",
         _vm.$attrs,
         false
@@ -674,14 +679,42 @@ var render = function() {
         [
           !_vm.isEllipsis(index)
             ? [
-                _vm._m(0, true),
+                _c(
+                  "div",
+                  {
+                    staticClass: "ov-timeline-node",
+                    style: { "background-color": _vm.color }
+                  },
+                  [_c("div", { staticClass: "center" })]
+                ),
+                _vm.showContentLine
+                  ? _c("div", {
+                      staticClass: "dashed-line",
+                      style: {
+                        "background-image":
+                          "linear-gradient(0deg, " +
+                          _vm.color +
+                          " 0%, " +
+                          _vm.color +
+                          " 50%, transparent 50%)"
+                      }
+                    })
+                  : _vm._e(),
                 _vm.timelineList.length > 1
-                  ? _c("div", { staticClass: "ov-timeline-tail" })
+                  ? _c("div", {
+                      staticClass: "ov-timeline-tail",
+                      class: {
+                        dashed: _vm.lineType === "dashed",
+                        infinite: _vm.infinite
+                      },
+                      style: _vm.tailStyle
+                    })
                   : _vm._e(),
                 _c(
                   "div",
                   {
                     staticClass: "ov-timeline-content",
+                    class: { "algin-top": _vm.contentAlign === "top" },
                     style: {
                       left: _vm.collapse
                         ? ""
@@ -696,12 +729,15 @@ var render = function() {
                     _c("div", {
                       staticClass: "ov-timeline-description",
                       domProps: { textContent: _vm._s(item.description) }
-                    })
-                  ]
+                    }),
+                    _vm._t("content"),
+                    _vm._t("default")
+                  ],
+                  2
                 )
               ]
             : _vm._e(),
-          _vm.isEllipsis(index) ? [_vm._m(1, true)] : _vm._e()
+          _vm.isEllipsis(index) ? [_vm._m(0, true)] : _vm._e()
         ],
         2
       )
@@ -710,14 +746,6 @@ var render = function() {
   )
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "ov-timeline-node" }, [
-      _c("div", { staticClass: "center" })
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -735,6 +763,28 @@ render._withStripped = true
 // CONCATENATED MODULE: ./src/overview-timeline/src/overview-timeline.vue?vue&type=template&id=6770f667&scoped=true&
 
 // CONCATENATED MODULE: ./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./src/overview-timeline/src/overview-timeline.vue?vue&type=script&lang=js&
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -792,6 +842,33 @@ render._withStripped = true
     max: {
       type: Number,
       default: 4
+    },
+    align: {
+      type: String,
+      default: 'center'
+    },
+    lineType: {
+      type: String,
+      default: 'solid'
+    },
+    color: {
+      type: String,
+      default: 'rgba(72, 101, 233, 1)'
+    },
+    // 首位线是否延伸
+    infinite: {
+      type: Boolean,
+      default: false
+    },
+    // 内容位置方向 bottom/top
+    contentAlign: {
+      type: String,
+      default: 'bottom'
+    },
+    // 内容虚线
+    showContentLine: {
+      type: Boolean,
+      default: false
     }
   },
 
@@ -807,12 +884,28 @@ render._withStripped = true
     }
 
   },
-  computed: {},
+  computed: {
+    tailStyle() {
+      const c = {
+        opacity: 0.5
+      };
+
+      if (this.lineType === 'dashed') {
+        c['background-image'] = `linear-gradient(to right, ${this.color} 0%, ${this.color} 50%, transparent 50%)`;
+      } else {
+        c['background-color'] = this.color;
+      }
+
+      return c;
+    }
+
+  },
 
   created() {},
 
   mounted() {
     this.setTimelineList();
+    console.log(this.$slots);
   },
 
   methods: {
@@ -821,22 +914,7 @@ render._withStripped = true
     },
 
     isEllipsis(index) {
-      /* if (!this.collapse) {
-        return (
-          index !== 0 &&
-          index !== this.timelineList.length - 1 &&
-          this.collapse &&
-          this.timelineList.length > this.max
-          // index !== 0 && index !== this.timelineList.length - 1 && this.collapse
-        )
-      } */
       const length = this.timelineList.length;
-      console.log(index, index !== 0, this.collapse, index === length - 2, length > this.max);
-
-      if (index === length - 2) {
-        console.log('index === length - 2', index);
-      }
-
       return index !== 0 && this.collapse && index === length - 2 && this.data.length > this.max;
     },
 
@@ -856,7 +934,6 @@ render._withStripped = true
         list = this.data;
       }
 
-      console.log(list);
       this.timelineList = list;
     }
 
@@ -919,7 +996,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(false);
 // Module
-___CSS_LOADER_EXPORT___.push([module.i, ".overview-timeline-component[data-v-6770f667]{display:flex;justify-content:center;min-height:100px;padding-top:10px}.ov-timeline-node[data-v-6770f667]{display:flex;position:absolute;top:0;transform:translateX(-50%);background-color:#4865e9;border-radius:50%;justify-content:center;align-items:center;width:18px;height:18px;z-index:100}.ov-timeline-node>.center[data-v-6770f667]{background-color:#fff;width:12px;height:12px;border-radius:50%}.ov-timeline-item.single-node[data-v-6770f667]{display:flex;justify-content:center;align-items:center;text-align:center;flex-direction:column;position:relative}.ov-timeline-item.single-node .ov-timeline-node[data-v-6770f667]{left:0 !important;margin:0 auto}.ov-timeline-item.single-node .ov-timeline-content[data-v-6770f667]{width:100%;margin:0 auto}.ov-timeline-tail[data-v-6770f667]{position:absolute;top:8px;right:0;width:100%;border-top:2px solid rgba(72,101,233,0.5)}.ov-timeline-ellipsis[data-v-6770f667]{display:flex;align-items:center;width:44px !important;left:7px}.ov-timeline-ellipsis-item[data-v-6770f667]{display:flex;width:30px;justify-content:space-between;background:transparent;margin:0 auto}.ov-timeline-ellipsis-item>.ov-timeline-node[data-v-6770f667]{position:relative;width:8px;height:8px;background:rgba(72,101,233,0.5)}.ov-timeline-item[data-v-6770f667]{position:relative;display:inline-block;height:20px}.ov-timeline-item .ov-timeline-content[data-v-6770f667]{width:200px;margin-top:20px;text-align:center;font-size:16px}.ov-timeline-item .ov-timeline-content .ov-timeline-title[data-v-6770f667]{color:#333}.ov-timeline-item .ov-timeline-content .ov-timeline-description[data-v-6770f667]{margin-top:10px;color:#a6aab8}.ov-timeline-item:last-child .ov-timeline-node[data-v-6770f667]{right:-10px}.ov-timeline-item:last-child .ov-timeline-content[data-v-6770f667]{right:-100px}.collapse[data-v-6770f667],.expand[data-v-6770f667]{display:flex;width:400px;height:100px;justify-content:center;align-items:center}.collapse .ov-timeline-node[data-v-6770f667],.expand .ov-timeline-node[data-v-6770f667]{left:50%}.collapse:last-child .ov-timeline-tail[data-v-6770f667],.expand:last-child .ov-timeline-tail[data-v-6770f667]{left:0;width:50%}.collapse:first-child .ov-timeline-tail[data-v-6770f667],.expand:first-child .ov-timeline-tail[data-v-6770f667]{left:50%;width:50%}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.i, ".overview-timeline-component[data-v-6770f667]{display:flex;justify-content:center;min-height:100px;padding-top:10px}.ov-timeline-node[data-v-6770f667]{display:flex;position:absolute;top:0;transform:translateX(-50%);background-color:#4865e9;border-radius:50%;justify-content:center;align-items:center;width:18px;height:18px;z-index:100}.ov-timeline-node>.center[data-v-6770f667]{background-color:#fff;width:12px;height:12px;border-radius:50%}.ov-timeline-item.single-node[data-v-6770f667]{display:flex;justify-content:center;align-items:center;text-align:center;flex-direction:column;position:relative}.ov-timeline-item.single-node .ov-timeline-node[data-v-6770f667]{left:0 !important;margin:0 auto}.ov-timeline-item.single-node .ov-timeline-content[data-v-6770f667]{width:100%;margin:0 auto}.ov-timeline-item.ov-timeline-ellipsis[data-v-6770f667]{display:flex;height:16px}.ov-timeline-ellipsis[data-v-6770f667]{display:flex;align-items:center;width:44px !important;left:4px}.ov-timeline-ellipsis-item[data-v-6770f667]{display:flex !important;width:30px;justify-content:space-between;background:transparent;margin:0 auto}.ov-timeline-ellipsis-item>.ov-timeline-node[data-v-6770f667]{position:relative;width:8px;height:8px;background:rgba(72,101,233,0.5)}.ov-timeline-item[data-v-6770f667]{position:relative;display:inline-block;height:20px}.ov-timeline-item .ov-timeline-content[data-v-6770f667]{width:200px;margin-top:20px;text-align:center;font-size:16px}.ov-timeline-item .ov-timeline-content .ov-timeline-title[data-v-6770f667]{color:#333}.ov-timeline-item .ov-timeline-content .ov-timeline-description[data-v-6770f667]{margin-top:10px;color:#a6aab8}.ov-timeline-item .ov-timeline-content.algin-top[data-v-6770f667]{position:absolute;bottom:150px;right:0 !important}.ov-timeline-item:last-child .ov-timeline-node[data-v-6770f667]{right:-10px}.ov-timeline-item:last-child .ov-timeline-content[data-v-6770f667]{right:-100px}.collapse[data-v-6770f667],.expand[data-v-6770f667]{display:flex;width:400px;height:100px;justify-content:center;align-items:center}.collapse .ov-timeline-node[data-v-6770f667],.expand .ov-timeline-node[data-v-6770f667]{left:50%}.collapse:last-child .ov-timeline-tail[data-v-6770f667],.expand:last-child .ov-timeline-tail[data-v-6770f667]{left:0;width:50%}.collapse:last-child .ov-timeline-tail.infinite[data-v-6770f667],.expand:last-child .ov-timeline-tail.infinite[data-v-6770f667]{width:150%}.collapse:first-child .ov-timeline-tail[data-v-6770f667],.expand:first-child .ov-timeline-tail[data-v-6770f667]{left:50%;width:50%}.collapse:first-child .ov-timeline-tail.infinite[data-v-6770f667],.expand:first-child .ov-timeline-tail.infinite[data-v-6770f667]{left:-50%;width:150%}.ov-timeline-tail[data-v-6770f667]{position:absolute;top:8px;right:0;width:100%;border-top:2px solid rgba(72,101,233,0.5)}.ov-timeline-tail.dashed[data-v-6770f667]{border-radius:1px;width:100%;height:2px;background-image:linear-gradient(to right, rgba(72,101,233,0.5) 0%, rgba(72,101,233,0.5) 50%, transparent 50%);background-size:12px 2px;background-repeat:repeat-x;border-top:0}.dashed-line[data-v-6770f667]{position:absolute;bottom:100px;width:2px;height:40px;opacity:0.5;background-size:2px 12px;background-repeat:repeat-y}\n", ""]);
 // Exports
 /* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
 
