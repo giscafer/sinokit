@@ -108,7 +108,7 @@
       content-align="top"
     >
       <template #default="{ item }">
-        <p>🐥{{ item.title }}</p>
+        <p>{{ item.title }}</p>
         <p>{{ item.description }}</p>
       </template>
     </s-overview-timeline>
@@ -120,12 +120,15 @@
     data() {
       return {
         timelineList: [
-          { title: '1997年', description: '美国第一次上市' },
-          { title: '2000年', description: '香港第一次上市' },
-          { title: '2002年', description: '香港第一次上市' },
-          { title: '2003年', description: '香港第一次上市' },
-          { title: '2003年', description: '香港第一次上市' },
-          { title: '200x年', description: '香港第x次上市' }
+          { title: '2020年08月', description: '🐥 韭菜盒子插件发布' },
+          { title: '2020年08月10日', description: '盒子下载量突破5k' },
+          { title: '2020年09月20日', description: '盒子下载量破万' },
+          { title: '2020年10月24日', description: '盒子下载量>12k' },
+          {
+            title: '2020年10月31日',
+            description: '发布v1.6.7版本🚀'
+          },
+          { title: '未来', description: '什么时候回本？' }
         ]
       };
     }
